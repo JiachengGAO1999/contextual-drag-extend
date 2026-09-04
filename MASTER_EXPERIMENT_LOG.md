@@ -15,7 +15,7 @@ This is the live command file for the Contextual Drag reproduction and extension
 | Stage | State | Evidence / next gate |
 |---|---|---|
 | Stage 1 — local build + test | COMPLETE | 29 tests plus both executable smokes passed on 2026-09-04; local commit recorded below. |
-| Stage 2 — server preflight | BLOCKED BY POLICY GATE | Requires an `origin`, push, and server-side pull before any SSH audit. |
+| Stage 2 — server preflight | BLOCKED / NO-GO TO LAUNCH | User-authorized read-only resource audit completed out of sequence; no `origin`, data filesystems are full, and Qwen3-8B weights are incomplete. |
 | Stage 3 — A100 pilot | NOT STARTED | Requires Stage 2 space/environment approval. |
 | Phase 2 — attribution | NOT STARTED | Requires R0–R4 Go decision. |
 
@@ -69,8 +69,22 @@ Operational contrasts only:
 
 First require `R0 - R2 >= 5 pp`. Enter Phase 2 if either R3/R4 gains at least 5 pp over R2 with clustered-bootstrap 95% CI lower bound above zero, or recovers at least 20% of a residual gap below 25 pp with the same CI condition. Parseability and finish-rate degradation must each be no more than 5 pp. If both gains are below 3 pp with CIs including zero, stop; an intermediate case receives one `n=16` R2–R4 replication only.
 
+## SJTU A100 resource audit — 2026-09-04 17:28 CST
+
+This was a user-authorized, read-only capacity inspection. It did not pull code, install packages, download weights, delete files, or launch inference.
+
+- Host: `rtx-node131`; 8 × NVIDIA A100 80GB PCIe; driver 570.133.07; reported CUDA compatibility 12.8.
+- GPU snapshot: GPUs 0–3 and 5–7 had only 5.5–36GB free. GPU 4 had 80,001MiB free and 0% utilization, but a different user's long-lived process held 1,144MiB. User `gaojc` owned none of the listed GPU processes.
+- Filesystems: `/` had 145GB free at 92% use; `/data` had 38GB free and `/data2` 25GB free, both reported 100% use. Do not place model/cache data on the root filesystem merely to bypass this gate.
+- User footprint: `/home/gaojc` 750MB; `/data2/gaojc` 6.8GB; default HF/Transformers/XDG cache variables unset; `/home/gaojc/.cache` only 16KB.
+- Candidate checkpoint `/data2/gaojc/models/Qwen3-8B` is incomplete: 16MB metadata/tokenizer only, 0 of 5 referenced weight shards present. The index declares 16,381,470,720 bytes of weights.
+- No other Qwen3-8B directory was found in a depth-4 scan of `/data` and `/data2`.
+- Default `python3` is 3.8.10 and lacks PyTorch. Only recovery metadata was found for former environments (`cotx`: Python 3.10.19, torch 2.9.1, transformers 4.57.1; `vllm-budget`: Python 3.11.15, torch 2.11.0, transformers 4.57.6, vLLM 0.22.0); this is not evidence that a runnable environment currently exists.
+- Capacity decision: GPU memory is sufficient for a single-GPU, batch-conservative Qwen3-8B pilot when GPU 4 is available. Current storage/checkpoint/environment state is **not sufficient for a safe launch**. Require either a verified shared complete checkpoint or materially more `/data2` headroom before proceeding.
+
 ## Change log
 
 - 2026-09-04: Stage 1 started. Pinned official baseline checked out. Confirmed no server access and no model download.
 - 2026-09-04: Stage 1 acceptance passed. Official vLLM/prompt/evaluator/TED/aggregation baseline paths have zero diff. Local Python 3.9 cannot install upstream `math-verify==0.8.0` (requires Python >=3.10), so the local evaluator smoke uses a documented Game24-only fallback; official evaluator parity remains mandatory on the server stack.
 - 2026-09-04: Stage 1 snapshot committed locally; use `git log -1` for its content-addressed ID. No `origin` configured and nothing pushed.
+- 2026-09-04: User requested a read-only `sjtu-a100` capacity audit. Recorded a launch No-Go due to full data filesystems, an incomplete Qwen3-8B checkpoint, and no verified runnable environment; no server state was changed.
