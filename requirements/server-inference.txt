@@ -1,0 +1,4 @@
+# Layer this on top of the pinned official requirements.txt on the A100 host.
+# Keep heavy wheels and model caches outside the repository.
+-r ../requirements.txt
+pytest==8.3.5

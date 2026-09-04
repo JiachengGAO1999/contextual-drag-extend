@@ -201,6 +201,20 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 
+# Selective Context Reset: local/runtime artifacts never belong in git.
+.local_test_deps/
+.hf_cache/
+.transformers_cache/
+checkpoints/
+models/
+runs/
+outputs/
+artifacts/
+*.safetensors
+*.bin
+*.pt
+*.pth
+
 # Marimo
 marimo/_static/
 marimo/_lsp/

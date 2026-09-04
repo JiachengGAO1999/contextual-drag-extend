@@ -1,0 +1,7 @@
+# Install only for local CPU engineering; no vLLM or model weights.
+pytest==8.3.5
+math-verify==0.8.0; python_version >= "3.10"  # official evaluator dependency; upstream pin does not support local Python 3.9
+# Runtime packages are already part of the upstream environment. Minimum tested APIs:
+torch>=2.2
+transformers>=4.49,<4.56
+PyYAML>=6

@@ -1,0 +1,31 @@
+schema_version: 1
+status: frozen_not_executed
+dataset:
+  name: game24
+  subset_sizes: [10, 30, 100]
+  samples_per_problem: [1, 4, 8]
+model:
+  alias: Qwen3_8B
+  checkpoint: ${SERVER_EXISTING_QWEN3_8B_CHECKPOINT}
+  dtype: bfloat16
+  attention_implementation: eager
+generation:
+  max_new_tokens: 4096
+  temperature: 0.6
+  top_p: 0.95
+  seeds: [2027]
+conditions:
+  R0: {prompt: direct, access_mode: full}
+  R1: {prompt: one_failed, access_mode: full}
+  R2: {prompt: one_failed_error_signal, access_mode: full}
+  R3: {prompt: persisted_R2, access_mode: late_block}
+  R4: {prompt: persisted_R2, access_mode: path_block}
+gates:
+  residual_drag_pp: 5
+  absolute_recovery_pp: 5
+  relative_recovery_fraction: 0.20
+  no_go_gain_pp: 3
+  max_parseability_drop_pp: 5
+  max_finish_rate_drop_pp: 5
+  bootstrap_unit: problem
+  bootstrap_confidence: 0.95
