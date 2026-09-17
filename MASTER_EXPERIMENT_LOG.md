@@ -1,5 +1,9 @@
 # Selective Context Reset — Master Experiment Log
 
+## 2026-09-17 — Bounded independent-question batch authorized and queued
+
+User authorizes sequential handoff after current vLLM validation: at most32 draft samples and48 evaluation samples. Eight unseen question IDs frozen after excluding server historical IDs and number multisets:519,1080,69,377,45,1170,1144,197. Two fresh paired evaluation seeds927001/927002; at most6 accepted questions, R0/R2/whole_path/X_path. Resident startup queue automatically performs screening only after successful validation; then waits for agent textual/arithmetic X annotation audit. Evaluation is authorized but cannot bypass that audit. No automatic expansion or backend fallback. Plan and execution boundary: docs/quick_validation/heldout_queue_20260917.md. Freshness/overwrite tests:2 passed.
+
 ## 2026-09-17 — HF replication complete; selective vLLM engineering validation
 
 Scope update from user: deliver a usable first version and return to the research, rather than spending more time/quota on performance perfection. Current decode-kernel retry is the final planned engineering validation; no further performance sweeps. GPU toy dense-reference/mutation checks passed before launch. Earlier per-request complete-output run was intentionally stopped for this retry and is incomplete, not a pass. Current log: vllm_decode_validation_20260917.log, tmux qwen3-vllm-decode.

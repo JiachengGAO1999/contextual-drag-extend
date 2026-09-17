@@ -1,5 +1,7 @@
 # 当前研究入口
 
+**2026-09-17 新题批次已授权并排队：**当前 vLLM 验收成功后自动开始8道独立新题×4次筛草稿，最多32次；随后等待 X 标注审计，评测额度最多6题×2 seeds×4条件=48次。不是自动跳过审阅的全流程。见[冻结方案与自动执行边界](quick_validation/heldout_queue_20260917.md)。
+
 当前汇总入口：[2026-09-17 阶段报告与下一阶段建议](quick_validation/progress_report_20260917.md)。本次 GitHub 同步包含实现、标注、报告和汇总统计，不含 bulk outputs 或模型权重。
 
 **2026-09-17：**HF 新 seeds 的 late/path 两批共 96 条已完成。X / X+CALC：late 为 15/24、12/24；path 为 16/24、16/24，尚不能认定 CALC 的稳定功能方向。当前按用户授权开发独立 vLLM 后端：full/late/path 短生成已跑通，优化版完整验收正在 GPU4 运行；尚未批准作为正式科研后端。见 [vLLM 验收记录](quick_validation/vllm_backend_20260917.md)。以下排队状态均为历史。

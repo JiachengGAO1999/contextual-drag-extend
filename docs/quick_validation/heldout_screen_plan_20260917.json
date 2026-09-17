@@ -1,0 +1,472 @@
+{
+  "authorized": true,
+  "screening_cap": 32,
+  "evaluation_cap": 48,
+  "max_evaluation_questions": 6,
+  "samples_per_question": 4,
+  "order_seed": 20270917,
+  "draft_seed_base": 917000,
+  "evaluation_seeds": [
+    927001,
+    927002
+  ],
+  "source": "/data2/gaojc/data/game24-tot-8050e67/24.csv",
+  "source_revision": "8050e67d0e3a0fddc424d7fa5801538722a4c4cc",
+  "historical_records": [
+    {
+      "path": "outputs/game24-fixed-repeats-20260910/seed-12027/results.jsonl",
+      "records": 15
+    },
+    {
+      "path": "outputs/game24-fixed-repeats-20260910/seed-22027/results.jsonl",
+      "records": 15
+    },
+    {
+      "path": "outputs/game24-fixed-repeats-20260910/seed-32027/results.jsonl",
+      "records": 15
+    },
+    {
+      "path": "outputs/game24-independent-control-20260910/results.jsonl",
+      "records": 12
+    },
+    {
+      "path": "outputs/game24-independent-stage-a-20260910/seed-12027/results.jsonl",
+      "records": 12
+    },
+    {
+      "path": "outputs/game24-independent-stage-a-20260910/seed-22027/results.jsonl",
+      "records": 12
+    },
+    {
+      "path": "outputs/game24-independent-stage-a-20260910/seed-32027/results.jsonl",
+      "records": 12
+    },
+    {
+      "path": "outputs/game24-independent-stage-a-20260910/seed-42027/results.jsonl",
+      "records": 12
+    },
+    {
+      "path": "outputs/game24-independent-stage-a-20260910/seed-52027/results.jsonl",
+      "records": 12
+    },
+    {
+      "path": "outputs/game24-morphology-surgery-20260915/seed-12027/results.jsonl",
+      "records": 6
+    },
+    {
+      "path": "outputs/game24-morphology-surgery-20260915/seed-2027/results.jsonl",
+      "records": 6
+    },
+    {
+      "path": "outputs/game24-morphology-surgery-20260915/seed-22027/results.jsonl",
+      "records": 6
+    },
+    {
+      "path": "outputs/game24-morphology-surgery-20260915/seed-32027/results.jsonl",
+      "records": 6
+    },
+    {
+      "path": "outputs/game24-multi-late-20260912/seed-12027/results.jsonl",
+      "records": 24
+    },
+    {
+      "path": "outputs/game24-multi-late-20260912/seed-2027/results.jsonl",
+      "records": 24
+    },
+    {
+      "path": "outputs/game24-multi-late-20260912/seed-22027/results.jsonl",
+      "records": 24
+    },
+    {
+      "path": "outputs/game24-multi-late-20260912/seed-32027/results.jsonl",
+      "records": 24
+    },
+    {
+      "path": "outputs/game24-qwen3-8b-r0-r4-smoke-20260906/draft_candidates.jsonl",
+      "records": 4
+    },
+    {
+      "path": "outputs/game24-qwen3-8b-r0-r4-smoke-boundary-20260906/draft_candidates.jsonl",
+      "records": 70
+    },
+    {
+      "path": "outputs/game24-qwen3-8b-r0-r4-smoke-boundary-20260906/results.jsonl",
+      "records": 50
+    },
+    {
+      "path": "outputs/game24-qwen3-8b-thinking-drafts-20260908/draft_candidates.jsonl",
+      "records": 64
+    },
+    {
+      "path": "outputs/game24-qwen3-8b-thinking-fixed-r0-r4-20260908/results.jsonl",
+      "records": 15
+    },
+    {
+      "path": "outputs/game24-qwen3-8b-thinking-r0-r4-20260906/draft_candidates.jsonl",
+      "records": 64
+    },
+    {
+      "path": "outputs/game24-qwen3-8b-thinking-r0-r4-20260906/results.jsonl",
+      "records": 15
+    },
+    {
+      "path": "outputs/game24-qwen3-fixed-c2-path-20260913/seed-12027/results.jsonl",
+      "records": 5
+    },
+    {
+      "path": "outputs/game24-qwen3-fixed-c2-path-20260913/seed-2027/results.jsonl",
+      "records": 5
+    },
+    {
+      "path": "outputs/game24-qwen3-fixed-c2-path-20260913/seed-22027/results.jsonl",
+      "records": 5
+    },
+    {
+      "path": "outputs/game24-qwen3-fixed-c2-path-20260913/seed-32027/results.jsonl",
+      "records": 5
+    },
+    {
+      "path": "outputs/game24-qwen3-local-calculation-late-20260916/seed-12027/results.jsonl",
+      "records": 6
+    },
+    {
+      "path": "outputs/game24-qwen3-local-calculation-late-20260916/seed-2027/results.jsonl",
+      "records": 6
+    },
+    {
+      "path": "outputs/game24-qwen3-local-calculation-late-20260916/seed-22027/results.jsonl",
+      "records": 6
+    },
+    {
+      "path": "outputs/game24-qwen3-local-calculation-late-20260916/seed-32027/results.jsonl",
+      "records": 6
+    },
+    {
+      "path": "outputs/game24-qwen3-marginal-path-20260914/seed-12027/results.jsonl",
+      "records": 4
+    },
+    {
+      "path": "outputs/game24-qwen3-marginal-path-20260914/seed-2027/results.jsonl",
+      "records": 4
+    },
+    {
+      "path": "outputs/game24-qwen3-marginal-path-20260914/seed-22027/results.jsonl",
+      "records": 4
+    },
+    {
+      "path": "outputs/game24-qwen3-marginal-path-20260914/seed-32027/results.jsonl",
+      "records": 4
+    },
+    {
+      "path": "outputs/game24-qwen3-mx-late-path-20260913/seed-12027/results.jsonl",
+      "records": 40
+    },
+    {
+      "path": "outputs/game24-qwen3-mx-late-path-20260913/seed-2027/results.jsonl",
+      "records": 40
+    },
+    {
+      "path": "outputs/game24-qwen3-mx-late-path-20260913/seed-22027/results.jsonl",
+      "records": 40
+    },
+    {
+      "path": "outputs/game24-qwen3-mx-late-path-20260913/seed-32027/results.jsonl",
+      "records": 40
+    },
+    {
+      "path": "outputs/game24-qwen3-reendorsement-drafts-20260914/draft_candidates.jsonl",
+      "records": 32
+    },
+    {
+      "path": "outputs/game24-qwen3-ten-validity-late-20260915/seed-12027/results.jsonl",
+      "records": 7
+    },
+    {
+      "path": "outputs/game24-qwen3-ten-validity-late-20260915/seed-2027/results.jsonl",
+      "records": 7
+    },
+    {
+      "path": "outputs/game24-qwen3-ten-validity-late-20260915/seed-22027/results.jsonl",
+      "records": 7
+    },
+    {
+      "path": "outputs/game24-qwen3-ten-validity-late-20260915/seed-32027/results.jsonl",
+      "records": 7
+    },
+    {
+      "path": "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-42027/results.jsonl",
+      "records": 12
+    },
+    {
+      "path": "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-52027/results.jsonl",
+      "records": 12
+    },
+    {
+      "path": "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-62027/results.jsonl",
+      "records": 12
+    },
+    {
+      "path": "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-72027/results.jsonl",
+      "records": 12
+    },
+    {
+      "path": "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-42027/results.jsonl",
+      "records": 12
+    },
+    {
+      "path": "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-52027/results.jsonl",
+      "records": 12
+    },
+    {
+      "path": "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-62027/results.jsonl",
+      "records": 12
+    },
+    {
+      "path": "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-72027/results.jsonl",
+      "records": 12
+    },
+    {
+      "path": "outputs/game24-r1-supplement-20260912/seed-12027/results.jsonl",
+      "records": 10
+    },
+    {
+      "path": "outputs/game24-r1-supplement-20260912/seed-2027/results.jsonl",
+      "records": 10
+    },
+    {
+      "path": "outputs/game24-r1-supplement-20260912/seed-22027/results.jsonl",
+      "records": 10
+    },
+    {
+      "path": "outputs/game24-r1-supplement-20260912/seed-32027/results.jsonl",
+      "records": 10
+    },
+    {
+      "path": "outputs/game24-region-late-20260912/seed-12027/results.jsonl",
+      "records": 16
+    },
+    {
+      "path": "outputs/game24-region-late-20260912/seed-2027/results.jsonl",
+      "records": 16
+    },
+    {
+      "path": "outputs/game24-region-late-20260912/seed-22027/results.jsonl",
+      "records": 16
+    },
+    {
+      "path": "outputs/game24-region-late-20260912/seed-32027/results.jsonl",
+      "records": 16
+    },
+    {
+      "path": "outputs/game24-stage-b-drafts-20260911/draft_candidates.jsonl",
+      "records": 128
+    },
+    {
+      "path": "outputs/game24-stage-b-paired-20260911/seed-12027/results.jsonl",
+      "records": 28
+    },
+    {
+      "path": "outputs/game24-stage-b-paired-20260911/seed-2027/results.jsonl",
+      "records": 28
+    },
+    {
+      "path": "outputs/game24-stage-b-paired-20260911/seed-22027/results.jsonl",
+      "records": 28
+    },
+    {
+      "path": "outputs/game24-stage-b-paired-20260911/seed-32027/results.jsonl",
+      "records": 28
+    },
+    {
+      "path": "outputs/game24-stage-b-supplement-20260911/draft_candidates.jsonl",
+      "records": 12
+    },
+    {
+      "path": "outputs/game24-x-calc-late-20260916/seed-12027/results.jsonl",
+      "records": 6
+    },
+    {
+      "path": "outputs/game24-x-calc-late-20260916/seed-2027/results.jsonl",
+      "records": 6
+    },
+    {
+      "path": "outputs/game24-x-calc-late-20260916/seed-22027/results.jsonl",
+      "records": 6
+    },
+    {
+      "path": "outputs/game24-x-calc-late-20260916/seed-32027/results.jsonl",
+      "records": 6
+    }
+  ],
+  "excluded_ids": [
+    "1000",
+    "1008",
+    "101",
+    "1014",
+    "103",
+    "1054",
+    "1062",
+    "1084",
+    "1093",
+    "1107",
+    "114",
+    "1148",
+    "1161",
+    "1167",
+    "1185",
+    "1187",
+    "1189",
+    "1200",
+    "1219",
+    "1226",
+    "123",
+    "1238",
+    "1245",
+    "1261",
+    "1280",
+    "1299",
+    "1356",
+    "1358",
+    "138",
+    "153",
+    "159",
+    "170",
+    "171",
+    "19",
+    "22",
+    "23",
+    "282",
+    "30",
+    "305",
+    "33",
+    "342",
+    "355",
+    "360",
+    "368",
+    "380",
+    "425",
+    "458",
+    "497",
+    "503",
+    "512",
+    "513",
+    "54",
+    "577",
+    "588",
+    "60",
+    "626",
+    "650",
+    "651",
+    "702",
+    "71",
+    "716",
+    "718",
+    "719",
+    "729",
+    "769",
+    "776",
+    "796",
+    "797",
+    "804",
+    "826",
+    "829",
+    "850",
+    "864",
+    "873",
+    "877",
+    "896",
+    "918",
+    "998"
+  ],
+  "questions": [
+    {
+      "id": "519",
+      "answer": [
+        1,
+        2,
+        3,
+        9
+      ],
+      "problem": "Use the numbers 1, 2, 3, 9 exactly once each, with addition, subtraction, multiplication, division and parentheses, to make 24. Provide an expression using the original four numbers."
+    },
+    {
+      "id": "1080",
+      "answer": [
+        4,
+        7,
+        10,
+        12
+      ],
+      "problem": "Use the numbers 4, 7, 10, 12 exactly once each, with addition, subtraction, multiplication, division and parentheses, to make 24. Provide an expression using the original four numbers."
+    },
+    {
+      "id": "69",
+      "answer": [
+        11,
+        11,
+        11,
+        13
+      ],
+      "problem": "Use the numbers 11, 11, 11, 13 exactly once each, with addition, subtraction, multiplication, division and parentheses, to make 24. Provide an expression using the original four numbers."
+    },
+    {
+      "id": "377",
+      "answer": [
+        4,
+        7,
+        10,
+        11
+      ],
+      "problem": "Use the numbers 4, 7, 10, 11 exactly once each, with addition, subtraction, multiplication, division and parentheses, to make 24. Provide an expression using the original four numbers."
+    },
+    {
+      "id": "45",
+      "answer": [
+        1,
+        8,
+        8,
+        8
+      ],
+      "problem": "Use the numbers 1, 8, 8, 8 exactly once each, with addition, subtraction, multiplication, division and parentheses, to make 24. Provide an expression using the original four numbers."
+    },
+    {
+      "id": "1170",
+      "answer": [
+        5,
+        7,
+        12,
+        12
+      ],
+      "problem": "Use the numbers 5, 7, 12, 12 exactly once each, with addition, subtraction, multiplication, division and parentheses, to make 24. Provide an expression using the original four numbers."
+    },
+    {
+      "id": "1144",
+      "answer": [
+        2,
+        5,
+        9,
+        11
+      ],
+      "problem": "Use the numbers 2, 5, 9, 11 exactly once each, with addition, subtraction, multiplication, division and parentheses, to make 24. Provide an expression using the original four numbers."
+    },
+    {
+      "id": "197",
+      "answer": [
+        2,
+        11,
+        12,
+        12
+      ],
+      "problem": "Use the numbers 2, 11, 12, 12 exactly once each, with addition, subtraction, multiplication, division and parentheses, to make 24. Provide an expression using the original four numbers."
+    }
+  ],
+  "selection": "fixed question order; mixed completed parseable correct/failed samples; first failed reasoning draft passing frozen X audit; no outcome-based selection",
+  "annotation_gate": "manual textual/arithmetic X audit before any intervention; no automatic guessed spans",
+  "conditions": [
+    "R0",
+    "R2",
+    "whole_path",
+    "X_path"
+  ],
+  "output": "outputs/game24-heldout-screen-20260917"
+}
