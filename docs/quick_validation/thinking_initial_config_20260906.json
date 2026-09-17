@@ -1,0 +1,35 @@
+{
+  "model": "/data2/huangrj/models/qwen3-8b",
+  "input": "/data2/gaojc/data/game24-tot-8050e67/24.csv",
+  "source_revision": "8050e67d0e3a0fddc424d7fa5801538722a4c4cc",
+  "purpose": "thinking_quick_scientific_pilot",
+  "enable_thinking": true,
+  "context_size": 32768,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": 20,
+  "generation_budget": "32768 minus full prompt length",
+  "drafts_per_problem": 4,
+  "order_seed": 2027,
+  "draft_seed_base": 102027,
+  "evaluation_seed_base": 2027,
+  "backend": "hf_eager_bfloat16",
+  "thinking_removal": "upstream parse_thinking_steps; final only in draft context",
+  "sampling_dtype": "float32",
+  "selection": "first fixed-order problems with both completed parseable correct and incorrect responses among four independent Thinking samples; first eligible failed draft; no evaluation outcome filtering",
+  "deviations": "single-model mixed-success selection instead of three-anchor 653 subset; one paired evaluation generation per condition; HF backend instead of vLLM",
+  "upstream_config": {
+    "model_name": "Qwen/Qwen3-8B",
+    "context_length": 32768,
+    "sampling_params": {
+      "temperature": 0.6,
+      "top_p": 0.95,
+      "top_k": 20,
+      "max_tokens": 32768
+    }
+  },
+  "git_head": "7fc7245527ff81ffc2a5ee3f88db26d6e52d1540",
+  "git_status": " M MASTER_EXPERIMENT_LOG.md\n M selective_context/hf_backend.py\n M selective_context/prompting.py\n M tests/selective_context/test_prompting.py\n?? environment_check.json\n?? requirements/quick-smoke.txt\n?? selective_context/phase0/paired_report.py\n?? selective_context/phase0/real_smoke.py\n?? selective_context/phase0/thinking_pilot.py\n?? tests/selective_context/test_paired_report.py\n?? tests/selective_context/test_sampling.py\n?? tests/selective_context/test_thinking_pilot.py\n",
+  "torch": "2.8.0+cu128",
+  "transformers": "4.55.4"
+}

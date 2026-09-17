@@ -1,0 +1,106 @@
+{
+  "n_complete_pairs": 10,
+  "partial_problem_ids": [],
+  "bootstrap": {
+    "unit": "problem",
+    "resamples": 10000,
+    "seed": 2027,
+    "method": "paired percentile, 95% CI"
+  },
+  "conditions": {
+    "R0": {
+      "accuracy": 0.6,
+      "correct_n": 6,
+      "parse_rate": 1.0,
+      "completion_rate": 0.8
+    },
+    "R1": {
+      "accuracy": 0.1,
+      "correct_n": 1,
+      "parse_rate": 0.8,
+      "completion_rate": 0.8
+    },
+    "R2": {
+      "accuracy": 0.0,
+      "correct_n": 0,
+      "parse_rate": 0.8,
+      "completion_rate": 0.6
+    },
+    "R3": {
+      "accuracy": 0.4,
+      "correct_n": 4,
+      "parse_rate": 0.6,
+      "completion_rate": 0.6
+    },
+    "R4": {
+      "accuracy": 0.2,
+      "correct_n": 2,
+      "parse_rate": 0.5,
+      "completion_rate": 0.5
+    }
+  },
+  "effects": {
+    "R0-R1": {
+      "effect_pp": 50.0,
+      "ci95_pp": [
+        20.0,
+        80.0
+      ],
+      "reference_wrong_to_correct": 5,
+      "reference_correct_to_wrong": 0,
+      "unparsed_scoring": "unparsed outputs count as not correct; included in paired denominator"
+    },
+    "R0-R2": {
+      "effect_pp": 60.0,
+      "ci95_pp": [
+        30.0,
+        90.0
+      ],
+      "reference_wrong_to_correct": 6,
+      "reference_correct_to_wrong": 0,
+      "unparsed_scoring": "unparsed outputs count as not correct; included in paired denominator"
+    },
+    "R3-R2": {
+      "effect_pp": 40.0,
+      "ci95_pp": [
+        10.0,
+        70.0
+      ],
+      "reference_wrong_to_correct": 4,
+      "reference_correct_to_wrong": 0,
+      "unparsed_scoring": "unparsed outputs count as not correct; included in paired denominator"
+    },
+    "R4-R3": {
+      "effect_pp": -20.0,
+      "ci95_pp": [
+        -50.0,
+        0.0
+      ],
+      "reference_wrong_to_correct": 0,
+      "reference_correct_to_wrong": 2,
+      "unparsed_scoring": "unparsed outputs count as not correct; included in paired denominator"
+    },
+    "R4-R2": {
+      "effect_pp": 20.0,
+      "ci95_pp": [
+        0.0,
+        50.0
+      ],
+      "reference_wrong_to_correct": 2,
+      "reference_correct_to_wrong": 0,
+      "unparsed_scoring": "unparsed outputs count as not correct; included in paired denominator"
+    }
+  },
+  "recovery_ratios": {
+    "(R3-R2)/(R0-R2)": {
+      "value": 0.6666666666666667,
+      "ci95": null,
+      "note": "ratio undefined for nonpositive residual; CI omitted if bootstrap denominator crosses zero"
+    },
+    "(R4-R2)/(R0-R2)": {
+      "value": 0.33333333333333337,
+      "ci95": null,
+      "note": "ratio undefined for nonpositive residual; CI omitted if bootstrap denominator crosses zero"
+    }
+  }
+}

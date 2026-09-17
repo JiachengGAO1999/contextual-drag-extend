@@ -1,4 +1,6 @@
 # Byte-compiled / optimized / DLL files
+.tmp-smoke/
+*.exit
 __pycache__/
 *.py[codz]
 *$py.class

@@ -1,0 +1,23 @@
+{
+  "model": "/data2/huangrj/models/qwen3-8b",
+  "source": "/data2/gaojc/data/game24-tot-8050e67/24.csv",
+  "source_revision": "8050e67d0e3a0fddc424d7fa5801538722a4c4cc",
+  "count": 10,
+  "max_candidates": 100,
+  "max_new_tokens": 4096,
+  "temperature": 0.6,
+  "top_p": 0.95,
+  "top_k": null,
+  "enable_thinking": false,
+  "seed_order": 2027,
+  "draft_seed_base": 102027,
+  "evaluation_seed_base": 2027,
+  "selection": "first completed, officially parseable incorrect draft per unique problem; one independent draft attempt per candidate; no selection on R0-R4 outcomes",
+  "git_head": "7fc7245527ff81ffc2a5ee3f88db26d6e52d1540",
+  "git_status": " M MASTER_EXPERIMENT_LOG.md\n M selective_context/hf_backend.py\n?? environment_check.json\n?? requirements/quick-smoke.txt\n?? selective_context/phase0/real_smoke.py\n?? tests/selective_context/test_sampling.py\n",
+  "torch": "2.8.0+cu128",
+  "transformers": "4.55.4",
+  "dtype": "bfloat16",
+  "attention": "eager",
+  "physical_kv_eviction": false
+}

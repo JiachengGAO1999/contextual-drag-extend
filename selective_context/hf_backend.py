@@ -3,7 +3,7 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Optional, Tuple
+from typing import Any, Callable, Dict, Iterable, List, Optional, Tuple
 
 import torch
 
@@ -35,10 +35,14 @@ class SelectiveHFBackend:
         max_new_tokens: int,
         temperature: float = 0.0,
         top_k: Optional[int] = None,
+        top_p: float = 1.0,
+        progress_callback: Optional[Callable[[int], None]] = None,
     ) -> GenerationResult:
         request.validate()
         if max_new_tokens < 0:
             raise ValueError("max_new_tokens must be non-negative")
+        if not 0 < top_p <= 1:
+            raise ValueError("top_p must be in (0, 1]")
         prompt_ids = torch.tensor([request.input_ids], dtype=torch.long, device=self.device)
         prompt_length = prompt_ids.shape[1]
         model_dtype = next(self.model.parameters()).dtype
@@ -52,6 +56,8 @@ class SelectiveHFBackend:
                 query_positions=prefill_positions,
                 key_length=prompt_length,
                 draft_token_span=request.draft_token_span,
+                mask_token_spans=request.mask_token_spans,
+                path_block_units=request.path_block_units,
                 access_mode=request.access_mode,
                 prompt_length=prompt_length,
                 dtype=model_dtype,
@@ -67,9 +73,11 @@ class SelectiveHFBackend:
         finish_reason = "length"
 
         for step in range(max_new_tokens):
-            next_token = self._choose(next_logits, temperature, top_k, generator)
+            next_token = self._choose(next_logits, temperature, top_k, generator, top_p)
             token_id = int(next_token.item())
             generated.append(token_id)
+            if progress_callback is not None and len(generated) % 512 == 0:
+                progress_callback(len(generated))
             if eos_token_id is not None and token_id == eos_token_id:
                 finish_reason = "eos"
                 break
@@ -85,6 +93,8 @@ class SelectiveHFBackend:
                     query_positions=[absolute_position],
                     key_length=key_length,
                     draft_token_span=request.draft_token_span,
+                    mask_token_spans=request.mask_token_spans,
+                    path_block_units=request.path_block_units,
                     access_mode=request.access_mode,
                     prompt_length=prompt_length,
                     dtype=model_dtype,
@@ -114,6 +124,8 @@ class SelectiveHFBackend:
                 "cache_type": type(past).__name__,
                 "access_mode": request.access_mode.value,
                 "draft_token_span": list(request.draft_token_span),
+                "mask_token_spans": [list(x) for x in request.mask_token_spans],
+                "path_block_units": [list(x) for x in request.path_block_units],
             },
         )
 
@@ -123,13 +135,21 @@ class SelectiveHFBackend:
         temperature: float,
         top_k: Optional[int],
         generator: torch.Generator,
+        top_p: float = 1.0,
     ) -> torch.Tensor:
         if temperature <= 0:
             return torch.argmax(logits, dim=-1)
-        logits = logits / temperature
+        # Match HF generation's float32 sampling processors even for BF16 models.
+        logits = logits.float() / temperature
         if top_k is not None and 0 < top_k < logits.shape[-1]:
             cutoff = torch.topk(logits, top_k, dim=-1).values[:, -1:]
             logits = logits.masked_fill(logits < cutoff, -torch.inf)
+        if top_p < 1:
+            sorted_logits, indices = torch.sort(logits, descending=True, dim=-1)
+            remove = torch.softmax(sorted_logits, dim=-1).cumsum(dim=-1) > top_p
+            remove[..., 1:] = remove[..., :-1].clone()
+            remove[..., 0] = False
+            logits = logits.scatter(-1, indices, sorted_logits.masked_fill(remove, -torch.inf))
         probabilities = torch.softmax(logits, dim=-1)
         return torch.multinomial(probabilities, 1, generator=generator).squeeze(-1)
 

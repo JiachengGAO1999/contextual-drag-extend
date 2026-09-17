@@ -1,9 +1,9 @@
 from __future__ import annotations
 
 import json
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Any, Dict, Iterable, List, Sequence, Tuple
+from typing import Any, Dict, Iterable, List, Optional, Sequence, Tuple
 
 from .schema import AccessMode, SelectiveContextRequest, text_sha256, token_ids_sha256
 
@@ -18,6 +18,8 @@ class EncodedPrompt:
     input_ids: List[int]
     draft_character_span: Tuple[int, int]
     draft_token_span: Tuple[int, int]
+    masked_character_span: Tuple[int, int] = (0, 0)
+    boundary_spillover: Dict[str, str] = field(default_factory=lambda: {"before": "", "after": ""})
 
 
 def load_official_template(repo_root: Path, condition_id: str) -> str:
@@ -69,7 +71,7 @@ def _all_indices(text: str, needle: str) -> List[int]:
 
 
 def char_span_to_token_span(
-    offsets: Sequence[Sequence[int]], character_span: Tuple[int, int]
+    offsets: Sequence[Sequence[int]], character_span: Tuple[int, int], text: Optional[str] = None
 ) -> Tuple[int, int]:
     char_start, char_end = character_span
     if char_end <= char_start:
@@ -86,9 +88,21 @@ def char_span_to_token_span(
         raise ValueError("character span maps to non-contiguous tokens")
     first_start, _ = offsets[overlapping[0]]
     _, last_end = offsets[overlapping[-1]]
+    if first_start > char_start or last_end < char_end:
+        raise ValueError("character span was truncated")
     if first_start != char_start or last_end != char_end:
-        raise ValueError("draft delimiter crosses a token boundary; exact masking is unsafe")
+        if text is None:
+            raise ValueError("boundary spillover needs full prompt text for validation")
+        validate_boundary_spillover(text[first_start:char_start], text[char_end:last_end])
     return overlapping[0], overlapping[-1] + 1
+
+
+def validate_boundary_spillover(before: str, after: str) -> None:
+    # Conservative Markdown formatting allowlist. Words/digits and unrecognized
+    # symbols are never silently included in the masked span.
+    formatting = set("*_`#>-~[](){}.!|:+\\")
+    if any(not (character.isspace() or character in formatting) for character in before + after):
+        raise ValueError("boundary spillover crosses semantic wrapper text")
 
 
 def encode_prompt(tokenizer: Any, text: str) -> EncodedPrompt:
@@ -100,8 +114,11 @@ def encode_prompt(tokenizer: Any, text: str) -> EncodedPrompt:
     offsets = _flatten_offsets(encoded["offset_mapping"])
     if len(input_ids) != len(offsets):
         raise ValueError("tokenizer returned mismatched input_ids and offset_mapping")
-    token_span = char_span_to_token_span(offsets, character_span)
-    return EncodedPrompt(text, input_ids, character_span, token_span)
+    token_span = char_span_to_token_span(offsets, character_span, text)
+    masked_span = (offsets[token_span[0]][0], offsets[token_span[1] - 1][1])
+    spillover = {"before": text[masked_span[0]:character_span[0]],
+                "after": text[character_span[1]:masked_span[1]]}
+    return EncodedPrompt(text, input_ids, character_span, token_span, masked_span, spillover)
 
 
 def encode_direct_prompt(tokenizer: Any, text: str) -> EncodedPrompt:
@@ -165,6 +182,8 @@ def persist_request_bundle(path: Path, encoded: EncodedPrompt, requests: Iterabl
         "schema_version": 1,
         "prompt_text": encoded.text,
         "draft_character_span": list(encoded.draft_character_span),
+        "masked_character_span": list(encoded.masked_character_span),
+        "boundary_spillover": encoded.boundary_spillover,
         "requests": [request.to_dict() for request in requests],
     }
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -183,6 +202,8 @@ def load_request_bundle(path: Path) -> Tuple[EncodedPrompt, List[SelectiveContex
         input_ids=list(reference.input_ids),
         draft_character_span=tuple(payload["draft_character_span"]),
         draft_token_span=reference.draft_token_span,
+        masked_character_span=tuple(payload.get("masked_character_span", payload["draft_character_span"])),
+        boundary_spillover=payload.get("boundary_spillover", {"before": "", "after": ""}),
     )
     if text_sha256(encoded.text) != reference.prompt_sha256:
         raise ValueError("persisted prompt text hash mismatch")

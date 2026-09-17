@@ -1,0 +1,886 @@
+{
+  "version": "calculation_role_v1",
+  "source": "docs/quick_validation/ten_validity_annotations_v1_20260915.json",
+  "source_sha256": "7db161293bb5ac52cf529f637c9e9a18834c6959ba53a837042f346c39dcdaf5",
+  "condition": "L_CALC_v1",
+  "access_mode": "late_block",
+  "seed_bases": [
+    2027,
+    12027,
+    22027,
+    32027
+  ],
+  "inclusion": "All six fixed-ten unrejected resource-violation drafts; include ceilings/floors and formatting-confounded 123, no outcome selection",
+  "rule": "All standalone explicit candidate-linked numeric evaluation equations, in construction or checking sections, excluding full F1 formula occurrences and generic pre-construction target factorization. Preserve resource-accounting assertions, endorsement and rejection. Arithmetic truth does not mean valid resource use.",
+  "questions": {
+    "1189": {
+      "draft_key": "1189/3",
+      "draft": "To solve the problem of using the numbers **10, 12, 12, 12** exactly once each, with the operations **addition, subtraction, multiplication, division, and parentheses**, to make the number **24**, we proceed through a logical breakdown and simplification of the expression.\n\n---\n\n### Step-by-Step Construction\n\nWe aim to create an expression that evaluates to **24** using all four numbers **once**. Let’s explore the structure of the expression.\n\n#### Step 1: Consider the subtraction\nStart with the innermost operation:\n$$\n12 - 10 = 2\n$$\n\n#### Step 2: Use the result in a division\nNext, take one of the remaining 12s and divide it by the result:\n$$\n12 \\div (12 - 10) = 12 \\div 2 = 6\n$$\n\n#### Step 3: Multiply two of the 12s\nNow multiply the two remaining 12s:\n$$\n12 \\times 12 = 144\n$$\n\n#### Step 4: Divide the result from Step 3 by the result from Step 2\n$$\n144 \\div 6 = 24\n$$\n\n---\n\n### Final Expression\n\nCombining all the steps, the expression becomes:\n\n$$\n(12 \\times 12) \\div (12 \\div (12 - 10))\n$$\n\nThis uses:\n- **12 × 12** (two of the 12s),\n- **12 ÷ (12 - 10)** (one 12 and the 10),\n- All numbers are used exactly once.\n\n---\n\n### Final Answer\n\n$$\n\\boxed{(12 \\times 12) \\div (12 \\div (12 - 10))}\n$$",
+      "draft_sha256": "54ae389ba90952b5dd4d4de2b2bc9a22ac014018820a7d4691c473602c0d73b3",
+      "problem": "Use the numbers 10, 12, 12, 12 exactly once each, with addition, subtraction, multiplication, division and parentheses, to make 24. Provide an expression using the original four numbers.",
+      "numbers": [
+        10,
+        12,
+        12,
+        12
+      ],
+      "failure_subtype": "unrejected_resource_violation",
+      "failure_note": "四个12而非三个；remaining资源声明错误；局部算术正确",
+      "E": [
+        {
+          "kind": "false_endorsement_or_justification",
+          "draft_span": [
+            1089,
+            1125
+          ],
+          "text": "- All numbers are used exactly once.",
+          "unit_id": "E1"
+        }
+      ],
+      "candidate_occurrences": [
+        {
+          "kind": "expression",
+          "draft_span": [
+            957,
+            1002
+          ],
+          "text": "$$\n(12 \\times 12) \\div (12 \\div (12 - 10))\n$$",
+          "status": "asserted_or_unspecified",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review"
+        },
+        {
+          "kind": "expression",
+          "draft_span": [
+            1150,
+            1203
+          ],
+          "text": "$$\n\\boxed{(12 \\times 12) \\div (12 \\div (12 - 10))}\n$$",
+          "status": "asserted_or_unspecified",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review"
+        }
+      ],
+      "construction_evidence": [
+        {
+          "kind": "construction_or_evaluation",
+          "draft_span": [
+            448,
+            878
+          ],
+          "text": "#### Step 1: Consider the subtraction\nStart with the innermost operation:\n$$\n12 - 10 = 2\n$$\n\n#### Step 2: Use the result in a division\nNext, take one of the remaining 12s and divide it by the result:\n$$\n12 \\div (12 - 10) = 12 \\div 2 = 6\n$$\n\n#### Step 3: Multiply two of the 12s\nNow multiply the two remaining 12s:\n$$\n12 \\times 12 = 144\n$$\n\n#### Step 4: Divide the result from Step 3 by the result from Step 2\n$$\n144 \\div 6 = 24\n$$"
+        }
+      ],
+      "checking_evidence": [
+        {
+          "kind": "checking_with_possible_false_claims",
+          "draft_span": [
+            1004,
+            1125
+          ],
+          "text": "This uses:\n- **12 × 12** (two of the 12s),\n- **12 ÷ (12 - 10)** (one 12 and the 10),\n- All numbers are used exactly once."
+        }
+      ],
+      "retained_rejection": [],
+      "old_M_V_character_identity": true,
+      "old_only_spans": [],
+      "new_only_spans": [],
+      "CALC": [
+        {
+          "unit_id": "CALC1",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            522,
+            539
+          ],
+          "text": "$$\n12 - 10 = 2\n$$",
+          "arithmetic_check": {
+            "manual_transcription": "12-10",
+            "exact_value": 2,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC2",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            648,
+            687
+          ],
+          "text": "$$\n12 \\div (12 - 10) = 12 \\div 2 = 6\n$$",
+          "arithmetic_check": {
+            "manual_transcription": "12/(12-10)",
+            "exact_value": 6,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC3",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            762,
+            786
+          ],
+          "text": "$$\n12 \\times 12 = 144\n$$",
+          "arithmetic_check": {
+            "manual_transcription": "12*12",
+            "exact_value": 144,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC4",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            857,
+            878
+          ],
+          "text": "$$\n144 \\div 6 = 24\n$$",
+          "arithmetic_check": {
+            "manual_transcription": "144/6",
+            "exact_value": 24,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        }
+      ]
+    },
+    "123": {
+      "draft_key": "123/1",
+      "draft": "To solve the problem of using the numbers **1, 5, 8, 8** exactly once each, along with the operations **addition, subtraction, multiplication, division**, and **parentheses**, to make **24**, we can analyze the arithmetic relationships and test different expressions.\n\n---\n\n### Step-by-Step Reasoning\n\nWe are given four numbers: **1, 5, 8, 8**. Our goal is to combine them using the allowed operations to arrive at the number **24**.\n\nLet’s consider a promising path:\n\nWe know that:\n- **8 × 3 = 24**\n- So, if we can create the number **3** using the remaining numbers **1, 5, 8**, and then multiply by one of the 8s, that would be a valid approach.\n\nOne way to get **3** is:\n- **5 - 1 = 4**\n- Then, **8 ÷ 4 = 2**\n- So, **5 - (8 ÷ (5 - 1)) = 5 - 2 = 3**\n\nNow, multiply that result by one of the 8s:\n- **8 × (5 - (8 ÷ (5 - 1))) = 8 × 3 = 24**\n\nThis expression uses:\n- **8** (used in the multiplication),\n- **5** and **1** (used in the subtraction and division),\n- The second **8** (used in the division).\n\nAll four numbers are used exactly once, and all operations are valid.\n\n---\n\n### Final Expression\n\n$$\n8 \\times \\left(5 - \\left(\\frac{8}{5 - 1}\\right)\\right) = 24\n$$\n\n---\n\n### Final Answer\n\n$$\n\\boxed{24}\n$$",
+      "draft_sha256": "a1c000457ae56c69cec2aa72fdfed43e0ee93b7a78d7bee85987966b3292418e",
+      "problem": "Use the numbers 1, 5, 8, 8 exactly once each, with addition, subtraction, multiplication, division and parentheses, to make 24. Provide an expression using the original four numbers.",
+      "numbers": [
+        1,
+        5,
+        8,
+        8
+      ],
+      "failure_subtype": "unrejected_resource_violation",
+      "failure_note": "重复5；boxed24另有答案格式问题",
+      "E": [
+        {
+          "kind": "false_endorsement_or_justification",
+          "draft_span": [
+            1004,
+            1073
+          ],
+          "text": "All four numbers are used exactly once, and all operations are valid.",
+          "unit_id": "E1"
+        }
+      ],
+      "candidate_occurrences": [
+        {
+          "kind": "expression",
+          "draft_span": [
+            1102,
+            1167
+          ],
+          "text": "$$\n8 \\times \\left(5 - \\left(\\frac{8}{5 - 1}\\right)\\right) = 24\n$$",
+          "status": "asserted_or_unspecified",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review"
+        },
+        {
+          "kind": "expression",
+          "draft_span": [
+            798,
+            840
+          ],
+          "text": "- **8 × (5 - (8 ÷ (5 - 1))) = 8 × 3 = 24**",
+          "status": "asserted_or_unspecified",
+          "reason": "Manually reviewed plain-text duplicate of selected full expression"
+        }
+      ],
+      "construction_evidence": [
+        {
+          "kind": "construction_or_evaluation",
+          "draft_span": [
+            469,
+            840
+          ],
+          "text": "We know that:\n- **8 × 3 = 24**\n- So, if we can create the number **3** using the remaining numbers **1, 5, 8**, and then multiply by one of the 8s, that would be a valid approach.\n\nOne way to get **3** is:\n- **5 - 1 = 4**\n- Then, **8 ÷ 4 = 2**\n- So, **5 - (8 ÷ (5 - 1)) = 5 - 2 = 3**\n\nNow, multiply that result by one of the 8s:\n- **8 × (5 - (8 ÷ (5 - 1))) = 8 × 3 = 24**"
+        }
+      ],
+      "checking_evidence": [
+        {
+          "kind": "checking_with_possible_false_claims",
+          "draft_span": [
+            842,
+            1073
+          ],
+          "text": "This expression uses:\n- **8** (used in the multiplication),\n- **5** and **1** (used in the subtraction and division),\n- The second **8** (used in the division).\n\nAll four numbers are used exactly once, and all operations are valid."
+        }
+      ],
+      "retained_rejection": [],
+      "old_M_V_character_identity": true,
+      "old_only_spans": [],
+      "new_only_spans": [],
+      "CALC": [
+        {
+          "unit_id": "CALC1",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            675,
+            690
+          ],
+          "text": "- **5 - 1 = 4**",
+          "arithmetic_check": {
+            "manual_transcription": "5-1",
+            "exact_value": 4,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC2",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            691,
+            712
+          ],
+          "text": "- Then, **8 ÷ 4 = 2**",
+          "arithmetic_check": {
+            "manual_transcription": "8/4",
+            "exact_value": 2,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC3",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            713,
+            752
+          ],
+          "text": "- So, **5 - (8 ÷ (5 - 1)) = 5 - 2 = 3**",
+          "arithmetic_check": {
+            "manual_transcription": "5-8/(5-1)",
+            "exact_value": 3,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        }
+      ]
+    },
+    "577": {
+      "draft_key": "577/0",
+      "draft": "To solve the problem of using the numbers **1, 6, 9, and 13** exactly once with the operations **addition, subtraction, multiplication, division, and parentheses**, to form the number **24**, we need to carefully apply the allowed operations in a way that uses all numbers exactly once.\n\n---\n\n### Step-by-Step Analysis\n\nWe are given:\n- Numbers: **1, 6, 9, 13**\n- Allowed operations: **+, −, ×, ÷, and parentheses**\n- Goal: **Form the number 24**\n\nLet’s explore a valid expression that uses all four numbers once and applies the allowed operations.\n\n---\n\n### Constructing the Expression\n\nWe aim to find a combination of these numbers that results in 24. One promising approach is to break it down into two parts that multiply to give 24.\n\nLet’s consider:\n\n- **(13 - 6 + 1)**  \n  This simplifies to:  \n  $ 13 - 6 = 7 $  \n  $ 7 + 1 = 8 $\n\n- **(9 - 6)**  \n  This simplifies to:  \n  $ 9 - 6 = 3 $\n\nNow multiply the two results:\n\n- $ 8 \\times 3 = 24 $\n\nThis gives us the desired result. Now, we check:\n\n- **Used numbers**: 13, 6, 1, and 9 — all used exactly once ✅  \n- **Used operations**: subtraction, addition, multiplication ✅  \n- **Parentheses**: used to group operations correctly ✅\n\n---\n\n### Final Expression\n\nThus, the expression that satisfies all conditions is:\n\n$$\n\\boxed{(13 - 6 + 1) \\times (9 - 6)}\n$$\n\nThis expression uses all the numbers exactly once and only the allowed operations, and it evaluates to 24.",
+      "draft_sha256": "339bfdf6f5d0494f2292e8da767f54323742daa1134ecd7099be570270610fe0",
+      "problem": "Use the numbers 1, 6, 9, 13 exactly once each, with addition, subtraction, multiplication, division and parentheses, to make 24. Provide an expression using the original four numbers.",
+      "numbers": [
+        1,
+        6,
+        9,
+        13
+      ],
+      "failure_subtype": "unrejected_resource_violation",
+      "failure_note": "两个因子共享6；局部算术正确",
+      "E": [
+        {
+          "kind": "false_endorsement_or_justification",
+          "draft_span": [
+            997,
+            1060
+          ],
+          "text": "- **Used numbers**: 13, 6, 1, and 9 — all used exactly once ✅  ",
+          "unit_id": "E1"
+        },
+        {
+          "kind": "false_endorsement_or_justification",
+          "draft_span": [
+            1210,
+            1264
+          ],
+          "text": "Thus, the expression that satisfies all conditions is:",
+          "unit_id": "E2"
+        },
+        {
+          "kind": "false_endorsement_or_justification",
+          "draft_span": [
+            1309,
+            1415
+          ],
+          "text": "This expression uses all the numbers exactly once and only the allowed operations, and it evaluates to 24.",
+          "unit_id": "E3"
+        }
+      ],
+      "candidate_occurrences": [
+        {
+          "kind": "expression",
+          "draft_span": [
+            1266,
+            1307
+          ],
+          "text": "$$\n\\boxed{(13 - 6 + 1) \\times (9 - 6)}\n$$",
+          "status": "asserted_or_unspecified",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review"
+        }
+      ],
+      "construction_evidence": [
+        {
+          "kind": "construction_or_evaluation",
+          "draft_span": [
+            738,
+            945
+          ],
+          "text": "Let’s consider:\n\n- **(13 - 6 + 1)**  \n  This simplifies to:  \n  $ 13 - 6 = 7 $  \n  $ 7 + 1 = 8 $\n\n- **(9 - 6)**  \n  This simplifies to:  \n  $ 9 - 6 = 3 $\n\nNow multiply the two results:\n\n- $ 8 \\times 3 = 24 $"
+        }
+      ],
+      "checking_evidence": [
+        {
+          "kind": "checking_with_possible_false_claims",
+          "draft_span": [
+            947,
+            1181
+          ],
+          "text": "This gives us the desired result. Now, we check:\n\n- **Used numbers**: 13, 6, 1, and 9 — all used exactly once ✅  \n- **Used operations**: subtraction, addition, multiplication ✅  \n- **Parentheses**: used to group operations correctly ✅"
+        }
+      ],
+      "retained_rejection": [],
+      "old_M_V_character_identity": true,
+      "old_only_spans": [],
+      "new_only_spans": [],
+      "CALC": [
+        {
+          "unit_id": "CALC1",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            800,
+            818
+          ],
+          "text": "  $ 13 - 6 = 7 $  ",
+          "arithmetic_check": {
+            "manual_transcription": "13-6",
+            "exact_value": 7,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC2",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            819,
+            834
+          ],
+          "text": "  $ 7 + 1 = 8 $",
+          "arithmetic_check": {
+            "manual_transcription": "7+1",
+            "exact_value": 8,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC3",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            876,
+            891
+          ],
+          "text": "  $ 9 - 6 = 3 $",
+          "arithmetic_check": {
+            "manual_transcription": "9-6",
+            "exact_value": 3,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC4",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            924,
+            945
+          ],
+          "text": "- $ 8 \\times 3 = 24 $",
+          "arithmetic_check": {
+            "manual_transcription": "8*3",
+            "exact_value": 24,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        }
+      ]
+    },
+    "719": {
+      "draft_key": "719/2",
+      "draft": "To solve the problem of using the numbers **5, 7, 8, and 8** exactly once each with the operations of addition, subtraction, multiplication, division, and parentheses to make **24**, we need to strategically combine these numbers in a way that respects all constraints.\n\n---\n\n### Step-by-Step Breakdown\n\nWe are given:\n- Numbers: **5, 7, 8, 8**\n- Allowed operations: **+, −, ×, ÷, ( )**\n- Each number must be used **exactly once**\n- Goal: Create an expression that evaluates to **24**\n\n---\n\n### Key Insight\n\nWe aim to construct an expression that uses all four numbers and results in **24**. One effective approach is to consider the identity:\n\n$$\n24 = 8 \\times 3\n$$\n\nSo, we want to find a way to get **3** from the other numbers: **5, 7, and 8**. \n\nLet’s explore how to form **3** using **5, 7, and 8**. Consider:\n\n$$\n7 - (5 - (8 \\div 8))\n$$\n\nLet’s compute this expression step by step:\n\n1. **Innermost operation**:  \n   $$\n   8 \\div 8 = 1\n   $$\n\n2. **Next level**:  \n   $$\n   5 - 1 = 4\n   $$\n\n3. **Outer level**:  \n   $$\n   7 - 4 = 3\n   $$\n\nNow, multiply this result by the remaining 8:\n\n$$\n8 \\times (7 - (5 - (8 \\div 8))) = 8 \\times 3 = 24\n$$\n\n---\n\n### Verification\n\n- **Used numbers**: 8, 7, 5, and 8 — all used **exactly once**\n- **Operations used**: Division, subtraction, multiplication, and parentheses\n- **Result**: 24\n\nThis satisfies all the conditions of the problem.\n\n---\n\n### Final Answer\n\n$$\n\\boxed{8 \\times \\left(7 - \\left(5 - \\frac{8}{8}\\right)\\right)}\n$$",
+      "draft_sha256": "774701dc49574286fdc7f2f71f3893eced2c435f9f8d9efda3ead36c63eeb4d3",
+      "problem": "Use the numbers 5, 7, 8, 8 exactly once each, with addition, subtraction, multiplication, division and parentheses, to make 24. Provide an expression using the original four numbers.",
+      "numbers": [
+        5,
+        7,
+        8,
+        8
+      ],
+      "failure_subtype": "unrejected_resource_violation",
+      "failure_note": "三个8而非两个；remaining8错误",
+      "E": [
+        {
+          "kind": "false_endorsement_or_justification",
+          "draft_span": [
+            1169,
+            1231
+          ],
+          "text": "- **Used numbers**: 8, 7, 5, and 8 — all used **exactly once**",
+          "unit_id": "E1"
+        },
+        {
+          "kind": "false_endorsement_or_justification",
+          "draft_span": [
+            1328,
+            1377
+          ],
+          "text": "This satisfies all the conditions of the problem.",
+          "unit_id": "E2"
+        }
+      ],
+      "candidate_occurrences": [
+        {
+          "kind": "expression",
+          "draft_span": [
+            1089,
+            1144
+          ],
+          "text": "$$\n8 \\times (7 - (5 - (8 \\div 8))) = 8 \\times 3 = 24\n$$",
+          "status": "asserted_or_unspecified",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review"
+        },
+        {
+          "kind": "expression",
+          "draft_span": [
+            1402,
+            1470
+          ],
+          "text": "$$\n\\boxed{8 \\times \\left(7 - \\left(5 - \\frac{8}{8}\\right)\\right)}\n$$",
+          "status": "asserted_or_unspecified",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review"
+        }
+      ],
+      "construction_evidence": [
+        {
+          "kind": "construction_or_evaluation",
+          "draft_span": [
+            667,
+            1141
+          ],
+          "text": "So, we want to find a way to get **3** from the other numbers: **5, 7, and 8**. \n\nLet’s explore how to form **3** using **5, 7, and 8**. Consider:\n\n$$\n7 - (5 - (8 \\div 8))\n$$\n\nLet’s compute this expression step by step:\n\n1. **Innermost operation**:  \n   $$\n   8 \\div 8 = 1\n   $$\n\n2. **Next level**:  \n   $$\n   5 - 1 = 4\n   $$\n\n3. **Outer level**:  \n   $$\n   7 - 4 = 3\n   $$\n\nNow, multiply this result by the remaining 8:\n\n$$\n8 \\times (7 - (5 - (8 \\div 8))) = 8 \\times 3 = 24"
+        }
+      ],
+      "checking_evidence": [
+        {
+          "kind": "checking_with_possible_false_claims",
+          "draft_span": [
+            1151,
+            1377
+          ],
+          "text": "### Verification\n\n- **Used numbers**: 8, 7, 5, and 8 — all used **exactly once**\n- **Operations used**: Division, subtraction, multiplication, and parentheses\n- **Result**: 24\n\nThis satisfies all the conditions of the problem."
+        }
+      ],
+      "retained_rejection": [],
+      "old_M_V_character_identity": true,
+      "old_only_spans": [],
+      "new_only_spans": [],
+      "CALC": [
+        {
+          "unit_id": "CALC1",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            918,
+            945
+          ],
+          "text": "   $$\n   8 \\div 8 = 1\n   $$",
+          "arithmetic_check": {
+            "manual_transcription": "8/8",
+            "exact_value": 1,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC2",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            968,
+            992
+          ],
+          "text": "   $$\n   5 - 1 = 4\n   $$",
+          "arithmetic_check": {
+            "manual_transcription": "5-1",
+            "exact_value": 4,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC3",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            1016,
+            1040
+          ],
+          "text": "   $$\n   7 - 4 = 3\n   $$",
+          "arithmetic_check": {
+            "manual_transcription": "7-4",
+            "exact_value": 3,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        }
+      ]
+    },
+    "1084": {
+      "draft_key": "1084/0",
+      "draft": "To solve the problem of forming the number 24 using the numbers **5, 7, 7, and 9** exactly once each, along with the operations **addition, subtraction, multiplication, division**, and **parentheses**, we proceed by exploring combinations that yield the target number.\n\n---\n\n### Step-by-Step Breakdown\n\nWe aim to create an expression that evaluates to **24**. A useful approach is to consider factor pairs of 24, such as:\n\n- $ 24 = 4 \\times 6 $\n- $ 24 = 3 \\times 8 $\n- $ 24 = 12 \\times 2 $\n\nLet’s try the pair $ 4 \\times 6 $, as it seems promising with the available numbers.\n\nWe can use the following logic:\n\n- $ 9 - 5 = 4 $\n- $ 7 - (7 \\div 7) = 6 $\n\nNow we combine these two parts:\n\n$$\n(9 - 5) \\times (7 - (7 \\div 7))\n$$\n\n---\n\n### Verification\n\nLet’s compute the expression step by step:\n\n1. $ 7 \\div 7 = 1 $\n2. $ 7 - 1 = 6 $\n3. $ 9 - 5 = 4 $\n4. $ 4 \\times 6 = 24 $\n\nAll numbers are used exactly once:\n- 9 used in $ 9 - 5 $\n- 5 used in $ 9 - 5 $\n- The first 7 used in $ 7 - (7 \\div 7) $\n- The second 7 used in $ 7 \\div 7 $\n\n---\n\n### Final Answer\n\n$$\n\\boxed{(9 - 5) \\times (7 - (7 \\div 7))}\n$$",
+      "draft_sha256": "08ddaa19f347692a4315fe45f7546f5e003c642d57597c1350bba4aa55960a1b",
+      "problem": "Use the numbers 5, 7, 7, 9 exactly once each, with addition, subtraction, multiplication, division and parentheses, to make 24. Provide an expression using the original four numbers.",
+      "numbers": [
+        5,
+        7,
+        7,
+        9
+      ],
+      "failure_subtype": "unrejected_resource_violation",
+      "failure_note": "三个7而非两个；验证清单遗漏一次7",
+      "E": [
+        {
+          "kind": "false_endorsement_or_justification",
+          "draft_span": [
+            869,
+            903
+          ],
+          "text": "All numbers are used exactly once:",
+          "unit_id": "E1"
+        }
+      ],
+      "candidate_occurrences": [
+        {
+          "kind": "expression",
+          "draft_span": [
+            685,
+            722
+          ],
+          "text": "$$\n(9 - 5) \\times (7 - (7 \\div 7))\n$$",
+          "status": "asserted_or_unspecified",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review"
+        },
+        {
+          "kind": "expression",
+          "draft_span": [
+            1049,
+            1094
+          ],
+          "text": "$$\n\\boxed{(9 - 5) \\times (7 - (7 \\div 7))}\n$$",
+          "status": "asserted_or_unspecified",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review"
+        }
+      ],
+      "construction_evidence": [
+        {
+          "kind": "construction_or_evaluation",
+          "draft_span": [
+            577,
+            719
+          ],
+          "text": "We can use the following logic:\n\n- $ 9 - 5 = 4 $\n- $ 7 - (7 \\div 7) = 6 $\n\nNow we combine these two parts:\n\n$$\n(9 - 5) \\times (7 - (7 \\div 7))"
+        }
+      ],
+      "checking_evidence": [
+        {
+          "kind": "checking_with_possible_false_claims",
+          "draft_span": [
+            747,
+            1024
+          ],
+          "text": "Let’s compute the expression step by step:\n\n1. $ 7 \\div 7 = 1 $\n2. $ 7 - 1 = 6 $\n3. $ 9 - 5 = 4 $\n4. $ 4 \\times 6 = 24 $\n\nAll numbers are used exactly once:\n- 9 used in $ 9 - 5 $\n- 5 used in $ 9 - 5 $\n- The first 7 used in $ 7 - (7 \\div 7) $\n- The second 7 used in $ 7 \\div 7 $"
+        }
+      ],
+      "retained_rejection": [],
+      "old_M_V_character_identity": true,
+      "old_only_spans": [],
+      "new_only_spans": [],
+      "CALC": [
+        {
+          "unit_id": "CALC1",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            610,
+            625
+          ],
+          "text": "- $ 9 - 5 = 4 $",
+          "arithmetic_check": {
+            "manual_transcription": "9-5",
+            "exact_value": 4,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC2",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            626,
+            650
+          ],
+          "text": "- $ 7 - (7 \\div 7) = 6 $",
+          "arithmetic_check": {
+            "manual_transcription": "7-7/7",
+            "exact_value": 6,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC3",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            791,
+            810
+          ],
+          "text": "1. $ 7 \\div 7 = 1 $",
+          "arithmetic_check": {
+            "manual_transcription": "7/7",
+            "exact_value": 1,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC4",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            811,
+            827
+          ],
+          "text": "2. $ 7 - 1 = 6 $",
+          "arithmetic_check": {
+            "manual_transcription": "7-1",
+            "exact_value": 6,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC5",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            828,
+            844
+          ],
+          "text": "3. $ 9 - 5 = 4 $",
+          "arithmetic_check": {
+            "manual_transcription": "9-5",
+            "exact_value": 4,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC6",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            845,
+            867
+          ],
+          "text": "4. $ 4 \\times 6 = 24 $",
+          "arithmetic_check": {
+            "manual_transcription": "4*6",
+            "exact_value": 24,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        }
+      ]
+    },
+    "1226": {
+      "draft_key": "1226/1",
+      "draft": "To solve the problem of using the numbers **6, 8, 10, and 11** exactly once each, along with the operations **addition, subtraction, multiplication, division**, and **parentheses**, to make **24**, we need to strategically combine these numbers in a way that satisfies all constraints and yields the desired result.\n\n---\n\n### Step-by-Step Reasoning:\n\nWe are given the numbers:  \n**6, 8, 10, 11**  \nWe must use **each number exactly once** and apply operations to reach **24**.\n\nLet’s consider possible groupings and operations. A promising path is to first compute a small value from a subset of numbers, then combine it with the rest.\n\n---\n\n### Key Insight:\n\nLet’s try to create a **small number** from two of the numbers, then use that in a division or addition to reach **24**.\n\n- Consider **8 - 6 = 2**\n- Then, **6 ÷ 2 = 3**\n- Now, we have the numbers **10, 11**, and the result **3**\n- Adding them: **10 + 11 + 3 = 24**\n\nThis uses **6, 8, 10, and 11** exactly once.\n\n---\n\n### Final Expression:\n\n$$\n10 + 11 + \\frac{6}{8 - 6}\n$$\n\n---\n\n### Verification:\n\n- **8 - 6 = 2**\n- **6 ÷ 2 = 3**\n- **10 + 11 = 21**\n- **21 + 3 = 24**\n\n✅ All numbers used once.  \n✅ All operations valid (addition, subtraction, division).  \n✅ Parentheses used appropriately.\n\n---\n\n### Final Answer:\n\n$$\n\\boxed{10 + 11 + \\frac{6}{8 - 6}}\n$$",
+      "draft_sha256": "963ba4bcc8e6ecb73babb01a87f6df0a6fc1382d58e60022123e5716111addfb",
+      "problem": "Use the numbers 6, 8, 10, 11 exactly once each, with addition, subtraction, multiplication, division and parentheses, to make 24. Provide an expression using the original four numbers.",
+      "numbers": [
+        6,
+        8,
+        10,
+        11
+      ],
+      "failure_subtype": "unrejected_resource_violation",
+      "failure_note": "重复6；局部算术正确",
+      "E": [
+        {
+          "kind": "false_endorsement_or_justification",
+          "draft_span": [
+            926,
+            970
+          ],
+          "text": "This uses **6, 8, 10, and 11** exactly once.",
+          "unit_id": "E1"
+        },
+        {
+          "kind": "false_endorsement_or_justification",
+          "draft_span": [
+            1127,
+            1153
+          ],
+          "text": "✅ All numbers used once.  ",
+          "unit_id": "E2"
+        }
+      ],
+      "candidate_occurrences": [
+        {
+          "kind": "expression",
+          "draft_span": [
+            1000,
+            1031
+          ],
+          "text": "$$\n10 + 11 + \\frac{6}{8 - 6}\n$$",
+          "status": "asserted_or_unspecified",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review"
+        },
+        {
+          "kind": "expression",
+          "draft_span": [
+            1273,
+            1312
+          ],
+          "text": "$$\n\\boxed{10 + 11 + \\frac{6}{8 - 6}}\n$$",
+          "status": "asserted_or_unspecified",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review"
+        }
+      ],
+      "construction_evidence": [
+        {
+          "kind": "construction_or_evaluation",
+          "draft_span": [
+            782,
+            924
+          ],
+          "text": "- Consider **8 - 6 = 2**\n- Then, **6 ÷ 2 = 3**\n- Now, we have the numbers **10, 11**, and the result **3**\n- Adding them: **10 + 11 + 3 = 24**"
+        }
+      ],
+      "checking_evidence": [
+        {
+          "kind": "checking_with_possible_false_claims",
+          "draft_span": [
+            1038,
+            1247
+          ],
+          "text": "### Verification:\n\n- **8 - 6 = 2**\n- **6 ÷ 2 = 3**\n- **10 + 11 = 21**\n- **21 + 3 = 24**\n\n✅ All numbers used once.  \n✅ All operations valid (addition, subtraction, division).  \n✅ Parentheses used appropriately."
+        }
+      ],
+      "retained_rejection": [],
+      "old_M_V_character_identity": true,
+      "old_only_spans": [],
+      "new_only_spans": [],
+      "CALC": [
+        {
+          "unit_id": "CALC1",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            782,
+            806
+          ],
+          "text": "- Consider **8 - 6 = 2**",
+          "arithmetic_check": {
+            "manual_transcription": "8-6",
+            "exact_value": 2,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC2",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            807,
+            828
+          ],
+          "text": "- Then, **6 ÷ 2 = 3**",
+          "arithmetic_check": {
+            "manual_transcription": "6/2",
+            "exact_value": 3,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC3",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            889,
+            924
+          ],
+          "text": "- Adding them: **10 + 11 + 3 = 24**",
+          "arithmetic_check": {
+            "manual_transcription": "10+11+3",
+            "exact_value": 24,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC4",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            1057,
+            1072
+          ],
+          "text": "- **8 - 6 = 2**",
+          "arithmetic_check": {
+            "manual_transcription": "8-6",
+            "exact_value": 2,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC5",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            1073,
+            1088
+          ],
+          "text": "- **6 ÷ 2 = 3**",
+          "arithmetic_check": {
+            "manual_transcription": "6/2",
+            "exact_value": 3,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC6",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            1089,
+            1107
+          ],
+          "text": "- **10 + 11 = 21**",
+          "arithmetic_check": {
+            "manual_transcription": "10+11",
+            "exact_value": 21,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        },
+        {
+          "unit_id": "CALC7",
+          "kind": "local_arithmetic_evaluation",
+          "draft_span": [
+            1108,
+            1125
+          ],
+          "text": "- **21 + 3 = 24**",
+          "arithmetic_check": {
+            "manual_transcription": "21+3",
+            "exact_value": 24,
+            "status": "exactly_correct"
+          },
+          "resource_legality": "not_implied"
+        }
+      ]
+    }
+  }
+}

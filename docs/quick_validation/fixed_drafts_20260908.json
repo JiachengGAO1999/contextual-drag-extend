@@ -1,0 +1,6 @@
+{
+  "source": "/data2/gaojc/projects/contextual-drag-extend/outputs/game24-qwen3-8b-thinking-drafts-20260908/draft_candidates.jsonl",
+  "selected": {"1189": "1189/3", "1358": "1358/0", "804": "804/1"},
+  "rule": "First completed parsable manually accepted reasoning failure in sampling order per problem; frozen before paired evaluation",
+  "audit": "docs/quick_validation/new_drafts_manual_audit_20260908.md"
+}

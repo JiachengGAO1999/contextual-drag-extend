@@ -1,0 +1,673 @@
+{
+  "scope": "No generation; retrospective dev-set annotation audit, no causal harmful/useful labels",
+  "edge_definition": "unique (q,k), one attention matrix; prefill q=0..P-1; decode window q=P..P+1023 (hypothetical, not observed length)",
+  "questions": {
+    "1226": {
+      "prompt_tokens": 526,
+      "units": [
+        {
+          "id": "B1",
+          "category": "reconstruction",
+          "draft_span": [
+            782,
+            806
+          ],
+          "text": "- Consider **8 - 6 = 2**",
+          "reason": "6 reused between 8-6 and 6/2. Arithmetic is correct. Later sums consume intermediate results; included in reconstruction rather than a fabricated extra layer.",
+          "depends_on": [],
+          "arithmetic": "正确：8−6=2",
+          "resource_use": "该步本身未重复用数",
+          "functional_role": "构造分母",
+          "semantic_repeat_group": "denominator",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            259,
+            270
+          ],
+          "new_unique_keys": 11,
+          "prefill_added_edges": 2816,
+          "decode_1024_added_edges": 11264,
+          "leave_one_out_prefill_edges": 2816,
+          "context_before": "te a small value from a subset of numbers, then combine it with the rest.\n\n---\n\n### Key Insight:\n\nLet’s try to create a **small number** from two of the numbers, then use that in a division or addition to reach **24**.\n\n",
+          "context_after": "\n- Then, **6 ÷ 2 = 3**\n- Now, we have the numbers **10, 11**, and the result **3**\n- Adding them: **10 + 11 + 3 = 24**\n\nThis uses **6, 8, 10, and 11** exactly once.\n\n---\n\n### Final Expression:\n\n$$\n10 + 11 + \\frac{6}{8 - "
+        },
+        {
+          "id": "B2",
+          "category": "reconstruction",
+          "draft_span": [
+            807,
+            828
+          ],
+          "text": "- Then, **6 ÷ 2 = 3**",
+          "reason": "6 reused between 8-6 and 6/2. Arithmetic is correct. Later sums consume intermediate results; included in reconstruction rather than a fabricated extra layer.",
+          "depends_on": [
+            "B1"
+          ],
+          "arithmetic": "正确：6÷2=3",
+          "resource_use": "2若承接8−6，则再次使用6，组合违规",
+          "functional_role": "产生重复用数的构造步骤",
+          "semantic_repeat_group": "quotient",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            270,
+            283
+          ],
+          "new_unique_keys": 13,
+          "prefill_added_edges": 3159,
+          "decode_1024_added_edges": 13312,
+          "leave_one_out_prefill_edges": 3159,
+          "context_before": "ubset of numbers, then combine it with the rest.\n\n---\n\n### Key Insight:\n\nLet’s try to create a **small number** from two of the numbers, then use that in a division or addition to reach **24**.\n\n- Consider **8 - 6 = 2**\n",
+          "context_after": "\n- Now, we have the numbers **10, 11**, and the result **3**\n- Adding them: **10 + 11 + 3 = 24**\n\nThis uses **6, 8, 10, and 11** exactly once.\n\n---\n\n### Final Expression:\n\n$$\n10 + 11 + \\frac{6}{8 - 6}\n$$\n\n---\n\n### Verifi"
+        },
+        {
+          "id": "B3",
+          "category": "reconstruction",
+          "draft_span": [
+            829,
+            888
+          ],
+          "text": "- Now, we have the numbers **10, 11**, and the result **3**",
+          "reason": "6 reused between 8-6 and 6/2. Arithmetic is correct. Later sums consume intermediate results; included in reconstruction rather than a fabricated extra layer.",
+          "depends_on": [
+            "B2"
+          ],
+          "arithmetic": "无独立等式；3来自前一步",
+          "resource_use": "把已违规构造的3当成可用中间结果",
+          "functional_role": "中间结果重述",
+          "semantic_repeat_group": "",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            283,
+            304
+          ],
+          "new_unique_keys": 21,
+          "prefill_added_edges": 4662,
+          "decode_1024_added_edges": 21504,
+          "leave_one_out_prefill_edges": 4662,
+          "context_before": " combine it with the rest.\n\n---\n\n### Key Insight:\n\nLet’s try to create a **small number** from two of the numbers, then use that in a division or addition to reach **24**.\n\n- Consider **8 - 6 = 2**\n- Then, **6 ÷ 2 = 3**\n",
+          "context_after": "\n- Adding them: **10 + 11 + 3 = 24**\n\nThis uses **6, 8, 10, and 11** exactly once.\n\n---\n\n### Final Expression:\n\n$$\n10 + 11 + \\frac{6}{8 - 6}\n$$\n\n---\n\n### Verification:\n\n- **8 - 6 = 2**\n- **6 ÷ 2 = 3**\n- **10 + 11 = 21**\n"
+        },
+        {
+          "id": "B4",
+          "category": "reconstruction",
+          "draft_span": [
+            889,
+            924
+          ],
+          "text": "- Adding them: **10 + 11 + 3 = 24**",
+          "reason": "6 reused between 8-6 and 6/2. Arithmetic is correct. Later sums consume intermediate results; included in reconstruction rather than a fabricated extra layer.",
+          "depends_on": [
+            "B3"
+          ],
+          "arithmetic": "正确：10+11+3=24",
+          "resource_use": "继承3的重复6来源",
+          "functional_role": "组装结果",
+          "semantic_repeat_group": "",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            304,
+            323
+          ],
+          "new_unique_keys": 19,
+          "prefill_added_edges": 3857,
+          "decode_1024_added_edges": 19456,
+          "leave_one_out_prefill_edges": 3857,
+          "context_before": " to create a **small number** from two of the numbers, then use that in a division or addition to reach **24**.\n\n- Consider **8 - 6 = 2**\n- Then, **6 ÷ 2 = 3**\n- Now, we have the numbers **10, 11**, and the result **3**\n",
+          "context_after": "\n\nThis uses **6, 8, 10, and 11** exactly once.\n\n---\n\n### Final Expression:\n\n$$\n10 + 11 + \\frac{6}{8 - 6}\n$$\n\n---\n\n### Verification:\n\n- **8 - 6 = 2**\n- **6 ÷ 2 = 3**\n- **10 + 11 = 21**\n- **21 + 3 = 24**\n\n✅ All numbers use"
+        },
+        {
+          "id": "B5",
+          "category": "reconstruction",
+          "draft_span": [
+            1057,
+            1072
+          ],
+          "text": "- **8 - 6 = 2**",
+          "reason": "6 reused between 8-6 and 6/2. Arithmetic is correct. Later sums consume intermediate results; included in reconstruction rather than a fabricated extra layer.",
+          "depends_on": [],
+          "arithmetic": "正确：8−6=2",
+          "resource_use": "单步有效，复述前面分母",
+          "functional_role": "验证中重复分母",
+          "semantic_repeat_group": "denominator",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            373,
+            383
+          ],
+          "new_unique_keys": 10,
+          "prefill_added_edges": 1430,
+          "decode_1024_added_edges": 10240,
+          "leave_one_out_prefill_edges": 1430,
+          "context_before": "e have the numbers **10, 11**, and the result **3**\n- Adding them: **10 + 11 + 3 = 24**\n\nThis uses **6, 8, 10, and 11** exactly once.\n\n---\n\n### Final Expression:\n\n$$\n10 + 11 + \\frac{6}{8 - 6}\n$$\n\n---\n\n### Verification:\n\n",
+          "context_after": "\n- **6 ÷ 2 = 3**\n- **10 + 11 = 21**\n- **21 + 3 = 24**\n\n✅ All numbers used once.  \n✅ All operations valid (addition, subtraction, division).  \n✅ Parentheses used appropriately.\n\n---\n\n### Final Answer:\n\n$$\n\\boxed{10 + 11 +"
+        },
+        {
+          "id": "B6",
+          "category": "reconstruction",
+          "draft_span": [
+            1073,
+            1088
+          ],
+          "text": "- **6 ÷ 2 = 3**",
+          "reason": "6 reused between 8-6 and 6/2. Arithmetic is correct. Later sums consume intermediate results; included in reconstruction rather than a fabricated extra layer.",
+          "depends_on": [
+            "B5"
+          ],
+          "arithmetic": "正确：6÷2=3",
+          "resource_use": "继承分母来源时重复6",
+          "functional_role": "验证中重复商",
+          "semantic_repeat_group": "quotient",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            383,
+            394
+          ],
+          "new_unique_keys": 11,
+          "prefill_added_edges": 1452,
+          "decode_1024_added_edges": 11264,
+          "leave_one_out_prefill_edges": 1452,
+          "context_before": "rs **10, 11**, and the result **3**\n- Adding them: **10 + 11 + 3 = 24**\n\nThis uses **6, 8, 10, and 11** exactly once.\n\n---\n\n### Final Expression:\n\n$$\n10 + 11 + \\frac{6}{8 - 6}\n$$\n\n---\n\n### Verification:\n\n- **8 - 6 = 2**\n",
+          "context_after": "\n- **10 + 11 = 21**\n- **21 + 3 = 24**\n\n✅ All numbers used once.  \n✅ All operations valid (addition, subtraction, division).  \n✅ Parentheses used appropriately.\n\n---\n\n### Final Answer:\n\n$$\n\\boxed{10 + 11 + \\frac{6}{8 - 6}"
+        },
+        {
+          "id": "B7",
+          "category": "reconstruction",
+          "draft_span": [
+            1089,
+            1107
+          ],
+          "text": "- **10 + 11 = 21**",
+          "reason": "6 reused between 8-6 and 6/2. Arithmetic is correct. Later sums consume intermediate results; included in reconstruction rather than a fabricated extra layer.",
+          "depends_on": [],
+          "arithmetic": "正确：10+11=21",
+          "resource_use": "该子计算本身有效",
+          "functional_role": "验证中的独立和",
+          "semantic_repeat_group": "",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            394,
+            407
+          ],
+          "new_unique_keys": 13,
+          "prefill_added_edges": 1547,
+          "decode_1024_added_edges": 13312,
+          "leave_one_out_prefill_edges": 1547,
+          "context_before": "nd the result **3**\n- Adding them: **10 + 11 + 3 = 24**\n\nThis uses **6, 8, 10, and 11** exactly once.\n\n---\n\n### Final Expression:\n\n$$\n10 + 11 + \\frac{6}{8 - 6}\n$$\n\n---\n\n### Verification:\n\n- **8 - 6 = 2**\n- **6 ÷ 2 = 3**\n",
+          "context_after": "\n- **21 + 3 = 24**\n\n✅ All numbers used once.  \n✅ All operations valid (addition, subtraction, division).  \n✅ Parentheses used appropriately.\n\n---\n\n### Final Answer:\n\n$$\n\\boxed{10 + 11 + \\frac{6}{8 - 6}}\n$$"
+        },
+        {
+          "id": "B8",
+          "category": "reconstruction",
+          "draft_span": [
+            1108,
+            1125
+          ],
+          "text": "- **21 + 3 = 24**",
+          "reason": "6 reused between 8-6 and 6/2. Arithmetic is correct. Later sums consume intermediate results; included in reconstruction rather than a fabricated extra layer.",
+          "depends_on": [
+            "B6",
+            "B7"
+          ],
+          "arithmetic": "正确：21+3=24",
+          "resource_use": "继承3的重复6来源",
+          "functional_role": "验证中组装结果",
+          "semantic_repeat_group": "",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            407,
+            419
+          ],
+          "new_unique_keys": 12,
+          "prefill_added_edges": 1284,
+          "decode_1024_added_edges": 12288,
+          "leave_one_out_prefill_edges": 1284,
+          "context_before": "\n- Adding them: **10 + 11 + 3 = 24**\n\nThis uses **6, 8, 10, and 11** exactly once.\n\n---\n\n### Final Expression:\n\n$$\n10 + 11 + \\frac{6}{8 - 6}\n$$\n\n---\n\n### Verification:\n\n- **8 - 6 = 2**\n- **6 ÷ 2 = 3**\n- **10 + 11 = 21**\n",
+          "context_after": "\n\n✅ All numbers used once.  \n✅ All operations valid (addition, subtraction, division).  \n✅ Parentheses used appropriately.\n\n---\n\n### Final Answer:\n\n$$\n\\boxed{10 + 11 + \\frac{6}{8 - 6}}\n$$"
+        }
+      ],
+      "prefill_added_edges": 20207,
+      "sum_individual_prefill_added_edges": 20207,
+      "decode_1024_added_edges": 112640
+    },
+    "719": {
+      "prompt_tokens": 581,
+      "units": [
+        {
+          "id": "B1",
+          "category": "reconstruction",
+          "draft_span": [
+            815,
+            841
+          ],
+          "text": "$$\n7 - (5 - (8 \\div 8))\n$$",
+          "reason": "8/8 consumes both eights; subsequent multiplication claims a remaining 8. All local arithmetic is correct.",
+          "depends_on": [],
+          "arithmetic": "正确：7−(5−8/8)=3",
+          "resource_use": "单看该式用5、7、8、8可得3；不能再称剩余一个8",
+          "functional_role": "完整子表达式；不是单个算术步",
+          "semantic_repeat_group": "",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            294,
+            309
+          ],
+          "new_unique_keys": 15,
+          "prefill_added_edges": 4080,
+          "decode_1024_added_edges": 15360,
+          "leave_one_out_prefill_edges": 4080,
+          "context_before": "effective approach is to consider the identity:\n\n$$\n24 = 8 \\times 3\n$$\n\nSo, we want to find a way to get **3** from the other numbers: **5, 7, and 8**. \n\nLet’s explore how to form **3** using **5, 7, and 8**. Consider:\n\n",
+          "context_after": "\n\nLet’s compute this expression step by step:\n\n1. **Innermost operation**:  \n   $$\n   8 \\div 8 = 1\n   $$\n\n2. **Next level**:  \n   $$\n   5 - 1 = 4\n   $$\n\n3. **Outer level**:  \n   $$\n   7 - 4 = 3\n   $$\n\nNow, multiply this "
+        },
+        {
+          "id": "B2",
+          "category": "reconstruction",
+          "draft_span": [
+            888,
+            945
+          ],
+          "text": "1. **Innermost operation**:  \n   $$\n   8 \\div 8 = 1\n   $$",
+          "reason": "8/8 consumes both eights; subsequent multiplication claims a remaining 8. All local arithmetic is correct.",
+          "depends_on": [],
+          "arithmetic": "正确：8÷8=1",
+          "resource_use": "已消耗两个8；单步可用",
+          "functional_role": "构造比值",
+          "semantic_repeat_group": "",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            319,
+            343
+          ],
+          "new_unique_keys": 24,
+          "prefill_added_edges": 5712,
+          "decode_1024_added_edges": 24576,
+          "leave_one_out_prefill_edges": 5712,
+          "context_before": "o, we want to find a way to get **3** from the other numbers: **5, 7, and 8**. \n\nLet’s explore how to form **3** using **5, 7, and 8**. Consider:\n\n$$\n7 - (5 - (8 \\div 8))\n$$\n\nLet’s compute this expression step by step:\n\n",
+          "context_after": "\n\n2. **Next level**:  \n   $$\n   5 - 1 = 4\n   $$\n\n3. **Outer level**:  \n   $$\n   7 - 4 = 3\n   $$\n\nNow, multiply this result by the remaining 8:\n\n$$\n8 \\times (7 - (5 - (8 \\div 8))) = 8 \\times 3 = 24\n$$\n\n---\n\n### Verificati"
+        },
+        {
+          "id": "B3",
+          "category": "reconstruction",
+          "draft_span": [
+            947,
+            992
+          ],
+          "text": "2. **Next level**:  \n   $$\n   5 - 1 = 4\n   $$",
+          "reason": "8/8 consumes both eights; subsequent multiplication claims a remaining 8. All local arithmetic is correct.",
+          "depends_on": [
+            "B2"
+          ],
+          "arithmetic": "正确：5−1=4",
+          "resource_use": "继承8/8；当前子表达式未超用",
+          "functional_role": "下游计算",
+          "semantic_repeat_group": "",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            344,
+            366
+          ],
+          "new_unique_keys": 22,
+          "prefill_added_edges": 4730,
+          "decode_1024_added_edges": 22528,
+          "leave_one_out_prefill_edges": 4730,
+          "context_before": "s: **5, 7, and 8**. \n\nLet’s explore how to form **3** using **5, 7, and 8**. Consider:\n\n$$\n7 - (5 - (8 \\div 8))\n$$\n\nLet’s compute this expression step by step:\n\n1. **Innermost operation**:  \n   $$\n   8 \\div 8 = 1\n   $$\n\n",
+          "context_after": "\n\n3. **Outer level**:  \n   $$\n   7 - 4 = 3\n   $$\n\nNow, multiply this result by the remaining 8:\n\n$$\n8 \\times (7 - (5 - (8 \\div 8))) = 8 \\times 3 = 24\n$$\n\n---\n\n### Verification\n\n- **Used numbers**: 8, 7, 5, and 8 — all us"
+        },
+        {
+          "id": "B4",
+          "category": "reconstruction",
+          "draft_span": [
+            994,
+            1040
+          ],
+          "text": "3. **Outer level**:  \n   $$\n   7 - 4 = 3\n   $$",
+          "reason": "8/8 consumes both eights; subsequent multiplication claims a remaining 8. All local arithmetic is correct.",
+          "depends_on": [
+            "B3"
+          ],
+          "arithmetic": "正确：7−4=3",
+          "resource_use": "继承全部四数字，当前子表达式可用",
+          "functional_role": "下游计算",
+          "semantic_repeat_group": "",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            367,
+            389
+          ],
+          "new_unique_keys": 22,
+          "prefill_added_edges": 4224,
+          "decode_1024_added_edges": 22528,
+          "leave_one_out_prefill_edges": 4224,
+          "context_before": " **3** using **5, 7, and 8**. Consider:\n\n$$\n7 - (5 - (8 \\div 8))\n$$\n\nLet’s compute this expression step by step:\n\n1. **Innermost operation**:  \n   $$\n   8 \\div 8 = 1\n   $$\n\n2. **Next level**:  \n   $$\n   5 - 1 = 4\n   $$\n\n",
+          "context_after": "\n\nNow, multiply this result by the remaining 8:\n\n$$\n8 \\times (7 - (5 - (8 \\div 8))) = 8 \\times 3 = 24\n$$\n\n---\n\n### Verification\n\n- **Used numbers**: 8, 7, 5, and 8 — all used **exactly once**\n- **Operations used**: Divis"
+        },
+        {
+          "id": "B5",
+          "category": "reconstruction",
+          "draft_span": [
+            1042,
+            1087
+          ],
+          "text": "Now, multiply this result by the remaining 8:",
+          "reason": "8/8 consumes both eights; subsequent multiplication claims a remaining 8. All local arithmetic is correct.",
+          "depends_on": [
+            "B4"
+          ],
+          "arithmetic": "无等式；指令乘以remaining 8",
+          "resource_use": "前面已经用完两个8，remaining 8的断言错误",
+          "functional_role": "显式资源账本错误＋组装指令",
+          "semantic_repeat_group": "",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            390,
+            401
+          ],
+          "new_unique_keys": 11,
+          "prefill_added_edges": 1980,
+          "decode_1024_added_edges": 11264,
+          "leave_one_out_prefill_edges": 1980,
+          "context_before": "(5 - (8 \\div 8))\n$$\n\nLet’s compute this expression step by step:\n\n1. **Innermost operation**:  \n   $$\n   8 \\div 8 = 1\n   $$\n\n2. **Next level**:  \n   $$\n   5 - 1 = 4\n   $$\n\n3. **Outer level**:  \n   $$\n   7 - 4 = 3\n   $$\n\n",
+          "context_after": "\n\n$$\n8 \\times (7 - (5 - (8 \\div 8))) = 8 \\times 3 = 24\n$$\n\n---\n\n### Verification\n\n- **Used numbers**: 8, 7, 5, and 8 — all used **exactly once**\n- **Operations used**: Division, subtraction, multiplication, and parenthes"
+        }
+      ],
+      "prefill_added_edges": 20726,
+      "sum_individual_prefill_added_edges": 20726,
+      "decode_1024_added_edges": 96256
+    },
+    "577": {
+      "prompt_tokens": 520,
+      "units": [
+        {
+          "id": "B1",
+          "category": "reconstruction",
+          "draft_span": [
+            755,
+            834
+          ],
+          "text": "- **(13 - 6 + 1)**  \n  This simplifies to:  \n  $ 13 - 6 = 7 $  \n  $ 7 + 1 = 8 $",
+          "reason": "Both factors consume 6. Their multiplication is the resource-error nucleus; neither factor alone is arithmetically false.",
+          "depends_on": [],
+          "arithmetic": "正确：13−6+1=8；13−6=7，7+1=8",
+          "resource_use": "该因子自身可用；与下一因子组合重复6",
+          "functional_role": "多行因子及解释，粒度较大",
+          "semantic_repeat_group": "",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            253,
+            297
+          ],
+          "new_unique_keys": 44,
+          "prefill_added_edges": 9812,
+          "decode_1024_added_edges": 45056,
+          "leave_one_out_prefill_edges": 9812,
+          "context_before": " operations.\n\n---\n\n### Constructing the Expression\n\nWe aim to find a combination of these numbers that results in 24. One promising approach is to break it down into two parts that multiply to give 24.\n\nLet’s consider:\n\n",
+          "context_after": "\n\n- **(9 - 6)**  \n  This simplifies to:  \n  $ 9 - 6 = 3 $\n\nNow multiply the two results:\n\n- $ 8 \\times 3 = 24 $\n\nThis gives us the desired result. Now, we check:\n\n- **Used numbers**: 13, 6, 1, and 9 — all used exactly on"
+        },
+        {
+          "id": "B2",
+          "category": "reconstruction",
+          "draft_span": [
+            836,
+            891
+          ],
+          "text": "- **(9 - 6)**  \n  This simplifies to:  \n  $ 9 - 6 = 3 $",
+          "reason": "Both factors consume 6. Their multiplication is the resource-error nucleus; neither factor alone is arithmetically false.",
+          "depends_on": [],
+          "arithmetic": "正确：9−6=3",
+          "resource_use": "该因子自身可用；与前因子组合重复6",
+          "functional_role": "第二因子及解释",
+          "semantic_repeat_group": "",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            297,
+            324
+          ],
+          "new_unique_keys": 27,
+          "prefill_added_edges": 5292,
+          "decode_1024_added_edges": 27648,
+          "leave_one_out_prefill_edges": 5292,
+          "context_before": "of these numbers that results in 24. One promising approach is to break it down into two parts that multiply to give 24.\n\nLet’s consider:\n\n- **(13 - 6 + 1)**  \n  This simplifies to:  \n  $ 13 - 6 = 7 $  \n  $ 7 + 1 = 8 $\n\n",
+          "context_after": "\n\nNow multiply the two results:\n\n- $ 8 \\times 3 = 24 $\n\nThis gives us the desired result. Now, we check:\n\n- **Used numbers**: 13, 6, 1, and 9 — all used exactly once ✅  \n- **Used operations**: subtraction, addition, mult"
+        },
+        {
+          "id": "B3",
+          "category": "reconstruction",
+          "draft_span": [
+            893,
+            945
+          ],
+          "text": "Now multiply the two results:\n\n- $ 8 \\times 3 = 24 $",
+          "reason": "Both factors consume 6. Their multiplication is the resource-error nucleus; neither factor alone is arithmetically false.",
+          "depends_on": [
+            "B1",
+            "B2"
+          ],
+          "arithmetic": "正确：8×3=24",
+          "resource_use": "继承两个因子的同一6，组合违规",
+          "functional_role": "组装指令及计算",
+          "semantic_repeat_group": "",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            324,
+            343
+          ],
+          "new_unique_keys": 19,
+          "prefill_added_edges": 3363,
+          "decode_1024_added_edges": 19456,
+          "leave_one_out_prefill_edges": 3363,
+          "context_before": "ch is to break it down into two parts that multiply to give 24.\n\nLet’s consider:\n\n- **(13 - 6 + 1)**  \n  This simplifies to:  \n  $ 13 - 6 = 7 $  \n  $ 7 + 1 = 8 $\n\n- **(9 - 6)**  \n  This simplifies to:  \n  $ 9 - 6 = 3 $\n\n",
+          "context_after": "\n\nThis gives us the desired result. Now, we check:\n\n- **Used numbers**: 13, 6, 1, and 9 — all used exactly once ✅  \n- **Used operations**: subtraction, addition, multiplication ✅  \n- **Parentheses**: used to group operat"
+        }
+      ],
+      "prefill_added_edges": 18467,
+      "sum_individual_prefill_added_edges": 18467,
+      "decode_1024_added_edges": 92160
+    },
+    "513": {
+      "prompt_tokens": 1329,
+      "units": [
+        {
+          "id": "B1",
+          "category": "reconstruction",
+          "draft_span": [
+            563,
+            635
+          ],
+          "text": "- First, calculate the innermost parentheses:  \n  $$\n  9 \\div 3 = 3\n  $$",
+          "reason": "Selected family evaluates to 10 and uses three 13s. First occurrence explicitly rejected. Other failed candidate families and global no-solution claims are outside this family; not a semantic closure.",
+          "depends_on": [],
+          "arithmetic": "正确：9÷3=3",
+          "resource_use": "子计算本身有效",
+          "functional_role": "被否决候选的分解",
+          "semantic_repeat_group": "",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            217,
+            243
+          ],
+          "new_unique_keys": 26,
+          "prefill_added_edges": 28236,
+          "decode_1024_added_edges": 26624,
+          "leave_one_out_prefill_edges": 28236,
+          "context_before": "mber, we should focus on expressions that involve **multiplication** and **subtraction**, as they can quickly reach or exceed 24.\n\nLet’s test the expression:\n\n$$\n(13 - (9 \\div 3)) \\times (13 \\div 13)\n$$\n\n**Breakdown:**\n\n",
+          "context_after": "\n\n- Then, subtract from 13:  \n  $$\n  13 - 3 = 10\n  $$\n\n- Next, calculate the second division:  \n  $$\n  13 \\div 13 = 1\n  $$\n\n- Finally, multiply the results:  \n  $$\n  10 \\times 1 = 10\n  $$\n\nThis is not equal to 24. Let's "
+        },
+        {
+          "id": "B2",
+          "category": "reconstruction",
+          "draft_span": [
+            637,
+            688
+          ],
+          "text": "- Then, subtract from 13:  \n  $$\n  13 - 3 = 10\n  $$",
+          "reason": "Selected family evaluates to 10 and uses three 13s. First occurrence explicitly rejected. Other failed candidate families and global no-solution claims are outside this family; not a semantic closure.",
+          "depends_on": [
+            "B1"
+          ],
+          "arithmetic": "正确：13−3=10",
+          "resource_use": "结合上一商，子式用一13、9、3",
+          "functional_role": "被否决候选的分解",
+          "semantic_repeat_group": "",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            244,
+            271
+          ],
+          "new_unique_keys": 27,
+          "prefill_added_edges": 28566,
+          "decode_1024_added_edges": 27648,
+          "leave_one_out_prefill_edges": 28566,
+          "context_before": "*subtraction**, as they can quickly reach or exceed 24.\n\nLet’s test the expression:\n\n$$\n(13 - (9 \\div 3)) \\times (13 \\div 13)\n$$\n\n**Breakdown:**\n\n- First, calculate the innermost parentheses:  \n  $$\n  9 \\div 3 = 3\n  $$\n\n",
+          "context_after": "\n\n- Next, calculate the second division:  \n  $$\n  13 \\div 13 = 1\n  $$\n\n- Finally, multiply the results:  \n  $$\n  10 \\times 1 = 10\n  $$\n\nThis is not equal to 24. Let's try a different approach.\n\n---\n\n### A Working Express"
+        },
+        {
+          "id": "B3",
+          "category": "reconstruction",
+          "draft_span": [
+            690,
+            757
+          ],
+          "text": "- Next, calculate the second division:  \n  $$\n  13 \\div 13 = 1\n  $$",
+          "reason": "Selected family evaluates to 10 and uses three 13s. First occurrence explicitly rejected. Other failed candidate families and global no-solution claims are outside this family; not a semantic closure.",
+          "depends_on": [],
+          "arithmetic": "正确：13÷13=1",
+          "resource_use": "本步需两个13，与前因子共同需要三个13",
+          "functional_role": "构造重复用数的第二因子",
+          "semantic_repeat_group": "",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            272,
+            299
+          ],
+          "new_unique_keys": 27,
+          "prefill_added_edges": 27810,
+          "decode_1024_added_edges": 27648,
+          "leave_one_out_prefill_edges": 27810,
+          "context_before": "4.\n\nLet’s test the expression:\n\n$$\n(13 - (9 \\div 3)) \\times (13 \\div 13)\n$$\n\n**Breakdown:**\n\n- First, calculate the innermost parentheses:  \n  $$\n  9 \\div 3 = 3\n  $$\n\n- Then, subtract from 13:  \n  $$\n  13 - 3 = 10\n  $$\n\n",
+          "context_after": "\n\n- Finally, multiply the results:  \n  $$\n  10 \\times 1 = 10\n  $$\n\nThis is not equal to 24. Let's try a different approach.\n\n---\n\n### A Working Expression\n\nLet’s consider the following expression:\n\n$$\n(13 \\times (3 - (9 "
+        },
+        {
+          "id": "B4",
+          "category": "reconstruction",
+          "draft_span": [
+            759,
+            822
+          ],
+          "text": "- Finally, multiply the results:  \n  $$\n  10 \\times 1 = 10\n  $$",
+          "reason": "Selected family evaluates to 10 and uses three 13s. First occurrence explicitly rejected. Other failed candidate families and global no-solution claims are outside this family; not a semantic closure.",
+          "depends_on": [
+            "B2",
+            "B3"
+          ],
+          "arithmetic": "正确：10×1=10",
+          "resource_use": "继承重复13；结果10本身揭示未达到24",
+          "functional_role": "候选求值，同时可提供反证",
+          "semantic_repeat_group": "",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            300,
+            326
+          ],
+          "new_unique_keys": 26,
+          "prefill_added_edges": 26078,
+          "decode_1024_added_edges": 26624,
+          "leave_one_out_prefill_edges": 26078,
+          "context_before": "13)\n$$\n\n**Breakdown:**\n\n- First, calculate the innermost parentheses:  \n  $$\n  9 \\div 3 = 3\n  $$\n\n- Then, subtract from 13:  \n  $$\n  13 - 3 = 10\n  $$\n\n- Next, calculate the second division:  \n  $$\n  13 \\div 13 = 1\n  $$\n\n",
+          "context_after": "\n\nThis is not equal to 24. Let's try a different approach.\n\n---\n\n### A Working Expression\n\nLet’s consider the following expression:\n\n$$\n(13 \\times (3 - (9 \\div 13)))\n$$\n\n**Step-by-step Evaluation:**\n\n1. Compute the inner"
+        }
+      ],
+      "prefill_added_edges": 110690,
+      "sum_individual_prefill_added_edges": 110690,
+      "decode_1024_added_edges": 108544
+    },
+    "1358": {
+      "prompt_tokens": 767,
+      "units": [
+        {
+          "id": "B1",
+          "category": "reconstruction",
+          "draft_span": [
+            738,
+            779
+          ],
+          "text": "$$\n(13 - 5) \\times 3 = 8 \\times 3 = 24\n$$",
+          "reason": "Initial 3-number expression is correctly identified as incomplete. Its construction is included as a prerequisite, not labeled an error. Explicit corrections remain protected; neutral-use rationalization is included in C4.",
+          "depends_on": [],
+          "arithmetic": "正确：(13−5)×3=24",
+          "resource_use": "仅用13、5、3，遗漏7；正文随后明确指出",
+          "functional_role": "正确但不完整候选；不是被认可的合法解",
+          "semantic_repeat_group": "",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            269,
+            295
+          ],
+          "new_unique_keys": 26,
+          "prefill_added_edges": 12272,
+          "decode_1024_added_edges": 26624,
+          "leave_one_out_prefill_edges": 12272,
+          "context_before": " \\times 6 $\n- $ 24 = 12 \\times 2 $\n\nWe can look for combinations that form these products or sums, keeping in mind we need to use all four numbers exactly once.\n\n---\n\n### Key Insight\n\nOne promising path is to consider:\n\n",
+          "context_after": "\n\nThis expression uses the numbers **13**, **5**, and **3**, and gives the result **24**.\n\nHowever, this expression **does not use the number 7**, which violates the constraint of using each number exactly once.\n\n---\n\n##"
+        },
+        {
+          "id": "B2",
+          "category": "reconstruction",
+          "draft_span": [
+            781,
+            868
+          ],
+          "text": "This expression uses the numbers **13**, **5**, and **3**, and gives the result **24**.",
+          "reason": "Initial 3-number expression is correctly identified as incomplete. Its construction is included as a prerequisite, not labeled an error. Explicit corrections remain protected; neutral-use rationalization is included in C4.",
+          "depends_on": [
+            "B1"
+          ],
+          "arithmetic": "正确复述用了13、5、3且结果24",
+          "resource_use": "没有声称四数都用完；提示遗漏7的线索",
+          "functional_role": "候选摘要",
+          "semantic_repeat_group": "",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            296,
+            321
+          ],
+          "new_unique_keys": 25,
+          "prefill_added_edges": 11150,
+          "decode_1024_added_edges": 25600,
+          "leave_one_out_prefill_edges": 11150,
+          "context_before": "look for combinations that form these products or sums, keeping in mind we need to use all four numbers exactly once.\n\n---\n\n### Key Insight\n\nOne promising path is to consider:\n\n$$\n(13 - 5) \\times 3 = 8 \\times 3 = 24\n$$\n\n",
+          "context_after": "\n\nHowever, this expression **does not use the number 7**, which violates the constraint of using each number exactly once.\n\n---\n\n### Incorporating the Number 7\n\nWe must find a way to **include the number 7** in the expre"
+        },
+        {
+          "id": "B3",
+          "category": "reconstruction",
+          "draft_span": [
+            1029,
+            1222
+          ],
+          "text": "We must find a way to **include the number 7** in the expression **without changing the result**. One clever way to do this is to **add and subtract 7** in a way that does not affect the value:",
+          "reason": "Initial 3-number expression is correctly identified as incomplete. Its construction is included as a prerequisite, not labeled an error. Explicit corrections remain protected; neutral-use rationalization is included in C4.",
+          "depends_on": [
+            "B1"
+          ],
+          "arithmetic": "正确：加减7保持数值不变",
+          "resource_use": "用同一个7作+7和−7违反各用一次",
+          "functional_role": "违规修补建议＋中性运算理由，混合片段",
+          "semantic_repeat_group": "",
+          "usefulness": "未确定。可同时帮助重建、约束核验或重新求解；不根据本轮成败标成有害/保护。",
+          "token_span": [
+            354,
+            402
+          ],
+          "new_unique_keys": 48,
+          "prefill_added_edges": 17520,
+          "decode_1024_added_edges": 49152,
+          "leave_one_out_prefill_edges": 17520,
+          "context_before": "bers **13**, **5**, and **3**, and gives the result **24**.\n\nHowever, this expression **does not use the number 7**, which violates the constraint of using each number exactly once.\n\n---\n\n### Incorporating the Number 7\n\n",
+          "context_after": "\n\n$$\n(13 - 5) \\times 3 + (7 - 7) = 24 + 0 = 24\n$$\n\nThis expression uses **all four numbers exactly once**:\n- 13\n- 5\n- 3\n- 7 (used in both $+7$ and $-7$)\n\n---\n\n### Final Expression\n\nSo, the expression that uses all four n"
+        }
+      ],
+      "prefill_added_edges": 40942,
+      "sum_individual_prefill_added_edges": 40942,
+      "decode_1024_added_edges": 101376
+    }
+  }
+}

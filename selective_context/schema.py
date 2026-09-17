@@ -31,6 +31,9 @@ class SelectiveContextRequest:
     draft_token_span: Tuple[int, int]
     access_mode: AccessMode
     sample_seed: int
+    mask_token_spans: Tuple[Tuple[int, int], ...] = ()
+    # Fixed source units: retain individual path onsets even when key unions merge.
+    path_block_units: Tuple[Tuple[int, int], ...] = ()
 
     def validate(self) -> None:
         if not self.condition_id:
@@ -40,11 +43,22 @@ class SelectiveContextRequest:
         start, end = self.draft_token_span
         if not 0 <= start <= end <= len(self.input_ids):
             raise ValueError("draft_token_span is outside input_ids")
+        previous = -1
+        for lo, hi in self.mask_token_spans:
+            if not start <= lo < hi <= end or lo < previous:
+                raise ValueError("mask_token_spans must be sorted, disjoint and inside draft")
+            previous = hi
+        if self.mask_token_spans and self.access_mode not in (AccessMode.LATE_BLOCK, AccessMode.PATH_BLOCK):
+            raise ValueError("Multi-region requests require late_block or path_block")
+        validate_path_units(self.path_block_units, self.mask_token_spans,
+                            self.draft_token_span, self.access_mode)
         if self.input_ids_sha256 != token_ids_sha256(self.input_ids):
             raise ValueError("input_ids_sha256 does not match input_ids")
 
     def to_dict(self) -> Dict[str, Any]:
         value = asdict(self)
+        if not self.path_block_units:
+            value.pop('path_block_units')  # Preserve legacy serialized requests.
         value["access_mode"] = self.access_mode.value
         value["draft_token_span"] = list(self.draft_token_span)
         return value
@@ -59,4 +73,21 @@ class SelectiveContextRequest:
             draft_token_span=tuple(value["draft_token_span"]),
             access_mode=AccessMode(value["access_mode"]),
             sample_seed=int(value["sample_seed"]),
+            mask_token_spans=tuple(tuple(x) for x in value.get('mask_token_spans', [])),
+            path_block_units=tuple(tuple(x) for x in value.get('path_block_units', [])),
         )
+
+
+def validate_path_units(units, spans, draft_span, mode):
+    if not units:
+        return
+    if mode is not AccessMode.PATH_BLOCK or not spans:
+        raise ValueError('Fixed path units require path_block and explicit key spans')
+    if tuple(units) != tuple(sorted(set(units))):
+        raise ValueError('Fixed units must be sorted and unique')
+    start,end = draft_span
+    if any(not start <= lo < hi <= end for lo,hi in units):
+        raise ValueError('Fixed path unit outside draft')
+    keys = lambda ranges: {k for lo,hi in ranges for k in range(lo,hi)}
+    if keys(units) != keys(spans):
+        raise ValueError('Fixed path units must cover exactly the explicit key union')

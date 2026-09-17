@@ -1,0 +1,498 @@
+{
+  "conditions": {
+    "R2": {
+      "correct": 10,
+      "eos": 24,
+      "parse": 24,
+      "mean_tokens": 5002.666666666667
+    },
+    "X": {
+      "correct": 18,
+      "eos": 24,
+      "parse": 24,
+      "mean_tokens": 4596.666666666667
+    },
+    "L_CALC_v1": {
+      "correct": 8,
+      "eos": 24,
+      "parse": 24,
+      "mean_tokens": 4582.75
+    },
+    "XC": {
+      "correct": 14,
+      "eos": 24,
+      "parse": 23,
+      "mean_tokens": 4819.958333333333
+    }
+  },
+  "questions": {
+    "1189": {
+      "R2": 2,
+      "X": 2,
+      "L_CALC_v1": 1,
+      "XC": 3
+    },
+    "123": {
+      "R2": 1,
+      "X": 2,
+      "L_CALC_v1": 2,
+      "XC": 3
+    },
+    "577": {
+      "R2": 4,
+      "X": 4,
+      "L_CALC_v1": 1,
+      "XC": 3
+    },
+    "719": {
+      "R2": 1,
+      "X": 2,
+      "L_CALC_v1": 1,
+      "XC": 0
+    },
+    "1084": {
+      "R2": 2,
+      "X": 4,
+      "L_CALC_v1": 3,
+      "XC": 3
+    },
+    "1226": {
+      "R2": 0,
+      "X": 4,
+      "L_CALC_v1": 0,
+      "XC": 2
+    }
+  },
+  "effects": {
+    "R2->XC": {
+      "pp": 16.666666666666664,
+      "recovery": 8,
+      "harm": 4,
+      "ci": [
+        -8.333333333333332,
+        41.66666666666667
+      ]
+    },
+    "X->XC": {
+      "pp": -16.666666666666664,
+      "recovery": 3,
+      "harm": 7,
+      "ci": [
+        -41.66666666666667,
+        8.333333333333332
+      ]
+    },
+    "L_CALC_v1->XC": {
+      "pp": 25.0,
+      "recovery": 8,
+      "harm": 2,
+      "ci": [
+        0.0,
+        45.83333333333333
+      ]
+    },
+    "R2->L_CALC_v1": {
+      "pp": -8.333333333333332,
+      "recovery": 6,
+      "harm": 8,
+      "ci": [
+        -37.5,
+        16.666666666666664
+      ]
+    }
+  },
+  "cases": [
+    {
+      "id": "1189",
+      "seed": 2027,
+      "scores": {
+        "R2": 0,
+        "X": 1,
+        "L_CALC_v1": 0,
+        "XC": 1
+      },
+      "answers": {
+        "R2": "(12 \\times 12) \\div (12 \\div (12 - 10))",
+        "X": "(12 \\times 12) - (10 \\times 12)",
+        "L_CALC_v1": "(12 \\times 12) \\div (12 \\div (12 - 10))",
+        "XC": "(12 \\times 12) - (12 \\times 10)"
+      }
+    },
+    {
+      "id": "1189",
+      "seed": 12027,
+      "scores": {
+        "R2": 1,
+        "X": 0,
+        "L_CALC_v1": 0,
+        "XC": 1
+      },
+      "answers": {
+        "R2": "(12 \\times 12) - (12 \\times 10)",
+        "X": "\\frac{12 \\times 12}{12 \\div (12 - 10)}",
+        "L_CALC_v1": "(12 \\times 12) \\div (12 \\div (12 - 10))",
+        "XC": "(12 \\times 12) - (12 \\times 10)"
+      }
+    },
+    {
+      "id": "1189",
+      "seed": 22027,
+      "scores": {
+        "R2": 0,
+        "X": 0,
+        "L_CALC_v1": 1,
+        "XC": 1
+      },
+      "answers": {
+        "R2": "(12 \\times 12) \\div (12 \\div (12 - 10))",
+        "X": "\\frac{12 \\times 12}{12 \\div (12 - 10)}",
+        "L_CALC_v1": "(12 \\times 12) - (12 \\times 10)",
+        "XC": "12 \\times 12 - 12 \\times 10"
+      }
+    },
+    {
+      "id": "1189",
+      "seed": 32027,
+      "scores": {
+        "R2": 1,
+        "X": 1,
+        "L_CALC_v1": 0,
+        "XC": 0
+      },
+      "answers": {
+        "R2": "(12 \\times 12) - (12 \\times 10)",
+        "X": "(12 \\times 12) - (12 \\times 10)",
+        "L_CALC_v1": "(12 \\times 12) \\div (12 \\div (12 - 10))",
+        "XC": null
+      }
+    },
+    {
+      "id": "123",
+      "seed": 2027,
+      "scores": {
+        "R2": 0,
+        "X": 1,
+        "L_CALC_v1": 0,
+        "XC": 1
+      },
+      "answers": {
+        "R2": "24",
+        "X": "8 \\times (5 - 1) - 8",
+        "L_CALC_v1": "8 \\times \\left(5 - \\left(\\frac{8}{5 - 1}\\right)\\right)",
+        "XC": "8 \\times (5 - 1) - 8"
+      }
+    },
+    {
+      "id": "123",
+      "seed": 12027,
+      "scores": {
+        "R2": 0,
+        "X": 0,
+        "L_CALC_v1": 1,
+        "XC": 1
+      },
+      "answers": {
+        "R2": "8 \\times \\left(5 - \\left(\\frac{8}{5 - 1}\\right)\\right)",
+        "X": "24",
+        "L_CALC_v1": "8 \\times (5 - 1) - 8",
+        "XC": "8 \\times (5 - 1) - 8"
+      }
+    },
+    {
+      "id": "123",
+      "seed": 22027,
+      "scores": {
+        "R2": 0,
+        "X": 1,
+        "L_CALC_v1": 1,
+        "XC": 1
+      },
+      "answers": {
+        "R2": "8 \\times \\left(5 - \\left(\\frac{8}{5 - 1}\\right)\\right)",
+        "X": "8 \\times (5 - 1) - 8",
+        "L_CALC_v1": "8 \\times (5 - 1) - 8",
+        "XC": "8 \\times (5 - 1) - 8"
+      }
+    },
+    {
+      "id": "123",
+      "seed": 32027,
+      "scores": {
+        "R2": 1,
+        "X": 0,
+        "L_CALC_v1": 0,
+        "XC": 0
+      },
+      "answers": {
+        "R2": "8 \\times (5 - 1) - 8",
+        "X": "8 \\times \\left(5 - \\left(8 \\div (5 - 1)\\right)\\right)",
+        "L_CALC_v1": "24",
+        "XC": "8 \\times \\left((5 - 1) - \\left(\\frac{8}{8}\\right)\\right)"
+      }
+    },
+    {
+      "id": "577",
+      "seed": 2027,
+      "scores": {
+        "R2": 1,
+        "X": 1,
+        "L_CALC_v1": 0,
+        "XC": 0
+      },
+      "answers": {
+        "R2": "(13 - 9) \\times (6 \\times 1)",
+        "X": "(13 - (9 / 1)) \\times 6",
+        "L_CALC_v1": "(13 - 6 + 1) \\times (9 - 6)",
+        "XC": "(13 - 6 + 1) \\times (9 - 6)"
+      }
+    },
+    {
+      "id": "577",
+      "seed": 12027,
+      "scores": {
+        "R2": 1,
+        "X": 1,
+        "L_CALC_v1": 0,
+        "XC": 1
+      },
+      "answers": {
+        "R2": "(13 - 9) \\times 6 \\times 1",
+        "X": "(13 - 9) \\times (6 \\div 1)",
+        "L_CALC_v1": "(13 - 6 + 1) \\times (9 - 6)",
+        "XC": "6 \\times (13 - 9) \\times 1"
+      }
+    },
+    {
+      "id": "577",
+      "seed": 22027,
+      "scores": {
+        "R2": 1,
+        "X": 1,
+        "L_CALC_v1": 0,
+        "XC": 1
+      },
+      "answers": {
+        "R2": "(13 - 9) \\times 6 \\times 1",
+        "X": "6 \\times (13 - 9) \\times 1",
+        "L_CALC_v1": "(13 - 6 + 1) \\times (9 - 6)",
+        "XC": "6 \\times (13 - 9) \\times 1"
+      }
+    },
+    {
+      "id": "577",
+      "seed": 32027,
+      "scores": {
+        "R2": 1,
+        "X": 1,
+        "L_CALC_v1": 1,
+        "XC": 1
+      },
+      "answers": {
+        "R2": "(13 - (9 \\div 1)) \\times 6",
+        "X": "(13 - 9) \\times 6 \\times 1",
+        "L_CALC_v1": "6 \\times (13 - 9) \\times 1",
+        "XC": "6 \\times (13 - 9) \\times 1"
+      }
+    },
+    {
+      "id": "719",
+      "seed": 2027,
+      "scores": {
+        "R2": 0,
+        "X": 0,
+        "L_CALC_v1": 0,
+        "XC": 0
+      },
+      "answers": {
+        "R2": "8 \\times \\left( (7 - 5) + \\left(\\frac{8}{8}\\right) \\right)",
+        "X": "8 \\times \\left(7 - \\left(5 - \\left(8 \\div 8\\right)\\right)\\right)",
+        "L_CALC_v1": "8 \\times \\left(7 - \\left(5 - \\frac{8}{8}\\right)\\right)",
+        "XC": "8 \\times \\left(7 - \\left(5 - \\left(8 \\div 8\\right)\\right)\\right)"
+      }
+    },
+    {
+      "id": "719",
+      "seed": 12027,
+      "scores": {
+        "R2": 1,
+        "X": 0,
+        "L_CALC_v1": 0,
+        "XC": 0
+      },
+      "answers": {
+        "R2": "((7 - 5) \\times 8) + 8",
+        "X": "8 \\times \\left(7 - (5 - (8 \\div 8))\\right)",
+        "L_CALC_v1": "8 \\times \\left(7 - \\left(5 - \\frac{8}{8}\\right)\\right)",
+        "XC": "8 \\times (7 - (5 - (8 \\div 8)))"
+      }
+    },
+    {
+      "id": "719",
+      "seed": 22027,
+      "scores": {
+        "R2": 0,
+        "X": 1,
+        "L_CALC_v1": 0,
+        "XC": 0
+      },
+      "answers": {
+        "R2": "8 \\times \\left(7 - \\left(5 - \\frac{8}{8}\\right)\\right)",
+        "X": "8 \\times (7 - 5) + 8",
+        "L_CALC_v1": "8 \\times \\left(7 - \\left(5 - \\frac{8}{8}\\right)\\right)",
+        "XC": "(7 - (5 - (8 \\div 8))) \\times 8"
+      }
+    },
+    {
+      "id": "719",
+      "seed": 32027,
+      "scores": {
+        "R2": 0,
+        "X": 1,
+        "L_CALC_v1": 1,
+        "XC": 0
+      },
+      "answers": {
+        "R2": "8 \\times \\left(7 - \\left(5 - \\frac{8}{8}\\right)\\right)",
+        "X": "8 \\times (7 - 5) + 8",
+        "L_CALC_v1": "8 \\times (7 - 5) + 8",
+        "XC": "8 \\times \\left(7 - \\left(5 - \\left(8 \\div 8\\right)\\right)\\right)"
+      }
+    },
+    {
+      "id": "1084",
+      "seed": 2027,
+      "scores": {
+        "R2": 1,
+        "X": 1,
+        "L_CALC_v1": 1,
+        "XC": 1
+      },
+      "answers": {
+        "R2": "(5 + 7) \\times (9 - 7)",
+        "X": "(5 + 7) \\times (9 - 7)",
+        "L_CALC_v1": "(9 - 7) \\times (7 + 5)",
+        "XC": "(5 + 7) \\times (9 - 7)"
+      }
+    },
+    {
+      "id": "1084",
+      "seed": 12027,
+      "scores": {
+        "R2": 1,
+        "X": 1,
+        "L_CALC_v1": 0,
+        "XC": 1
+      },
+      "answers": {
+        "R2": "(7 + 5) \\times (9 - 7)",
+        "X": "(7 + 5) \\times (9 - 7)",
+        "L_CALC_v1": "(9 - 5) \\times (7 - (7 \\div 7))",
+        "XC": "(5 + 7) \\times (9 - 7)"
+      }
+    },
+    {
+      "id": "1084",
+      "seed": 22027,
+      "scores": {
+        "R2": 0,
+        "X": 1,
+        "L_CALC_v1": 1,
+        "XC": 0
+      },
+      "answers": {
+        "R2": "(9 - 5) \\times (7 - (7 \\div 7))",
+        "X": "(7 + 5) \\times (9 - 7)",
+        "L_CALC_v1": "(5 + 7) \\times (9 - 7)",
+        "XC": "(9 - 5) \\times (7 - (7 \\div 7))"
+      }
+    },
+    {
+      "id": "1084",
+      "seed": 32027,
+      "scores": {
+        "R2": 0,
+        "X": 1,
+        "L_CALC_v1": 1,
+        "XC": 1
+      },
+      "answers": {
+        "R2": "(9 - 5) \\times (7 - (7 \\div 7))",
+        "X": "(9 - 7) \\times (7 + 5)",
+        "L_CALC_v1": "(5 + 7) \\times (9 - 7)",
+        "XC": "(5 + 7) \\times (9 - 7)"
+      }
+    },
+    {
+      "id": "1226",
+      "seed": 2027,
+      "scores": {
+        "R2": 0,
+        "X": 1,
+        "L_CALC_v1": 0,
+        "XC": 0
+      },
+      "answers": {
+        "R2": "10 + 11 + \\frac{6}{8 - 6}",
+        "X": "10 \\times (11 - 8) - 6",
+        "L_CALC_v1": "10 + 11 + \\frac{6}{8 - 6}",
+        "XC": "10 \\times \\left( (11 - 8) - \\left( \\frac{6}{10} \\right) \\right)"
+      }
+    },
+    {
+      "id": "1226",
+      "seed": 12027,
+      "scores": {
+        "R2": 0,
+        "X": 1,
+        "L_CALC_v1": 0,
+        "XC": 1
+      },
+      "answers": {
+        "R2": "10 + 11 + \\frac{6}{8 - 6}",
+        "X": "((11 - 8) \\times 10) - 6",
+        "L_CALC_v1": "10 + 11 + \\frac{6}{8 - 6}",
+        "XC": "10 \\times (11 - 8) - 6"
+      }
+    },
+    {
+      "id": "1226",
+      "seed": 22027,
+      "scores": {
+        "R2": 0,
+        "X": 1,
+        "L_CALC_v1": 0,
+        "XC": 0
+      },
+      "answers": {
+        "R2": "10 + 11 + \\frac{6}{8 - 6}",
+        "X": "(11 - 8) \\times 10 - 6",
+        "L_CALC_v1": "10 + 11 + \\frac{6}{8 - 6}",
+        "XC": "(11 + 10) + \\left(\\frac{6}{8 - 6}\\right)"
+      }
+    },
+    {
+      "id": "1226",
+      "seed": 32027,
+      "scores": {
+        "R2": 0,
+        "X": 1,
+        "L_CALC_v1": 0,
+        "XC": 1
+      },
+      "answers": {
+        "R2": "10 + 11 + \\frac{6}{8 - 6}",
+        "X": "(11 - 8) \\times 10 - 6",
+        "L_CALC_v1": "10 + 11 + \\frac{6}{8 - 6}",
+        "XC": "10 \\times (11 - 8) - 6"
+      }
+    }
+  ],
+  "interaction": {
+    "pp": -8.333333333333332,
+    "ci": [
+      -41.66666666666667,
+      33.33333333333333
+    ]
+  },
+  "generation_seconds": 3496.8914137743413
+}

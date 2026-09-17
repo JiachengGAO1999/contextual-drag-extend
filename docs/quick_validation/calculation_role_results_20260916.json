@@ -1,0 +1,423 @@
+{
+  "n_questions": 6,
+  "n_pairs": 24,
+  "conditions": {
+    "R0": {
+      "correct": 18,
+      "n": 24,
+      "parse": 24,
+      "eos": 24
+    },
+    "R2": {
+      "correct": 10,
+      "n": 24,
+      "parse": 24,
+      "eos": 24
+    },
+    "E": {
+      "correct": 6,
+      "n": 24,
+      "parse": 24,
+      "eos": 24
+    },
+    "X": {
+      "correct": 18,
+      "n": 24,
+      "parse": 24,
+      "eos": 24
+    },
+    "L_CALC_v1": {
+      "correct": 8,
+      "n": 24,
+      "parse": 24,
+      "eos": 24
+    },
+    "R3": {
+      "correct": 18,
+      "n": 24,
+      "parse": 24,
+      "eos": 24
+    },
+    "R4": {
+      "correct": 20,
+      "n": 24,
+      "parse": 24,
+      "eos": 24
+    }
+  },
+  "questions": {
+    "1189": {
+      "counts": {
+        "R0": 3,
+        "R2": 2,
+        "E": 0,
+        "X": 2,
+        "L_CALC_v1": 1,
+        "R3": 3,
+        "R4": 4
+      },
+      "effect": {
+        "delta_pp": -25.0,
+        "wrong_to_correct": 1,
+        "correct_to_wrong": 2,
+        "ci95_pp": null
+      }
+    },
+    "123": {
+      "counts": {
+        "R0": 4,
+        "R2": 1,
+        "E": 1,
+        "X": 2,
+        "L_CALC_v1": 2,
+        "R3": 3,
+        "R4": 3
+      },
+      "effect": {
+        "delta_pp": 25.0,
+        "wrong_to_correct": 2,
+        "correct_to_wrong": 1,
+        "ci95_pp": null
+      }
+    },
+    "577": {
+      "counts": {
+        "R0": 3,
+        "R2": 4,
+        "E": 1,
+        "X": 4,
+        "L_CALC_v1": 1,
+        "R3": 4,
+        "R4": 2
+      },
+      "effect": {
+        "delta_pp": -75.0,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 3,
+        "ci95_pp": null
+      }
+    },
+    "719": {
+      "counts": {
+        "R0": 2,
+        "R2": 1,
+        "E": 1,
+        "X": 2,
+        "L_CALC_v1": 1,
+        "R3": 1,
+        "R4": 4
+      },
+      "effect": {
+        "delta_pp": 0.0,
+        "wrong_to_correct": 1,
+        "correct_to_wrong": 1,
+        "ci95_pp": null
+      }
+    },
+    "1084": {
+      "counts": {
+        "R0": 3,
+        "R2": 2,
+        "E": 1,
+        "X": 4,
+        "L_CALC_v1": 3,
+        "R3": 4,
+        "R4": 3
+      },
+      "effect": {
+        "delta_pp": 25.0,
+        "wrong_to_correct": 2,
+        "correct_to_wrong": 1,
+        "ci95_pp": null
+      }
+    },
+    "1226": {
+      "counts": {
+        "R0": 3,
+        "R2": 0,
+        "E": 2,
+        "X": 4,
+        "L_CALC_v1": 0,
+        "R3": 3,
+        "R4": 4
+      },
+      "effect": {
+        "delta_pp": 0.0,
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "ci95_pp": null
+      }
+    }
+  },
+  "effects": {
+    "R2->L_CALC_v1": {
+      "delta_pp": -8.333,
+      "wrong_to_correct": 6,
+      "correct_to_wrong": 8,
+      "ci95_pp": [
+        -37.5,
+        16.667
+      ]
+    },
+    "E->L_CALC_v1": {
+      "delta_pp": 8.333,
+      "wrong_to_correct": 6,
+      "correct_to_wrong": 4,
+      "ci95_pp": [
+        -16.667,
+        29.167
+      ]
+    },
+    "X->L_CALC_v1": {
+      "delta_pp": -41.667,
+      "wrong_to_correct": 2,
+      "correct_to_wrong": 12,
+      "ci95_pp": [
+        -70.833,
+        -16.667
+      ]
+    }
+  },
+  "cases": [
+    {
+      "id": "1189",
+      "seed": 2027,
+      "r2": 0,
+      "calc": 0,
+      "answers": {
+        "R2": "(12 \\times 12) \\div (12 \\div (12 - 10))",
+        "L_CALC_v1": "(12 \\times 12) \\div (12 \\div (12 - 10))"
+      }
+    },
+    {
+      "id": "1189",
+      "seed": 12027,
+      "r2": 1,
+      "calc": 0,
+      "answers": {
+        "R2": "(12 \\times 12) - (12 \\times 10)",
+        "L_CALC_v1": "(12 \\times 12) \\div (12 \\div (12 - 10))"
+      }
+    },
+    {
+      "id": "1189",
+      "seed": 22027,
+      "r2": 0,
+      "calc": 1,
+      "answers": {
+        "R2": "(12 \\times 12) \\div (12 \\div (12 - 10))",
+        "L_CALC_v1": "(12 \\times 12) - (12 \\times 10)"
+      }
+    },
+    {
+      "id": "1189",
+      "seed": 32027,
+      "r2": 1,
+      "calc": 0,
+      "answers": {
+        "R2": "(12 \\times 12) - (12 \\times 10)",
+        "L_CALC_v1": "(12 \\times 12) \\div (12 \\div (12 - 10))"
+      }
+    },
+    {
+      "id": "123",
+      "seed": 2027,
+      "r2": 0,
+      "calc": 0,
+      "answers": {
+        "R2": "24",
+        "L_CALC_v1": "8 \\times \\left(5 - \\left(\\frac{8}{5 - 1}\\right)\\right)"
+      }
+    },
+    {
+      "id": "123",
+      "seed": 12027,
+      "r2": 0,
+      "calc": 1,
+      "answers": {
+        "R2": "8 \\times \\left(5 - \\left(\\frac{8}{5 - 1}\\right)\\right)",
+        "L_CALC_v1": "8 \\times (5 - 1) - 8"
+      }
+    },
+    {
+      "id": "123",
+      "seed": 22027,
+      "r2": 0,
+      "calc": 1,
+      "answers": {
+        "R2": "8 \\times \\left(5 - \\left(\\frac{8}{5 - 1}\\right)\\right)",
+        "L_CALC_v1": "8 \\times (5 - 1) - 8"
+      }
+    },
+    {
+      "id": "123",
+      "seed": 32027,
+      "r2": 1,
+      "calc": 0,
+      "answers": {
+        "R2": "8 \\times (5 - 1) - 8",
+        "L_CALC_v1": "24"
+      }
+    },
+    {
+      "id": "577",
+      "seed": 2027,
+      "r2": 1,
+      "calc": 0,
+      "answers": {
+        "R2": "(13 - 9) \\times (6 \\times 1)",
+        "L_CALC_v1": "(13 - 6 + 1) \\times (9 - 6)"
+      }
+    },
+    {
+      "id": "577",
+      "seed": 12027,
+      "r2": 1,
+      "calc": 0,
+      "answers": {
+        "R2": "(13 - 9) \\times 6 \\times 1",
+        "L_CALC_v1": "(13 - 6 + 1) \\times (9 - 6)"
+      }
+    },
+    {
+      "id": "577",
+      "seed": 22027,
+      "r2": 1,
+      "calc": 0,
+      "answers": {
+        "R2": "(13 - 9) \\times 6 \\times 1",
+        "L_CALC_v1": "(13 - 6 + 1) \\times (9 - 6)"
+      }
+    },
+    {
+      "id": "577",
+      "seed": 32027,
+      "r2": 1,
+      "calc": 1,
+      "answers": {
+        "R2": "(13 - (9 \\div 1)) \\times 6",
+        "L_CALC_v1": "6 \\times (13 - 9) \\times 1"
+      }
+    },
+    {
+      "id": "719",
+      "seed": 2027,
+      "r2": 0,
+      "calc": 0,
+      "answers": {
+        "R2": "8 \\times \\left( (7 - 5) + \\left(\\frac{8}{8}\\right) \\right)",
+        "L_CALC_v1": "8 \\times \\left(7 - \\left(5 - \\frac{8}{8}\\right)\\right)"
+      }
+    },
+    {
+      "id": "719",
+      "seed": 12027,
+      "r2": 1,
+      "calc": 0,
+      "answers": {
+        "R2": "((7 - 5) \\times 8) + 8",
+        "L_CALC_v1": "8 \\times \\left(7 - \\left(5 - \\frac{8}{8}\\right)\\right)"
+      }
+    },
+    {
+      "id": "719",
+      "seed": 22027,
+      "r2": 0,
+      "calc": 0,
+      "answers": {
+        "R2": "8 \\times \\left(7 - \\left(5 - \\frac{8}{8}\\right)\\right)",
+        "L_CALC_v1": "8 \\times \\left(7 - \\left(5 - \\frac{8}{8}\\right)\\right)"
+      }
+    },
+    {
+      "id": "719",
+      "seed": 32027,
+      "r2": 0,
+      "calc": 1,
+      "answers": {
+        "R2": "8 \\times \\left(7 - \\left(5 - \\frac{8}{8}\\right)\\right)",
+        "L_CALC_v1": "8 \\times (7 - 5) + 8"
+      }
+    },
+    {
+      "id": "1084",
+      "seed": 2027,
+      "r2": 1,
+      "calc": 1,
+      "answers": {
+        "R2": "(5 + 7) \\times (9 - 7)",
+        "L_CALC_v1": "(9 - 7) \\times (7 + 5)"
+      }
+    },
+    {
+      "id": "1084",
+      "seed": 12027,
+      "r2": 1,
+      "calc": 0,
+      "answers": {
+        "R2": "(7 + 5) \\times (9 - 7)",
+        "L_CALC_v1": "(9 - 5) \\times (7 - (7 \\div 7))"
+      }
+    },
+    {
+      "id": "1084",
+      "seed": 22027,
+      "r2": 0,
+      "calc": 1,
+      "answers": {
+        "R2": "(9 - 5) \\times (7 - (7 \\div 7))",
+        "L_CALC_v1": "(5 + 7) \\times (9 - 7)"
+      }
+    },
+    {
+      "id": "1084",
+      "seed": 32027,
+      "r2": 0,
+      "calc": 1,
+      "answers": {
+        "R2": "(9 - 5) \\times (7 - (7 \\div 7))",
+        "L_CALC_v1": "(5 + 7) \\times (9 - 7)"
+      }
+    },
+    {
+      "id": "1226",
+      "seed": 2027,
+      "r2": 0,
+      "calc": 0,
+      "answers": {
+        "R2": "10 + 11 + \\frac{6}{8 - 6}",
+        "L_CALC_v1": "10 + 11 + \\frac{6}{8 - 6}"
+      }
+    },
+    {
+      "id": "1226",
+      "seed": 12027,
+      "r2": 0,
+      "calc": 0,
+      "answers": {
+        "R2": "10 + 11 + \\frac{6}{8 - 6}",
+        "L_CALC_v1": "10 + 11 + \\frac{6}{8 - 6}"
+      }
+    },
+    {
+      "id": "1226",
+      "seed": 22027,
+      "r2": 0,
+      "calc": 0,
+      "answers": {
+        "R2": "10 + 11 + \\frac{6}{8 - 6}",
+        "L_CALC_v1": "10 + 11 + \\frac{6}{8 - 6}"
+      }
+    },
+    {
+      "id": "1226",
+      "seed": 32027,
+      "r2": 0,
+      "calc": 0,
+      "answers": {
+        "R2": "10 + 11 + \\frac{6}{8 - 6}",
+        "L_CALC_v1": "10 + 11 + \\frac{6}{8 - 6}"
+      }
+    }
+  ]
+}

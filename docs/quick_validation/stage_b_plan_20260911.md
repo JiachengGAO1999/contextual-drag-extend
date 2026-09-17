@@ -1,0 +1,17 @@
+# Stage B: expansion to independent Game24 questions
+
+Authorized by user after Stage A. Target lower end of discussed10–15:10total independent problems, consisting of3fixed Stage A problems and7new problems. Four paired evaluation seeds per problem, R0/R2/R3/R4. Primary generalization evidence must be reported on7new questions separately;10-question combined results descriptive. Previously observed3cases are not an independent confirmation set.
+
+Frozen evaluation: exact independent-solve templates from initial control, HF BF16 eager Qwen3-8B, Thinking temperature.6/top_p.95/top_k20/context32768, fixed whole-draft late/path masks and full-prefill first-token R3 boundary, original official scorer. No R1, new model/task, fine-grained masks, or attribution. Preflight against saved initial-control configuration before paired evaluation.
+
+Seeds fixed now: evaluation bases2027,12027,22027,32027 plus original pool index. For old3questions reuse the first four chronologically collected independent-prompt groups; retain remaining two Stage A groups in their original report without choosing seeds by outcome. New7questions require112new paired generations (7x4x4). Combined balanced report160outputs (10x4x4).
+
+Draft acquisition: original pinned1362-row ToT pool, shuffle seed2027, next untested indices[32,64),32problems x4samples=128generation cap for first batch. Retain original upstream direct draft-generation prompt and Thinking sampling, matching earlier draft acquisition. Current modified independent-solve prompt applies to evaluation only. Draft seeds102027+4*pool_index+j. Previously tested indices0–31 not sampled again.
+
+Selection before evaluating interventions: completed EOS, parsable Thinking, nonempty final; at least one correct companion and one manually confirmed reasoning-failure draft for that problem. Exclude format-only or final-transcription-only failures. Review in fixed pool order and select first7eligible new problems, first eligible failed draft by sample order per problem. Never use R3/R4 outcomes for selection. Retain all raw attempts and exclusion reasons. Record error-type/number-pattern diversity; do not claim representative sampling or discard eligible questions solely to favor a recovery pattern. This batch may yield fewer than7eligible questions; no automatic claim of target success or silent replacement with truncated/format-only cases.
+
+Current launch is draft acquisition only. After the bounded batch, human-readable candidate review and a frozen manifest precede any paired evaluation; this review remains authorized work, not a new permission gate. If insufficient yield or a material methodological decision arises, report and ask rather than silently change the setup. No automatic unaudited candidate promotion. Success returns to prior authorized GPU4 model residency.
+
+Reporting: accuracy first, then per-question paired effects and wrong→correct/correct→wrong, question-cluster bootstrap CIs, residual/recovery ratios when defined, parse/EOS, body/format diagnostics and intervention sanity. Assess net recovery and heterogeneity on new questions; do not demand significance or advance automatically to responsibility decomposition.
+
+Run outputs/game24-stage-b-drafts-20260911, sibling.log/.pid; tmux qwen3-stage-b-gpu4. First-batch sampling runtime estimate roughly10–14hours based on previous64-draft batch6h, with substantial length variability; evaluation additional. No source-code changes required for draft launch.

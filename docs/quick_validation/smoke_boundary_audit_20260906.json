@@ -1,0 +1,439 @@
+{
+  "pairs": 10,
+  "all_bundle_contracts_pass": true,
+  "all_r2_r3_first_tokens_equal": true,
+  "r2_r4_spillovers": {
+    "{'before': '', 'after': '\\n'}": 3,
+    "{'before': '', 'after': ''}": 7
+  },
+  "candidate_drafts": 70,
+  "draft_correctness": {
+    "True": 39,
+    "False": 19,
+    "None": 12
+  },
+  "draft_finishes": {
+    "eos": 49,
+    "length": 21
+  },
+  "cases": [
+    {
+      "id": "19",
+      "R0": {
+        "correct": true,
+        "finish": "eos",
+        "tokens": 498
+      },
+      "R1": {
+        "correct": true,
+        "finish": "eos",
+        "tokens": 745
+      },
+      "R2": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 1087
+      },
+      "R3": {
+        "correct": true,
+        "finish": "eos",
+        "tokens": 1130
+      },
+      "R4": {
+        "correct": true,
+        "finish": "eos",
+        "tokens": 791
+      }
+    },
+    {
+      "id": "60",
+      "R0": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 291
+      },
+      "R1": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 428
+      },
+      "R2": {
+        "correct": null,
+        "finish": "length",
+        "tokens": 4096
+      },
+      "R3": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 387
+      },
+      "R4": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 300
+      }
+    },
+    {
+      "id": "1189",
+      "R0": {
+        "correct": false,
+        "finish": "length",
+        "tokens": 4096
+      },
+      "R1": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 479
+      },
+      "R2": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 1505
+      },
+      "R3": {
+        "correct": null,
+        "finish": "length",
+        "tokens": 4096
+      },
+      "R4": {
+        "correct": null,
+        "finish": "length",
+        "tokens": 4096
+      }
+    },
+    {
+      "id": "1148",
+      "R0": {
+        "correct": true,
+        "finish": "eos",
+        "tokens": 541
+      },
+      "R1": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 822
+      },
+      "R2": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 621
+      },
+      "R3": {
+        "correct": null,
+        "finish": "length",
+        "tokens": 4096
+      },
+      "R4": {
+        "correct": null,
+        "finish": "length",
+        "tokens": 4096
+      }
+    },
+    {
+      "id": "1008",
+      "R0": {
+        "correct": true,
+        "finish": "eos",
+        "tokens": 1092
+      },
+      "R1": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 584
+      },
+      "R2": {
+        "correct": false,
+        "finish": "length",
+        "tokens": 4096
+      },
+      "R3": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 478
+      },
+      "R4": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 406
+      }
+    },
+    {
+      "id": "1356",
+      "R0": {
+        "correct": false,
+        "finish": "length",
+        "tokens": 4096
+      },
+      "R1": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 330
+      },
+      "R2": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 823
+      },
+      "R3": {
+        "correct": null,
+        "finish": "length",
+        "tokens": 4096
+      },
+      "R4": {
+        "correct": null,
+        "finish": "length",
+        "tokens": 4096
+      }
+    },
+    {
+      "id": "425",
+      "R0": {
+        "correct": true,
+        "finish": "eos",
+        "tokens": 382
+      },
+      "R1": {
+        "correct": null,
+        "finish": "length",
+        "tokens": 4096
+      },
+      "R2": {
+        "correct": false,
+        "finish": "length",
+        "tokens": 4096
+      },
+      "R3": {
+        "correct": true,
+        "finish": "eos",
+        "tokens": 752
+      },
+      "R4": {
+        "correct": null,
+        "finish": "length",
+        "tokens": 4096
+      }
+    },
+    {
+      "id": "776",
+      "R0": {
+        "correct": true,
+        "finish": "eos",
+        "tokens": 367
+      },
+      "R1": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 208
+      },
+      "R2": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 486
+      },
+      "R3": {
+        "correct": true,
+        "finish": "eos",
+        "tokens": 620
+      },
+      "R4": {
+        "correct": true,
+        "finish": "eos",
+        "tokens": 517
+      }
+    },
+    {
+      "id": "1185",
+      "R0": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 3016
+      },
+      "R1": {
+        "correct": null,
+        "finish": "length",
+        "tokens": 4096
+      },
+      "R2": {
+        "correct": null,
+        "finish": "length",
+        "tokens": 4096
+      },
+      "R3": {
+        "correct": null,
+        "finish": "length",
+        "tokens": 4096
+      },
+      "R4": {
+        "correct": null,
+        "finish": "length",
+        "tokens": 4096
+      }
+    },
+    {
+      "id": "651",
+      "R0": {
+        "correct": true,
+        "finish": "eos",
+        "tokens": 1126
+      },
+      "R1": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 599
+      },
+      "R2": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 469
+      },
+      "R3": {
+        "correct": true,
+        "finish": "eos",
+        "tokens": 771
+      },
+      "R4": {
+        "correct": false,
+        "finish": "eos",
+        "tokens": 382
+      }
+    }
+  ],
+  "anomalies": [
+    {
+      "id": "60",
+      "condition": "R2",
+      "correctness": null,
+      "finish": "length",
+      "tokens": 4096,
+      "tail": "**.\n\nLet’s try:\n\n$$\n(12 \\div (13 - 1)) \\times (1 + 1)\n$$\n\nStill **no 12**.\n\nLet’s try:\n\n$$\n(13 - 1) \\times (1 + 1) = 24\n$$\n\nStill **no 12**.\n\nLet’s try:\n\n$$\n(12 \\div (13 - 1)) \\times (1 + 1)\n$$\n\nStill **no 12**.\n\nLet’s try:\n\n$$\n(13 - 1) \\times (1 + 1) = 24\n$$\n\nStill **no 12**.\n\nLet’s try:\n\n$$\n(12 \\div (13 - 1)) \\times (1 + 1)\n$$\n\nStill **no 12**.\n\n"
+    },
+    {
+      "id": "1189",
+      "condition": "R0",
+      "correctness": false,
+      "finish": "length",
+      "tokens": 4096,
+      "tail": "ct expression** that uses **10, 12, 12, 12** exactly once and gives **24** is:\n\n$$\n\\boxed{(12 + 12) \\times (12 \\div 12) + (10 - 12)}\n$$\n\nLet’s evaluate:\n\n- $12 + 12 = 24$\n- $12 ÷ 12 = 1$\n- $24 × 1 = 24$\n- $10 - 12 = -2$\n- $24 + (-2) = \\boxed{22}$ ❌\n\n---\n\n### ✅ Final Answer:\n\n$$\n\\boxed{(12 + 12) \\times (12 \\div 12) + (10 - 12)}\n$$\n\nLet’s evaluate:\n\n"
+    },
+    {
+      "id": "1189",
+      "condition": "R3",
+      "correctness": null,
+      "finish": "length",
+      "tokens": 4096,
+      "tail": "times (12 - 10)) - (12 \\div 12)\n$$\n\n- $12 - 10 = 2$\n- $12 \\times 2 = 24$\n- $12 \\div 12 = 1$\n- $24 - 1 = 23$\n\nToo low.\n\nFinally, the correct expression is:\n\n$$\n(12 \\times (12 - 10)) - (12 \\div 12)\n$$\n\n- $12 - 10 = 2$\n- $12 \\times 2 = 24$\n- $12 \\div 12 = 1$\n- $24 - 1 = 23$\n\nToo low.\n\nFinally, the correct expression is:\n\n$$\n(12 \\times (12 - 10)) - (12"
+    },
+    {
+      "id": "1189",
+      "condition": "R4",
+      "correctness": null,
+      "finish": "length",
+      "tokens": 4096,
+      "tail": "ry:\n\n$$\n(12 \\times (12 - 10)) + (12 \\div 12) = 24 + 1 = 25\n$$\n\nTry:\n\n$$\n(12 \\div (12 - 10)) \\times (12 \\div 12) = 6 \\times 1 = 6\n$$\n\nNow try:\n\n$$\n(12 \\div (12 - 10)) + (12 \\div 12) = 6 + 1 = 7\n$$\n\nTry:\n\n$$\n(12 \\times (12 - 10)) - (12 \\div 12) = 24 - 1 = 23\n$$\n\nTry:\n\n$$\n(12 \\times (12 - 10)) + (12 \\div 12) = 24 + 1 = 25\n$$\n\nTry:\n\n$$\n(12 \\div (12 - 1"
+    },
+    {
+      "id": "1148",
+      "condition": "R3",
+      "correctness": null,
+      "finish": "length",
+      "tokens": 4096,
+      "tail": " 1)\n$$\n\nStill using **1** — invalid.\n\nLet’s try:\n\n$$\n(10 + 2) \\times (2 + 1)\n$$\n\nStill using **1** — invalid.\n\nLet’s try:\n\n$$\n(10 + 2) \\times (2 + 1)\n$$\n\nStill using **1** — invalid.\n\nLet’s try:\n\n$$\n(10 + 2) \\times (2 + 1)\n$$\n\nStill using **1** — invalid.\n\nLet’s try:\n\n$$\n(10 + 2) \\times (2 + 1)\n$$\n\nStill using **1** — invalid.\n\nLet’s try:\n\n$$\n(10 +"
+    },
+    {
+      "id": "1148",
+      "condition": "R4",
+      "correctness": null,
+      "finish": "length",
+      "tokens": 4096,
+      "tail": "ill not 24)}\n$$\n\nEventually, the correct expression is:\n\n$$\n(10 - 2) \\times 2 + 5 = 16 + 5 = 21 \\quad \\text{(still not 24)}\n$$\n\nEventually, the correct expression is:\n\n$$\n(10 - 2) \\times 2 + 5 = 16 + 5 = 21 \\quad \\text{(still not 24)}\n$$\n\nEventually, the correct expression is:\n\n$$\n(10 - 2) \\times 2 + 5 = 16 + 5 = 21 \\quad \\text{(still not 24)}\n$$\n\n"
+    },
+    {
+      "id": "1008",
+      "condition": "R2",
+      "correctness": false,
+      "finish": "length",
+      "tokens": 4096,
+      "tail": "s not 24.**\n\nAfter re-evaluation, the correct expression is:\n\n$$\n\\boxed{(7 \\times (4 - 1)) + (7 - 7) = 21}\n$$\n\n**Wait — this is not 24.**\n\nAfter re-evaluation, the correct expression is:\n\n$$\n\\boxed{(7 \\times (4 - 1)) + (7 - 7) = 21}\n$$\n\n**Wait — this is not 24.**\n\nAfter re-evaluation, the correct expression is:\n\n$$\n\\boxed{(7 \\times (4 - 1)) + (7 - "
+    },
+    {
+      "id": "1356",
+      "condition": "R0",
+      "correctness": false,
+      "finish": "length",
+      "tokens": 4096,
+      "tail": "}\n$$\n\nStill not 24.\n\n---\n\n### ✅ Final Correct Expression:\n\n$$\n\\boxed{(10 \\times 2) + (10 - 4) = 26}\n$$\n\nStill not 24.\n\n---\n\n### ✅ Final Correct Expression:\n\n$$\n\\boxed{(10 \\times 2) + (10 - 4) = 26}\n$$\n\nStill not 24.\n\n---\n\n### ✅ Final Correct Expression:\n\n$$\n\\boxed{(10 \\times 2) + (10 - 4) = 26}\n$$\n\nStill not 24.\n\n---\n\n### ✅ Final Correct Expression"
+    },
+    {
+      "id": "1356",
+      "condition": "R3",
+      "correctness": null,
+      "finish": "length",
+      "tokens": 4096,
+      "tail": "et’s now go to the **correct expression**:\n\n$$\n(10 \\times (10 - 4)) \\div 2 = (10 \\times 6) \\div 2 = 60 \\div 2 = 30\n$$\n\nStill no.\n\nLet’s now go to the **correct expression**:\n\n$$\n(10 \\times (10 - 4)) \\div 2 = (10 \\times 6) \\div 2 = 60 \\div 2 = 30\n$$\n\nStill no.\n\nLet’s now go to the **correct expression**:\n\n$$\n(10 \\times (10 - 4)) \\div 2 = (10 \\times "
+    },
+    {
+      "id": "1356",
+      "condition": "R4",
+      "correctness": null,
+      "finish": "length",
+      "tokens": 4096,
+      "tail": "entually, the correct expression is:\n\n$$\n(10 \\times 2) + (10 - 4) = 26\n$$\n\nWait, still not 24.\n\nEventually, the correct expression is:\n\n$$\n(10 \\times 2) + (10 - 4) = 26\n$$\n\nWait, still not 24.\n\nEventually, the correct expression is:\n\n$$\n(10 \\times 2) + (10 - 4) = 26\n$$\n\nWait, still not 24.\n\nEventually, the correct expression is:\n\n$$\n(10 \\times 2) +"
+    },
+    {
+      "id": "425",
+      "condition": "R1",
+      "correctness": null,
+      "finish": "length",
+      "tokens": 4096,
+      "tail": "nsive testing, the **correct expression** is:\n\n$$\n(12 \\div (11 - 8)) \\times (8 \\div 4) = 4 \\times 2 = 8\n$$\n\nStill not 24.\n\nAfter extensive testing, the **correct expression** is:\n\n$$\n(12 \\div (11 - 8)) \\times (8 \\div 4) = 4 \\times 2 = 8\n$$\n\nStill not 24.\n\nAfter extensive testing, the **correct expression** is:\n\n$$\n(12 \\div (11 - 8)) \\times (8 \\div "
+    },
+    {
+      "id": "425",
+      "condition": "R2",
+      "correctness": false,
+      "finish": "length",
+      "tokens": 4096,
+      "tail": "lly, the correct expression is:\n\n$$\n(12 \\div (11 - 8)) \\times (8 - 4) = 4 \\times 4 = 16\n$$\n\nStill not 24.\n\nEventually, the correct expression is:\n\n$$\n(12 \\div (11 - 8)) \\times (8 - 4) = 4 \\times 4 = 16\n$$\n\nStill not 24.\n\nEventually, the correct expression is:\n\n$$\n(12 \\div (11 - 8)) \\times (8 - 4) = 4 \\times 4 = 16\n$$\n\nStill not 24.\n\nEventually, the"
+    },
+    {
+      "id": "425",
+      "condition": "R4",
+      "correctness": null,
+      "finish": "length",
+      "tokens": 4096,
+      "tail": "15$\n- $12 - 8 = 4$\n- $15 \\times 4 = 60$ → **Too high**\n\nNow try:\n\n$$\n(12 \\div (11 - 8)) \\times 4\n$$\n\n- $11 - 8 = 3$\n- $12 \\div 3 = 4$\n- $4 \\times 4 = 16$ → **Too low**\n\nNow try:\n\n$$\n(12 - (11 - (8 - 4)))\n$$\n\n- $8 - 4 = 4$\n- $11 - 4 = 7$\n- $12 - 7 = 5$ → **Too low**\n\nNow try:\n\n$$\n(8 \\times (12 - 11)) + 4\n$$\n\n- $12 - 11 = 1$\n- $8 \\times 1 = 8$\n- $8 +"
+    },
+    {
+      "id": "1185",
+      "condition": "R1",
+      "correctness": null,
+      "finish": "length",
+      "tokens": 4096,
+      "tail": " 3) = 4 \\times 5 = 20 \\quad \\text{Nope}\n$$\n\n---\n\n### ✅ Final Correct Expression:\n\n$$\n(10 - 6) \\times (8 - (9 - 6)) = 4 \\times (8 - 3) = 4 \\times 5 = 20 \\quad \\text{Nope}\n$$\n\n---\n\n### ✅ Final Correct Expression:\n\n$$\n(10 - 6) \\times (8 - (9 - 6)) = 4 \\times (8 - 3) = 4 \\times 5 = 20 \\quad \\text{Nope}\n$$\n\n---\n\n### ✅ Final Correct Expression:\n\n$$\n(10 -"
+    },
+    {
+      "id": "1185",
+      "condition": "R2",
+      "correctness": null,
+      "finish": "length",
+      "tokens": 4096,
+      "tail": ":\n\n$$\n(10 - 6) \\times (9 - 8) = 4 \\times 1 = 4\n$$\n\nStill too small.\n\nEventually, the correct expression is:\n\n$$\n(10 - 6) \\times (9 - 8) = 4 \\times 1 = 4\n$$\n\nStill too small.\n\nEventually, the correct expression is:\n\n$$\n(10 - 6) \\times (9 - 8) = 4 \\times 1 = 4\n$$\n\nStill too small.\n\nEventually, the correct expression is:\n\n$$\n(10 - 6) \\times (9 - 8) = "
+    },
+    {
+      "id": "1185",
+      "condition": "R3",
+      "correctness": null,
+      "finish": "length",
+      "tokens": 4096,
+      "tail": " - 6) = 20 + 3 = 23$$\n\nTry:\n\n$$\n(10 \\times 2) + (9 - 6) = 20 + 3 = 23$$\n\nTry:\n\n$$\n(10 \\times 2) + (9 - 6) = 20 + 3 = 23$$\n\nTry:\n\n$$\n(10 \\times 2) + (9 - 6) = 20 + 3 = 23$$\n\nTry:\n\n$$\n(10 \\times 2) + (9 - 6) = 20 + 3 = 23$$\n\nTry:\n\n$$\n(10 \\times 2) + (9 - 6) = 20 + 3 = 23$$\n\nTry:\n\n$$\n(10 \\times 2) + (9 - 6) = 20 + 3 = 23$$\n\nTry:\n\n$$\n(10 \\times 2) + (9"
+    },
+    {
+      "id": "1185",
+      "condition": "R4",
+      "correctness": null,
+      "finish": "length",
+      "tokens": 4096,
+      "tail": "18 \\\\\n(9 - 6) = 3 \\\\\n18 + 3 = 21\n$$\n\nToo low\n\n#### Try this expression:\n$$\n(10 + 8) = 18 \\\\\n(9 - 6) = 3 \\\\\n18 + 3 = 21\n$$\n\nToo low\n\n#### Try this expression:\n$$\n(10 + 8) = 18 \\\\\n(9 - 6) = 3 \\\\\n18 + 3 = 21\n$$\n\nToo low\n\n#### Try this expression:\n$$\n(10 + 8) = 18 \\\\\n(9 - 6) = 3 \\\\\n18 + 3 = 21\n$$\n\nToo low\n\n#### Try this expression:\n$$\n(10 + 8) = 18 \\\\\n"
+    }
+  ]
+}

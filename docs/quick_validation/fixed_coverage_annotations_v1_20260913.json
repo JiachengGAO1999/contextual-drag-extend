@@ -1,0 +1,1255 @@
+{
+  "version": "fixed_units_v1",
+  "status": "annotation_frozen_for_preflight_not_generation",
+  "development_set": "current ten; five diagnostic cases, not held out",
+  "rules": [
+    "C1 retains old merged M_X units exactly to test reuse.",
+    "C2 adds complete reconstruction units, each onset fixed at its token end.",
+    "C3 equals C2 if no distinct additional downstream inference is identified.",
+    "C4 adds explicitly linked validity claims or justifications; no entire-suffix closure.",
+    "Text dependency hypotheses only; arithmetic-correct and rejected text explicitly distinguished.",
+    "Control candidates are reviewed non-target complete units; matching may be infeasible."
+  ],
+  "questions": {
+    "1226": {
+      "draft": "To solve the problem of using the numbers **6, 8, 10, and 11** exactly once each, along with the operations **addition, subtraction, multiplication, division**, and **parentheses**, to make **24**, we need to strategically combine these numbers in a way that satisfies all constraints and yields the desired result.\n\n---\n\n### Step-by-Step Reasoning:\n\nWe are given the numbers:  \n**6, 8, 10, 11**  \nWe must use **each number exactly once** and apply operations to reach **24**.\n\nLet’s consider possible groupings and operations. A promising path is to first compute a small value from a subset of numbers, then combine it with the rest.\n\n---\n\n### Key Insight:\n\nLet’s try to create a **small number** from two of the numbers, then use that in a division or addition to reach **24**.\n\n- Consider **8 - 6 = 2**\n- Then, **6 ÷ 2 = 3**\n- Now, we have the numbers **10, 11**, and the result **3**\n- Adding them: **10 + 11 + 3 = 24**\n\nThis uses **6, 8, 10, and 11** exactly once.\n\n---\n\n### Final Expression:\n\n$$\n10 + 11 + \\frac{6}{8 - 6}\n$$\n\n---\n\n### Verification:\n\n- **8 - 6 = 2**\n- **6 ÷ 2 = 3**\n- **10 + 11 = 21**\n- **21 + 3 = 24**\n\n✅ All numbers used once.  \n✅ All operations valid (addition, subtraction, division).  \n✅ Parentheses used appropriately.\n\n---\n\n### Final Answer:\n\n$$\n\\boxed{10 + 11 + \\frac{6}{8 - 6}}\n$$",
+      "draft_key": "1226/1",
+      "numbers": [
+        6,
+        8,
+        10,
+        11
+      ],
+      "notes": "6 reused between 8-6 and 6/2. Arithmetic is correct. Later sums consume intermediate results; included in reconstruction rather than a fabricated extra layer.",
+      "units": [
+        {
+          "id": "X1",
+          "category": "expression",
+          "draft_span": [
+            1000,
+            1031
+          ],
+          "text": "$$\n10 + 11 + \\frac{6}{8 - 6}\n$$",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review",
+          "status": "asserted_or_unspecified",
+          "depends_on": []
+        },
+        {
+          "id": "X2",
+          "category": "expression",
+          "draft_span": [
+            1273,
+            1312
+          ],
+          "text": "$$\n\\boxed{10 + 11 + \\frac{6}{8 - 6}}\n$$",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review",
+          "status": "asserted_or_unspecified",
+          "depends_on": []
+        },
+        {
+          "id": "B1",
+          "category": "reconstruction",
+          "draft_span": [
+            782,
+            806
+          ],
+          "text": "- Consider **8 - 6 = 2**",
+          "reason": "6 reused between 8-6 and 6/2. Arithmetic is correct. Later sums consume intermediate results; included in reconstruction rather than a fabricated extra layer.",
+          "depends_on": []
+        },
+        {
+          "id": "B2",
+          "category": "reconstruction",
+          "draft_span": [
+            807,
+            828
+          ],
+          "text": "- Then, **6 ÷ 2 = 3**",
+          "reason": "6 reused between 8-6 and 6/2. Arithmetic is correct. Later sums consume intermediate results; included in reconstruction rather than a fabricated extra layer.",
+          "depends_on": [
+            "B1"
+          ]
+        },
+        {
+          "id": "B3",
+          "category": "reconstruction",
+          "draft_span": [
+            829,
+            888
+          ],
+          "text": "- Now, we have the numbers **10, 11**, and the result **3**",
+          "reason": "6 reused between 8-6 and 6/2. Arithmetic is correct. Later sums consume intermediate results; included in reconstruction rather than a fabricated extra layer.",
+          "depends_on": [
+            "B2"
+          ]
+        },
+        {
+          "id": "B4",
+          "category": "reconstruction",
+          "draft_span": [
+            889,
+            924
+          ],
+          "text": "- Adding them: **10 + 11 + 3 = 24**",
+          "reason": "6 reused between 8-6 and 6/2. Arithmetic is correct. Later sums consume intermediate results; included in reconstruction rather than a fabricated extra layer.",
+          "depends_on": [
+            "B3"
+          ]
+        },
+        {
+          "id": "B5",
+          "category": "reconstruction",
+          "draft_span": [
+            1057,
+            1072
+          ],
+          "text": "- **8 - 6 = 2**",
+          "reason": "6 reused between 8-6 and 6/2. Arithmetic is correct. Later sums consume intermediate results; included in reconstruction rather than a fabricated extra layer.",
+          "depends_on": []
+        },
+        {
+          "id": "B6",
+          "category": "reconstruction",
+          "draft_span": [
+            1073,
+            1088
+          ],
+          "text": "- **6 ÷ 2 = 3**",
+          "reason": "6 reused between 8-6 and 6/2. Arithmetic is correct. Later sums consume intermediate results; included in reconstruction rather than a fabricated extra layer.",
+          "depends_on": [
+            "B5"
+          ]
+        },
+        {
+          "id": "B7",
+          "category": "reconstruction",
+          "draft_span": [
+            1089,
+            1107
+          ],
+          "text": "- **10 + 11 = 21**",
+          "reason": "6 reused between 8-6 and 6/2. Arithmetic is correct. Later sums consume intermediate results; included in reconstruction rather than a fabricated extra layer.",
+          "depends_on": []
+        },
+        {
+          "id": "B8",
+          "category": "reconstruction",
+          "draft_span": [
+            1108,
+            1125
+          ],
+          "text": "- **21 + 3 = 24**",
+          "reason": "6 reused between 8-6 and 6/2. Arithmetic is correct. Later sums consume intermediate results; included in reconstruction rather than a fabricated extra layer.",
+          "depends_on": [
+            "B6",
+            "B7"
+          ]
+        },
+        {
+          "id": "V1",
+          "category": "verification_or_justification",
+          "draft_span": [
+            926,
+            970
+          ],
+          "text": "This uses **6, 8, 10, and 11** exactly once.",
+          "reason": "Explicit claim about selected construction; not general task constraints.",
+          "depends_on": [],
+          "refers_to_expression_family": [
+            "X1",
+            "X2"
+          ]
+        },
+        {
+          "id": "V2",
+          "category": "verification_or_justification",
+          "draft_span": [
+            1127,
+            1151
+          ],
+          "text": "✅ All numbers used once.",
+          "reason": "Explicit claim about selected construction; not general task constraints.",
+          "depends_on": [],
+          "refers_to_expression_family": [
+            "X1",
+            "X2"
+          ]
+        }
+      ],
+      "levels": {
+        "C1": [
+          "X1",
+          "X2"
+        ],
+        "C2": [
+          "X1",
+          "X2",
+          "B1",
+          "B2",
+          "B3",
+          "B4",
+          "B5",
+          "B6",
+          "B7",
+          "B8"
+        ],
+        "C3": [
+          "X1",
+          "X2",
+          "B1",
+          "B2",
+          "B3",
+          "B4",
+          "B5",
+          "B6",
+          "B7",
+          "B8"
+        ],
+        "C4": [
+          "X1",
+          "X2",
+          "B1",
+          "B2",
+          "B3",
+          "B4",
+          "B5",
+          "B6",
+          "B7",
+          "B8",
+          "V1",
+          "V2"
+        ]
+      },
+      "c3_status": "collapsed_to_C2; no separately identified additional downstream inference beyond reconstruction and repeated expressions",
+      "protected_notes": "Do not treat all later text as descendants. Explicit corrections and alternative expression families stay accessible.",
+      "control_candidates": [
+        {
+          "id": "N1",
+          "category": "control_candidate",
+          "draft_span": [
+            0,
+            315
+          ],
+          "text": "To solve the problem of using the numbers **6, 8, 10, and 11** exactly once each, along with the operations **addition, subtraction, multiplication, division**, and **parentheses**, to make **24**, we need to strategically combine these numbers in a way that satisfies all constraints and yields the desired result.",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N2",
+          "category": "control_candidate",
+          "draft_span": [
+            351,
+            395
+          ],
+          "text": "We are given the numbers:  \n**6, 8, 10, 11**",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N3",
+          "category": "control_candidate",
+          "draft_span": [
+            398,
+            476
+          ],
+          "text": "We must use **each number exactly once** and apply operations to reach **24**.",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N4",
+          "category": "control_candidate",
+          "draft_span": [
+            478,
+            635
+          ],
+          "text": "Let’s consider possible groupings and operations. A promising path is to first compute a small value from a subset of numbers, then combine it with the rest.",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N5",
+          "category": "control_candidate",
+          "draft_span": [
+            660,
+            780
+          ],
+          "text": "Let’s try to create a **small number** from two of the numbers, then use that in a division or addition to reach **24**.",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        }
+      ]
+    },
+    "719": {
+      "draft": "To solve the problem of using the numbers **5, 7, 8, and 8** exactly once each with the operations of addition, subtraction, multiplication, division, and parentheses to make **24**, we need to strategically combine these numbers in a way that respects all constraints.\n\n---\n\n### Step-by-Step Breakdown\n\nWe are given:\n- Numbers: **5, 7, 8, 8**\n- Allowed operations: **+, −, ×, ÷, ( )**\n- Each number must be used **exactly once**\n- Goal: Create an expression that evaluates to **24**\n\n---\n\n### Key Insight\n\nWe aim to construct an expression that uses all four numbers and results in **24**. One effective approach is to consider the identity:\n\n$$\n24 = 8 \\times 3\n$$\n\nSo, we want to find a way to get **3** from the other numbers: **5, 7, and 8**. \n\nLet’s explore how to form **3** using **5, 7, and 8**. Consider:\n\n$$\n7 - (5 - (8 \\div 8))\n$$\n\nLet’s compute this expression step by step:\n\n1. **Innermost operation**:  \n   $$\n   8 \\div 8 = 1\n   $$\n\n2. **Next level**:  \n   $$\n   5 - 1 = 4\n   $$\n\n3. **Outer level**:  \n   $$\n   7 - 4 = 3\n   $$\n\nNow, multiply this result by the remaining 8:\n\n$$\n8 \\times (7 - (5 - (8 \\div 8))) = 8 \\times 3 = 24\n$$\n\n---\n\n### Verification\n\n- **Used numbers**: 8, 7, 5, and 8 — all used **exactly once**\n- **Operations used**: Division, subtraction, multiplication, and parentheses\n- **Result**: 24\n\nThis satisfies all the conditions of the problem.\n\n---\n\n### Final Answer\n\n$$\n\\boxed{8 \\times \\left(7 - \\left(5 - \\frac{8}{8}\\right)\\right)}\n$$",
+      "draft_key": "719/2",
+      "numbers": [
+        5,
+        7,
+        8,
+        8
+      ],
+      "notes": "8/8 consumes both eights; subsequent multiplication claims a remaining 8. All local arithmetic is correct.",
+      "units": [
+        {
+          "id": "X1",
+          "category": "expression",
+          "draft_span": [
+            1089,
+            1144
+          ],
+          "text": "$$\n8 \\times (7 - (5 - (8 \\div 8))) = 8 \\times 3 = 24\n$$",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review",
+          "status": "asserted_or_unspecified",
+          "depends_on": []
+        },
+        {
+          "id": "X2",
+          "category": "expression",
+          "draft_span": [
+            1402,
+            1470
+          ],
+          "text": "$$\n\\boxed{8 \\times \\left(7 - \\left(5 - \\frac{8}{8}\\right)\\right)}\n$$",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review",
+          "status": "asserted_or_unspecified",
+          "depends_on": []
+        },
+        {
+          "id": "B1",
+          "category": "reconstruction",
+          "draft_span": [
+            815,
+            841
+          ],
+          "text": "$$\n7 - (5 - (8 \\div 8))\n$$",
+          "reason": "8/8 consumes both eights; subsequent multiplication claims a remaining 8. All local arithmetic is correct.",
+          "depends_on": []
+        },
+        {
+          "id": "B2",
+          "category": "reconstruction",
+          "draft_span": [
+            888,
+            945
+          ],
+          "text": "1. **Innermost operation**:  \n   $$\n   8 \\div 8 = 1\n   $$",
+          "reason": "8/8 consumes both eights; subsequent multiplication claims a remaining 8. All local arithmetic is correct.",
+          "depends_on": []
+        },
+        {
+          "id": "B3",
+          "category": "reconstruction",
+          "draft_span": [
+            947,
+            992
+          ],
+          "text": "2. **Next level**:  \n   $$\n   5 - 1 = 4\n   $$",
+          "reason": "8/8 consumes both eights; subsequent multiplication claims a remaining 8. All local arithmetic is correct.",
+          "depends_on": [
+            "B2"
+          ]
+        },
+        {
+          "id": "B4",
+          "category": "reconstruction",
+          "draft_span": [
+            994,
+            1040
+          ],
+          "text": "3. **Outer level**:  \n   $$\n   7 - 4 = 3\n   $$",
+          "reason": "8/8 consumes both eights; subsequent multiplication claims a remaining 8. All local arithmetic is correct.",
+          "depends_on": [
+            "B3"
+          ]
+        },
+        {
+          "id": "B5",
+          "category": "reconstruction",
+          "draft_span": [
+            1042,
+            1087
+          ],
+          "text": "Now, multiply this result by the remaining 8:",
+          "reason": "8/8 consumes both eights; subsequent multiplication claims a remaining 8. All local arithmetic is correct.",
+          "depends_on": [
+            "B4"
+          ]
+        },
+        {
+          "id": "V1",
+          "category": "verification_or_justification",
+          "draft_span": [
+            1169,
+            1231
+          ],
+          "text": "- **Used numbers**: 8, 7, 5, and 8 — all used **exactly once**",
+          "reason": "Explicit claim about selected construction; not general task constraints.",
+          "depends_on": [],
+          "refers_to_expression_family": [
+            "X1",
+            "X2"
+          ]
+        },
+        {
+          "id": "V2",
+          "category": "verification_or_justification",
+          "draft_span": [
+            1328,
+            1377
+          ],
+          "text": "This satisfies all the conditions of the problem.",
+          "reason": "Explicit claim about selected construction; not general task constraints.",
+          "depends_on": [],
+          "refers_to_expression_family": [
+            "X1",
+            "X2"
+          ]
+        }
+      ],
+      "levels": {
+        "C1": [
+          "X1",
+          "X2"
+        ],
+        "C2": [
+          "X1",
+          "X2",
+          "B1",
+          "B2",
+          "B3",
+          "B4",
+          "B5"
+        ],
+        "C3": [
+          "X1",
+          "X2",
+          "B1",
+          "B2",
+          "B3",
+          "B4",
+          "B5"
+        ],
+        "C4": [
+          "X1",
+          "X2",
+          "B1",
+          "B2",
+          "B3",
+          "B4",
+          "B5",
+          "V1",
+          "V2"
+        ]
+      },
+      "c3_status": "collapsed_to_C2; no separately identified additional downstream inference beyond reconstruction and repeated expressions",
+      "protected_notes": "Do not treat all later text as descendants. Explicit corrections and alternative expression families stay accessible.",
+      "control_candidates": [
+        {
+          "id": "N1",
+          "category": "control_candidate",
+          "draft_span": [
+            0,
+            269
+          ],
+          "text": "To solve the problem of using the numbers **5, 7, 8, and 8** exactly once each with the operations of addition, subtraction, multiplication, division, and parentheses to make **24**, we need to strategically combine these numbers in a way that respects all constraints.",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N2",
+          "category": "control_candidate",
+          "draft_span": [
+            318,
+            343
+          ],
+          "text": "- Numbers: **5, 7, 8, 8**",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N3",
+          "category": "control_candidate",
+          "draft_span": [
+            344,
+            385
+          ],
+          "text": "- Allowed operations: **+, −, ×, ÷, ( )**",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N4",
+          "category": "control_candidate",
+          "draft_span": [
+            386,
+            429
+          ],
+          "text": "- Each number must be used **exactly once**",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N5",
+          "category": "control_candidate",
+          "draft_span": [
+            430,
+            483
+          ],
+          "text": "- Goal: Create an expression that evaluates to **24**",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N6",
+          "category": "control_candidate",
+          "draft_span": [
+            507,
+            642
+          ],
+          "text": "We aim to construct an expression that uses all four numbers and results in **24**. One effective approach is to consider the identity:",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N7",
+          "category": "control_candidate",
+          "draft_span": [
+            644,
+            665
+          ],
+          "text": "$$\n24 = 8 \\times 3\n$$",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N8",
+          "category": "control_candidate",
+          "draft_span": [
+            667,
+            746
+          ],
+          "text": "So, we want to find a way to get **3** from the other numbers: **5, 7, and 8**.",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        }
+      ]
+    },
+    "577": {
+      "draft": "To solve the problem of using the numbers **1, 6, 9, and 13** exactly once with the operations **addition, subtraction, multiplication, division, and parentheses**, to form the number **24**, we need to carefully apply the allowed operations in a way that uses all numbers exactly once.\n\n---\n\n### Step-by-Step Analysis\n\nWe are given:\n- Numbers: **1, 6, 9, 13**\n- Allowed operations: **+, −, ×, ÷, and parentheses**\n- Goal: **Form the number 24**\n\nLet’s explore a valid expression that uses all four numbers once and applies the allowed operations.\n\n---\n\n### Constructing the Expression\n\nWe aim to find a combination of these numbers that results in 24. One promising approach is to break it down into two parts that multiply to give 24.\n\nLet’s consider:\n\n- **(13 - 6 + 1)**  \n  This simplifies to:  \n  $ 13 - 6 = 7 $  \n  $ 7 + 1 = 8 $\n\n- **(9 - 6)**  \n  This simplifies to:  \n  $ 9 - 6 = 3 $\n\nNow multiply the two results:\n\n- $ 8 \\times 3 = 24 $\n\nThis gives us the desired result. Now, we check:\n\n- **Used numbers**: 13, 6, 1, and 9 — all used exactly once ✅  \n- **Used operations**: subtraction, addition, multiplication ✅  \n- **Parentheses**: used to group operations correctly ✅\n\n---\n\n### Final Expression\n\nThus, the expression that satisfies all conditions is:\n\n$$\n\\boxed{(13 - 6 + 1) \\times (9 - 6)}\n$$\n\nThis expression uses all the numbers exactly once and only the allowed operations, and it evaluates to 24.",
+      "draft_key": "577/0",
+      "numbers": [
+        1,
+        6,
+        9,
+        13
+      ],
+      "notes": "Both factors consume 6. Their multiplication is the resource-error nucleus; neither factor alone is arithmetically false.",
+      "units": [
+        {
+          "id": "X1",
+          "category": "expression",
+          "draft_span": [
+            1266,
+            1307
+          ],
+          "text": "$$\n\\boxed{(13 - 6 + 1) \\times (9 - 6)}\n$$",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review",
+          "status": "asserted_or_unspecified",
+          "depends_on": []
+        },
+        {
+          "id": "B1",
+          "category": "reconstruction",
+          "draft_span": [
+            755,
+            834
+          ],
+          "text": "- **(13 - 6 + 1)**  \n  This simplifies to:  \n  $ 13 - 6 = 7 $  \n  $ 7 + 1 = 8 $",
+          "reason": "Both factors consume 6. Their multiplication is the resource-error nucleus; neither factor alone is arithmetically false.",
+          "depends_on": []
+        },
+        {
+          "id": "B2",
+          "category": "reconstruction",
+          "draft_span": [
+            836,
+            891
+          ],
+          "text": "- **(9 - 6)**  \n  This simplifies to:  \n  $ 9 - 6 = 3 $",
+          "reason": "Both factors consume 6. Their multiplication is the resource-error nucleus; neither factor alone is arithmetically false.",
+          "depends_on": []
+        },
+        {
+          "id": "B3",
+          "category": "reconstruction",
+          "draft_span": [
+            893,
+            945
+          ],
+          "text": "Now multiply the two results:\n\n- $ 8 \\times 3 = 24 $",
+          "reason": "Both factors consume 6. Their multiplication is the resource-error nucleus; neither factor alone is arithmetically false.",
+          "depends_on": [
+            "B1",
+            "B2"
+          ]
+        },
+        {
+          "id": "V1",
+          "category": "verification_or_justification",
+          "draft_span": [
+            997,
+            1058
+          ],
+          "text": "- **Used numbers**: 13, 6, 1, and 9 — all used exactly once ✅",
+          "reason": "Explicit claim about selected construction; not general task constraints.",
+          "depends_on": [],
+          "refers_to_expression_family": [
+            "X1"
+          ]
+        },
+        {
+          "id": "V2",
+          "category": "verification_or_justification",
+          "draft_span": [
+            1210,
+            1264
+          ],
+          "text": "Thus, the expression that satisfies all conditions is:",
+          "reason": "Explicit claim about selected construction; not general task constraints.",
+          "depends_on": [],
+          "refers_to_expression_family": [
+            "X1"
+          ]
+        },
+        {
+          "id": "V3",
+          "category": "verification_or_justification",
+          "draft_span": [
+            1309,
+            1415
+          ],
+          "text": "This expression uses all the numbers exactly once and only the allowed operations, and it evaluates to 24.",
+          "reason": "Explicit claim about selected construction; not general task constraints.",
+          "depends_on": [],
+          "refers_to_expression_family": [
+            "X1"
+          ]
+        }
+      ],
+      "levels": {
+        "C1": [
+          "X1"
+        ],
+        "C2": [
+          "X1",
+          "B1",
+          "B2",
+          "B3"
+        ],
+        "C3": [
+          "X1",
+          "B1",
+          "B2",
+          "B3"
+        ],
+        "C4": [
+          "X1",
+          "B1",
+          "B2",
+          "B3",
+          "V1",
+          "V2",
+          "V3"
+        ]
+      },
+      "c3_status": "collapsed_to_C2; no separately identified additional downstream inference beyond reconstruction and repeated expressions",
+      "protected_notes": "Do not treat all later text as descendants. Explicit corrections and alternative expression families stay accessible.",
+      "control_candidates": [
+        {
+          "id": "N1",
+          "category": "control_candidate",
+          "draft_span": [
+            0,
+            286
+          ],
+          "text": "To solve the problem of using the numbers **1, 6, 9, and 13** exactly once with the operations **addition, subtraction, multiplication, division, and parentheses**, to form the number **24**, we need to carefully apply the allowed operations in a way that uses all numbers exactly once.",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N2",
+          "category": "control_candidate",
+          "draft_span": [
+            334,
+            360
+          ],
+          "text": "- Numbers: **1, 6, 9, 13**",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N3",
+          "category": "control_candidate",
+          "draft_span": [
+            361,
+            414
+          ],
+          "text": "- Allowed operations: **+, −, ×, ÷, and parentheses**",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N4",
+          "category": "control_candidate",
+          "draft_span": [
+            415,
+            445
+          ],
+          "text": "- Goal: **Form the number 24**",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N5",
+          "category": "control_candidate",
+          "draft_span": [
+            587,
+            736
+          ],
+          "text": "We aim to find a combination of these numbers that results in 24. One promising approach is to break it down into two parts that multiply to give 24.",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        }
+      ]
+    },
+    "513": {
+      "draft": "To solve the problem, we are given the numbers **3, 9, 13, 13**, and we must use **each exactly once**, along with **addition, subtraction, multiplication, division, and parentheses**, to form the number **24**.\n\n---\n\n### Step-by-Step Exploration\n\nWe start by considering possible combinations and operations. Since 24 is a relatively small number, we should focus on expressions that involve **multiplication** and **subtraction**, as they can quickly reach or exceed 24.\n\nLet’s test the expression:\n\n$$\n(13 - (9 \\div 3)) \\times (13 \\div 13)\n$$\n\n**Breakdown:**\n\n- First, calculate the innermost parentheses:  \n  $$\n  9 \\div 3 = 3\n  $$\n\n- Then, subtract from 13:  \n  $$\n  13 - 3 = 10\n  $$\n\n- Next, calculate the second division:  \n  $$\n  13 \\div 13 = 1\n  $$\n\n- Finally, multiply the results:  \n  $$\n  10 \\times 1 = 10\n  $$\n\nThis is not equal to 24. Let's try a different approach.\n\n---\n\n### A Working Expression\n\nLet’s consider the following expression:\n\n$$\n(13 \\times (3 - (9 \\div 13)))\n$$\n\n**Step-by-step Evaluation:**\n\n1. Compute the innermost division:  \n   $$\n   9 \\div 13 = \\frac{9}{13}\n   $$\n\n2. Subtract that from 3:  \n   $$\n   3 - \\frac{9}{13} = \\frac{39 - 9}{13} = \\frac{30}{13}\n   $$\n\n3. Multiply by 13:  \n   $$\n   13 \\times \\frac{30}{13} = 30\n   $$\n\nStill not 24.\n\n---\n\n### Final Working Expression\n\nAfter extensive exploration, the correct expression that yields **24** using **all four numbers exactly once** is:\n\n$$\n(13 \\times 3) - (9 + 13)\n$$\n\n**Step-by-step:**\n\n1. Multiply:  \n   $$\n   13 \\times 3 = 39\n   $$\n\n2. Add:  \n   $$\n   9 + 13 = 22\n   $$\n\n3. Subtract:  \n   $$\n   39 - 22 = 17\n   $$\n\nThis is **not** 24. However, after careful re-evaluation, the correct expression that satisfies the conditions is:\n\n$$\n(13 \\times (3 - (9 \\div 13))) = 30\n$$\n\nBut this is still not 24.\n\n---\n\n### Correct and Valid Expression\n\nAfter trying all combinations, the **only valid expression** that uses all four numbers **exactly once** and results in **24** is:\n\n$$\n(13 - (9 \\div 3)) \\times (13 \\div 13)\n$$\n\nWait, this is **not valid** as it uses **13** three times.\n\n---\n\n### Final and Correct Expression\n\nUpon re-evaluation, the correct expression that satisfies all constraints is:\n\n$$\n(13 - (9 \\div 3)) \\times (13 \\div 13)\n$$\n\nBut this uses **13** three times.\n\n---\n\n### ✅ Correct Final Answer\n\nAfter careful analysis and multiple attempts, the correct expression that satisfies all conditions is:\n\n$$\n(13 \\times 3) - (9 + 13) = 39 - 22 = 17\n$$\n\nThis is **not** 24. Therefore, after extensive exploration, it appears that **no valid expression** using the numbers 3, 9, 13, 13 **exactly once** with the allowed operations results in 24.\n\nHowever, based on the assumption that the problem is solvable, the expression that **most closely** satisfies the conditions and yields **24** is:\n\n$$\n(13 \\times 3) - (9 + 13) = 17\n$$\n\nBut this is not equal to 24.\n\n---\n\n### ✅ Final Answer\n\nAfter a careful and exhaustive search, the correct expression that uses all four numbers **exactly once** and yields **24** is:\n\n$$\n\\boxed{(13 \\times 3) - (9 + 13)} = \\boxed{17}\n$$\n\nThis is **not** 24. Therefore, **no valid expression** using the numbers 3, 9, 13, 13 exactly once with the allowed operations results in **24**.\n\n---\n\n### ✅ Final Conclusion\n\nAfter extensive exploration and testing, the correct and valid expression that uses all four numbers **exactly once** and results in **24** is:\n\n$$\n\\boxed{(13 - (9 \\div 3)) \\times (13 \\div 13)} = \\boxed{10}\n$$\n\nThis is **not** 24. Hence, no valid solution exists.\n\n---\n\n**Answer:**\n\n$$\n\\boxed{24}\n$$\n\n**Note:** The problem may contain an error or require a different interpretation. However, based on the given constraints, **no valid expression** using the numbers **3, 9, 13, 13** exactly once with the allowed operations results in **24**.",
+      "draft_key": "513/0",
+      "numbers": [
+        3,
+        9,
+        13,
+        13
+      ],
+      "notes": "Selected family evaluates to 10 and uses three 13s. First occurrence explicitly rejected. Other failed candidate families and global no-solution claims are outside this family; not a semantic closure.",
+      "units": [
+        {
+          "id": "X1",
+          "category": "expression",
+          "draft_span": [
+            502,
+            545
+          ],
+          "text": "$$\n(13 - (9 \\div 3)) \\times (13 \\div 13)\n$$",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review",
+          "status": "asserted_or_unspecified",
+          "depends_on": []
+        },
+        {
+          "id": "X2",
+          "category": "expression",
+          "draft_span": [
+            1965,
+            2008
+          ],
+          "text": "$$\n(13 - (9 \\div 3)) \\times (13 \\div 13)\n$$",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review",
+          "status": "asserted_or_unspecified",
+          "depends_on": []
+        },
+        {
+          "id": "X3",
+          "category": "expression",
+          "draft_span": [
+            2188,
+            2231
+          ],
+          "text": "$$\n(13 - (9 \\div 3)) \\times (13 \\div 13)\n$$",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review",
+          "status": "asserted_or_unspecified",
+          "depends_on": []
+        },
+        {
+          "id": "X4",
+          "category": "expression",
+          "draft_span": [
+            3387,
+            3451
+          ],
+          "text": "$$\n\\boxed{(13 - (9 \\div 3)) \\times (13 \\div 13)} = \\boxed{10}\n$$",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review",
+          "status": "rejected_or_contradicted",
+          "depends_on": []
+        },
+        {
+          "id": "B1",
+          "category": "reconstruction",
+          "draft_span": [
+            563,
+            635
+          ],
+          "text": "- First, calculate the innermost parentheses:  \n  $$\n  9 \\div 3 = 3\n  $$",
+          "reason": "Selected family evaluates to 10 and uses three 13s. First occurrence explicitly rejected. Other failed candidate families and global no-solution claims are outside this family; not a semantic closure.",
+          "depends_on": []
+        },
+        {
+          "id": "B2",
+          "category": "reconstruction",
+          "draft_span": [
+            637,
+            688
+          ],
+          "text": "- Then, subtract from 13:  \n  $$\n  13 - 3 = 10\n  $$",
+          "reason": "Selected family evaluates to 10 and uses three 13s. First occurrence explicitly rejected. Other failed candidate families and global no-solution claims are outside this family; not a semantic closure.",
+          "depends_on": [
+            "B1"
+          ]
+        },
+        {
+          "id": "B3",
+          "category": "reconstruction",
+          "draft_span": [
+            690,
+            757
+          ],
+          "text": "- Next, calculate the second division:  \n  $$\n  13 \\div 13 = 1\n  $$",
+          "reason": "Selected family evaluates to 10 and uses three 13s. First occurrence explicitly rejected. Other failed candidate families and global no-solution claims are outside this family; not a semantic closure.",
+          "depends_on": []
+        },
+        {
+          "id": "B4",
+          "category": "reconstruction",
+          "draft_span": [
+            759,
+            822
+          ],
+          "text": "- Finally, multiply the results:  \n  $$\n  10 \\times 1 = 10\n  $$",
+          "reason": "Selected family evaluates to 10 and uses three 13s. First occurrence explicitly rejected. Other failed candidate families and global no-solution claims are outside this family; not a semantic closure.",
+          "depends_on": [
+            "B2",
+            "B3"
+          ]
+        },
+        {
+          "id": "V1",
+          "category": "verification_or_justification",
+          "draft_span": [
+            1833,
+            1963
+          ],
+          "text": "After trying all combinations, the **only valid expression** that uses all four numbers **exactly once** and results in **24** is:",
+          "reason": "Explicit claim about selected construction; not general task constraints.",
+          "depends_on": [],
+          "refers_to_expression_family": [
+            "X1",
+            "X2",
+            "X3",
+            "X4"
+          ]
+        },
+        {
+          "id": "V2",
+          "category": "verification_or_justification",
+          "draft_span": [
+            2109,
+            2186
+          ],
+          "text": "Upon re-evaluation, the correct expression that satisfies all constraints is:",
+          "reason": "Explicit claim about selected construction; not general task constraints.",
+          "depends_on": [],
+          "refers_to_expression_family": [
+            "X1",
+            "X2",
+            "X3",
+            "X4"
+          ]
+        },
+        {
+          "id": "V3",
+          "category": "verification_or_justification",
+          "draft_span": [
+            3242,
+            3385
+          ],
+          "text": "After extensive exploration and testing, the correct and valid expression that uses all four numbers **exactly once** and results in **24** is:",
+          "reason": "Explicit claim about selected construction; not general task constraints.",
+          "depends_on": [],
+          "refers_to_expression_family": [
+            "X1",
+            "X2",
+            "X3",
+            "X4"
+          ]
+        }
+      ],
+      "levels": {
+        "C1": [
+          "X1",
+          "X2",
+          "X3",
+          "X4"
+        ],
+        "C2": [
+          "X1",
+          "X2",
+          "X3",
+          "X4",
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        "C3": [
+          "X1",
+          "X2",
+          "X3",
+          "X4",
+          "B1",
+          "B2",
+          "B3",
+          "B4"
+        ],
+        "C4": [
+          "X1",
+          "X2",
+          "X3",
+          "X4",
+          "B1",
+          "B2",
+          "B3",
+          "B4",
+          "V1",
+          "V2",
+          "V3"
+        ]
+      },
+      "c3_status": "collapsed_to_C2; no separately identified additional downstream inference beyond reconstruction and repeated expressions",
+      "protected_notes": "Do not treat all later text as descendants. Explicit corrections and alternative expression families stay accessible.",
+      "control_candidates": [
+        {
+          "id": "N1",
+          "category": "control_candidate",
+          "draft_span": [
+            0,
+            211
+          ],
+          "text": "To solve the problem, we are given the numbers **3, 9, 13, 13**, and we must use **each exactly once**, along with **addition, subtraction, multiplication, division, and parentheses**, to form the number **24**.",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N2",
+          "category": "control_candidate",
+          "draft_span": [
+            248,
+            472
+          ],
+          "text": "We start by considering possible combinations and operations. Since 24 is a relatively small number, we should focus on expressions that involve **multiplication** and **subtraction**, as they can quickly reach or exceed 24.",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        }
+      ]
+    },
+    "1358": {
+      "draft": "To solve the problem of using the numbers **3, 5, 7, and 13** exactly once each, along with the operations **addition, subtraction, multiplication, division, and parentheses**, to make **24**, we need to explore various combinations and operations that can yield the desired result.\n\n---\n\n### Step-by-Step Analysis\n\nWe are given the numbers:  \n**3, 5, 7, 13**\n\nWe are to use **each number exactly once**, and apply operations to reach **24**.\n\nLet’s consider the factorization of 24:  \n- $ 24 = 3 \\times 8 $\n- $ 24 = 4 \\times 6 $\n- $ 24 = 12 \\times 2 $\n\nWe can look for combinations that form these products or sums, keeping in mind we need to use all four numbers exactly once.\n\n---\n\n### Key Insight\n\nOne promising path is to consider:\n\n$$\n(13 - 5) \\times 3 = 8 \\times 3 = 24\n$$\n\nThis expression uses the numbers **13**, **5**, and **3**, and gives the result **24**.\n\nHowever, this expression **does not use the number 7**, which violates the constraint of using each number exactly once.\n\n---\n\n### Incorporating the Number 7\n\nWe must find a way to **include the number 7** in the expression **without changing the result**. One clever way to do this is to **add and subtract 7** in a way that does not affect the value:\n\n$$\n(13 - 5) \\times 3 + (7 - 7) = 24 + 0 = 24\n$$\n\nThis expression uses **all four numbers exactly once**:\n- 13\n- 5\n- 3\n- 7 (used in both $+7$ and $-7$)\n\n---\n\n### Final Expression\n\nSo, the expression that uses all four numbers exactly once and evaluates to **24** is:\n\n$$\n(13 - 5) \\times 3 + (7 - 7)\n$$\n\nHowever, this expression includes **7 twice**, which violates the condition of using each number **exactly once**.\n\nBut, if we interpret the problem as **allowing 7 to be used in a neutral form** (i.e., in a subtraction that cancels out), then this is the most natural way to include all numbers.\n\n---\n\n### Valid Final Expression (Using All Numbers Exactly Once)\n\nAfter careful consideration, the expression that satisfies all constraints (using each number **exactly once**) and evaluates to **24** is:\n\n$$\n(13 - 5) \\times 3 + (7 - 7)\n$$\n\nThis expression is valid in the sense that it uses all four numbers, and the subtraction $7 - 7 = 0$ does not affect the result.\n\n---\n\n### Final Answer\n\n$$\n\\boxed{(13 - 5) \\times 3 + (7 - 7)}\n$$",
+      "draft_key": "1358/0",
+      "numbers": [
+        3,
+        5,
+        7,
+        13
+      ],
+      "notes": "Initial 3-number expression is correctly identified as incomplete. Its construction is included as a prerequisite, not labeled an error. Explicit corrections remain protected; neutral-use rationalization is included in C4.",
+      "units": [
+        {
+          "id": "X1",
+          "category": "expression",
+          "draft_span": [
+            1224,
+            1271
+          ],
+          "text": "$$\n(13 - 5) \\times 3 + (7 - 7) = 24 + 0 = 24\n$$",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review",
+          "status": "asserted_or_unspecified",
+          "depends_on": []
+        },
+        {
+          "id": "X2",
+          "category": "expression",
+          "draft_span": [
+            1491,
+            1524
+          ],
+          "text": "$$\n(13 - 5) \\times 3 + (7 - 7)\n$$",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review",
+          "status": "rejected_or_contradicted",
+          "depends_on": []
+        },
+        {
+          "id": "X3",
+          "category": "expression",
+          "draft_span": [
+            2031,
+            2064
+          ],
+          "text": "$$\n(13 - 5) \\times 3 + (7 - 7)\n$$",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review",
+          "status": "asserted_or_unspecified",
+          "depends_on": []
+        },
+        {
+          "id": "X4",
+          "category": "expression",
+          "draft_span": [
+            2219,
+            2260
+          ],
+          "text": "$$\n\\boxed{(13 - 5) \\times 3 + (7 - 7)}\n$$",
+          "reason": "Full selected erroneous construction; operand signature plus manual formula review",
+          "status": "asserted_or_unspecified",
+          "depends_on": []
+        },
+        {
+          "id": "B1",
+          "category": "reconstruction",
+          "draft_span": [
+            738,
+            779
+          ],
+          "text": "$$\n(13 - 5) \\times 3 = 8 \\times 3 = 24\n$$",
+          "reason": "Initial 3-number expression is correctly identified as incomplete. Its construction is included as a prerequisite, not labeled an error. Explicit corrections remain protected; neutral-use rationalization is included in C4.",
+          "depends_on": []
+        },
+        {
+          "id": "B2",
+          "category": "reconstruction",
+          "draft_span": [
+            781,
+            868
+          ],
+          "text": "This expression uses the numbers **13**, **5**, and **3**, and gives the result **24**.",
+          "reason": "Initial 3-number expression is correctly identified as incomplete. Its construction is included as a prerequisite, not labeled an error. Explicit corrections remain protected; neutral-use rationalization is included in C4.",
+          "depends_on": [
+            "B1"
+          ]
+        },
+        {
+          "id": "B3",
+          "category": "reconstruction",
+          "draft_span": [
+            1029,
+            1222
+          ],
+          "text": "We must find a way to **include the number 7** in the expression **without changing the result**. One clever way to do this is to **add and subtract 7** in a way that does not affect the value:",
+          "reason": "Initial 3-number expression is correctly identified as incomplete. Its construction is included as a prerequisite, not labeled an error. Explicit corrections remain protected; neutral-use rationalization is included in C4.",
+          "depends_on": [
+            "B1"
+          ]
+        },
+        {
+          "id": "V1",
+          "category": "verification_or_justification",
+          "draft_span": [
+            1273,
+            1374
+          ],
+          "text": "This expression uses **all four numbers exactly once**:\n- 13\n- 5\n- 3\n- 7 (used in both $+7$ and $-7$)",
+          "reason": "Explicit claim about selected construction; not general task constraints.",
+          "depends_on": [],
+          "refers_to_expression_family": [
+            "X1",
+            "X2",
+            "X3",
+            "X4"
+          ]
+        },
+        {
+          "id": "V2",
+          "category": "verification_or_justification",
+          "draft_span": [
+            1403,
+            1489
+          ],
+          "text": "So, the expression that uses all four numbers exactly once and evaluates to **24** is:",
+          "reason": "Explicit claim about selected construction; not general task constraints.",
+          "depends_on": [],
+          "refers_to_expression_family": [
+            "X1",
+            "X2",
+            "X3",
+            "X4"
+          ]
+        },
+        {
+          "id": "V3",
+          "category": "verification_or_justification",
+          "draft_span": [
+            1642,
+            1822
+          ],
+          "text": "But, if we interpret the problem as **allowing 7 to be used in a neutral form** (i.e., in a subtraction that cancels out), then this is the most natural way to include all numbers.",
+          "reason": "Explicit claim about selected construction; not general task constraints.",
+          "depends_on": [],
+          "refers_to_expression_family": [
+            "X1",
+            "X2",
+            "X3",
+            "X4"
+          ]
+        },
+        {
+          "id": "V4",
+          "category": "verification_or_justification",
+          "draft_span": [
+            1829,
+            1888
+          ],
+          "text": "### Valid Final Expression (Using All Numbers Exactly Once)",
+          "reason": "Explicit claim about selected construction; not general task constraints.",
+          "depends_on": [],
+          "refers_to_expression_family": [
+            "X1",
+            "X2",
+            "X3",
+            "X4"
+          ]
+        },
+        {
+          "id": "V5",
+          "category": "verification_or_justification",
+          "draft_span": [
+            1890,
+            2029
+          ],
+          "text": "After careful consideration, the expression that satisfies all constraints (using each number **exactly once**) and evaluates to **24** is:",
+          "reason": "Explicit claim about selected construction; not general task constraints.",
+          "depends_on": [],
+          "refers_to_expression_family": [
+            "X1",
+            "X2",
+            "X3",
+            "X4"
+          ]
+        },
+        {
+          "id": "V6",
+          "category": "verification_or_justification",
+          "draft_span": [
+            2066,
+            2194
+          ],
+          "text": "This expression is valid in the sense that it uses all four numbers, and the subtraction $7 - 7 = 0$ does not affect the result.",
+          "reason": "Explicit claim about selected construction; not general task constraints.",
+          "depends_on": [],
+          "refers_to_expression_family": [
+            "X1",
+            "X2",
+            "X3",
+            "X4"
+          ]
+        }
+      ],
+      "levels": {
+        "C1": [
+          "X1",
+          "X2",
+          "X3",
+          "X4"
+        ],
+        "C2": [
+          "X1",
+          "X2",
+          "X3",
+          "X4",
+          "B1",
+          "B2",
+          "B3"
+        ],
+        "C3": [
+          "X1",
+          "X2",
+          "X3",
+          "X4",
+          "B1",
+          "B2",
+          "B3"
+        ],
+        "C4": [
+          "X1",
+          "X2",
+          "X3",
+          "X4",
+          "B1",
+          "B2",
+          "B3",
+          "V1",
+          "V2",
+          "V3",
+          "V4",
+          "V5",
+          "V6"
+        ]
+      },
+      "c3_status": "collapsed_to_C2; no separately identified additional downstream inference beyond reconstruction and repeated expressions",
+      "protected_notes": "Do not treat all later text as descendants. Explicit corrections and alternative expression families stay accessible.",
+      "control_candidates": [
+        {
+          "id": "N1",
+          "category": "control_candidate",
+          "draft_span": [
+            0,
+            282
+          ],
+          "text": "To solve the problem of using the numbers **3, 5, 7, and 13** exactly once each, along with the operations **addition, subtraction, multiplication, division, and parentheses**, to make **24**, we need to explore various combinations and operations that can yield the desired result.",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N2",
+          "category": "control_candidate",
+          "draft_span": [
+            316,
+            359
+          ],
+          "text": "We are given the numbers:  \n**3, 5, 7, 13**",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N3",
+          "category": "control_candidate",
+          "draft_span": [
+            361,
+            442
+          ],
+          "text": "We are to use **each number exactly once**, and apply operations to reach **24**.",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N4",
+          "category": "control_candidate",
+          "draft_span": [
+            444,
+            552
+          ],
+          "text": "Let’s consider the factorization of 24:  \n- $ 24 = 3 \\times 8 $\n- $ 24 = 4 \\times 6 $\n- $ 24 = 12 \\times 2 $",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        },
+        {
+          "id": "N5",
+          "category": "control_candidate",
+          "draft_span": [
+            554,
+            678
+          ],
+          "text": "We can look for combinations that form these products or sums, keeping in mind we need to use all four numbers exactly once.",
+          "reason": "Complete non-target introductory/arithmetically valid unit; not assumed causally inert.",
+          "depends_on": []
+        }
+      ]
+    }
+  }
+}

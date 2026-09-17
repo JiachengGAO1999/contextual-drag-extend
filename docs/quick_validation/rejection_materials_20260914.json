@@ -1,0 +1,698 @@
+{
+  "version": "rejection_inventory_v1",
+  "status": "retrospective_material_screen_and_selected_event_evidence_not_frozen_intervention",
+  "source": "docs\\quick_validation\\multi_region_annotations_20260912.json",
+  "source_sha256": "c3c98fbab1aacdee7582609f251eeb2baf7625c7548cd83f7d3febeabd0b8d48",
+  "text_layer": "fixed initial final-response draft, initial thinking stripped",
+  "exhaustive_scope": "ten-draft manual screening; selected event evidence only, not exhaustive sentence annotations",
+  "questions": {
+    "1358": {
+      "draft_key": "1358/0",
+      "material_type": "explicit_rejection_and_repair_reendorsement",
+      "note": "明确指出漏7及重复7，却保留三数字结构修补并重新认可；初始候选与最终候选不是同一表达式。",
+      "events": [
+        {
+          "event_type": "evaluate",
+          "family": "F0",
+          "character_span": [
+            741,
+            776
+          ],
+          "text": "(13 - 5) \\times 3 = 8 \\times 3 = 24",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "reject",
+          "family": "F0",
+          "character_span": [
+            870,
+            990
+          ],
+          "text": "However, this expression **does not use the number 7**, which violates the constraint of using each number exactly once.",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "repair",
+          "family": "F0_to_F1",
+          "character_span": [
+            1029,
+            1222
+          ],
+          "text": "We must find a way to **include the number 7** in the expression **without changing the result**. One clever way to do this is to **add and subtract 7** in a way that does not affect the value:",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_1",
+          "character_span": [
+            1224,
+            1271
+          ],
+          "text": "$$\n(13 - 5) \\times 3 + (7 - 7) = 24 + 0 = 24\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "r 7\n\nWe must find a way to **include the number 7** in the expression **without changing the result**. One clever way to do this is to **add and subtract 7** in a way that does not affect the value:\n\n",
+          "following_context": "\n\nThis expression uses **all four numbers exactly once**:\n- 13\n- 5\n- 3\n- 7 (used in both $+7$ and $-7$)\n\n---\n\n### Final Expression\n\nSo, the expression that uses all four numbers exactly once and evalu"
+        },
+        {
+          "event_type": "endorse",
+          "family": "F1",
+          "character_span": [
+            1273,
+            1328
+          ],
+          "text": "This expression uses **all four numbers exactly once**:",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_2",
+          "character_span": [
+            1491,
+            1524
+          ],
+          "text": "$$\n(13 - 5) \\times 3 + (7 - 7)\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "es **all four numbers exactly once**:\n- 13\n- 5\n- 3\n- 7 (used in both $+7$ and $-7$)\n\n---\n\n### Final Expression\n\nSo, the expression that uses all four numbers exactly once and evaluates to **24** is:\n\n",
+          "following_context": "\n\nHowever, this expression includes **7 twice**, which violates the condition of using each number **exactly once**.\n\nBut, if we interpret the problem as **allowing 7 to be used in a neutral form** (i"
+        },
+        {
+          "event_type": "reject",
+          "family": "F1",
+          "character_span": [
+            1526,
+            1640
+          ],
+          "text": "However, this expression includes **7 twice**, which violates the condition of using each number **exactly once**.",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "reinterpret_constraint",
+          "family": "F1",
+          "character_span": [
+            1642,
+            1822
+          ],
+          "text": "But, if we interpret the problem as **allowing 7 to be used in a neutral form** (i.e., in a subtraction that cancels out), then this is the most natural way to include all numbers.",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "endorse",
+          "family": "F1",
+          "character_span": [
+            1890,
+            2029
+          ],
+          "text": "After careful consideration, the expression that satisfies all constraints (using each number **exactly once**) and evaluates to **24** is:",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_3",
+          "character_span": [
+            2031,
+            2064
+          ],
+          "text": "$$\n(13 - 5) \\times 3 + (7 - 7)\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "# Valid Final Expression (Using All Numbers Exactly Once)\n\nAfter careful consideration, the expression that satisfies all constraints (using each number **exactly once**) and evaluates to **24** is:\n\n",
+          "following_context": "\n\nThis expression is valid in the sense that it uses all four numbers, and the subtraction $7 - 7 = 0$ does not affect the result.\n\n---\n\n### Final Answer\n\n$$\n\\boxed{(13 - 5) \\times 3 + (7 - 7)}\n$$"
+        },
+        {
+          "event_type": "justify",
+          "family": "F1",
+          "character_span": [
+            2066,
+            2194
+          ],
+          "text": "This expression is valid in the sense that it uses all four numbers, and the subtraction $7 - 7 = 0$ does not affect the result.",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_4",
+          "character_span": [
+            2219,
+            2260
+          ],
+          "text": "$$\n\\boxed{(13 - 5) \\times 3 + (7 - 7)}\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "**24** is:\n\n$$\n(13 - 5) \\times 3 + (7 - 7)\n$$\n\nThis expression is valid in the sense that it uses all four numbers, and the subtraction $7 - 7 = 0$ does not affect the result.\n\n---\n\n### Final Answer\n\n",
+          "following_context": ""
+        }
+      ],
+      "family_definition": "F1 denotes previously selected full-expression family; not all errors or final scalar answer",
+      "old_component_primary_does_not_transfer": true
+    },
+    "513": {
+      "draft_key": "513/0",
+      "material_type": "explicit_rejection_multiple_candidate_returns",
+      "note": "多候选求值、否定和重现交错；最终还输出标量24与无解声明。",
+      "events": [
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_1",
+          "character_span": [
+            502,
+            545
+          ],
+          "text": "$$\n(13 - (9 \\div 3)) \\times (13 \\div 13)\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "ations. Since 24 is a relatively small number, we should focus on expressions that involve **multiplication** and **subtraction**, as they can quickly reach or exceed 24.\n\nLet’s test the expression:\n\n",
+          "following_context": "\n\n**Breakdown:**\n\n- First, calculate the innermost parentheses:  \n  $$\n  9 \\div 3 = 3\n  $$\n\n- Then, subtract from 13:  \n  $$\n  13 - 3 = 10\n  $$\n\n- Next, calculate the second division:  \n  $$\n  13 \\div"
+        },
+        {
+          "event_type": "reject",
+          "family": "F1",
+          "character_span": [
+            824,
+            880
+          ],
+          "text": "This is not equal to 24. Let's try a different approach.",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "endorse",
+          "family": "F1",
+          "character_span": [
+            1833,
+            1963
+          ],
+          "text": "After trying all combinations, the **only valid expression** that uses all four numbers **exactly once** and results in **24** is:",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_2",
+          "character_span": [
+            1965,
+            2008
+          ],
+          "text": "$$\n(13 - (9 \\div 3)) \\times (13 \\div 13)\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "\n\nBut this is still not 24.\n\n---\n\n### Correct and Valid Expression\n\nAfter trying all combinations, the **only valid expression** that uses all four numbers **exactly once** and results in **24** is:\n\n",
+          "following_context": "\n\nWait, this is **not valid** as it uses **13** three times.\n\n---\n\n### Final and Correct Expression\n\nUpon re-evaluation, the correct expression that satisfies all constraints is:\n\n$$\n(13 - (9 \\div 3))"
+        },
+        {
+          "event_type": "reject",
+          "family": "F1",
+          "character_span": [
+            2010,
+            2068
+          ],
+          "text": "Wait, this is **not valid** as it uses **13** three times.",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "endorse",
+          "family": "F1",
+          "character_span": [
+            2109,
+            2186
+          ],
+          "text": "Upon re-evaluation, the correct expression that satisfies all constraints is:",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_3",
+          "character_span": [
+            2188,
+            2231
+          ],
+          "text": "$$\n(13 - (9 \\div 3)) \\times (13 \\div 13)\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "imes (13 \\div 13)\n$$\n\nWait, this is **not valid** as it uses **13** three times.\n\n---\n\n### Final and Correct Expression\n\nUpon re-evaluation, the correct expression that satisfies all constraints is:\n\n",
+          "following_context": "\n\nBut this uses **13** three times.\n\n---\n\n### ✅ Correct Final Answer\n\nAfter careful analysis and multiple attempts, the correct expression that satisfies all conditions is:\n\n$$\n(13 \\times 3) - (9 + 13"
+        },
+        {
+          "event_type": "reject",
+          "family": "F1",
+          "character_span": [
+            2233,
+            2266
+          ],
+          "text": "But this uses **13** three times.",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "endorse",
+          "family": "F1",
+          "character_span": [
+            3242,
+            3385
+          ],
+          "text": "After extensive exploration and testing, the correct and valid expression that uses all four numbers **exactly once** and results in **24** is:",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_4",
+          "character_span": [
+            3387,
+            3451
+          ],
+          "text": "$$\n\\boxed{(13 - (9 \\div 3)) \\times (13 \\div 13)} = \\boxed{10}\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "tions results in **24**.\n\n---\n\n### ✅ Final Conclusion\n\nAfter extensive exploration and testing, the correct and valid expression that uses all four numbers **exactly once** and results in **24** is:\n\n",
+          "following_context": "\n\nThis is **not** 24. Hence, no valid solution exists.\n\n---\n\n**Answer:**\n\n$$\n\\boxed{24}\n$$\n\n**Note:** The problem may contain an error or require a different interpretation. However, based on the give"
+        },
+        {
+          "event_type": "reject_and_global_claim",
+          "family": "F1",
+          "character_span": [
+            3453,
+            3505
+          ],
+          "text": "This is **not** 24. Hence, no valid solution exists.",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "global_claim",
+          "family": "none",
+          "character_span": [
+            3543,
+            3784
+          ],
+          "text": "**Note:** The problem may contain an error or require a different interpretation. However, based on the given constraints, **no valid expression** using the numbers **3, 9, 13, 13** exactly once with the allowed operations results in **24**.",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        }
+      ],
+      "family_definition": "F1 denotes previously selected full-expression family; not all errors or final scalar answer",
+      "old_component_primary_does_not_transfer": true
+    },
+    "71": {
+      "draft_key": "71/0",
+      "material_type": "explicit_rejection_same_expression_returns",
+      "note": "同一36值表达式反复被指出不是24，又被称为正确；部分单元内立场冲突。",
+      "events": [
+        {
+          "event_type": "endorse",
+          "family": "F1",
+          "character_span": [
+            1469,
+            1596
+          ],
+          "text": "After exhaustive testing, the correct expression that uses all four numbers **7, 7, 11, 12** exactly once and yields **24** is:",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_1",
+          "character_span": [
+            1598,
+            1630
+          ],
+          "text": "$$\n(12 \\times (7 - (11 - 7)))\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "7) = 21 + 0 = 21\n$$\n\nStill not 24.\n\n---\n\n### Final Working Expression\n\nAfter exhaustive testing, the correct expression that uses all four numbers **7, 7, 11, 12** exactly once and yields **24** is:\n\n",
+          "following_context": "\n\nLet’s verify this step-by-step:\n\n- $ 11 - 7 = 4 $\n- $ 7 - 4 = 3 $\n- $ 12 \\times 3 = 36 $\n\nWait, that gives **36**, not 24.\n\nLet’s now try:\n\n$$\n(12 - (11 - 7)) \\times (7 - 7)\n$$\n\n- $ 11 - 7 = 4 $\n- $"
+        },
+        {
+          "event_type": "reject",
+          "family": "F1",
+          "character_span": [
+            1722,
+            1754
+          ],
+          "text": "Wait, that gives **36**, not 24.",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "endorse",
+          "family": "F1",
+          "character_span": [
+            1921,
+            2042
+          ],
+          "text": "After careful review and testing, the correct expression that evaluates to **24** using all four numbers exactly once is:",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_2",
+          "character_span": [
+            2044,
+            2115
+          ],
+          "text": "$$\n(12 \\times (7 - (11 - 7))) = 12 \\times (7 - 4) = 12 \\times 3 = 36\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "- $ 7 - 7 = 0 $\n- $ 8 \\times 0 = 0 $\n\nNo good.\n\n---\n\n### Correct Expression\n\nAfter careful review and testing, the correct expression that evaluates to **24** using all four numbers exactly once is:\n\n",
+          "following_context": "\n\nThis gives **36**, not 24.\n\nEventually, the correct expression is:\n\n$$\n(12 \\times (7 - (11 - 7))) = 36 \\quad \\text{(incorrect)}\n$$\n\nAfter further analysis, the correct expression is:\n\n$$\n(12 \\times "
+        },
+        {
+          "event_type": "reject",
+          "family": "F1",
+          "character_span": [
+            2117,
+            2143
+          ],
+          "text": "This gives **36**, not 24.",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "endorse",
+          "family": "F1",
+          "character_span": [
+            2145,
+            2183
+          ],
+          "text": "Eventually, the correct expression is:",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_3",
+          "character_span": [
+            2185,
+            2247
+          ],
+          "text": "$$\n(12 \\times (7 - (11 - 7))) = 36 \\quad \\text{(incorrect)}\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "aluates to **24** using all four numbers exactly once is:\n\n$$\n(12 \\times (7 - (11 - 7))) = 12 \\times (7 - 4) = 12 \\times 3 = 36\n$$\n\nThis gives **36**, not 24.\n\nEventually, the correct expression is:\n\n",
+          "following_context": "\n\nAfter further analysis, the correct expression is:\n\n$$\n(12 \\times (7 - (11 - 7))) = 36 \\quad \\text{(still incorrect)}\n$$\n\nAfter rechecking, the correct expression is:\n\n$$\n(12 \\times (7 - (11 - 7))) "
+        },
+        {
+          "event_type": "endorse",
+          "family": "F1",
+          "character_span": [
+            2249,
+            2299
+          ],
+          "text": "After further analysis, the correct expression is:",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_4",
+          "character_span": [
+            2301,
+            2369
+          ],
+          "text": "$$\n(12 \\times (7 - (11 - 7))) = 36 \\quad \\text{(still incorrect)}\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "imes 3 = 36\n$$\n\nThis gives **36**, not 24.\n\nEventually, the correct expression is:\n\n$$\n(12 \\times (7 - (11 - 7))) = 36 \\quad \\text{(incorrect)}\n$$\n\nAfter further analysis, the correct expression is:\n\n",
+          "following_context": "\n\nAfter rechecking, the correct expression is:\n\n$$\n(12 \\times (7 - (11 - 7))) = 36 \\quad \\text{(still incorrect)}\n$$\n\nEventually, the correct and verified expression is:\n\n$$\n(12 \\times (7 - (11 - 7)))"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_5",
+          "character_span": [
+            2417,
+            2485
+          ],
+          "text": "$$\n(12 \\times (7 - (11 - 7))) = 36 \\quad \\text{(still incorrect)}\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "36 \\quad \\text{(incorrect)}\n$$\n\nAfter further analysis, the correct expression is:\n\n$$\n(12 \\times (7 - (11 - 7))) = 36 \\quad \\text{(still incorrect)}\n$$\n\nAfter rechecking, the correct expression is:\n\n",
+          "following_context": "\n\nEventually, the correct and verified expression is:\n\n$$\n(12 \\times (7 - (11 - 7))) = 36 \\quad \\text{(still incorrect)}\n$$\n\n---\n\n### Final Answer\n\nAfter extensive testing and verification, the correc"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_6",
+          "character_span": [
+            2540,
+            2608
+          ],
+          "text": "$$\n(12 \\times (7 - (11 - 7))) = 36 \\quad \\text{(still incorrect)}\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "d \\text{(still incorrect)}\n$$\n\nAfter rechecking, the correct expression is:\n\n$$\n(12 \\times (7 - (11 - 7))) = 36 \\quad \\text{(still incorrect)}\n$$\n\nEventually, the correct and verified expression is:\n\n",
+          "following_context": "\n\n---\n\n### Final Answer\n\nAfter extensive testing and verification, the correct and verified expression that uses all four numbers exactly once and evaluates to 24 is:\n\n$$\n\\boxed{(12 \\times (7 - (11 - "
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_7",
+          "character_span": [
+            2776,
+            2816
+          ],
+          "text": "$$\n\\boxed{(12 \\times (7 - (11 - 7)))}\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "quad \\text{(still incorrect)}\n$$\n\n---\n\n### Final Answer\n\nAfter extensive testing and verification, the correct and verified expression that uses all four numbers exactly once and evaluates to 24 is:\n\n",
+          "following_context": "\n\nThis evaluates to:\n\n- $ 11 - 7 = 4 $\n- $ 7 - 4 = 3 $\n- $ 12 \\times 3 = 36 $\n\nWait, that's still **36**.\n\n---\n\n### ✅ Final Correct Expression\n\nAfter rechecking, the correct expression is:\n\n$$\n\\boxed{"
+        },
+        {
+          "event_type": "reject",
+          "family": "F1",
+          "character_span": [
+            2895,
+            2921
+          ],
+          "text": "Wait, that's still **36**.",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_8",
+          "character_span": [
+            3006,
+            3046
+          ],
+          "text": "$$\n\\boxed{(12 \\times (7 - (11 - 7)))}\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "- 7)))}\n$$\n\nThis evaluates to:\n\n- $ 11 - 7 = 4 $\n- $ 7 - 4 = 3 $\n- $ 12 \\times 3 = 36 $\n\nWait, that's still **36**.\n\n---\n\n### ✅ Final Correct Expression\n\nAfter rechecking, the correct expression is:\n\n",
+          "following_context": "\n\nThis evaluates to:\n\n- $ 11 - 7 = 4 $\n- $ 7 - 4 = 3 $\n- $ 12 \\times 3 = 36 $\n\nWait, that's still **36**.\n\n---\n\n### ✅ Final Correct Expression\n\nAfter rechecking all possible combinations and verifying"
+        },
+        {
+          "event_type": "reject",
+          "family": "F1",
+          "character_span": [
+            3125,
+            3151
+          ],
+          "text": "Wait, that's still **36**.",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_9",
+          "character_span": [
+            3360,
+            3400
+          ],
+          "text": "$$\n\\boxed{(12 \\times (7 - (11 - 7)))}\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "# ✅ Final Correct Expression\n\nAfter rechecking all possible combinations and verifying the correct expression that evaluates to **24** using all four numbers exactly once, the correct expression is:\n\n",
+          "following_context": "\n\nThis evaluates to:\n\n- $ 11 - 7 = 4 $\n- $ 7 - 4 = 3 $\n- $ 12 \\times 3 = 36 $\n\nWait, that's still **36**.\n\n---\n\n### ✅ Final Answer\n\nAfter thorough testing, the correct expression is:\n\n$$\n\\boxed{(12 \\t"
+        },
+        {
+          "event_type": "reject",
+          "family": "F1",
+          "character_span": [
+            3479,
+            3505
+          ],
+          "text": "Wait, that's still **36**.",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_10",
+          "character_span": [
+            3584,
+            3624
+          ],
+          "text": "$$\n\\boxed{(12 \\times (7 - (11 - 7)))}\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "- (11 - 7)))}\n$$\n\nThis evaluates to:\n\n- $ 11 - 7 = 4 $\n- $ 7 - 4 = 3 $\n- $ 12 \\times 3 = 36 $\n\nWait, that's still **36**.\n\n---\n\n### ✅ Final Answer\n\nAfter thorough testing, the correct expression is:\n\n",
+          "following_context": "\n\nThis evaluates to:\n\n- $ 11 - 7 = 4 $\n- $ 7 - 4 = 3 $\n- $ 12 \\times 3 = 36 $\n\nWait, that's still **36**.\n\n---\n\n### ✅ Final Answer\n\n$$\n\\boxed{24}\n$$\n\n**Correct Expression:**\n\n$$\n(12 \\times (7 - (11 - "
+        },
+        {
+          "event_type": "reject",
+          "family": "F1",
+          "character_span": [
+            3703,
+            3729
+          ],
+          "text": "Wait, that's still **36**.",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_11",
+          "character_span": [
+            3799,
+            3861
+          ],
+          "text": "$$\n(12 \\times (7 - (11 - 7))) = 36 \\quad \\text{(incorrect)}\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "times (7 - (11 - 7)))}\n$$\n\nThis evaluates to:\n\n- $ 11 - 7 = 4 $\n- $ 7 - 4 = 3 $\n- $ 12 \\times 3 = 36 $\n\nWait, that's still **36**.\n\n---\n\n### ✅ Final Answer\n\n$$\n\\boxed{24}\n$$\n\n**Correct Expression:**\n\n",
+          "following_context": "\n\n---\n\n### ✅ Final Correct Expression\n\n$$\n\\boxed{(12 \\times (7 - (11 - 7)))}\n$$\n\nThis evaluates to:\n\n- $ 11 - 7 = 4 $\n- $ 7 - 4 = 3 $\n- $ 12 \\times 3 = 36 $\n\nWait, that's still **36**.\n\n---\n\n### ✅ Fin"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_12",
+          "character_span": [
+            3900,
+            3940
+          ],
+          "text": "$$\n\\boxed{(12 \\times (7 - (11 - 7)))}\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "$\n\nWait, that's still **36**.\n\n---\n\n### ✅ Final Answer\n\n$$\n\\boxed{24}\n$$\n\n**Correct Expression:**\n\n$$\n(12 \\times (7 - (11 - 7))) = 36 \\quad \\text{(incorrect)}\n$$\n\n---\n\n### ✅ Final Correct Expression\n\n",
+          "following_context": "\n\nThis evaluates to:\n\n- $ 11 - 7 = 4 $\n- $ 7 - 4 = 3 $\n- $ 12 \\times 3 = 36 $\n\nWait, that's still **36**.\n\n---\n\n### ✅ Final Answer\n\n$$\n\\boxed{(12 \\times (7 - (11 - 7)))}\n$$\n\nThis expression evaluates "
+        },
+        {
+          "event_type": "reject",
+          "family": "F1",
+          "character_span": [
+            4019,
+            4045
+          ],
+          "text": "Wait, that's still **36**.",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_13",
+          "character_span": [
+            4072,
+            4112
+          ],
+          "text": "$$\n\\boxed{(12 \\times (7 - (11 - 7)))}\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "✅ Final Correct Expression\n\n$$\n\\boxed{(12 \\times (7 - (11 - 7)))}\n$$\n\nThis evaluates to:\n\n- $ 11 - 7 = 4 $\n- $ 7 - 4 = 3 $\n- $ 12 \\times 3 = 36 $\n\nWait, that's still **36**.\n\n---\n\n### ✅ Final Answer\n\n",
+          "following_context": "\n\nThis expression evaluates to **36**, not **24**.\n\n---\n\n### ✅ Final Correct Answer\n\nAfter rechecking all possibilities, the correct expression that evaluates to **24** using all four numbers exactly "
+        },
+        {
+          "event_type": "reject",
+          "family": "F1",
+          "character_span": [
+            4114,
+            4162
+          ],
+          "text": "This expression evaluates to **36**, not **24**.",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "endorse",
+          "family": "F1",
+          "character_span": [
+            4197,
+            4320
+          ],
+          "text": "After rechecking all possibilities, the correct expression that evaluates to **24** using all four numbers exactly once is:",
+          "stance": "explicit_surface_statement_not_internal_belief",
+          "annotation_scope": "selected_literal_evidence"
+        },
+        {
+          "event_type": "expression_occurrence",
+          "family": "F1",
+          "occurrence_id": "F1_14",
+          "character_span": [
+            4322,
+            4362
+          ],
+          "text": "$$\n\\boxed{(12 \\times (7 - (11 - 7)))}\n$$",
+          "stance": "not_assigned_from_expression_alone",
+          "previous_context": "ression evaluates to **36**, not **24**.\n\n---\n\n### ✅ Final Correct Answer\n\nAfter rechecking all possibilities, the correct expression that evaluates to **24** using all four numbers exactly once is:\n\n",
+          "following_context": "\n\n**Final Answer:**\n\n$$\n\\boxed{24}\n$$"
+        }
+      ],
+      "family_definition": "F1 denotes previously selected full-expression family; not all errors or final scalar answer",
+      "old_component_primary_does_not_transfer": true
+    },
+    "804": {
+      "draft_key": "804/1",
+      "material_type": "incomplete_candidate_repair_only",
+      "note": "明确说还有一个10要用并补乘10/10；未发现对最终重复10构造的明确否定。",
+      "events": [],
+      "family_definition": "F1 denotes previously selected full-expression family; not all errors or final scalar answer",
+      "old_component_primary_does_not_transfer": true
+    },
+    "1189": {
+      "draft_key": "1189/3",
+      "material_type": "no_explicit_rejection_found",
+      "note": "给出构造及错误合法性声明，没有明确自我否定。",
+      "events": [],
+      "family_definition": "F1 denotes previously selected full-expression family; not all errors or final scalar answer",
+      "old_component_primary_does_not_transfer": true
+    },
+    "123": {
+      "draft_key": "123/1",
+      "material_type": "no_explicit_rejection_found",
+      "note": "给出构造与合法性声明，boxed24是格式/表达式识别另一个问题。",
+      "events": [],
+      "family_definition": "F1 denotes previously selected full-expression family; not all errors or final scalar answer",
+      "old_component_primary_does_not_transfer": true
+    },
+    "577": {
+      "draft_key": "577/0",
+      "material_type": "no_explicit_rejection_found",
+      "note": "因子组合重复6，但草稿未明确否定该构造。",
+      "events": [],
+      "family_definition": "F1 denotes previously selected full-expression family; not all errors or final scalar answer",
+      "old_component_primary_does_not_transfer": true
+    },
+    "719": {
+      "draft_key": "719/2",
+      "material_type": "no_explicit_rejection_found",
+      "note": "声称remaining8且错误验证合法，无明确否定。",
+      "events": [],
+      "family_definition": "F1 denotes previously selected full-expression family; not all errors or final scalar answer",
+      "old_component_primary_does_not_transfer": true
+    },
+    "1084": {
+      "draft_key": "1084/0",
+      "material_type": "no_explicit_rejection_found",
+      "note": "重复7构造和合法性声明，无明确否定。",
+      "events": [],
+      "family_definition": "F1 denotes previously selected full-expression family; not all errors or final scalar answer",
+      "old_component_primary_does_not_transfer": true
+    },
+    "1226": {
+      "draft_key": "1226/1",
+      "material_type": "no_explicit_rejection_found",
+      "note": "重复6构造和验证，无明确否定。",
+      "events": [],
+      "family_definition": "F1 denotes previously selected full-expression family; not all errors or final scalar answer",
+      "old_component_primary_does_not_transfer": true
+    }
+  }
+}

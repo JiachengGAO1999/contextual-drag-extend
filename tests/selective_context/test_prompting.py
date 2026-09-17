@@ -42,6 +42,26 @@ def test_cross_token_boundary_fails():
         char_span_to_token_span([(0, 2), (2, 4)], (1, 4))
 
 
+def test_qwen_markdown_newline_boundary_uses_minimal_covering_span():
+    text = "We**\nNext"
+    assert char_span_to_token_span([(0, 2), (2, 5), (5, 9)], (0, 4), text) == (0, 2)
+
+
+def test_formatting_spillover_on_both_boundaries_allowed():
+    text = "\n**draft**\n"
+    assert char_span_to_token_span([(0, 4), (4, 8), (8, 11)], (3, 8), text) == (0, 2)
+
+
+def test_semantic_boundary_spillover_rejected():
+    with pytest.raises(ValueError, match="semantic"):
+        char_span_to_token_span([(0, 2), (2, 7)], (0, 4), "We**Now")
+
+
+def test_partial_token_coverage_rejected():
+    with pytest.raises(ValueError, match="truncated"):
+        char_span_to_token_span([(0, 2)], (0, 4), "abcd")
+
+
 def test_request_bundle_roundtrip_and_hash_validation(tmp_path):
     text = render_official_prompt(ROOT, "R2", "game", "6 - 2 = 5")
     encoded = encode_prompt(CharacterTokenizer(), text)

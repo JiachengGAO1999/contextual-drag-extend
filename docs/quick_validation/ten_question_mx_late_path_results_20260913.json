@@ -1,0 +1,619 @@
+{
+  "all": {
+    "n_questions": 10,
+    "n_pairs": 40,
+    "conditions": {
+      "R0": {
+        "correct": 28,
+        "n": 40,
+        "parse": 40,
+        "eos": 39
+      },
+      "R2": {
+        "correct": 18,
+        "n": 40,
+        "parse": 40,
+        "eos": 40
+      },
+      "R3": {
+        "correct": 29,
+        "n": 40,
+        "parse": 39,
+        "eos": 39
+      },
+      "R4": {
+        "correct": 31,
+        "n": 40,
+        "parse": 39,
+        "eos": 39
+      },
+      "M_X": {
+        "correct": 24,
+        "n": 40,
+        "parse": 40,
+        "eos": 40
+      },
+      "M_CX": {
+        "correct": 18,
+        "n": 40,
+        "parse": 40,
+        "eos": 40
+      },
+      "P_X": {
+        "correct": 25,
+        "n": 40,
+        "parse": 38,
+        "eos": 38
+      },
+      "P_CX": {
+        "correct": 15,
+        "n": 40,
+        "parse": 40,
+        "eos": 40
+      }
+    },
+    "effects": {
+      "R2->M_X": {
+        "pp": 15.0,
+        "ci": [
+          -7.5,
+          40.0
+        ],
+        "improve": 12,
+        "harm": 6,
+        "question_positive": 4,
+        "question_negative": 1
+      },
+      "R2->P_X": {
+        "pp": 17.5,
+        "ci": [
+          -2.5,
+          35.0
+        ],
+        "improve": 13,
+        "harm": 6,
+        "question_positive": 7,
+        "question_negative": 1
+      },
+      "M_X->P_X": {
+        "pp": 2.5,
+        "ci": [
+          -17.5,
+          22.5
+        ],
+        "improve": 8,
+        "harm": 7,
+        "question_positive": 3,
+        "question_negative": 3
+      },
+      "M_CX->M_X": {
+        "pp": 15.0,
+        "ci": [
+          -10.0,
+          37.5
+        ],
+        "improve": 11,
+        "harm": 5,
+        "question_positive": 6,
+        "question_negative": 2
+      },
+      "P_CX->P_X": {
+        "pp": 25.0,
+        "ci": [
+          12.5,
+          37.5
+        ],
+        "improve": 13,
+        "harm": 3,
+        "question_positive": 7,
+        "question_negative": 0
+      },
+      "M_CX->P_CX": {
+        "pp": -7.5,
+        "ci": [
+          -25.0,
+          12.5
+        ],
+        "improve": 5,
+        "harm": 8,
+        "question_positive": 3,
+        "question_negative": 6
+      },
+      "R3->M_X": {
+        "pp": -12.5,
+        "ci": [
+          -30.0,
+          5.0
+        ],
+        "improve": 5,
+        "harm": 10,
+        "question_positive": 2,
+        "question_negative": 5
+      },
+      "R4->P_X": {
+        "pp": -15.0,
+        "ci": [
+          -30.0,
+          0.0
+        ],
+        "improve": 4,
+        "harm": 10,
+        "question_positive": 1,
+        "question_negative": 5
+      },
+      "R2->R3": {
+        "pp": 27.5,
+        "ci": [
+          12.5,
+          42.5
+        ],
+        "improve": 14,
+        "harm": 3,
+        "question_positive": 7,
+        "question_negative": 0
+      },
+      "R2->R4": {
+        "pp": 32.5,
+        "ci": [
+          5.0,
+          57.5
+        ],
+        "improve": 18,
+        "harm": 5,
+        "question_positive": 7,
+        "question_negative": 1
+      }
+    }
+  },
+  "old4": {
+    "n_questions": 4,
+    "n_pairs": 16,
+    "conditions": {
+      "R0": {
+        "correct": 8,
+        "n": 16,
+        "parse": 16,
+        "eos": 16
+      },
+      "R2": {
+        "correct": 5,
+        "n": 16,
+        "parse": 16,
+        "eos": 16
+      },
+      "R3": {
+        "correct": 9,
+        "n": 16,
+        "parse": 16,
+        "eos": 16
+      },
+      "R4": {
+        "correct": 11,
+        "n": 16,
+        "parse": 16,
+        "eos": 16
+      },
+      "M_X": {
+        "correct": 10,
+        "n": 16,
+        "parse": 16,
+        "eos": 16
+      },
+      "M_CX": {
+        "correct": 5,
+        "n": 16,
+        "parse": 16,
+        "eos": 16
+      },
+      "P_X": {
+        "correct": 8,
+        "n": 16,
+        "parse": 15,
+        "eos": 15
+      },
+      "P_CX": {
+        "correct": 3,
+        "n": 16,
+        "parse": 16,
+        "eos": 16
+      }
+    },
+    "effects": {
+      "R2->M_X": {
+        "pp": 31.25,
+        "ci": [
+          0.0,
+          75.0
+        ],
+        "improve": 6,
+        "harm": 1,
+        "question_positive": 2,
+        "question_negative": 0
+      },
+      "R2->P_X": {
+        "pp": 18.75,
+        "ci": [
+          -31.25,
+          62.5
+        ],
+        "improve": 6,
+        "harm": 3,
+        "question_positive": 3,
+        "question_negative": 1
+      },
+      "M_X->P_X": {
+        "pp": -12.5,
+        "ci": [
+          -37.5,
+          12.5
+        ],
+        "improve": 2,
+        "harm": 4,
+        "question_positive": 1,
+        "question_negative": 2
+      },
+      "M_CX->M_X": {
+        "pp": 31.25,
+        "ci": [
+          -6.25,
+          50.0
+        ],
+        "improve": 6,
+        "harm": 1,
+        "question_positive": 3,
+        "question_negative": 1
+      },
+      "P_CX->P_X": {
+        "pp": 31.25,
+        "ci": [
+          25.0,
+          43.75
+        ],
+        "improve": 6,
+        "harm": 1,
+        "question_positive": 4,
+        "question_negative": 0
+      },
+      "M_CX->P_CX": {
+        "pp": -12.5,
+        "ci": [
+          -25.0,
+          12.5
+        ],
+        "improve": 2,
+        "harm": 4,
+        "question_positive": 1,
+        "question_negative": 3
+      },
+      "R3->M_X": {
+        "pp": 6.25,
+        "ci": [
+          -12.5,
+          25.0
+        ],
+        "improve": 2,
+        "harm": 1,
+        "question_positive": 2,
+        "question_negative": 1
+      },
+      "R4->P_X": {
+        "pp": -18.75,
+        "ci": [
+          -37.5,
+          0.0
+        ],
+        "improve": 2,
+        "harm": 5,
+        "question_positive": 0,
+        "question_negative": 2
+      },
+      "R2->R3": {
+        "pp": 25.0,
+        "ci": [
+          0.0,
+          56.25
+        ],
+        "improve": 5,
+        "harm": 1,
+        "question_positive": 2,
+        "question_negative": 0
+      },
+      "R2->R4": {
+        "pp": 37.5,
+        "ci": [
+          -18.75,
+          87.5
+        ],
+        "improve": 8,
+        "harm": 2,
+        "question_positive": 3,
+        "question_negative": 1
+      }
+    }
+  },
+  "additional6": {
+    "n_questions": 6,
+    "n_pairs": 24,
+    "conditions": {
+      "R0": {
+        "correct": 20,
+        "n": 24,
+        "parse": 24,
+        "eos": 23
+      },
+      "R2": {
+        "correct": 13,
+        "n": 24,
+        "parse": 24,
+        "eos": 24
+      },
+      "R3": {
+        "correct": 20,
+        "n": 24,
+        "parse": 23,
+        "eos": 23
+      },
+      "R4": {
+        "correct": 20,
+        "n": 24,
+        "parse": 23,
+        "eos": 23
+      },
+      "M_X": {
+        "correct": 14,
+        "n": 24,
+        "parse": 24,
+        "eos": 24
+      },
+      "M_CX": {
+        "correct": 13,
+        "n": 24,
+        "parse": 24,
+        "eos": 24
+      },
+      "P_X": {
+        "correct": 17,
+        "n": 24,
+        "parse": 23,
+        "eos": 23
+      },
+      "P_CX": {
+        "correct": 12,
+        "n": 24,
+        "parse": 24,
+        "eos": 24
+      }
+    },
+    "effects": {
+      "R2->M_X": {
+        "pp": 4.166666666666667,
+        "ci": [
+          -20.833333333333332,
+          29.166666666666668
+        ],
+        "improve": 6,
+        "harm": 5,
+        "question_positive": 2,
+        "question_negative": 1
+      },
+      "R2->P_X": {
+        "pp": 16.666666666666668,
+        "ci": [
+          8.333333333333334,
+          25.0
+        ],
+        "improve": 7,
+        "harm": 3,
+        "question_positive": 4,
+        "question_negative": 0
+      },
+      "M_X->P_X": {
+        "pp": 12.5,
+        "ci": [
+          -8.333333333333334,
+          37.5
+        ],
+        "improve": 6,
+        "harm": 3,
+        "question_positive": 2,
+        "question_negative": 1
+      },
+      "M_CX->M_X": {
+        "pp": 4.166666666666667,
+        "ci": [
+          -29.166666666666668,
+          33.333333333333336
+        ],
+        "improve": 5,
+        "harm": 4,
+        "question_positive": 3,
+        "question_negative": 1
+      },
+      "P_CX->P_X": {
+        "pp": 20.833333333333332,
+        "ci": [
+          4.166666666666667,
+          37.5
+        ],
+        "improve": 7,
+        "harm": 2,
+        "question_positive": 3,
+        "question_negative": 0
+      },
+      "M_CX->P_CX": {
+        "pp": -4.166666666666667,
+        "ci": [
+          -29.166666666666668,
+          25.0
+        ],
+        "improve": 3,
+        "harm": 4,
+        "question_positive": 2,
+        "question_negative": 3
+      },
+      "R3->M_X": {
+        "pp": -25.0,
+        "ci": [
+          -45.833333333333336,
+          -8.333333333333334
+        ],
+        "improve": 3,
+        "harm": 9,
+        "question_positive": 0,
+        "question_negative": 4
+      },
+      "R4->P_X": {
+        "pp": -12.5,
+        "ci": [
+          -33.333333333333336,
+          4.166666666666667
+        ],
+        "improve": 2,
+        "harm": 5,
+        "question_positive": 1,
+        "question_negative": 3
+      },
+      "R2->R3": {
+        "pp": 29.166666666666668,
+        "ci": [
+          16.666666666666668,
+          41.666666666666664
+        ],
+        "improve": 9,
+        "harm": 2,
+        "question_positive": 5,
+        "question_negative": 0
+      },
+      "R2->R4": {
+        "pp": 29.166666666666668,
+        "ci": [
+          12.5,
+          45.833333333333336
+        ],
+        "improve": 10,
+        "harm": 3,
+        "question_positive": 4,
+        "question_negative": 0
+      }
+    }
+  },
+  "per_question": {
+    "1226": {
+      "R0": 3,
+      "R2": 0,
+      "R3": 3,
+      "R4": 4,
+      "M_X": 4,
+      "M_CX": 2,
+      "P_X": 3,
+      "P_CX": 1
+    },
+    "719": {
+      "R0": 2,
+      "R2": 1,
+      "R3": 1,
+      "R4": 4,
+      "M_X": 2,
+      "M_CX": 0,
+      "P_X": 2,
+      "P_CX": 1
+    },
+    "577": {
+      "R0": 3,
+      "R2": 4,
+      "R3": 4,
+      "R4": 2,
+      "M_X": 4,
+      "M_CX": 2,
+      "P_X": 2,
+      "P_CX": 1
+    },
+    "1358": {
+      "R0": 0,
+      "R2": 0,
+      "R3": 1,
+      "R4": 1,
+      "M_X": 0,
+      "M_CX": 1,
+      "P_X": 1,
+      "P_CX": 0
+    },
+    "1189": {
+      "R0": 3,
+      "R2": 2,
+      "R3": 3,
+      "R4": 4,
+      "M_X": 2,
+      "M_CX": 0,
+      "P_X": 2,
+      "P_CX": 2
+    },
+    "804": {
+      "R0": 3,
+      "R2": 2,
+      "R3": 3,
+      "R4": 4,
+      "M_X": 2,
+      "M_CX": 1,
+      "P_X": 3,
+      "P_CX": 2
+    },
+    "123": {
+      "R0": 4,
+      "R2": 1,
+      "R3": 3,
+      "R4": 3,
+      "M_X": 2,
+      "M_CX": 1,
+      "P_X": 2,
+      "P_CX": 0
+    },
+    "71": {
+      "R0": 3,
+      "R2": 3,
+      "R3": 3,
+      "R4": 3,
+      "M_X": 3,
+      "M_CX": 3,
+      "P_X": 3,
+      "P_CX": 1
+    },
+    "513": {
+      "R0": 4,
+      "R2": 3,
+      "R3": 4,
+      "R4": 3,
+      "M_X": 1,
+      "M_CX": 4,
+      "P_X": 4,
+      "P_CX": 4
+    },
+    "1084": {
+      "R0": 3,
+      "R2": 2,
+      "R3": 4,
+      "R4": 3,
+      "M_X": 4,
+      "M_CX": 4,
+      "P_X": 3,
+      "P_CX": 3
+    }
+  },
+  "anomalies": [
+    {
+      "id": "1226",
+      "seed": 32027,
+      "condition": "P_X",
+      "correctness": null,
+      "finish": "length"
+    },
+    {
+      "id": "71",
+      "seed": 2027,
+      "condition": "P_X",
+      "correctness": null,
+      "finish": "length"
+    }
+  ],
+  "sanity": "160 input/hash/seed/bundle checks;80 late first-token checks;32 exact reused records;40 actual attention checks passed"
+}

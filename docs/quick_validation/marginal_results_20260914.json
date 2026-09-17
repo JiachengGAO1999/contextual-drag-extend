@@ -1,0 +1,158 @@
+{
+  "scope": "Two preselected dev cases x4 original seeds; no structural control or independent replication",
+  "questions": {
+    "719": {
+      "conditions": {
+        "R0": {
+          "correct": 2,
+          "n": 4,
+          "parse": 4,
+          "eos": 4
+        },
+        "R2": {
+          "correct": 1,
+          "n": 4,
+          "parse": 4,
+          "eos": 4
+        },
+        "R3": {
+          "correct": 1,
+          "n": 4,
+          "parse": 4,
+          "eos": 4
+        },
+        "R4": {
+          "correct": 4,
+          "n": 4,
+          "parse": 4,
+          "eos": 4
+        },
+        "P_X": {
+          "correct": 2,
+          "n": 4,
+          "parse": 4,
+          "eos": 4
+        },
+        "C1_plus_U": {
+          "correct": 1,
+          "n": 4,
+          "parse": 4,
+          "eos": 4
+        },
+        "C2_minus_U": {
+          "correct": 3,
+          "n": 4,
+          "parse": 4,
+          "eos": 4
+        },
+        "fixed_C2": {
+          "correct": 2,
+          "n": 4,
+          "parse": 4,
+          "eos": 4
+        }
+      },
+      "effects": {
+        "P_X->C1_plus_U": {
+          "pp": -25,
+          "improve": 1,
+          "harm": 2,
+          "per_seed": {
+            "2027": -1,
+            "12027": 1,
+            "22027": -1,
+            "32027": 0
+          }
+        },
+        "C2_minus_U->fixed_C2": {
+          "pp": -25,
+          "improve": 1,
+          "harm": 2,
+          "per_seed": {
+            "2027": 0,
+            "12027": 1,
+            "22027": -1,
+            "32027": -1
+          }
+        }
+      }
+    },
+    "1358": {
+      "conditions": {
+        "R0": {
+          "correct": 0,
+          "n": 4,
+          "parse": 4,
+          "eos": 4
+        },
+        "R2": {
+          "correct": 0,
+          "n": 4,
+          "parse": 4,
+          "eos": 4
+        },
+        "R3": {
+          "correct": 1,
+          "n": 4,
+          "parse": 4,
+          "eos": 4
+        },
+        "R4": {
+          "correct": 1,
+          "n": 4,
+          "parse": 4,
+          "eos": 4
+        },
+        "P_X": {
+          "correct": 1,
+          "n": 4,
+          "parse": 4,
+          "eos": 4
+        },
+        "C1_plus_U": {
+          "correct": 0,
+          "n": 4,
+          "parse": 4,
+          "eos": 4
+        },
+        "C2_minus_U": {
+          "correct": 0,
+          "n": 4,
+          "parse": 4,
+          "eos": 4
+        },
+        "fixed_C2": {
+          "correct": 0,
+          "n": 4,
+          "parse": 4,
+          "eos": 4
+        }
+      },
+      "effects": {
+        "P_X->C1_plus_U": {
+          "pp": -25,
+          "improve": 0,
+          "harm": 1,
+          "per_seed": {
+            "2027": 0,
+            "12027": 0,
+            "22027": -1,
+            "32027": 0
+          }
+        },
+        "C2_minus_U->fixed_C2": {
+          "pp": 0,
+          "improve": 0,
+          "harm": 0,
+          "per_seed": {
+            "2027": 0,
+            "12027": 0,
+            "22027": 0,
+            "32027": 0
+          }
+        }
+      }
+    }
+  },
+  "checks": "16 exact bundles/input/seed checks;48 unchanged reference records;8 pair edge-difference equalities;four36-layer actual attention checks passed"
+}

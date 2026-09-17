@@ -1,0 +1,119 @@
+{
+  "per_question": {
+    "1226": {
+      "R0": 3,
+      "R2": 0,
+      "R3": 3,
+      "R4": 4,
+      "P_X": 3,
+      "fixed_C2": 2
+    },
+    "719": {
+      "R0": 2,
+      "R2": 1,
+      "R3": 1,
+      "R4": 4,
+      "P_X": 2,
+      "fixed_C2": 2
+    },
+    "577": {
+      "R0": 3,
+      "R2": 4,
+      "R3": 4,
+      "R4": 2,
+      "P_X": 2,
+      "fixed_C2": 4
+    },
+    "513": {
+      "R0": 4,
+      "R2": 3,
+      "R3": 4,
+      "R4": 3,
+      "P_X": 4,
+      "fixed_C2": 4
+    },
+    "1358": {
+      "R0": 0,
+      "R2": 0,
+      "R3": 1,
+      "R4": 1,
+      "P_X": 1,
+      "fixed_C2": 0
+    }
+  },
+  "conditions": {
+    "R0": {
+      "correct": 12,
+      "n": 20,
+      "parse": 20,
+      "eos": 20
+    },
+    "R2": {
+      "correct": 8,
+      "n": 20,
+      "parse": 20,
+      "eos": 20
+    },
+    "R3": {
+      "correct": 13,
+      "n": 20,
+      "parse": 20,
+      "eos": 20
+    },
+    "R4": {
+      "correct": 14,
+      "n": 20,
+      "parse": 20,
+      "eos": 20
+    },
+    "P_X": {
+      "correct": 12,
+      "n": 20,
+      "parse": 19,
+      "eos": 19
+    },
+    "fixed_C2": {
+      "correct": 12,
+      "n": 20,
+      "parse": 19,
+      "eos": 20
+    }
+  },
+  "effects": {
+    "P_X->fixed_C2": {
+      "pp": 0,
+      "ci": [
+        -20.0,
+        25.0
+      ],
+      "improve": 3,
+      "harm": 3
+    },
+    "R2->fixed_C2": {
+      "pp": 20,
+      "ci": [
+        5.0,
+        35.0
+      ],
+      "improve": 4,
+      "harm": 0
+    },
+    "R4->fixed_C2": {
+      "pp": -10,
+      "ci": [
+        -45.0,
+        25.0
+      ],
+      "improve": 3,
+      "harm": 5
+    }
+  },
+  "anomalies": [
+    {
+      "id": "1226",
+      "seed": 32027,
+      "finish": "eos"
+    }
+  ],
+  "checks": "20 exact bundles, frozen masks, paired inputs/seeds;100 reference records exact;five36-layer decode checks pass"
+}

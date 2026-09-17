@@ -1,0 +1,221 @@
+{
+  "version": "dependency_decision_v1",
+  "approved_date": "2026-09-14",
+  "source": "docs\\quick_validation\\fixed_coverage_annotations_v1_20260913.json",
+  "source_sha256": "33072a451c98dc683120a8969c6e62a4dce42ede113e9f6f81fe933baa76d512",
+  "status": "semantic_decision_only_no_new_generation",
+  "records": [
+    {
+      "question": "1358",
+      "unit": "B1",
+      "classification": "target_ancestor_correct_incomplete",
+      "primary_candidate": true,
+      "draft_span": [
+        738,
+        779
+      ],
+      "text": "$$\n(13 - 5) \\times 3 = 8 \\times 3 = 24\n$$",
+      "source_unit_unchanged": true,
+      "functional_harm_or_protection": "not_established"
+    },
+    {
+      "question": "1358",
+      "unit": "B2",
+      "classification": "target_resource_state_description",
+      "primary_candidate": true,
+      "draft_span": [
+        781,
+        868
+      ],
+      "text": "This expression uses the numbers **13**, **5**, and **3**, and gives the result **24**.",
+      "source_unit_unchanged": true,
+      "functional_harm_or_protection": "not_established"
+    },
+    {
+      "question": "1358",
+      "unit": "B3",
+      "classification": "invalid_repair_instruction",
+      "primary_candidate": true,
+      "draft_span": [
+        1029,
+        1222
+      ],
+      "text": "We must find a way to **include the number 7** in the expression **without changing the result**. One clever way to do this is to **add and subtract 7** in a way that does not affect the value:",
+      "source_unit_unchanged": true,
+      "functional_harm_or_protection": "not_established"
+    },
+    {
+      "question": "513",
+      "unit": "B1",
+      "classification": "ambiguous_reintroduced_candidate_evaluation",
+      "primary_candidate": false,
+      "draft_span": [
+        563,
+        635
+      ],
+      "text": "- First, calculate the innermost parentheses:  \n  $$\n  9 \\div 3 = 3\n  $$",
+      "source_unit_unchanged": true,
+      "functional_harm_or_protection": "not_established"
+    },
+    {
+      "question": "513",
+      "unit": "B2",
+      "classification": "ambiguous_reintroduced_candidate_evaluation",
+      "primary_candidate": false,
+      "draft_span": [
+        637,
+        688
+      ],
+      "text": "- Then, subtract from 13:  \n  $$\n  13 - 3 = 10\n  $$",
+      "source_unit_unchanged": true,
+      "functional_harm_or_protection": "not_established"
+    },
+    {
+      "question": "513",
+      "unit": "B3",
+      "classification": "ambiguous_reintroduced_candidate_evaluation",
+      "primary_candidate": false,
+      "draft_span": [
+        690,
+        757
+      ],
+      "text": "- Next, calculate the second division:  \n  $$\n  13 \\div 13 = 1\n  $$",
+      "source_unit_unchanged": true,
+      "functional_harm_or_protection": "not_established"
+    },
+    {
+      "question": "513",
+      "unit": "B4",
+      "classification": "ambiguous_reintroduced_candidate_evaluation",
+      "primary_candidate": false,
+      "draft_span": [
+        759,
+        822
+      ],
+      "text": "- Finally, multiply the results:  \n  $$\n  10 \\times 1 = 10\n  $$",
+      "source_unit_unchanged": true,
+      "functional_harm_or_protection": "not_established"
+    },
+    {
+      "question": "577",
+      "unit": "B1",
+      "classification": "target_factor_ancestor",
+      "primary_candidate": true,
+      "draft_span": [
+        755,
+        834
+      ],
+      "text": "- **(13 - 6 + 1)**  \n  This simplifies to:  \n  $ 13 - 6 = 7 $  \n  $ 7 + 1 = 8 $",
+      "source_unit_unchanged": true,
+      "functional_harm_or_protection": "not_established"
+    },
+    {
+      "question": "577",
+      "unit": "B2",
+      "classification": "target_factor_ancestor",
+      "primary_candidate": true,
+      "draft_span": [
+        836,
+        891
+      ],
+      "text": "- **(9 - 6)**  \n  This simplifies to:  \n  $ 9 - 6 = 3 $",
+      "source_unit_unchanged": true,
+      "functional_harm_or_protection": "not_established"
+    },
+    {
+      "question": "577",
+      "unit": "B3",
+      "classification": "resource_conflicting_composition",
+      "primary_candidate": true,
+      "draft_span": [
+        893,
+        945
+      ],
+      "text": "Now multiply the two results:\n\n- $ 8 \\times 3 = 24 $",
+      "source_unit_unchanged": true,
+      "functional_harm_or_protection": "not_established"
+    },
+    {
+      "question": "719",
+      "unit": "B1",
+      "classification": "target_reconstruction_ancestor",
+      "primary_candidate": true,
+      "draft_span": [
+        815,
+        841
+      ],
+      "text": "$$\n7 - (5 - (8 \\div 8))\n$$",
+      "source_unit_unchanged": true,
+      "functional_harm_or_protection": "not_established"
+    },
+    {
+      "question": "719",
+      "unit": "B2",
+      "classification": "target_reconstruction_ancestor",
+      "primary_candidate": true,
+      "draft_span": [
+        888,
+        945
+      ],
+      "text": "1. **Innermost operation**:  \n   $$\n   8 \\div 8 = 1\n   $$",
+      "source_unit_unchanged": true,
+      "functional_harm_or_protection": "not_established"
+    },
+    {
+      "question": "719",
+      "unit": "B3",
+      "classification": "target_reconstruction_ancestor",
+      "primary_candidate": true,
+      "draft_span": [
+        947,
+        992
+      ],
+      "text": "2. **Next level**:  \n   $$\n   5 - 1 = 4\n   $$",
+      "source_unit_unchanged": true,
+      "functional_harm_or_protection": "not_established"
+    },
+    {
+      "question": "719",
+      "unit": "B4",
+      "classification": "target_reconstruction_ancestor",
+      "primary_candidate": true,
+      "draft_span": [
+        994,
+        1040
+      ],
+      "text": "3. **Outer level**:  \n   $$\n   7 - 4 = 3\n   $$",
+      "source_unit_unchanged": true,
+      "functional_harm_or_protection": "not_established"
+    },
+    {
+      "question": "719",
+      "unit": "B5",
+      "classification": "false_remaining_resource_and_composition",
+      "primary_candidate": true,
+      "draft_span": [
+        1042,
+        1087
+      ],
+      "text": "Now, multiply this result by the remaining 8:",
+      "source_unit_unchanged": true,
+      "functional_harm_or_protection": "not_established"
+    }
+  ],
+  "primary_question_candidates": [
+    "1358",
+    "577",
+    "719"
+  ],
+  "exploratory": [
+    "513"
+  ],
+  "not_readjudicated": [
+    "1226"
+  ],
+  "historical_results": "preserved including513 in original five-question denominator",
+  "future_candidate_units": [
+    "1358/B3",
+    "719/B5"
+  ],
+  "future_matrix_frozen": false
+}

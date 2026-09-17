@@ -1,5 +1,10 @@
 # Contextual Drag: How Errors in the Context Affect LLM Reasoning
 
+> **Research extension workspace — JiachengGAO1999/contextual-drag-extend.**
+> This repository extends the original [Princeton Contextual-Drag code](https://github.com/princeton-pli/Contextual-Drag) with selective logical attention blocking experiments. The original project documentation follows below.
+>
+> Start with the [2026-09-17 progress report](docs/quick_validation/progress_report_20260917.md), [research status](docs/RESEARCH_STATUS.md), and [master experiment log](MASTER_EXPERIMENT_LOG.md). Implementation: `selective_context/`; tests: `tests/selective_context/`; annotations and reports: `docs/quick_validation/`. Model weights, local environments and bulk `outputs/` are excluded. The vLLM backend is undergoing completed-output acceptance; see its [validation record](docs/quick_validation/vllm_backend_20260917.md).
+
 <div align="center">
 
 [![arXiv](https://img.shields.io/badge/arXiv-2602.04288-b31b1b.svg?style=flat)](https://arxiv.org/abs/2602.04288)

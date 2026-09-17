@@ -1,0 +1,218 @@
+{
+  "n_questions": 3,
+  "paired_seeds_per_question": 6,
+  "outputs": 72,
+  "conditions": {
+    "R0": {
+      "correct": 10,
+      "n": 18,
+      "accuracy": 0.5555555555555556,
+      "parse_rate": 1.0,
+      "completion_rate": 1.0
+    },
+    "R2": {
+      "correct": 5,
+      "n": 18,
+      "accuracy": 0.2777777777777778,
+      "parse_rate": 1.0,
+      "completion_rate": 1.0
+    },
+    "R3": {
+      "correct": 10,
+      "n": 18,
+      "accuracy": 0.5555555555555556,
+      "parse_rate": 0.9444444444444444,
+      "completion_rate": 1.0
+    },
+    "R4": {
+      "correct": 11,
+      "n": 18,
+      "accuracy": 0.6111111111111112,
+      "parse_rate": 1.0,
+      "completion_rate": 1.0
+    }
+  },
+  "per_question": {
+    "1189": {
+      "R0": 5,
+      "R2": 2,
+      "R3": 4,
+      "R4": 5
+    },
+    "1358": {
+      "R0": 0,
+      "R2": 0,
+      "R3": 1,
+      "R4": 1
+    },
+    "804": {
+      "R0": 5,
+      "R2": 3,
+      "R3": 5,
+      "R4": 5
+    }
+  },
+  "per_seed": {
+    "game24-independent-control-20260910": {
+      "R0": 1,
+      "R2": 0,
+      "R3": 1,
+      "R4": 2
+    },
+    "seed-12027": {
+      "R0": 2,
+      "R2": 2,
+      "R3": 3,
+      "R4": 3
+    },
+    "seed-22027": {
+      "R0": 1,
+      "R2": 0,
+      "R3": 2,
+      "R4": 2
+    },
+    "seed-32027": {
+      "R0": 2,
+      "R2": 2,
+      "R3": 1,
+      "R4": 2
+    },
+    "seed-42027": {
+      "R0": 2,
+      "R2": 0,
+      "R3": 2,
+      "R4": 2
+    },
+    "seed-52027": {
+      "R0": 2,
+      "R2": 1,
+      "R3": 1,
+      "R4": 0
+    }
+  },
+  "effects": {
+    "R0-R2": {
+      "pp": 27.77777777777778,
+      "ci95_pp": [
+        0.0,
+        50.0
+      ],
+      "wrong_to_correct": 5,
+      "correct_to_wrong": 0,
+      "per_question_pp": {
+        "1189": 50.0,
+        "1358": 0.0,
+        "804": 33.33333333333333
+      }
+    },
+    "R3-R2": {
+      "pp": 27.77777777777778,
+      "ci95_pp": [
+        16.666666666666664,
+        33.33333333333333
+      ],
+      "wrong_to_correct": 6,
+      "correct_to_wrong": 1,
+      "per_question_pp": {
+        "1189": 33.33333333333333,
+        "1358": 16.666666666666664,
+        "804": 33.33333333333333
+      }
+    },
+    "R4-R2": {
+      "pp": 33.33333333333333,
+      "ci95_pp": [
+        16.666666666666664,
+        50.0
+      ],
+      "wrong_to_correct": 7,
+      "correct_to_wrong": 1,
+      "per_question_pp": {
+        "1189": 50.0,
+        "1358": 16.666666666666664,
+        "804": 33.33333333333333
+      }
+    },
+    "R4-R3": {
+      "pp": 5.555555555555555,
+      "ci95_pp": [
+        0.0,
+        16.666666666666664
+      ],
+      "wrong_to_correct": 2,
+      "correct_to_wrong": 1,
+      "per_question_pp": {
+        "1189": 16.666666666666664,
+        "1358": 0.0,
+        "804": 0.0
+      }
+    }
+  },
+  "sanity": [
+    {
+      "path_block_max_attention": 0.0,
+      "late_block_max_attention": 0.0,
+      "path_postdraft_logits_change_after_draft_token_mutation": 0.0,
+      "layers_checked": 36,
+      "prompt_tokens": 523,
+      "position_ids": "unchanged implicit absolute positions 0..prompt_length-1",
+      "r3_first_token_boundary": "full-prefill logits, unchanged"
+    },
+    {
+      "path_block_max_attention": 0.0,
+      "late_block_max_attention": 0.0,
+      "path_postdraft_logits_change_after_draft_token_mutation": 0.0,
+      "layers_checked": 36,
+      "prompt_tokens": 523,
+      "position_ids": "unchanged implicit absolute positions 0..prompt_length-1",
+      "r3_first_token_boundary": "full-prefill logits, unchanged"
+    },
+    {
+      "path_block_max_attention": 0.0,
+      "late_block_max_attention": 0.0,
+      "path_postdraft_logits_change_after_draft_token_mutation": 0.0,
+      "layers_checked": 36,
+      "prompt_tokens": 523,
+      "position_ids": "unchanged implicit absolute positions 0..prompt_length-1",
+      "r3_first_token_boundary": "full-prefill logits, unchanged"
+    },
+    {
+      "path_block_max_attention": 0.0,
+      "late_block_max_attention": 0.0,
+      "path_postdraft_logits_change_after_draft_token_mutation": 0.0,
+      "layers_checked": 36,
+      "prompt_tokens": 523,
+      "position_ids": "unchanged implicit absolute positions 0..prompt_length-1",
+      "r3_first_token_boundary": "full-prefill logits, unchanged"
+    },
+    {
+      "path_block_max_attention": 0.0,
+      "late_block_max_attention": 0.0,
+      "path_postdraft_logits_change_after_draft_token_mutation": 0.0,
+      "layers_checked": 36,
+      "prompt_tokens": 523,
+      "position_ids": "unchanged implicit absolute positions 0..prompt_length-1",
+      "r3_first_token_boundary": "full-prefill logits, unchanged"
+    },
+    {
+      "path_block_max_attention": 0.0,
+      "late_block_max_attention": 0.0,
+      "path_postdraft_logits_change_after_draft_token_mutation": 0.0,
+      "layers_checked": 36,
+      "prompt_tokens": 523,
+      "position_ids": "unchanged implicit absolute positions 0..prompt_length-1",
+      "r3_first_token_boundary": "full-prefill logits, unchanged"
+    }
+  ],
+  "recovery_ratios": {
+    "R3": {
+      "value": 1.0,
+      "ci95": null
+    },
+    "R4": {
+      "value": 1.1999999999999997,
+      "ci95": null
+    }
+  },
+  "bootstrap": "10000 paired question-cluster resamples; retain all six paired seeds per sampled question; seed2027; percentile95%; three clusters only, not seed/population certainty"
+}

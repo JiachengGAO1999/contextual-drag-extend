@@ -1,0 +1,117 @@
+{
+  "n_questions": 6,
+  "n_pairs": 24,
+  "conditions": {
+    "M_X": {
+      "correct": 15,
+      "n": 24,
+      "eos": 23,
+      "parse": 23,
+      "mean_tokens": 6353.458333333333
+    },
+    "L_XCALC_v1": {
+      "correct": 12,
+      "n": 24,
+      "eos": 23,
+      "parse": 22,
+      "mean_tokens": 6100.083333333333
+    },
+    "P_X_fixed": {
+      "correct": 16,
+      "n": 24,
+      "eos": 24,
+      "parse": 24,
+      "mean_tokens": 4811.791666666667
+    },
+    "P_XCALC_fixed": {
+      "correct": 16,
+      "n": 24,
+      "eos": 24,
+      "parse": 24,
+      "mean_tokens": 5240.541666666667
+    }
+  },
+  "effects": {
+    "M_X->L_XCALC_v1": {
+      "delta_pp": -12.5,
+      "recovery": 3,
+      "harm": 6,
+      "ci95": [
+        -41.66666666666667,
+        8.333333333333332
+      ]
+    },
+    "P_X_fixed->P_XCALC_fixed": {
+      "delta_pp": 0.0,
+      "recovery": 4,
+      "harm": 4,
+      "ci95": [
+        -16.666666666666664,
+        16.666666666666664
+      ]
+    },
+    "M_X->P_X_fixed": {
+      "delta_pp": 4.166666666666666,
+      "recovery": 7,
+      "harm": 6,
+      "ci95": [
+        -16.666666666666664,
+        29.166666666666668
+      ]
+    },
+    "L_XCALC_v1->P_XCALC_fixed": {
+      "delta_pp": 16.666666666666664,
+      "recovery": 7,
+      "harm": 3,
+      "ci95": [
+        -4.166666666666666,
+        33.33333333333333
+      ]
+    }
+  },
+  "per_question": {
+    "1084": {
+      "M_X": 4,
+      "L_XCALC_v1": 3,
+      "P_X_fixed": 3,
+      "P_XCALC_fixed": 4
+    },
+    "1189": {
+      "M_X": 3,
+      "L_XCALC_v1": 0,
+      "P_X_fixed": 2,
+      "P_XCALC_fixed": 2
+    },
+    "1226": {
+      "M_X": 2,
+      "L_XCALC_v1": 2,
+      "P_X_fixed": 4,
+      "P_XCALC_fixed": 3
+    },
+    "123": {
+      "M_X": 2,
+      "L_XCALC_v1": 3,
+      "P_X_fixed": 3,
+      "P_XCALC_fixed": 4
+    },
+    "577": {
+      "M_X": 3,
+      "L_XCALC_v1": 3,
+      "P_X_fixed": 2,
+      "P_XCALC_fixed": 2
+    },
+    "719": {
+      "M_X": 1,
+      "L_XCALC_v1": 1,
+      "P_X_fixed": 2,
+      "P_XCALC_fixed": 1
+    }
+  },
+  "timing_coverage_interaction": {
+    "delta_pp": 12.5,
+    "ci95": [
+      -16.666666666666664,
+      45.83333333333333
+    ]
+  }
+}

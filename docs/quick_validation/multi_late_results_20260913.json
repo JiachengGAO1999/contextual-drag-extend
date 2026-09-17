@@ -1,0 +1,225 @@
+{
+  "per_question": {
+    "1226": {
+      "R0": 3,
+      "R2": 0,
+      "R3": 3,
+      "R4": 4,
+      "M_X": 4,
+      "M_V": 2,
+      "M_XV": 4,
+      "M_CX": 2,
+      "M_CV": 2,
+      "M_CXV": 1
+    },
+    "719": {
+      "R0": 2,
+      "R2": 1,
+      "R3": 1,
+      "R4": 4,
+      "M_X": 2,
+      "M_V": 1,
+      "M_XV": 1,
+      "M_CX": 0,
+      "M_CV": 0,
+      "M_CXV": 0
+    },
+    "577": {
+      "R0": 3,
+      "R2": 4,
+      "R3": 4,
+      "R4": 2,
+      "M_X": 4,
+      "M_V": 1,
+      "M_XV": 3,
+      "M_CX": 2,
+      "M_CV": 3,
+      "M_CXV": 4
+    },
+    "1358": {
+      "R0": 0,
+      "R2": 0,
+      "R3": 1,
+      "R4": 1,
+      "M_X": 0,
+      "M_V": 0,
+      "M_XV": 0,
+      "M_CX": 1,
+      "M_CV": 0,
+      "M_CXV": 1
+    }
+  },
+  "conditions": {
+    "R0": {
+      "correct": 8,
+      "n": 16,
+      "parse": 16,
+      "eos": 16
+    },
+    "R2": {
+      "correct": 5,
+      "n": 16,
+      "parse": 16,
+      "eos": 16
+    },
+    "R3": {
+      "correct": 9,
+      "n": 16,
+      "parse": 16,
+      "eos": 16
+    },
+    "R4": {
+      "correct": 11,
+      "n": 16,
+      "parse": 16,
+      "eos": 16
+    },
+    "M_X": {
+      "correct": 10,
+      "n": 16,
+      "parse": 16,
+      "eos": 16
+    },
+    "M_V": {
+      "correct": 4,
+      "n": 16,
+      "parse": 16,
+      "eos": 16
+    },
+    "M_XV": {
+      "correct": 8,
+      "n": 16,
+      "parse": 16,
+      "eos": 16
+    },
+    "M_CX": {
+      "correct": 5,
+      "n": 16,
+      "parse": 16,
+      "eos": 16
+    },
+    "M_CV": {
+      "correct": 5,
+      "n": 16,
+      "parse": 15,
+      "eos": 15
+    },
+    "M_CXV": {
+      "correct": 6,
+      "n": 16,
+      "parse": 16,
+      "eos": 16
+    }
+  },
+  "effects": {
+    "M_CX->M_X": {
+      "pp": 31.25,
+      "ci": [
+        -6.25,
+        50.0
+      ],
+      "improve": 6,
+      "harm": 1
+    },
+    "M_CV->M_V": {
+      "pp": -6.25,
+      "ci": [
+        -37.5,
+        18.75
+      ],
+      "improve": 1,
+      "harm": 2
+    },
+    "M_CXV->M_XV": {
+      "pp": 12.5,
+      "ci": [
+        -25.0,
+        50.0
+      ],
+      "improve": 4,
+      "harm": 2
+    },
+    "M_X->M_XV": {
+      "pp": -12.5,
+      "ci": [
+        -25.0,
+        0.0
+      ],
+      "improve": 0,
+      "harm": 2
+    },
+    "R2->M_X": {
+      "pp": 31.25,
+      "ci": [
+        0.0,
+        75.0
+      ],
+      "improve": 6,
+      "harm": 1
+    },
+    "R2->M_V": {
+      "pp": -6.25,
+      "ci": [
+        -56.25,
+        37.5
+      ],
+      "improve": 2,
+      "harm": 3
+    },
+    "R2->M_XV": {
+      "pp": 18.75,
+      "ci": [
+        -18.75,
+        75.0
+      ],
+      "improve": 5,
+      "harm": 2
+    },
+    "R2->M_CX": {
+      "pp": 0.0,
+      "ci": [
+        -37.5,
+        37.5
+      ],
+      "improve": 3,
+      "harm": 3
+    },
+    "R2->M_CV": {
+      "pp": 0.0,
+      "ci": [
+        -25.0,
+        31.25
+      ],
+      "improve": 2,
+      "harm": 2
+    },
+    "R2->M_CXV": {
+      "pp": 6.25,
+      "ci": [
+        -12.5,
+        25.0
+      ],
+      "improve": 2,
+      "harm": 1
+    },
+    "R3->M_X": {
+      "pp": 6.25,
+      "ci": [
+        -12.5,
+        25.0
+      ],
+      "improve": 2,
+      "harm": 1
+    },
+    "R3->M_XV": {
+      "pp": -6.25,
+      "ci": [
+        -25.0,
+        12.5
+      ],
+      "improve": 1,
+      "harm": 2
+    }
+  },
+  "sanity": "96 token/hash/seed/first-token checks;24 multi-region attention checks passed"
+}
