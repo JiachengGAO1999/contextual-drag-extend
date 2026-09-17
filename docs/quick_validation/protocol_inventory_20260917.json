@@ -1,0 +1,450 @@
+{
+  "source": {
+    "rows": 1362,
+    "unique_number_multisets": 1362,
+    "sha256": "b9f12b3e36d987a3c714c4cef17d89a137d7c59da26532fcfb93b4821d8111b5"
+  },
+  "cache": {
+    "GPT_OSS_120B": {
+      "questions": 631,
+      "retained_init_counts_per_draft_group": {
+        "16": 599,
+        "15": 191,
+        "14": 86,
+        "13": 60,
+        "5": 2,
+        "9": 16,
+        "10": 6,
+        "11": 23,
+        "7": 5,
+        "12": 33,
+        "8": 6,
+        "4": 1
+      }
+    },
+    "GPT_OSS_20B": {
+      "questions": 631,
+      "retained_init_counts_per_draft_group": {
+        "15": 191,
+        "16": 604,
+        "13": 57,
+        "12": 21,
+        "14": 82,
+        "6": 8,
+        "11": 29,
+        "10": 19,
+        "7": 4,
+        "9": 8,
+        "5": 4,
+        "8": 2
+      }
+    },
+    "Nemotron_32B": {
+      "questions": 631,
+      "retained_init_counts_per_draft_group": {
+        "16": 871,
+        "15": 100,
+        "12": 4,
+        "14": 45,
+        "13": 6,
+        "10": 1,
+        "11": 1
+      }
+    },
+    "Nemotron_7B": {
+      "questions": 631,
+      "retained_init_counts_per_draft_group": {
+        "16": 765,
+        "14": 57,
+        "15": 172,
+        "10": 2,
+        "12": 10,
+        "13": 22,
+        "11": 1
+      }
+    },
+    "Qwen3_32B": {
+      "questions": 630,
+      "retained_init_counts_per_draft_group": {
+        "16": 617,
+        "15": 212,
+        "14": 91,
+        "12": 20,
+        "13": 56,
+        "7": 3,
+        "9": 6,
+        "10": 8,
+        "11": 15
+      }
+    },
+    "Qwen3_8B": {
+      "questions": 630,
+      "retained_init_counts_per_draft_group": {
+        "16": 552,
+        "15": 243,
+        "14": 109,
+        "13": 63,
+        "11": 13,
+        "9": 7,
+        "12": 26,
+        "10": 12,
+        "8": 3
+      }
+    }
+  },
+  "cache_union_questions": 631,
+  "inferred_mapping_count": 631,
+  "mapping_conflicts": {},
+  "cache_ids_matching_zero_based_lexicographic_order": 631,
+  "cached_anchor_stop_2true_2false_count": 596,
+  "cache_ids_equal_tot_rank": 2,
+  "baseline_groups": {
+    "thinking=False; backend=unknown": {
+      "samples": 70,
+      "True": 39,
+      "False": 19,
+      "None": 12,
+      "questions": 70
+    },
+    "thinking=True; backend=vllm_selective_flex_0.11.0": {
+      "samples": 32,
+      "True": 30,
+      "complete_parsable": 31,
+      "None": 1,
+      "False": 1,
+      "questions": 8
+    },
+    "thinking=True; backend=hf_eager_bfloat16": {
+      "samples": 299,
+      "True": 262,
+      "complete_parsable": 286,
+      "False": 26,
+      "None": 11,
+      "questions": 75
+    }
+  },
+  "complete_thinking_mixed_ids": [
+    "1084",
+    "1093",
+    "1170",
+    "1189",
+    "1226",
+    "123",
+    "1261",
+    "1358",
+    "159",
+    "170",
+    "23",
+    "513",
+    "577",
+    "71",
+    "719",
+    "804"
+  ],
+  "complete_thinking_2true_2false_ids": [
+    "1084"
+  ],
+  "nondevelopment_2true_2false_ids": [],
+  "counts_by_question": {
+    "519": {
+      "True": 4
+    },
+    "1080": {
+      "True": 4
+    },
+    "69": {
+      "True": 3
+    },
+    "377": {
+      "True": 4
+    },
+    "45": {
+      "True": 4
+    },
+    "1170": {
+      "False": 1,
+      "True": 3
+    },
+    "1144": {
+      "True": 4
+    },
+    "197": {
+      "True": 4
+    },
+    "1161": {
+      "True": 4
+    },
+    "342": {
+      "True": 4
+    },
+    "1280": {
+      "True": 3
+    },
+    "864": {
+      "True": 4
+    },
+    "360": {
+      "True": 4
+    },
+    "458": {
+      "True": 4
+    },
+    "503": {
+      "True": 4
+    },
+    "1189": {
+      "True": 2,
+      "False": 1
+    },
+    "1358": {
+      "False": 3,
+      "True": 1
+    },
+    "797": {
+      "True": 4
+    },
+    "1219": {
+      "True": 4
+    },
+    "1000": {
+      "True": 4
+    },
+    "804": {
+      "True": 3,
+      "False": 1
+    },
+    "918": {
+      "True": 4
+    },
+    "998": {
+      "True": 4
+    },
+    "769": {
+      "True": 2
+    },
+    "877": {
+      "True": 4
+    },
+    "171": {
+      "True": 4
+    },
+    "702": {
+      "True": 4
+    },
+    "19": {
+      "True": 4
+    },
+    "103": {
+      "True": 4
+    },
+    "1238": {
+      "True": 4
+    },
+    "1014": {
+      "True": 4
+    },
+    "153": {
+      "True": 4
+    },
+    "626": {
+      "True": 4
+    },
+    "170": {
+      "True": 3,
+      "False": 1
+    },
+    "60": {
+      "True": 4
+    },
+    "1054": {
+      "True": 4
+    },
+    "30": {
+      "True": 4
+    },
+    "159": {
+      "True": 3,
+      "False": 1
+    },
+    "1245": {
+      "True": 4
+    },
+    "1093": {
+      "False": 1,
+      "True": 3
+    },
+    "826": {
+      "True": 4
+    },
+    "1299": {
+      "True": 4
+    },
+    "1062": {
+      "True": 4
+    },
+    "796": {
+      "True": 4
+    },
+    "1261": {
+      "False": 1,
+      "True": 3
+    },
+    "33": {
+      "True": 3
+    },
+    "138": {
+      "True": 4
+    },
+    "54": {
+      "True": 4
+    },
+    "123": {
+      "True": 3,
+      "False": 1
+    },
+    "718": {
+      "True": 3
+    },
+    "368": {
+      "True": 4
+    },
+    "729": {
+      "True": 4
+    },
+    "305": {
+      "True": 4
+    },
+    "114": {
+      "True": 4
+    },
+    "577": {
+      "False": 3,
+      "True": 1
+    },
+    "873": {
+      "True": 4
+    },
+    "71": {
+      "False": 1,
+      "True": 3
+    },
+    "1148": {
+      "True": 4
+    },
+    "23": {
+      "True": 3,
+      "False": 1
+    },
+    "1008": {
+      "True": 4
+    },
+    "719": {
+      "True": 3,
+      "False": 1
+    },
+    "850": {
+      "True": 4
+    },
+    "497": {
+      "True": 4
+    },
+    "282": {
+      "True": 4
+    },
+    "588": {
+      "True": 3
+    },
+    "380": {
+      "True": 4
+    },
+    "513": {
+      "False": 1,
+      "True": 3
+    },
+    "1200": {
+      "True": 4
+    },
+    "1356": {
+      "False": 4
+    },
+    "650": {
+      "True": 4
+    },
+    "101": {
+      "True": 4
+    },
+    "716": {
+      "True": 2
+    },
+    "1084": {
+      "False": 2,
+      "True": 2
+    },
+    "512": {
+      "True": 4
+    },
+    "355": {
+      "True": 3
+    },
+    "425": {
+      "True": 4
+    },
+    "1187": {
+      "True": 4
+    },
+    "1167": {
+      "True": 4
+    },
+    "776": {
+      "True": 4
+    },
+    "829": {
+      "True": 4
+    },
+    "22": {
+      "True": 1
+    },
+    "1107": {
+      "True": 4
+    },
+    "1226": {
+      "True": 2,
+      "False": 1
+    }
+  },
+  "source_inventory": [
+    {
+      "path": "outputs\\baseline-corpus-audit-20260917\\server_sources\\qwen3-8b-r0-r4-smoke-20260906-draft_candidates.jsonl",
+      "deduplicated_records": 4
+    },
+    {
+      "path": "outputs\\baseline-corpus-audit-20260917\\server_sources\\qwen3-8b-r0-r4-smoke-boundary-20260906-draft_candidates.jsonl",
+      "deduplicated_records": 66
+    },
+    {
+      "path": "outputs\\game24-heldout-screen-20260917\\draft_candidates.jsonl",
+      "deduplicated_records": 32
+    },
+    {
+      "path": "outputs\\game24-qwen3-8b-thinking-drafts-20260908\\draft_candidates.jsonl",
+      "deduplicated_records": 64
+    },
+    {
+      "path": "outputs\\game24-qwen3-8b-thinking-r0-r4-20260906\\draft_candidates.jsonl",
+      "deduplicated_records": 64
+    },
+    {
+      "path": "outputs\\game24-qwen3-reendorsement-drafts-20260914\\draft_candidates.jsonl",
+      "deduplicated_records": 32
+    },
+    {
+      "path": "outputs\\game24-stage-b-drafts-20260911\\draft_candidates.jsonl",
+      "deduplicated_records": 128
+    },
+    {
+      "path": "outputs\\game24-stage-b-supplement-20260911\\draft_candidates.jsonl",
+      "deduplicated_records": 11
+    }
+  ],
+  "note": "Historical HF/vLLM and possibly sampling configurations are stratified, not declared interchangeable anchor samples. No new eligible set accepted."
+}

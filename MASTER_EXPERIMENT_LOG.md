@@ -1,5 +1,17 @@
 # Selective Context Reset — Master Experiment Log
 
+## 2026-09-17 — Protocol parity audit, preparation only (zero generation)
+
+User explicitly pauses interventions/screening pending audit. Official HEAD8614634 unchanged in audited code directories. Pooled three-anchor2T/2F rule confirmed in extant aggregate_data.py; scripts reference missing aggregate_data_minimal.py. Default baseline16/model/question, seed42. Extant filter includes falsey None after stop/parsable-Thinking filters. 1F flatten creates two rows but published shell/path handling is inconsistent for F2; not executed.
+
+TED caches union631questions; all631 numeric mappings match zero-based lexical ordering of our1362 ToT multisets, only2 IDs equal ToT Rank.596 retained pooled anchor cases have≥2 stop/True and≥2 stop/False, but missing raw drafts/Thinking flags and anchored parse selection prevent treating cache as full original653 or baseline-only membership. Historical401baseline records include70nonthinking,299HFThinking,32vLLMThinking; exclude development then zero meet explicit2T/2F in existing completed/parsable pool.
+
+Read-only discovery: Qwen3-32B17/17shards (~65.5GB) under another user's directory, use not authorized; no Nemotron32B found in bounded accessible scan; own smaller model directories inspected lack weights. New machine plan selects104unseen candidates from1276 (86historical multiset exclusions), seed20270918, generate:false. Full three-anchor stages32/64/104 imply1536/3072/4992baseline generations, not approved. Old startup queue nowpaused_protocol_audit; GPU4resident unchanged. Report docs/quick_validation/protocol_parity_report_20260917.md; no new model download/load/generation.
+
+## 2026-09-17 — Screening finished; one eligible new failed draft, no interventions
+
+Validation exit0 at13:07:58 CST:9 EOS completions,4 correct/4 false/1 scorer-null;36529 tokens in977.59s. Null1189/path is a nested fraction with an extra12; preserve official score. vLLM resident active onGPU4. Screening13:08:49–15:11:23 CST:32 outputs,245140 tokens,30 correct,1 completed wrong,1 length-limited malformed Thinking. Only1170 mixed-success;1170/0 uses three12s where two allowed, arithmetic24 correct, explicit invalid usage endorsement.69/2 repeats until32696-token limit and is excluded. No held-out intervention generated or new budget consumed. Full result/audit: docs/quick_validation/heldout_screen_results_20260917.md. Frozen matrix remains unchanged pending discussion.
+
 ## 2026-09-17 — Bounded independent-question batch authorized and queued
 
 User authorizes sequential handoff after current vLLM validation: at most32 draft samples and48 evaluation samples. Eight unseen question IDs frozen after excluding server historical IDs and number multisets:519,1080,69,377,45,1170,1144,197. Two fresh paired evaluation seeds927001/927002; at most6 accepted questions, R0/R2/whole_path/X_path. Resident startup queue automatically performs screening only after successful validation; then waits for agent textual/arithmetic X annotation audit. Evaluation is authorized but cannot bypass that audit. No automatic expansion or backend fallback. Plan and execution boundary: docs/quick_validation/heldout_queue_20260917.md. Freshness/overwrite tests:2 passed.

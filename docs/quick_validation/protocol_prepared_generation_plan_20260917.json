@@ -1,0 +1,989 @@
+{
+  "status": "PREPARED_NOT_AUTHORIZED_TO_GENERATE",
+  "generate": false,
+  "protocol_label": "paper-aligned re-instantiation; not exact original-653 reproduction",
+  "sources_revision": "8050e67d0e3a0fddc424d7fa5801538722a4c4cc",
+  "source_prompt_verbatim_recovered": false,
+  "order_seed": 20270918,
+  "historical_number_multisets_excluded": 86,
+  "candidate_count": 1276,
+  "candidates": [
+    {
+      "tot_rank": "964",
+      "numbers": [
+        4,
+        4,
+        7,
+        10
+      ]
+    },
+    {
+      "tot_rank": "6",
+      "numbers": [
+        1,
+        1,
+        2,
+        12
+      ]
+    },
+    {
+      "tot_rank": "44",
+      "numbers": [
+        10,
+        10,
+        12,
+        12
+      ]
+    },
+    {
+      "tot_rank": "137",
+      "numbers": [
+        4,
+        6,
+        6,
+        7
+      ]
+    },
+    {
+      "tot_rank": "914",
+      "numbers": [
+        1,
+        4,
+        4,
+        8
+      ]
+    },
+    {
+      "tot_rank": "1293",
+      "numbers": [
+        5,
+        5,
+        8,
+        11
+      ]
+    },
+    {
+      "tot_rank": "655",
+      "numbers": [
+        3,
+        7,
+        8,
+        12
+      ]
+    },
+    {
+      "tot_rank": "753",
+      "numbers": [
+        1,
+        3,
+        8,
+        8
+      ]
+    },
+    {
+      "tot_rank": "1112",
+      "numbers": [
+        4,
+        5,
+        8,
+        10
+      ]
+    },
+    {
+      "tot_rank": "697",
+      "numbers": [
+        1,
+        2,
+        2,
+        7
+      ]
+    },
+    {
+      "tot_rank": "1126",
+      "numbers": [
+        2,
+        4,
+        9,
+        10
+      ]
+    },
+    {
+      "tot_rank": "949",
+      "numbers": [
+        1,
+        2,
+        3,
+        13
+      ]
+    },
+    {
+      "tot_rank": "165",
+      "numbers": [
+        5,
+        5,
+        5,
+        5
+      ]
+    },
+    {
+      "tot_rank": "41",
+      "numbers": [
+        1,
+        1,
+        11,
+        12
+      ]
+    },
+    {
+      "tot_rank": "1033",
+      "numbers": [
+        1,
+        4,
+        8,
+        9
+      ]
+    },
+    {
+      "tot_rank": "1057",
+      "numbers": [
+        6,
+        9,
+        9,
+        12
+      ]
+    },
+    {
+      "tot_rank": "125",
+      "numbers": [
+        3,
+        4,
+        4,
+        6
+      ]
+    },
+    {
+      "tot_rank": "413",
+      "numbers": [
+        5,
+        6,
+        9,
+        9
+      ]
+    },
+    {
+      "tot_rank": "152",
+      "numbers": [
+        10,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tot_rank": "509",
+      "numbers": [
+        6,
+        6,
+        6,
+        9
+      ]
+    },
+    {
+      "tot_rank": "283",
+      "numbers": [
+        4,
+        5,
+        6,
+        6
+      ]
+    },
+    {
+      "tot_rank": "903",
+      "numbers": [
+        2,
+        5,
+        8,
+        11
+      ]
+    },
+    {
+      "tot_rank": "1058",
+      "numbers": [
+        2,
+        3,
+        6,
+        12
+      ]
+    },
+    {
+      "tot_rank": "1009",
+      "numbers": [
+        4,
+        4,
+        5,
+        11
+      ]
+    },
+    {
+      "tot_rank": "590",
+      "numbers": [
+        1,
+        2,
+        4,
+        11
+      ]
+    },
+    {
+      "tot_rank": "419",
+      "numbers": [
+        1,
+        3,
+        5,
+        13
+      ]
+    },
+    {
+      "tot_rank": "1342",
+      "numbers": [
+        3,
+        8,
+        8,
+        10
+      ]
+    },
+    {
+      "tot_rank": "956",
+      "numbers": [
+        7,
+        8,
+        8,
+        12
+      ]
+    },
+    {
+      "tot_rank": "1139",
+      "numbers": [
+        2,
+        5,
+        9,
+        10
+      ]
+    },
+    {
+      "tot_rank": "339",
+      "numbers": [
+        1,
+        6,
+        6,
+        10
+      ]
+    },
+    {
+      "tot_rank": "274",
+      "numbers": [
+        6,
+        6,
+        11,
+        12
+      ]
+    },
+    {
+      "tot_rank": "167",
+      "numbers": [
+        2,
+        8,
+        10,
+        10
+      ]
+    },
+    {
+      "tot_rank": "87",
+      "numbers": [
+        1,
+        4,
+        7,
+        12
+      ]
+    },
+    {
+      "tot_rank": "363",
+      "numbers": [
+        9,
+        11,
+        11,
+        11
+      ]
+    },
+    {
+      "tot_rank": "668",
+      "numbers": [
+        6,
+        8,
+        8,
+        10
+      ]
+    },
+    {
+      "tot_rank": "812",
+      "numbers": [
+        1,
+        5,
+        10,
+        13
+      ]
+    },
+    {
+      "tot_rank": "221",
+      "numbers": [
+        1,
+        4,
+        6,
+        8
+      ]
+    },
+    {
+      "tot_rank": "685",
+      "numbers": [
+        6,
+        6,
+        7,
+        9
+      ]
+    },
+    {
+      "tot_rank": "735",
+      "numbers": [
+        4,
+        5,
+        9,
+        13
+      ]
+    },
+    {
+      "tot_rank": "761",
+      "numbers": [
+        4,
+        4,
+        8,
+        10
+      ]
+    },
+    {
+      "tot_rank": "1214",
+      "numbers": [
+        3,
+        5,
+        9,
+        10
+      ]
+    },
+    {
+      "tot_rank": "1103",
+      "numbers": [
+        2,
+        3,
+        5,
+        10
+      ]
+    },
+    {
+      "tot_rank": "52",
+      "numbers": [
+        3,
+        3,
+        12,
+        12
+      ]
+    },
+    {
+      "tot_rank": "585",
+      "numbers": [
+        6,
+        6,
+        9,
+        12
+      ]
+    },
+    {
+      "tot_rank": "754",
+      "numbers": [
+        3,
+        9,
+        9,
+        10
+      ]
+    },
+    {
+      "tot_rank": "710",
+      "numbers": [
+        2,
+        9,
+        10,
+        13
+      ]
+    },
+    {
+      "tot_rank": "126",
+      "numbers": [
+        1,
+        5,
+        6,
+        12
+      ]
+    },
+    {
+      "tot_rank": "1305",
+      "numbers": [
+        5,
+        10,
+        10,
+        13
+      ]
+    },
+    {
+      "tot_rank": "289",
+      "numbers": [
+        12,
+        13,
+        13,
+        13
+      ]
+    },
+    {
+      "tot_rank": "230",
+      "numbers": [
+        3,
+        11,
+        11,
+        12
+      ]
+    },
+    {
+      "tot_rank": "717",
+      "numbers": [
+        1,
+        4,
+        6,
+        7
+      ]
+    },
+    {
+      "tot_rank": "1173",
+      "numbers": [
+        1,
+        3,
+        12,
+        13
+      ]
+    },
+    {
+      "tot_rank": "674",
+      "numbers": [
+        2,
+        2,
+        6,
+        10
+      ]
+    },
+    {
+      "tot_rank": "457",
+      "numbers": [
+        4,
+        5,
+        11,
+        13
+      ]
+    },
+    {
+      "tot_rank": "256",
+      "numbers": [
+        2,
+        8,
+        10,
+        11
+      ]
+    },
+    {
+      "tot_rank": "350",
+      "numbers": [
+        5,
+        7,
+        11,
+        11
+      ]
+    },
+    {
+      "tot_rank": "195",
+      "numbers": [
+        2,
+        8,
+        13,
+        13
+      ]
+    },
+    {
+      "tot_rank": "434",
+      "numbers": [
+        5,
+        5,
+        11,
+        11
+      ]
+    },
+    {
+      "tot_rank": "86",
+      "numbers": [
+        2,
+        3,
+        12,
+        12
+      ]
+    },
+    {
+      "tot_rank": "1051",
+      "numbers": [
+        4,
+        10,
+        11,
+        13
+      ]
+    },
+    {
+      "tot_rank": "345",
+      "numbers": [
+        2,
+        11,
+        11,
+        13
+      ]
+    },
+    {
+      "tot_rank": "14",
+      "numbers": [
+        4,
+        6,
+        11,
+        11
+      ]
+    },
+    {
+      "tot_rank": "215",
+      "numbers": [
+        10,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "tot_rank": "795",
+      "numbers": [
+        3,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "tot_rank": "445",
+      "numbers": [
+        2,
+        8,
+        8,
+        8
+      ]
+    },
+    {
+      "tot_rank": "144",
+      "numbers": [
+        2,
+        4,
+        11,
+        11
+      ]
+    },
+    {
+      "tot_rank": "564",
+      "numbers": [
+        2,
+        6,
+        8,
+        11
+      ]
+    },
+    {
+      "tot_rank": "580",
+      "numbers": [
+        6,
+        6,
+        10,
+        12
+      ]
+    },
+    {
+      "tot_rank": "1181",
+      "numbers": [
+        1,
+        3,
+        11,
+        12
+      ]
+    },
+    {
+      "tot_rank": "99",
+      "numbers": [
+        4,
+        6,
+        6,
+        6
+      ]
+    },
+    {
+      "tot_rank": "1133",
+      "numbers": [
+        2,
+        6,
+        12,
+        13
+      ]
+    },
+    {
+      "tot_rank": "1281",
+      "numbers": [
+        3,
+        6,
+        7,
+        10
+      ]
+    },
+    {
+      "tot_rank": "395",
+      "numbers": [
+        1,
+        2,
+        7,
+        10
+      ]
+    },
+    {
+      "tot_rank": "807",
+      "numbers": [
+        2,
+        2,
+        5,
+        11
+      ]
+    },
+    {
+      "tot_rank": "1206",
+      "numbers": [
+        2,
+        6,
+        7,
+        10
+      ]
+    },
+    {
+      "tot_rank": "423",
+      "numbers": [
+        3,
+        7,
+        12,
+        13
+      ]
+    },
+    {
+      "tot_rank": "381",
+      "numbers": [
+        6,
+        8,
+        11,
+        11
+      ]
+    },
+    {
+      "tot_rank": "524",
+      "numbers": [
+        3,
+        4,
+        4,
+        7
+      ]
+    },
+    {
+      "tot_rank": "1171",
+      "numbers": [
+        4,
+        7,
+        8,
+        11
+      ]
+    },
+    {
+      "tot_rank": "1049",
+      "numbers": [
+        3,
+        4,
+        8,
+        9
+      ]
+    },
+    {
+      "tot_rank": "396",
+      "numbers": [
+        2,
+        6,
+        10,
+        12
+      ]
+    },
+    {
+      "tot_rank": "764",
+      "numbers": [
+        3,
+        4,
+        4,
+        5
+      ]
+    },
+    {
+      "tot_rank": "1019",
+      "numbers": [
+        4,
+        5,
+        6,
+        13
+      ]
+    },
+    {
+      "tot_rank": "744",
+      "numbers": [
+        2,
+        4,
+        7,
+        11
+      ]
+    },
+    {
+      "tot_rank": "200",
+      "numbers": [
+        2,
+        2,
+        11,
+        12
+      ]
+    },
+    {
+      "tot_rank": "711",
+      "numbers": [
+        5,
+        6,
+        10,
+        13
+      ]
+    },
+    {
+      "tot_rank": "122",
+      "numbers": [
+        8,
+        9,
+        12,
+        12
+      ]
+    },
+    {
+      "tot_rank": "908",
+      "numbers": [
+        2,
+        3,
+        6,
+        9
+      ]
+    },
+    {
+      "tot_rank": "235",
+      "numbers": [
+        1,
+        5,
+        10,
+        10
+      ]
+    },
+    {
+      "tot_rank": "1020",
+      "numbers": [
+        3,
+        3,
+        5,
+        13
+      ]
+    },
+    {
+      "tot_rank": "50",
+      "numbers": [
+        9,
+        9,
+        12,
+        12
+      ]
+    },
+    {
+      "tot_rank": "641",
+      "numbers": [
+        2,
+        8,
+        8,
+        9
+      ]
+    },
+    {
+      "tot_rank": "765",
+      "numbers": [
+        3,
+        5,
+        9,
+        12
+      ]
+    },
+    {
+      "tot_rank": "790",
+      "numbers": [
+        2,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "tot_rank": "94",
+      "numbers": [
+        1,
+        2,
+        5,
+        12
+      ]
+    },
+    {
+      "tot_rank": "59",
+      "numbers": [
+        12,
+        12,
+        13,
+        13
+      ]
+    },
+    {
+      "tot_rank": "995",
+      "numbers": [
+        5,
+        8,
+        10,
+        11
+      ]
+    },
+    {
+      "tot_rank": "440",
+      "numbers": [
+        2,
+        2,
+        7,
+        13
+      ]
+    },
+    {
+      "tot_rank": "49",
+      "numbers": [
+        3,
+        8,
+        13,
+        13
+      ]
+    },
+    {
+      "tot_rank": "366",
+      "numbers": [
+        2,
+        6,
+        6,
+        8
+      ]
+    },
+    {
+      "tot_rank": "161",
+      "numbers": [
+        1,
+        2,
+        11,
+        11
+      ]
+    },
+    {
+      "tot_rank": "328",
+      "numbers": [
+        1,
+        2,
+        5,
+        5
+      ]
+    },
+    {
+      "tot_rank": "192",
+      "numbers": [
+        1,
+        1,
+        9,
+        13
+      ]
+    },
+    {
+      "tot_rank": "1194",
+      "numbers": [
+        2,
+        3,
+        7,
+        7
+      ]
+    }
+  ],
+  "stages": [
+    32,
+    64,
+    104
+  ],
+  "anchors": [
+    "nvidia/OpenReasoning-Nemotron-32B",
+    "Qwen/Qwen3-32B",
+    "Qwen/Qwen3-8B"
+  ],
+  "samples_per_model_per_question": 16,
+  "initial_sampling_seed": 42,
+  "baseline_caps_by_stage": [
+    1536,
+    3072,
+    4992
+  ],
+  "target_problem_count": [
+    30,
+    50
+  ],
+  "conditions": [
+    "R0",
+    "R2",
+    "whole_late",
+    "whole_path"
+  ],
+  "evaluation_paired_seeds": [
+    927001,
+    927002
+  ],
+  "evaluation_cap_for_50_questions": 400,
+  "pending_decisions": [
+    "Nemotron-32B storage/compute availability",
+    "authorization for discovered Qwen3-32B weights",
+    "paper-faithful falsey-label pool versus explicit-False primary pool",
+    "approve documented source/prompt/backend deviations or supply original data",
+    "approve bounded baseline budget; prior 32+48 budget is not carried forward"
+  ],
+  "no_auto_anchor_substitution": true,
+  "no_auto_start": true
+}

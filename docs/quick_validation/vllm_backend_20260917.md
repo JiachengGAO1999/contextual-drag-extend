@@ -1,5 +1,7 @@
 # Selective vLLM后端：实现与验收记录
 
+**最新状态（2026-09-17）：**decode-kernel完整验收exit0，9/9 EOS、9/9 Thinking结构可解析、官方答案解析8/9（1条nested fraction返回None，人工确认用数错误，原评分保留）；36529tokens/977.59s≈37.4tokens/s。随后32次筛选已完成，vLLM常驻GPU4。现在按用户指示暂停新生成，进入protocol parity audit；不继续优化后端。下文“尚待验收”为历史阶段记录。
+
 ## 环境与范围
 
 - 独立环境：`/data2/gaojc/envs/contextual-drag-vllm`，vLLM0.11.0、Torch2.8.0、Transformers4.55.4；完整锁定见`requirements/vllm-development-lock-20260917.txt`。

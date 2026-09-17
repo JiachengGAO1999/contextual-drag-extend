@@ -1,5 +1,11 @@
 # 当前研究入口
 
+**2026-09-17 协议审计完成，禁止新生成：**当前协议结论为partially aligned but materially different。三anchor合池2对2错已由论文与现存代码支持；公开脚本默认每模型每题16条；官方Game24数据/完整草稿未找到，TED缓存不能替代。现存聚合把None归错误池，1F脚本存在路径/glob缺口。已准备104道候选及阶段32/64/104的三anchor预算1536/3072/4992次，全部`generate:false`。32B模型资源和使用授权未落实，旧筛选队列已暂停。见[完整协议审计与生成前决策](quick_validation/protocol_parity_report_20260917.md)。
+
+**2026-09-17 16:20 核查：**vLLM完整验收exit0，9/9 EOS、官方答案解析8/9，长输出约37.4 tokens/s；GPU4已vLLM常驻。新题32次筛选结束：30正确、1完整错误（1170/0，重复使用12）、1超长循环；仅1道mixed-success题，干预评测0条。已停在审计点。见[结果与方向判断](quick_validation/heldout_screen_results_20260917.md)。
+
+**2026-09-17 baseline-only corpus audit：**补核服务器 `/data2/gaojc/projects/contextual-drag-extend` 后，将本地未同步的两份历史 R0 草稿池纳入审计；去重后共401条 baseline 样本、86道题。严格排除当前十题开发/标注集（1189、1358、804、123、577、719、1084、71、513、1226）及旧 prompt/mask/reuse 案例（170、159、1093），不使用任何 R2/R3/R4/late/path/X/CALC/X+CALC outcome。当前仅1170、1261满足“未复用、borderline、正确 companion + 人工确认 substantive failed trace”，远未达到下一轮12–15道独立题目标；不启动 intervention。完整 provenance 与机器可读结果见 [`baseline_corpus_audit.md`](../outputs/baseline-corpus-audit-20260917/baseline_corpus_audit.md)。
+
 **2026-09-17 新题批次已授权并排队：**当前 vLLM 验收成功后自动开始8道独立新题×4次筛草稿，最多32次；随后等待 X 标注审计，评测额度最多6题×2 seeds×4条件=48次。不是自动跳过审阅的全流程。见[冻结方案与自动执行边界](quick_validation/heldout_queue_20260917.md)。
 
 当前汇总入口：[2026-09-17 阶段报告与下一阶段建议](quick_validation/progress_report_20260917.md)。本次 GitHub 同步包含实现、标注、报告和汇总统计，不含 bulk outputs 或模型权重。
