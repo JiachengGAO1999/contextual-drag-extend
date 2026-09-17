@@ -1,5 +1,9 @@
 # Selective Context Reset — Master Experiment Log
 
+## 2026-09-17 — Ordinary vLLM baseline benchmarks authorized and generating
+
+User authorizes bounded throughput work (2development questions×16samples per available anchor, max96 across3), then explicitly confirms read-only Qwen3-32B checkpoint permission. Qwen3-8B ordinary FLASH_ATTN/default worker generated from18:13:52CST onGPU4;16concurrent sequences. Qwen3-32B32generation follow-up queued after8Bsuccess;singleGPU,4concurrent sequences,32768context retained,noquantization. Both useBF16,n16,seed42,.6/.95/top_k20, eager ordinaryvLLM0.11.0; no custom mask. No formal held-out acquisition/intervention authorized. Nemotron32B not found and storage insufficient for comfortable download; no fallback. Ends restoring selective8Bresident. Full plan docs/quick_validation/ordinary_anchor_benchmark_20260917.md.
+
 ## 2026-09-17 — Protocol parity audit, preparation only (zero generation)
 
 User explicitly pauses interventions/screening pending audit. Official HEAD8614634 unchanged in audited code directories. Pooled three-anchor2T/2F rule confirmed in extant aggregate_data.py; scripts reference missing aggregate_data_minimal.py. Default baseline16/model/question, seed42. Extant filter includes falsey None after stop/parsable-Thinking filters. 1F flatten creates two rows but published shell/path handling is inconsistent for F2; not executed.

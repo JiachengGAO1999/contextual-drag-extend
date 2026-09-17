@@ -1,5 +1,7 @@
 # 当前研究入口
 
+**2026-09-17 18:14：普通vLLM吞吐benchmark已启动。** 用户批准小规模测速并确认Qwen3-32B只读授权。GPU4先跑Qwen3-8B开发题2×16=32条，成功后自动接Qwen3-32B同32条；结束恢复selective常驻。Nemotron32B资源未落实，不下载、不替代。正式64题acquisition仍未授权启动。见[当前运行方案](quick_validation/ordinary_anchor_benchmark_20260917.md)。下方“禁止新生成”指此前审计阶段，已被这项限定benchmark授权更新。
+
 **2026-09-17 协议审计完成，禁止新生成：**当前协议结论为partially aligned but materially different。三anchor合池2对2错已由论文与现存代码支持；公开脚本默认每模型每题16条；官方Game24数据/完整草稿未找到，TED缓存不能替代。现存聚合把None归错误池，1F脚本存在路径/glob缺口。已准备104道候选及阶段32/64/104的三anchor预算1536/3072/4992次，全部`generate:false`。32B模型资源和使用授权未落实，旧筛选队列已暂停。见[完整协议审计与生成前决策](quick_validation/protocol_parity_report_20260917.md)。
 
 **2026-09-17 16:20 核查：**vLLM完整验收exit0，9/9 EOS、官方答案解析8/9，长输出约37.4 tokens/s；GPU4已vLLM常驻。新题32次筛选结束：30正确、1完整错误（1170/0，重复使用12）、1超长循环；仅1道mixed-success题，干预评测0条。已停在审计点。见[结果与方向判断](quick_validation/heldout_screen_results_20260917.md)。
