@@ -35,6 +35,8 @@ A100实际遇到默认64x64 tile共享内存超限，已固定32x32 tile；这�
 
 ## 实际运行入口
 
+常驻接棒：`scripts/vllm_resident_after_validation.sh` 在本轮 exit=0 且9条输出落盘后，替换本人的 HF resident，启动 tmux 内 vLLM 交互进程；失败则停止接棒。当前 tmux 名 `qwen3-vllm-resident`。出现 `SELECTIVE_VLLM_RESIDENT_READY` 后才算加载完成。在该会话调用 `run_manifest(manifest, new_output, batch_size=8)` 可复用已加载 backend，不重启模型；这不是通用 HTTP 服务，不自动筛题或启动新实验。支持直接使用 `backend.generate_batch` 执行预先构造好的 full/late/path 请求。
+
 通用入口：`python -m selective_context.phase0.vllm_run --manifest <manifest.json> --output <new-output> --batch-size 8`。
 manifest为JSON数组，每项包含仓库相对路径`bundle`、`pair`及该bundle中的`condition`。bundle保存原始token和请求，不重新构造prompt。输出兼容原官方scorer，保留Thinking、final、token、请求及后端元数据。temperature=.6/top_p=.95/top_k=20/context32768，生成预算为32768减prompt长度。
 

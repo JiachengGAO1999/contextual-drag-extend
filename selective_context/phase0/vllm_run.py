@@ -10,12 +10,12 @@ from selective_context.phase0.real_smoke import append,evaluate,save
 from selective_context.phase0.thinking_pilot import extract_final_draft
 from selective_context.vllm_backend import SelectiveVLLMBackend
 
-def main():
+def main(argv=None, backend=None):
     ap=argparse.ArgumentParser()
     ap.add_argument('--manifest',type=Path,required=True)
     ap.add_argument('--output',type=Path,required=True)
     ap.add_argument('--batch-size',type=int,default=8)
-    args=ap.parse_args();root=Path(__file__).resolve().parents[2]
+    args=ap.parse_args(argv);root=Path(__file__).resolve().parents[2]
     if not 1<=args.batch_size<=8:raise ValueError('Validated batch range: 1..8')
     manifest=json.loads(args.manifest.read_text(encoding='utf-8'));jobs=[]
     for entry in manifest:
@@ -29,7 +29,8 @@ def main():
     args.output.mkdir(parents=True)
     save(args.output/'manifest.json',manifest)
     save(args.output/'config.json',dict(backend='vllm_selective_flex_0.11.0',model='/data2/huangrj/models/qwen3-8b',temperature=.6,top_p=.95,top_k=20,context_size=32768,batch_size=args.batch_size,enable_thinking=True,prefix_caching=False,scope='all comparisons must use the same backend; old HF outputs are reference only'))
-    backend=SelectiveVLLMBackend('/data2/huangrj/models/qwen3-8b',max_num_seqs=args.batch_size)
+    if backend is None:
+        backend=SelectiveVLLMBackend('/data2/huangrj/models/qwen3-8b',max_num_seqs=args.batch_size)
     total_tokens=0;started=time.monotonic()
     for start in range(0,len(jobs),args.batch_size):
         batch=jobs[start:start+args.batch_size]
