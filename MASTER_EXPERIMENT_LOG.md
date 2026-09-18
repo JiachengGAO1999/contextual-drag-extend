@@ -657,3 +657,14 @@ Only `/data/sharing/Llama-3.1-8B-Instruct` is in an explicitly shared namespace 
 - 2026-09-04: Stage 1 snapshot committed locally; use `git log -1` for its content-addressed ID. No `origin` configured and nothing pushed.
 - 2026-09-04: User requested a read-only `sjtu-a100` capacity audit. Recorded a launch No-Go due to full data filesystems, an incomplete Qwen3-8B checkpoint, and no verified runnable environment; no server state was changed.
 - 2026-09-04: Targeted shared-model audit found three complete readable Qwen3-8B copies and several 7–9B alternatives. No weights were copied; owner confirmation is required before formal reuse.
+
+
+## 2026-09-17 夜间双anchor acquisition 已授权启动
+
+用户批准双Qwen adaptation，固定候选前20题 × 8B/32B × n16，最多640次，约10–12小时。普通vLLM，GPU4；分批落盘，12小时上限；不自动intervention，结束恢复selective resident。原n4样本不重复合池。详见 [冻结协议与监控](docs/quick_validation/dual_anchor_overnight_20260917.md)。首启进程等待接口异常在生成前修复；原始异常日志保留。前轮人工审计修正为8实质错误/3纯格式错误，1057/1属实质错误。
+
+## 2026-09-18 dual-anchor overnight audit
+640/640 complete in 32539s. Official: 583 true, 51 false, 6 length. Final-answer audit: 40 substantive multiset failures, 11 format-only. Strict scorer eligible: 9 questions; at least one substantive draft: 7; at least two substantive failures: 6. Resident restored. No new generation. Report: outputs/game24-dual-anchor-20q-20260917/analysis_20260918.md. Raw records synchronized locally.
+
+## 2026-09-18 seven-question intervention launched
+Authorized 7 questions x 2 paired seeds (927001/927002) x R0/R2/whole-late/whole-path = 56 generations. Frozen random failed drafts, 5 from 8B and 2 from 32B. Independent-solve prompt unchanged; all conditions selective vLLM, including fresh R0. Preflight input/boundary/onset checks passed. Existing GPU4 resident reused; no extra screening. Protocol: docs/quick_validation/dual_anchor_validation_20260918.md. Output: outputs/game24-dual-anchor-validation-20260918/.
