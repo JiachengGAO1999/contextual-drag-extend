@@ -1,3 +1,7 @@
+> Current schedule and scope: [ICLR 2027 one-week execution plan](docs/quick_validation/iclr2027_submission_sprint_20260919.md), adopted 2026-09-19. This is the maintained planning entry; update its change log when scope or timing changes.
+
+> 2026-09-19 status update: The local-carrier/descendant contribution proposal below is exploratory history, not the current primary claim. Current primary study is trajectory-level failed-trace access control: residual drag (R0>R2), whole-late recovery (R3>R2), and R4 timing diagnostic. See [current frozen plan](docs/quick_validation/whole_trace_acquisition_plan_20260919.md). No stable local carrier has been established.
+
 # Contextual Drag 新方向：Research Gap、Motivation、Main Contribution 与 ICLR 2027 实验判据
 
 ## 0. 核心判断

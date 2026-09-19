@@ -674,3 +674,11 @@ Only `/data/sharing/Llama-3.1-8B-Instruct` is in an explicitly shared namespace 
 
 ## 2026-09-18 seven-question intervention launched
 Authorized 7 questions x 2 paired seeds (927001/927002) x R0/R2/whole-late/whole-path = 56 generations. Frozen random failed drafts, 5 from 8B and 2 from 32B. Independent-solve prompt unchanged; all conditions selective vLLM, including fresh R0. Preflight input/boundary/onset checks passed. Existing GPU4 resident reused; no extra screening. Protocol: docs/quick_validation/dual_anchor_validation_20260918.md. Output: outputs/game24-dual-anchor-validation-20260918/.
+
+
+## 2026-09-19 whole-trace acquisition / Batch02 second anchor
+User approved full32 Qwen3-32B x16=512 ordinary-vLLM baseline, no filtering by 8B outcomes. Frozen original candidate manifest; strict formal eligibility >=2 completed parsed True and >=2 manually substantive False, unlike pilot41. 8B manual audit35 substantive/7 format/17 length/1 unscored/452 correct; same8 preeligible. 32B chunked job launched GPU4; finish -> pooled scorer audit + manual queue -> resident; no intervention/next-batch auto-launch. See docs/quick_validation/whole_trace_acquisition_plan_20260919.md.
+
+
+## 2026-09-19 submission sprint adopted and recorded
+User requested plan persistence, GitHub synchronization and ongoing change tracking. Canonical plan: docs/quick_validation/iclr2027_submission_sprint_20260919.md. Acquisition time-box September21, target20–30 new strict questions, batchwise R0/R2/R3/R4, correct-draft control, bounded second task/model; major results freeze September24. Supersedes prior acquire30–50-before-evaluation schedule, not scientific thresholds. No additional generation launched by this documentation update; Batch02 queue unchanged.
