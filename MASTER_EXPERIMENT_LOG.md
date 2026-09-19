@@ -1,5 +1,11 @@
 # Selective Context Reset — Master Experiment Log
 
+## 2026-09-18 — Gate A passed; clean baseline acquisition queued
+
+The seven-question dual-anchor pilot completed 56/56 with EOS and parseable outputs. R0/R2/R3/R4 were 12/14, 4/14, 12/14, and 10/14. Question-cluster bootstrap gives R3−R2 +57.1 pp and R4−R3 −14.3 pp; the strict six-question subset has the same direction. Go to independent baseline acquisition; hold any path-superiority or local-mask claim.
+
+The earlier 24-question screen remains baseline-only history and is excluded from the formal pool because it overlaps development/intervention questions. A new fixed-order batch of 32 clean questions × 16 Qwen3-8B R0 samples (512 ordinary-vLLM generations) is queued on A100 GPU4. The queue excludes all development/intervention IDs and all previously screened IDs, waits for large non-owner GPU processes, stops only the exact own resident, and restores it after completion. No intervention or automatic Qwen3-32B launch follows this batch. Decision record: `docs/quick_validation/gate_a_decision_20260918.md`.
+
 ## 2026-09-17 — Ordinary vLLM baseline benchmarks authorized and generating
 
 User authorizes bounded throughput work (2development questions×16samples per available anchor, max96 across3), then explicitly confirms read-only Qwen3-32B checkpoint permission. Qwen3-8B ordinary FLASH_ATTN/default worker generated from18:13:52CST onGPU4;16concurrent sequences. Qwen3-32B32generation follow-up queued after8Bsuccess;singleGPU,4concurrent sequences,32768context retained,noquantization. Both useBF16,n16,seed42,.6/.95/top_k20, eager ordinaryvLLM0.11.0; no custom mask. No formal held-out acquisition/intervention authorized. Nemotron32B not found and storage insufficient for comfortable download; no fallback. Ends restoring selective8Bresident. Full plan docs/quick_validation/ordinary_anchor_benchmark_20260917.md.

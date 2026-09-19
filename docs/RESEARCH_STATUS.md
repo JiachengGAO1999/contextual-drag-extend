@@ -1,5 +1,9 @@
 # 当前研究入口
 
+**2026-09-18 Gate A：**七题×两paired seeds×R0/R2/whole-late/whole-path已完成56/56，全部EOS且可解析。R0/R2=12/14 vs 4/14；R3 whole-late=12/14；R4 whole-path=10/14。R3相对R2为+57.1pp，R4相对R3为−14.3pp；因此Go baseline acquisition，但不声称path优于late，也不新增局部mask。当前已冻结下一批32道未使用题×每题16条R0，共512次普通vLLM Qwen3-8B；排除全部development/intervention题和此前24题screen。队列脚本见`scripts/queue_baseline_acquisition_a100_20260918_batch02.sh`，结束后只做baseline eligibility audit，不自动跑intervention。
+
+详见[Gate A decision](quick_validation/gate_a_decision_20260918.md)。
+
 **2026-09-17 18:14：普通vLLM吞吐benchmark已启动。** 用户批准小规模测速并确认Qwen3-32B只读授权。GPU4先跑Qwen3-8B开发题2×16=32条，成功后自动接Qwen3-32B同32条；结束恢复selective常驻。Nemotron32B资源未落实，不下载、不替代。正式64题acquisition仍未授权启动。见[当前运行方案](quick_validation/ordinary_anchor_benchmark_20260917.md)。下方“禁止新生成”指此前审计阶段，已被这项限定benchmark授权更新。
 
 **2026-09-17 协议审计完成，禁止新生成：**当前协议结论为partially aligned but materially different。三anchor合池2对2错已由论文与现存代码支持；公开脚本默认每模型每题16条；官方Game24数据/完整草稿未找到，TED缓存不能替代。现存聚合把None归错误池，1F脚本存在路径/glob缺口。已准备104道候选及阶段32/64/104的三anchor预算1536/3072/4992次，全部`generate:false`。32B模型资源和使用授权未落实，旧筛选队列已暂停。见[完整协议审计与生成前决策](quick_validation/protocol_parity_report_20260917.md)。

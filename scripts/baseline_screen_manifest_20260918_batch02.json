@@ -1,0 +1,451 @@
+{
+  "manifest_version": 1,
+  "status": "authorized_stage1_baseline_only",
+  "purpose": "Fixed baseline-only acquisition before any intervention selection.",
+  "source_plan": "docs/quick_validation/protocol_prepared_generation_plan_20260917.json",
+  "source_revision": "8050e67d0e3a0fddc424d7fa5801538722a4c4cc",
+  "selection_basis": "First fixed-order candidates after excluding all development/intervention questions and all questions in baseline_screen_manifest_20260917.json; no intervention outcome was inspected.",
+  "excluded_development_ids": [
+    "1057",
+    "1084",
+    "1093",
+    "1112",
+    "1189",
+    "1226",
+    "123",
+    "1358",
+    "159",
+    "170",
+    "41",
+    "413",
+    "44",
+    "509",
+    "513",
+    "577",
+    "71",
+    "719",
+    "804",
+    "914"
+  ],
+  "excluded_previous_screen_ids": [
+    "1009",
+    "1033",
+    "1057",
+    "1058",
+    "1112",
+    "1126",
+    "125",
+    "1293",
+    "137",
+    "152",
+    "165",
+    "283",
+    "41",
+    "413",
+    "44",
+    "509",
+    "6",
+    "655",
+    "697",
+    "753",
+    "903",
+    "914",
+    "949",
+    "964"
+  ],
+  "skipped_prefix": [
+    {
+      "id": "964",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "6",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "44",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "137",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "914",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "1293",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "655",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "753",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "1112",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "697",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "1126",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "949",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "165",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "41",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "1033",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "1057",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "125",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "413",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "152",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "509",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "283",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "903",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "1058",
+      "reason": "development_or_previous_screen"
+    },
+    {
+      "id": "1009",
+      "reason": "development_or_previous_screen"
+    }
+  ],
+  "candidate_count": 32,
+  "samples_per_problem": 16,
+  "total_generations": 512,
+  "condition": "R0",
+  "backend": "ordinary_vllm_default_worker",
+  "model_alias": "Qwen3_8B",
+  "seed": 42,
+  "candidate_rows": [
+    {
+      "id": "590",
+      "numbers": [
+        1,
+        2,
+        4,
+        11
+      ]
+    },
+    {
+      "id": "419",
+      "numbers": [
+        1,
+        3,
+        5,
+        13
+      ]
+    },
+    {
+      "id": "1342",
+      "numbers": [
+        3,
+        8,
+        8,
+        10
+      ]
+    },
+    {
+      "id": "956",
+      "numbers": [
+        7,
+        8,
+        8,
+        12
+      ]
+    },
+    {
+      "id": "1139",
+      "numbers": [
+        2,
+        5,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "339",
+      "numbers": [
+        1,
+        6,
+        6,
+        10
+      ]
+    },
+    {
+      "id": "274",
+      "numbers": [
+        6,
+        6,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "167",
+      "numbers": [
+        2,
+        8,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "87",
+      "numbers": [
+        1,
+        4,
+        7,
+        12
+      ]
+    },
+    {
+      "id": "363",
+      "numbers": [
+        9,
+        11,
+        11,
+        11
+      ]
+    },
+    {
+      "id": "668",
+      "numbers": [
+        6,
+        8,
+        8,
+        10
+      ]
+    },
+    {
+      "id": "812",
+      "numbers": [
+        1,
+        5,
+        10,
+        13
+      ]
+    },
+    {
+      "id": "221",
+      "numbers": [
+        1,
+        4,
+        6,
+        8
+      ]
+    },
+    {
+      "id": "685",
+      "numbers": [
+        6,
+        6,
+        7,
+        9
+      ]
+    },
+    {
+      "id": "735",
+      "numbers": [
+        4,
+        5,
+        9,
+        13
+      ]
+    },
+    {
+      "id": "761",
+      "numbers": [
+        4,
+        4,
+        8,
+        10
+      ]
+    },
+    {
+      "id": "1214",
+      "numbers": [
+        3,
+        5,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "1103",
+      "numbers": [
+        2,
+        3,
+        5,
+        10
+      ]
+    },
+    {
+      "id": "52",
+      "numbers": [
+        3,
+        3,
+        12,
+        12
+      ]
+    },
+    {
+      "id": "585",
+      "numbers": [
+        6,
+        6,
+        9,
+        12
+      ]
+    },
+    {
+      "id": "754",
+      "numbers": [
+        3,
+        9,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "710",
+      "numbers": [
+        2,
+        9,
+        10,
+        13
+      ]
+    },
+    {
+      "id": "126",
+      "numbers": [
+        1,
+        5,
+        6,
+        12
+      ]
+    },
+    {
+      "id": "1305",
+      "numbers": [
+        5,
+        10,
+        10,
+        13
+      ]
+    },
+    {
+      "id": "289",
+      "numbers": [
+        12,
+        13,
+        13,
+        13
+      ]
+    },
+    {
+      "id": "230",
+      "numbers": [
+        3,
+        11,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "717",
+      "numbers": [
+        1,
+        4,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "1173",
+      "numbers": [
+        1,
+        3,
+        12,
+        13
+      ]
+    },
+    {
+      "id": "674",
+      "numbers": [
+        2,
+        2,
+        6,
+        10
+      ]
+    },
+    {
+      "id": "457",
+      "numbers": [
+        4,
+        5,
+        11,
+        13
+      ]
+    },
+    {
+      "id": "256",
+      "numbers": [
+        2,
+        8,
+        10,
+        11
+      ]
+    },
+    {
+      "id": "350",
+      "numbers": [
+        5,
+        7,
+        11,
+        11
+      ]
+    }
+  ]
+}
