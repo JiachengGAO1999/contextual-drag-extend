@@ -1,5 +1,9 @@
 # ICLR 2027 一周冲刺计划
 
+**Latest execution update:** User authorized one Track B UFT external20 run (160 generations), same validated server backend and four conditions. Original32B remains paused. See [frozen protocol](uft_external_plan_20260919.md). No automatic acquisition or second-task generation.
+
+**2026-09-19执行更新：**用户要求先做零generation公开数据审计，暂缓新的baseline和intervention。Batch02 32B当前组完成后已暂停，实际288/512落盘（父进程旧status仍可能显示256），可在核实原进程和GPU后续跑，未自动恢复。UFT公开数据初审发现625道排除历史及预留后的自动新候选题，但缺少EOS元数据；尚未冻结external protocol或改变Track A门槛。下一决策是是否接受已处理、完整外观的短trajectory作为单独Track B，再决定节省多少自生成预算。详见[公开数据审计](public_uft_audit_20260919.md)。以下原计划保留作时间线，暂停期间不自动执行。
+
 版本：v1，2026-09-19。用户已确认摘要提交，并同意后续尽量按此计划执行；发生调整时更新本文件及研究入口。本文为当前时间与范围的主计划，取代此前“先取得30–50题再开始其他验证”的顺序；既定科学配置与数据保留规则仍有效。
 
 全文截止：2026-09-26 19:59，北京时间（Sep 25 23:59 AoE）。内部主要结果冻结目标：9月24日。官方入口：https://iclr.cc/Conferences/2027/AuthorGuidelines 。
@@ -70,3 +74,9 @@ R3/R4已有时机对照，R0是无历史参照。优先正确草稿控制，不�
 | 2026-09-19 | v1：从先集齐30–50题改为时间限定的20–30题目标、分批主实验，加入正确草稿控制与第二任务/模型计划 | 截止日期约一周；减少筛题占用，保留写作核查时间。用户要求记录、GitHub同步并持续更新。 |
 
 以后每次修改记录日期、原因、涉及题集/配置、是否已看结果、预算和运行状态。同步更新docs/RESEARCH_STATUS.md与MASTER_EXPERIMENT_LOG.md；不覆盖旧冻结manifest或原始结果。
+
+### 2026-09-19 implementation update
+MATH500 CPU compatibility implemented and tested; see [report](math500_compatibility_20260919.md). GPU smoke and scientific acquisition budget remain pending, current Game24 queue unchanged. No hypothesis or sampling threshold changed.
+
+### 2026-09-20 overnight execution update
+用户批准最多176条，实际新生成168条：先续MATH16纯文本题剩余104条，再运行已审核冻结的Game24 Batch02新8题×2seeds×4条件64条。GPU4替换本项目idle resident，结束/失败后恢复，不碰他人进程。Batch02双-anchor1024条已完整，8题strict eligible；不追加baseline，不放宽筛题标准。MATH仅前三题有完整24条，尚不能据此评估16题总体；外部UFT20题未见drag，不继续扩该来源。今晚队列可能超过一夜，早晨验收保存部分。完整记录见[night report](night_validation_20260920.md)。正确草稿control和第二target模型仍待后续设计与批准，未自动入队。

@@ -1,5 +1,27 @@
 # Selective Context Reset — Master Experiment Log
 
+## 2026-09-20 — Same-question scope reaffirmed; public MATH final-answer audit
+
+User confirmed existing same-question route. Parallel32B resumes frozen acquisition; no new intervention launched. Manual review of20 public R1 MATH outputs flagged by scorer finds10 substantive final errors,9 correct-answer extraction artifacts (6 nested boxes,3 multiple boxes),1 missing final. Of10 errors,7 depend on diagram relationships,1 has missing diagram,2 have sufficient text (source indices154,444). Full trace/token-budget review pending, not generation-ready. Report `docs/quick_validation/math500_public_review_20260920.md`. Original scorer results preserved; no silent scorer change.
+
+## 2026-09-20 — UFT external20 completed, no positive residual drag
+
+160 requests returned;157EOS/3length,7.68h. R0/R2/R3/R4 correct36/39/34/40. Question-cluster CI and paired transitions saved in outputs/game24-uft-external-20q-20260919/analysis.json. R3-R2=-12.5pp,0 recoveries/5 harms (3 length loops); R4-R2=+2.5pp,1 recovery/0 harms. No positive residual denominator; recovery ratios not interpreted. All40 same-text triples verified. No new jobs launched. See docs/quick_validation/uft_external_results_20260920.md.
+
+## 2026-09-19 — User authorizes UFT external20 whole-trace validation
+
+User requested draft recheck and actual generation. Frozen20 fresh UFT Qwen2.5-Math-7B CoT questions with one manually reviewed failed final expression each; no intervention-outcome or R0 selection. Source EOS unavailable and explicitly disclosed. Track B only; dual-anchor protocol unchanged. Seeds929001/929002 × R0/R2/R3/R4,160 requests, same server vLLM/Thinking sampling and prompt as seven-question pilot. Uploaded only new experiment files; original32B stays STOP at288/512. Tmux uft-external20-20260919 created20:35 CST; Real-tokenizer same-text and key-onset metadata checks160/160 passed. Model initialized and status running confirmed20:38 CST. Detailed frozen protocol: `docs/quick_validation/uft_external_plan_20260919.md`. Finish retains same engine resident; no automatic expansion.
+
+## 2026-09-19 — Public alternatives follow-up, zero generation
+
+Per user request, inspected additional public sources. Official ToT direct GPT-4 Game24 CoT log contains10,000 outputs/100 questions,9,597 source failures; safe final-expression checks confirm6,782 errors. After historical/reserved exclusions91 fresh questions have6,222 such rows; completion/manual review pending. Qwen3-4B MATH-traces downloaded:10,000 rows/500 questions,1,046 source False across87 questions; first False is a currency-format false negative, so labels cannot be reused as-is. Exact whitespace-normalized overlap with downloaded rasbt MATH500 is0. rasbt DeepSeek-R1 MATH500 JSON contains500 question/thinking/final-answer records, promising for second-task acquisition savings; not yet rescored. Other sources documented, no new GPU work. See `docs/quick_validation/public_failed_trace_alternatives_20260919.md`.
+
+## 2026-09-19 — Zero-generation public UFT audit; resumable acquisition pause
+
+User requested public failed-draft availability audit before further acquisition. Downloaded official UFT training archive (fixed repository commit and archive SHA recorded in report), read 54 Game24 failed CSVs: 1,634,093 rows across720 mapped questions. Priority Qwen2.5-Math-7B CoT:470,898 rows,361,394 exact unique text strings. Automatic canonical final-error filtering leaves625 questions after all historical and reserved exclusions; these are candidates, not manually certified or target-solvable questions. Fixed reservoir20 manually audited:12 canonical substantive failures,5 extra-step substantive failures,2 valid final expressions with inconsistent steps/RHS,1 visibly incomplete. No EOS metadata, so strict non-truncation cannot be certified. CPU wrapper checks12/12 pass with CharacterTokenizer only; no model test or new generation. Track A protocol unchanged; Track B acceptance of processed trajectories remains a decision point. See `docs/quick_validation/public_uft_audit_20260919.md` and `outputs/public-uft-audit-20260919/`.
+
+Per user pause authorization, SIGSTOP only the exact own32B orchestration parent PID930390 while its in-flight child completed normally. Verified9 saved chunks=288/512 outputs; child exited, parent remains stopped, no next chunk. status.json256 is stale until parent resumes. Resume requires matching process creation time1789783061.78 and available GPU, then SIGCONT original parent; do not restart runner. No automatic continuation or intervention was launched.
+
 ## 2026-09-18 — Gate A passed; clean baseline acquisition queued
 
 The seven-question dual-anchor pilot completed 56/56 with EOS and parseable outputs. R0/R2/R3/R4 were 12/14, 4/14, 12/14, and 10/14. Question-cluster bootstrap gives R3−R2 +57.1 pp and R4−R3 −14.3 pp; the strict six-question subset has the same direction. Go to independent baseline acquisition; hold any path-superiority or local-mask claim.
@@ -682,3 +704,45 @@ User approved full32 Qwen3-32B x16=512 ordinary-vLLM baseline, no filtering by 8
 
 ## 2026-09-19 submission sprint adopted and recorded
 User requested plan persistence, GitHub synchronization and ongoing change tracking. Canonical plan: docs/quick_validation/iclr2027_submission_sprint_20260919.md. Acquisition time-box September21, target20–30 new strict questions, batchwise R0/R2/R3/R4, correct-draft control, bounded second task/model; major results freeze September24. Supersedes prior acquire30–50-before-evaluation schedule, not scientific thresholds. No additional generation launched by this documentation update; Batch02 queue unchanged.
+
+## 2026-09-19 17:55 progress and CPU preparation
+Batch02 Qwen32B persisted224/512 (14 questions), chunk14 running. CPU-only MATH500 read check:500 rows/500 unique IDs; official math equivalence smoke passed two checks. Existing evaluator and independent prompt are Game24-specific; explicit task routing is required before second-task generation. Preparation notes: docs/quick_validation/parallel_preparation_20260919.md. No GPU job changed or added.
+
+
+## 2026-09-19 MATH500 compatibility CPU validation
+Implemented explicit task routing, official math scorer, task-specific independent prompt, baseline source validation and audited-pair bundle preparation. Game24 defaults unchanged. Local31pass/4skip; isolated server37pass; real500-item dataset and Qwen tokenizer CPU integration passed. Explicit user permission obtained for isolated code upload after auto-review rejection. No active scripts overwritten/no new GPU generation. See docs/quick_validation/math500_compatibility_20260919.md.
+
+
+## 2026-09-20 — Resume fixed acquisition and parallel CPU external math audit
+
+User authorized both. Stopped exact completed own8B resident PID1868203 and its children, verified GPU4 free, SIGCONT original32B parent930390 with verified creation time. Status288/512,current chunk18;224 remaining. Isolated CUDA-disabled official MATH500 scoring completed500 public R1 outputs:480 True,12 False,8 no extracted answer. False are pending substantive manual review, not12 certified failures; no math generation launched.
+
+Clarification: all current interventions pair a question with its own failed draft and solve that same question again. New question means newly admitted dataset item, not cross-question contamination. UFT20 selection random from625 fresh candidates; no target mixed-success filtering. Actual injected draft character mean104.7 vs pilot7 mean1391.14; these are injected strings, not full source Thinking lengths.
+
+## 2026-09-20 Public math validation
+用户批准排除图形后按实际16题运行：8 MATH500 + 8 MATH train，2 paired seeds × R0/R2/R3/R4 = 128。冻结数据与预检通过，服务器12项CPU测试通过。GPU0隔离tmux启动，GPU4的32B继续。详见 docs/quick_validation/math_external_launch_20260920.md。
+
+
+## 2026-09-20 MATH external run failed before first persisted batch
+运行约57分钟，服务器05:40:54 UTC（北京时间13:40:54）CUDA illegal memory access，继而EngineDeadError。128计划请求，0条持久化结果；无results.jsonl、无completion.json。GPU0已释放。故障栈经过FlexAttention create_block_mask_compiled / PyTorch Inductor cudagraph；CUDA异步报错，尚不能认定根因。不能计算accuracy或推断科学结论。原始日志已同步 outputs/math-external-16q-20260920/run.log。尚未重启。
+
+
+## 2026-09-20 MATH retry1 repair
+修复selective mask回调padding域读取前未保护的索引，先clamp实际读取索引，再以原物理范围门控；有效token阻断关系不变。GPU回归12组形状（batch8/5/3/1，KV127/129/32767）通过。原事故CUDA异步栈不足以认定唯一根因，长运行仍待验证。新增on_result接口按请求完成立即保存并fsync，避免整批失败丢失已完成结果。启动math-external-retry1于GPU0；短四条件接口一致性smoke通过后才运行同一128冻结请求，8条×4tokens工程检查不计科学结果。旧运行目录保留。
+
+
+### retry1/retry2短验收失败，retry3静态形状修复
+两次短验收均在正式生成前失败；padding保护和关闭CUDA graph分别不足。CUDA_LAUNCH_BLOCKING定位至create_block_mask编译出的triton_per_fused__to_copy_sum_7：R0_BLOCK=128、r0_mask恒True、读取x+1876*r，而buf20按动态ceil(query_length/128)分配。改create_block_mask为dynamic=False并关闭cudagraph，避免动态形状错误复用。retry3在GPU0验收，正式结果仅写retry3目录，前两次不能合并。工程短探针不计科学样本。
+
+
+### retry3 partial and resume
+静态形状修复后短接口一致性通过，保存24/128（3道MATH500×2seeds×4条件）。R0=6/6,R2=0/6,R3=6/6,R4=5/6，R4一次length/未解析；不可当16题总体。运行约3.36小时后达到Dynamo recompile_limit64，而非CUDA非法访问。有限上限调整1024，按id/condition/seed检查重复及manifest一致性后保留24条续104条，tmux math-external-resume，日志resume.log。首24条metadata enable_thinking默认False为记录字段遗漏，实际使用冻结Thinking prompt；后续修正字段，不修改旧结果。
+
+
+## 2026-09-20 GPU4 overnight queue
+Batch02 audited:8 strict eligible. User approved <=176; actual104 remaining MATH +64 Game24=168 launched GPU4. Earlier GPU0 restart failed; GPU4 preserves24 records. Finite compile limits1024/2048, static masks, immediate fsync, stop on failure and restore own resident. See docs/quick_validation/night_validation_20260920.md.
+
+
+## 2026-09-20 contribution review and live snapshot
+MATH34/128 persisted at check, GPU4 active; Game2464 queued. Recorded mixed evidence and deletion/reset reviewer objection in docs/quick_validation/contribution_and_controls_20260920.md. Continued access intervention differs from deletion in retained prefill exposure, but is not proof of erased information or practical superiority. Proposed controls only; no added generation budget.
+

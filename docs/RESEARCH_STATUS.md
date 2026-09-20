@@ -1,3 +1,15 @@
+**2026-09-20 reviewer/novelty audit:** Latest server snapshot: MATH34/128 saved and running; Game24 new8 queued. Evidence is mixed, not uniformly supportive. Next proposed controls: inspect/reuse R0 as reset where equivalent, otherwise coherent deletion comparator; correct-draft full vs late; second target model. No new jobs authorized or launched by this proposal. [Contribution and control analysis](quick_validation/contribution_and_controls_20260920.md).
+
+**2026-09-20 23:16 CST — latest:** Batch02 dual-anchor complete: 8 strict eligible new questions. Approved <=176, actual168 pending generations launched GPU4: resume104 MATH then64 Game24. Earlier GPU0 resume failed. See [results and overnight queue](quick_validation/night_validation_20260920.md).
+
+**2026-09-20 latest — UFT external20 complete:**160/160 returned,157EOS/3length. R0/R2/R3/R4=36/39/34/40 of40. No residual drag (R0-R2=-7.5pp); late harms relative toR2(-12.5pp), including3 loops. R4-R2+2.5pp is one recovery, not evidence of broad drag removal. Do not expand short-UFT generation by default. Recommend finish frozen in-protocol acquisition and CPU-audit MATH500 long traces; neither started here. [Full results](quick_validation/uft_external_results_20260920.md).
+
+**2026-09-19 latest — UFT external20 authorized:** User approved reviewed external drafts and generation. Frozen20 fresh questions, two paired seeds, R0/R2/R3/R4=160 requests. Real Qwen tokenizer and key-block onset metadata checks passed160/160; model initialized and run state running at20:38 CST in tmux uft-external20-20260919 on GPU4. Original32B remains paused288/512. Track B only; source EOS unknown; no R0/outcome filtering, no automatic expansion. [Protocol and draft review](quick_validation/uft_external_plan_20260919.md). This authorization supersedes the earlier zero-generation pause for this bounded external experiment only.
+
+**2026-09-19 latest — public-data audit, acquisition paused:** User requested zero new generation. UFT archive audited: 1,634,093 failed rows / 720 questions; Qwen2.5-Math-7B CoT 470,898 rows. Excluding historical and reserved questions leaves 625 automatic candidate questions, not yet a certified external set. Random20: 17 substantive final failures (12 canonical three-step), 2 valid final expressions with inconsistent reasoning/RHS, 1 incomplete. EOS metadata unavailable; accepting processed complete-looking trajectories for Track B requires a separate protocol decision. Track A unchanged. Batch02 32B paused after 288/512 saved; parent STOP, current child finished; stale status may show256. No new baseline/intervention or automatic resume. [Full audit and resume details](quick_validation/public_uft_audit_20260919.md). This pause supersedes older running/queue statements below.
+
+**2026-09-19 MATH500 compatibility:** Explicit task/scorer/prompt routing and CPU preparation entrypoints implemented. Local31 passed/4 dependency skips; isolated server37 passed, real dataset/tokenizer CPU preparation passed. No GPU generation or active-project deployment. See [compatibility and commands](quick_validation/math500_compatibility_20260919.md).
+
 **2026-09-19 active execution plan:** [ICLR 2027 submission sprint](quick_validation/iclr2027_submission_sprint_20260919.md). User adopted this as the working plan. Time-box Game24 acquisition through September 21; target 20–30 new strict questions, batchwise main evaluation, correct-draft control, then bounded second-task/model validation. Freeze primary results September 24. This supersedes the older requirement to acquire 30–50 questions before any evaluation; scientific eligibility is unchanged. Current Batch02 32B queue remains unchanged; other planned runs are not yet launched. Changes must be logged in the sprint plan.
 
 **2026-09-19 current direction:** Whole-trace failed-context access control. Seven-question pilot is Stage-1 evidence, excluded from confirmatory primary sample. Formal target: 30 independent audited dual-anchor questions initially (maximum 50); strict >=2 completed parsable correct + >=2 substantive False. Batch02 full 32-question Qwen3-32B x16 (512) launched; no outcome-dependent selection, no intervention or next-batch auto-launch. 8B manual audit: 452 correct / 35 substantive / 7 format-only / 17 length / 1 completed unscored; 8 preliminary eligible questions. See [frozen plan](quick_validation/whole_trace_acquisition_plan_20260919.md). All status entries below are historical.
@@ -70,3 +82,19 @@
 - `selective_context/phase0/`：各历史运行器，不能混用其条件定义。
 
 上一批筛选：32次限额采样于2026-09-15 00:37:47 CST结束；30正确、1完整错误、1截断，按当时狭义RQ合格草稿0。见[筛选结果](quick_validation/reendorsement_screen_results_20260915.md)。随后用户批准扩大RQ并使用十题：当前运行L_E_v1，见本页顶部。两题事件标注仍作为子类型资料保留。本页不是实时监控。
+
+### 2026-09-20：公开数学验证启动
+16题/128生成，MATH500与MATH训练集各8题分层；GPU0隔离运行，未新增baseline。记录见 quick_validation/math_external_launch_20260920.md。
+
+
+### 更正：MATH external16题未完成
+首批生成期间CUDA非法内存访问退出（北京时间09-20 13:40），保存结果0/128；GPU0空闲。此前启动成功不代表完成。需先定位并修复运行问题，再在冻结数据/条件下恢复，不能报告本轮科学结果。
+
+
+### MATH retry1修复与重跑
+边界保护及逐请求持久化已部署，GPU12组mask回归通过。tmux math-external-retry1，GPU0；日志/data2/gaojc/tmp/math-external-16q-20260920/outputs/retry1.log。正式条件/采样/冻结题目不变，长运行稳定性待确认。
+
+
+### MATH部分结果：24/128已保存
+前三题R0/R2/R3/R4=6/0/6/5（分母6，R4含一次超限）。静态形状版遇编译变体上限64，已调有限上限1024并断点续剩104条；不能外推全部16题。
+
