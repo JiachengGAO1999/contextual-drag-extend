@@ -1,0 +1,588 @@
+"""Audit persisted Batch03 Game24 chunks; never treat the interrupted run as complete."""
+
+from __future__ import annotations
+
+import argparse
+import ast
+import csv
+import hashlib
+import json
+import re
+from collections import Counter, defaultdict
+from fractions import Fraction
+from pathlib import Path
+from typing import Any
+
+
+ROOT = Path(__file__).resolve().parents[1]
+DEFAULT_RUN = ROOT / "runs/batch03_interrupted_20260924"
+
+
+def read_json(path: Path) -> Any:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def read_jsonl(path: Path) -> list[dict[str, Any]]:
+    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+
+
+def sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with path.open("rb") as handle:
+        for block in iter(lambda: handle.read(1024 * 1024), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def sample_index(record: dict[str, Any]) -> int:
+    generation = record["init_response_generations"][0]
+    if "response_id" in generation:
+        return int(generation["response_id"])
+    return int(str(record["draft_key"]).rsplit("/", 1)[1])
+
+
+def is_valid(record: dict[str, Any]) -> bool:
+    generation = record["init_response_generations"][0]
+    return generation.get("finish_reason") == "eos" and record.get("thinking_status") == "parsable_thinking"
+
+
+def record_fields(record: dict[str, Any]) -> dict[str, Any]:
+    generation = record["init_response_generations"][0]
+    return {
+        "model": record["init_response_generations_metadata"].get("model_config_alias"),
+        "id": str(record["id"]),
+        "draft_key": str(record["draft_key"]),
+        "sample_index": sample_index(record),
+        "finish_reason": generation.get("finish_reason"),
+        "thinking_status": record.get("thinking_status"),
+        "correctness": generation.get("correctness"),
+        "answer_numbers": record.get("answer"),
+        "extracted_answer": generation.get("extracted_answer"),
+        "final_response": record.get("final_response"),
+        "generated_response": generation.get("generated_response"),
+    }
+
+
+FORMAT_FALSE_NEGATIVES = {
+    ("Qwen3_8B_Thinking", "445", 13): (
+        "正文明确给出 8×(2+8÷8)=24，使用输入 2、8、8、8 各一次；提取器只取到 boxed 24。"
+    ),
+    ("Qwen3_8B_Thinking", "395", 7): (
+        "正文明确给出 10+7×2×1=24，使用输入 1、2、7、10 各一次；提取器只取到 boxed 24。"
+    ),
+    ("Qwen3_8B_Thinking", "395", 12): (
+        "正文明确给出 (7×2)+(10÷1)=24，使用输入 1、2、7、10 各一次；提取器只取到 boxed 24。"
+    ),
+    ("Qwen3_8B_Thinking", "122", 4): (
+        "提取出的 8×(9÷(12÷(12−8)))=24 本身合法，输入 8、9、12、12 各一次；评分器误判。"
+    ),
+    ("Qwen3_8B_Thinking", "122", 9): (
+        "提取出的 (12×8)÷(12÷(12−9))=24 本身合法，输入 8、9、12、12 各一次；评分器误判。"
+    ),
+    ("Qwen3_32B", "381", 5): (
+        "最终选定式多用了一个 11，但正文明确列出替代式 11+11+8−6=24，四个输入各一次；提取器只取最终选定式，漏掉正文中的合法答案。"
+    ),
+    ("Qwen3_32B", "381", 10): (
+        "最终选定式多用了一个 11，但正文先明确列出 11+11+8−6=24，四个输入各一次；提取器只取最终选定式，漏掉正文中的合法答案。"
+    ),
+}
+
+
+SCALAR_FALSE_EVIDENCE = {
+    ("Qwen3_8B_Thinking", "1019", 1):
+        "正文未给出有效表达式；其所谓 closest expression (6×4)+(13−5) 算出 32，随后承认答案不满足约束却输出 24。",
+    ("Qwen3_8B_Thinking", "1171", 4):
+        "正文算式 (8×(11−7))−(4×(8÷4)) 虽得 24，但重复使用输入 8 和 4。",
+    ("Qwen3_8B_Thinking", "1171", 8):
+        "正文算式 (8×(11−7))−(4÷4) 得 31，且把唯一的 4 使用了两次。",
+    ("Qwen3_8B_Thinking", "1171", 10):
+        "正文算式 (8×(11−7))−4=28，输入虽各一次但算术结果不是 24。",
+    ("Qwen3_8B_Thinking", "1171", 11):
+        "正文算式 (8×(11−7))−(4×(8÷4)) 虽得 24，但重复使用输入 8 和 4。",
+    ("Qwen3_8B_Thinking", "1171", 15):
+        "正文算式 ((11+7)×(8−4))÷(11−8) 得 24，但重复使用输入 11 和 8。",
+    ("Qwen3_8B_Thinking", "1019", 11):
+        "正文算式 (13−5)×(6÷(4÷(6−4))) 得 24，但重复使用输入 6 和 4。",
+}
+
+
+def _braced_group(text: str, start: int) -> tuple[str, int]:
+    while start < len(text) and text[start].isspace():
+        start += 1
+    if start >= len(text) or text[start] != "{":
+        raise ValueError("expected braced LaTeX group")
+    depth = 1
+    end = start + 1
+    while end < len(text) and depth:
+        if text[end] == "{":
+            depth += 1
+        elif text[end] == "}":
+            depth -= 1
+        end += 1
+    if depth:
+        raise ValueError("unclosed LaTeX group")
+    return text[start + 1:end - 1], end
+
+
+def evaluate_expression(expression: str) -> tuple[Fraction, Counter[int]]:
+    """Evaluate the narrow arithmetic/LaTeX syntax used by extracted Game24 answers."""
+    value = expression.split("=", 1)[0]
+    while True:
+        match = re.search(r"\\boxed\s*", value)
+        if not match:
+            break
+        boxed, cursor = _braced_group(value, match.end())
+        value = value[:match.start()] + f"({boxed})" + value[cursor:]
+    while True:
+        match = re.search(r"\\(?:d?frac)\s*", value)
+        if not match:
+            break
+        numerator, cursor = _braced_group(value, match.end())
+        denominator, cursor = _braced_group(value, cursor)
+        value = value[:match.start()] + f"(({numerator})/({denominator}))" + value[cursor:]
+    value = value.replace("\\left", "").replace("\\right", "")
+    for token, replacement in (("\\times", "*"), ("\\cdot", "*"), ("\\div", "/"), ("×", "*"), ("÷", "/")):
+        value = value.replace(token, replacement)
+    value = value.replace("{", "(").replace("}", ")").strip()
+    if "\\" in value:
+        raise ValueError(f"unsupported LaTeX token in {expression!r}")
+    tree = ast.parse(value, mode="eval")
+    operands: Counter[int] = Counter()
+
+    def visit(node: ast.AST) -> Fraction:
+        if isinstance(node, ast.Constant) and isinstance(node.value, int) and not isinstance(node.value, bool):
+            operands[node.value] += 1
+            return Fraction(node.value)
+        if isinstance(node, ast.UnaryOp) and isinstance(node.op, (ast.UAdd, ast.USub)):
+            result = visit(node.operand)
+            return result if isinstance(node.op, ast.UAdd) else -result
+        if isinstance(node, ast.BinOp) and isinstance(node.op, (ast.Add, ast.Sub, ast.Mult, ast.Div)):
+            left, right = visit(node.left), visit(node.right)
+            if isinstance(node.op, ast.Add):
+                return left + right
+            if isinstance(node.op, ast.Sub):
+                return left - right
+            if isinstance(node.op, ast.Mult):
+                return left * right
+            return left / right
+        raise ValueError(f"unsupported arithmetic node {type(node).__name__}")
+
+    return visit(tree.body), operands
+
+
+def valid_response_expressions(response: str, answer_numbers: list[int]) -> list[str]:
+    """Find displayed/inline equations in the final response that solve this exact number multiset."""
+    pattern = re.compile(r"\$\$(.+?)\$\$|\\\[(.+?)\\\]|\\\((.+?)\\\)|(?<!\$)\$(?!\$)(.+?)(?<!\$)\$(?!\$)", re.DOTALL)
+    expected = Counter(int(number) for number in answer_numbers)
+    found = []
+    for match in pattern.finditer(response or ""):
+        expression = next((group for group in match.groups() if group is not None), "").strip()
+        try:
+            value, operands = evaluate_expression(expression)
+        except (SyntaxError, ValueError, ZeroDivisionError):
+            continue
+        if value == 24 and operands == expected and expression not in found:
+            found.append(expression)
+    return found
+
+
+def manual_classification(row: dict[str, Any]) -> tuple[str, str, str | None]:
+    key = (row["model"], row["id"], row["sample_index"])
+    if not row["valid_for_eligibility"]:
+        return "excluded_invalid", "未同时满足完整 EOS 结束与可解析回答条件；不进入错误样本门槛。", None
+    if key in FORMAT_FALSE_NEGATIVES:
+        return "format_or_extraction_false_negative", FORMAT_FALSE_NEGATIVES[key], None
+    response_candidates = valid_response_expressions(row.get("final_response") or "", row["answer_numbers"])
+    expression = row.get("extracted_answer") or ""
+    if expression.strip() == "24":
+        reason = SCALAR_FALSE_EVIDENCE.get(key)
+        if reason is None:
+            return "uncertain_manual_confirmation", "只提取到标量 24，正文证据未完成核定。", None
+        return "substantive_error", reason, None
+    try:
+        value, operands = evaluate_expression(expression)
+    except (SyntaxError, ValueError, ZeroDivisionError) as exc:
+        return "uncertain_manual_confirmation", f"提取式无法安全求值：{type(exc).__name__}: {exc}", None
+    expected = Counter(int(number) for number in row["answer_numbers"])
+    got = ",".join(str(number) for number in sorted(operands.elements()))
+    wanted = ",".join(str(number) for number in sorted(expected.elements()))
+    value_text = str(value.numerator) if value.denominator == 1 else f"{value.numerator}/{value.denominator}"
+    if value == 24 and operands == expected:
+        return "format_or_extraction_false_negative", "提取表达式本身满足 24 与四个输入数字各用一次；评分器误判。", value_text
+    if response_candidates:
+        examples = "；".join(response_candidates[:2])
+        return "uncertain_manual_confirmation", f"正文另含满足目标且用数完整的表达式，但提取/最终选定式不一致，需人工判断作答是否应计正确：{examples}", value_text
+    details = []
+    if value != 24:
+        details.append(f"提取表达式精确值为 {value_text}，不是 24")
+    if operands != expected:
+        details.append(f"提取表达式数字为 [{got}]，题目输入为 [{wanted}]，多重集不一致")
+    return "substantive_error", "；".join(details), value_text
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--run-dir", type=Path, default=DEFAULT_RUN)
+    parser.add_argument("--data-dir", type=Path, default=DEFAULT_RUN / "raw")
+    parser.add_argument("--inspect-failures", type=int, default=0, help="Print the first N scorer-false cases for format inspection")
+    parser.add_argument("--failure-offset", type=int, default=0)
+    parser.add_argument("--list-failures", action="store_true", help="Print compact indexed failure rows for manual audit")
+    parser.add_argument("--response-tail-chars", type=int, default=1200)
+    args = parser.parse_args()
+    run_dir, data_dir = args.run_dir, args.data_dir
+    manifest = read_json(data_dir / "baseline_manifest_batch03_20260919.json")
+    ordered_ids = [str(row["id"]) for row in manifest["candidate_rows"]]
+    if len(ordered_ids) != 32 or len(set(ordered_ids)) != 32:
+        raise RuntimeError("Frozen manifest must contain 32 unique questions")
+
+    model_chunks = {"Qwen3_8B_Thinking": list(range(8)), "Qwen3_32B": list(range(11))}
+    all_records: list[dict[str, Any]] = []
+    file_manifest = []
+    identity_manifest = []
+    chunk_summaries: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    observed = Counter()
+    identities: set[tuple[str, str, int]] = set()
+    source_lines: dict[tuple[str, str, int], tuple[str, int, str]] = {}
+
+    for model, chunks in model_chunks.items():
+        for chunk_number in chunks:
+            chunk = f"chunk-{chunk_number:02d}"
+            base = data_dir / model / chunk
+            result_path = base / "draft_candidates.jsonl"
+            summary_path = base / "summary.json"
+            if not result_path.is_file() or not summary_path.is_file():
+                raise FileNotFoundError(f"Missing completed chunk artifacts: {model}/{chunk}")
+            summary = read_json(summary_path)
+            records = read_jsonl(result_path)
+            expected = 64 if model == "Qwen3_8B_Thinking" else 32
+            if summary.get("generations") != expected or len(records) != expected:
+                raise RuntimeError(f"Unexpected persisted count in {model}/{chunk}: {len(records)}")
+            relative_path = result_path.relative_to(data_dir).as_posix()
+            digest = sha256(result_path)
+            file_manifest.append({"path": relative_path, "records": len(records), "sha256": digest})
+            chunk_summaries[model].append({"chunk": chunk, **summary})
+            for line_number, record in enumerate(records, start=1):
+                fields = record_fields(record)
+                if fields["model"] != model:
+                    raise RuntimeError(f"Model alias mismatch in {relative_path}:{line_number}")
+                identity = (model, fields["id"], fields["sample_index"])
+                if identity in identities:
+                    raise RuntimeError(f"Duplicate model/question/sample identity: {identity}")
+                identities.add(identity)
+                observed[model, fields["id"]] += 1
+                source_lines[identity] = (relative_path, line_number, digest)
+                identity_manifest.append({
+                    "model": model,
+                    "question_id": fields["id"],
+                    "sample_index": fields["sample_index"],
+                    "finish_reason": fields["finish_reason"],
+                    "thinking_status": fields["thinking_status"],
+                    "raw_scorer_correctness": fields["correctness"],
+                    "source_path": relative_path,
+                    "source_line": line_number,
+                    "source_sha256": digest,
+                })
+                all_records.append(record)
+
+    complete_8b = {qid for qid in ordered_ids if observed["Qwen3_8B_Thinking", qid] == 16}
+    complete_32b = {qid for qid in ordered_ids if observed["Qwen3_32B", qid] == 16}
+    dual_complete = complete_8b & complete_32b
+    partial_only = (complete_8b | complete_32b) - dual_complete
+    if len(complete_8b) != 32 or len(complete_32b) != 22 or len(dual_complete) != 22 or len(partial_only) != 10:
+        raise RuntimeError(f"Unexpected coverage: 8B={len(complete_8b)}, 32B={len(complete_32b)}, dual={len(dual_complete)}")
+    for model in model_chunks:
+        for qid in ordered_ids:
+            expected = 16 if (model, qid) in observed else 0
+            if observed[model, qid] not in (0, 16):
+                raise RuntimeError(f"Partial saved sample group: {model}/{qid}={observed[model, qid]}")
+            if observed[model, qid] != expected:
+                raise RuntimeError(f"Invalid group count: {model}/{qid}={observed[model, qid]}")
+
+    scorer_counts = Counter()
+    strict_counts = Counter()
+    per_question: dict[str, dict[str, Counter]] = defaultdict(lambda: defaultdict(Counter))
+    failure_queue = []
+    for record in all_records:
+        fields = record_fields(record)
+        model, qid = fields["model"], fields["id"]
+        correct = fields["correctness"]
+        scorer_counts[str(correct)] += 1
+        per_question[qid][model]["samples"] += 1
+        if not is_valid(record):
+            strict_counts["invalid"] += 1
+            per_question[qid][model]["invalid"] += 1
+        elif correct is True:
+            strict_counts["correct"] += 1
+            per_question[qid][model]["correct"] += 1
+        elif correct is False:
+            strict_counts["incorrect_pending_manual_review"] += 1
+            per_question[qid][model]["incorrect_pending_manual_review"] += 1
+        else:
+            strict_counts["invalid"] += 1
+            per_question[qid][model]["invalid"] += 1
+        if correct is False:
+            identity = (model, qid, fields["sample_index"])
+            path, line_number, digest = source_lines[identity]
+            response_candidates = valid_response_expressions(fields["final_response"] or "", fields["answer_numbers"] or [])
+            failure_queue.append(
+                {
+                    **fields,
+                    "valid_exact_expressions_in_response": response_candidates,
+                    "valid_for_eligibility": is_valid(record),
+                    "source_path": path,
+                    "source_line": line_number,
+                    "source_sha256": digest,
+                    "manual_category": "pending",
+                    "manual_reason": "",
+                }
+            )
+
+    preaudit_eligible = {
+        qid
+        for qid, by_model in per_question.items()
+        if sum(counts["correct"] for counts in by_model.values()) >= 2
+        and sum(counts["incorrect_pending_manual_review"] for counts in by_model.values()) >= 2
+    }
+
+    audited_failures = []
+    review_by_identity = {}
+    for row in failure_queue:
+        category, reason, value = manual_classification(row)
+        reviewed = {**row, "manual_category": category, "manual_reason": reason,
+                    "audited_expression_value": value}
+        audited_failures.append(reviewed)
+        review_by_identity[(row["model"], row["id"], row["sample_index"])] = reviewed
+    audited_counts = Counter(row["manual_category"] for row in audited_failures)
+
+    def counts_for_question(question_id: str, max_sample_index: int | None = None) -> dict[str, Counter]:
+        counts = {model: Counter() for model in model_chunks}
+        for record in all_records:
+            fields = record_fields(record)
+            if fields["id"] != question_id:
+                continue
+            if max_sample_index is not None and fields["sample_index"] >= max_sample_index:
+                continue
+            if not is_valid(record):
+                counts[fields["model"]]["invalid"] += 1
+                continue
+            correctness = fields["correctness"]
+            if correctness is True:
+                counts[fields["model"]]["correct"] += 1
+            elif correctness is False:
+                audit = review_by_identity[(fields["model"], fields["id"], fields["sample_index"])]
+                if audit["manual_category"] == "format_or_extraction_false_negative":
+                    counts[fields["model"]]["correct"] += 1
+                elif audit["manual_category"] == "substantive_error":
+                    counts[fields["model"]]["substantive_wrong"] += 1
+                else:
+                    counts[fields["model"]]["unresolved"] += 1
+            else:
+                counts[fields["model"]]["unresolved"] += 1
+        return counts
+
+    final_coverage = {}
+    for cohort, question_ids in (("dual_complete", dual_complete), ("8b_only_partial", partial_only)):
+        qualifying = []
+        for qid in ordered_ids:
+            if qid not in question_ids:
+                continue
+            model_counts = counts_for_question(qid)
+            correct_n = sum(value["correct"] for value in model_counts.values())
+            substantive_n = sum(value["substantive_wrong"] for value in model_counts.values())
+            if correct_n >= 2 and substantive_n >= 2:
+                qualifying.append(qid)
+        final_coverage[cohort] = {"candidate_n": len(question_ids), "qualifying_n": len(qualifying),
+                                  "qualifying_question_ids": qualifying}
+
+    prefix_replay = []
+    previous_qualified: set[str] = set()
+    for k in (4, 8, 12, 16):
+        qualified = set()
+        q8_standalone = set()
+        q32_standalone = set()
+        both_standalone = set()
+        q8_rescue = set()
+        q32_rescue = set()
+        question_rows = []
+        for qid in ordered_ids:
+            if qid not in dual_complete:
+                continue
+            model_counts = counts_for_question(qid, max_sample_index=k)
+            c8, c32 = model_counts["Qwen3_8B_Thinking"], model_counts["Qwen3_32B"]
+            e8 = c8["correct"] >= 2 and c8["substantive_wrong"] >= 2
+            e32 = c32["correct"] >= 2 and c32["substantive_wrong"] >= 2
+            pooled = (c8["correct"] + c32["correct"] >= 2 and
+                      c8["substantive_wrong"] + c32["substantive_wrong"] >= 2)
+            if e8:
+                q8_standalone.add(qid)
+            if e32:
+                q32_standalone.add(qid)
+            if e8 and e32:
+                both_standalone.add(qid)
+            if pooled:
+                qualified.add(qid)
+                if not e32:
+                    q8_rescue.add(qid)
+                if not e8:
+                    q32_rescue.add(qid)
+            question_rows.append({
+                "id": qid,
+                "8b_correct": c8["correct"], "8b_substantive_wrong": c8["substantive_wrong"],
+                "32b_correct": c32["correct"], "32b_substantive_wrong": c32["substantive_wrong"],
+                "pooled_correct": c8["correct"] + c32["correct"],
+                "pooled_substantive_wrong": c8["substantive_wrong"] + c32["substantive_wrong"],
+                "qualifies_8b_alone": e8, "qualifies_32b_alone": e32, "qualifies_pooled": pooled,
+            })
+        new_questions = qualified - previous_qualified
+        prefix_replay.append({
+            "samples_per_model_prefix": k,
+            "dual_complete_questions": len(dual_complete),
+            "qwen3_8b_alone_qualifying_n": len(q8_standalone),
+            "qwen3_8b_alone_qualifying_ids": [qid for qid in ordered_ids if qid in q8_standalone],
+            "qwen3_32b_alone_qualifying_n": len(q32_standalone),
+            "qwen3_32b_alone_qualifying_ids": [qid for qid in ordered_ids if qid in q32_standalone],
+            "both_models_alone_qualifying_n": len(both_standalone),
+            "both_models_alone_qualifying_ids": [qid for qid in ordered_ids if qid in both_standalone],
+            "pooled_qualifying_n": len(qualified),
+            "new_since_previous_prefix_n": len(new_questions),
+            "new_since_previous_prefix_ids": [qid for qid in ordered_ids if qid in new_questions],
+            "pooled_questions_rescued_by_8b": [qid for qid in ordered_ids if qid in q8_rescue],
+            "pooled_questions_rescued_by_32b": [qid for qid in ordered_ids if qid in q32_rescue],
+            "qualified_question_ids": [qid for qid in ordered_ids if qid in qualified],
+            "per_question": question_rows,
+            "timing_note": "Chunk summaries record aggregate duration only; no per-sample timestamps support a prefix-specific GPU-time estimate.",
+        })
+        previous_qualified = qualified
+
+    gpu_time = {}
+    for model, summaries in chunk_summaries.items():
+        gpu_time[model] = {
+            "chunks": len(summaries),
+            "generation_seconds_sum": round(sum(row.get("generation_seconds", 0) for row in summaries), 3),
+            "model_load_seconds_sum": round(sum(row.get("load_seconds", 0) for row in summaries), 3),
+            "reported_total_seconds_sum": round(sum(row.get("total_seconds", 0) for row in summaries), 3),
+            "generated_tokens_sum": sum(row.get("tokens", 0) for row in summaries),
+            "tokens_per_second_weighted": round(
+                sum(row.get("tokens", 0) for row in summaries) /
+                max(1e-9, sum(row.get("generation_seconds", 0) for row in summaries)), 3
+            ),
+        }
+
+    summary = {
+        "run_state": "interrupted",
+        "planned_generations": 1024,
+        "persisted_generations": len(all_records),
+        "persisted_per_model": {model: len(chunks) * (64 if model == "Qwen3_8B_Thinking" else 32) for model, chunks in model_chunks.items()},
+        "coverage": {
+            "candidate_questions": len(ordered_ids),
+            "dual_model_complete_question_ids": [qid for qid in ordered_ids if qid in dual_complete],
+            "dual_model_complete_n": len(dual_complete),
+            "8b_only_question_ids": [qid for qid in ordered_ids if qid in partial_only],
+            "8b_only_n": len(partial_only),
+            "32b_only_n": len(complete_32b - complete_8b),
+            "unstarted_32b_question_ids": [qid for qid in ordered_ids if qid not in complete_32b],
+        },
+        "raw_scorer_correctness_counts": dict(scorer_counts),
+        "strict_eos_parseable_counts": dict(strict_counts),
+        "prefilter_automatic_threshold_n_correct_ge_2_and_raw_false_ge_2": {
+            "dual_complete": sum(qid in preaudit_eligible for qid in dual_complete),
+            "partial_only": sum(qid in preaudit_eligible for qid in partial_only),
+            "ids": [qid for qid in ordered_ids if qid in preaudit_eligible],
+        },
+        "manual_error_audit_counts": dict(audited_counts),
+        "manual_eligibility_after_review": final_coverage,
+        "prefix_replay": prefix_replay,
+        "summed_chunk_timing_from_persisted_summaries_only": gpu_time,
+        "chunk_summary_records": chunk_summaries,
+        "source_files": file_manifest,
+        "question_counts": {
+            qid: {model: dict(per_question[qid][model]) for model in model_chunks}
+            for qid in ordered_ids
+        },
+        "note": "The interrupted Qwen3_32B/chunk-11 has no result records and is excluded. No result is inferred from the incomplete batch.",
+    }
+    (run_dir / "partial_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    model_order = {model: index for index, model in enumerate(model_chunks)}
+    question_order = {question_id: index for index, question_id in enumerate(ordered_ids)}
+    identity_manifest.sort(key=lambda row: (
+        model_order[row["model"]], question_order[row["question_id"]], row["sample_index"]
+    ))
+    partial_manifest = {
+        "files": file_manifest,
+        "record_count": len(identity_manifest),
+        "unique_identity_count": len(identities),
+        "duplicate_identity_count": len(identity_manifest) - len(identities),
+        "coverage": {
+            "candidate_question_count": len(ordered_ids),
+            "dual_model_complete_question_count": len(dual_complete),
+            "8b_only_question_count": len(partial_only),
+            "saved_generation_count_by_model": {
+                model: sum(1 for row in identity_manifest if row["model"] == model)
+                for model in model_chunks
+            },
+        },
+        "identities": identity_manifest,
+        "identity_check": "Every persisted record has one unique (model, question_id, sample_index); duplicate identities fail analysis.",
+    }
+    (run_dir / "partial_results_manifest.json").write_text(json.dumps(partial_manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (run_dir / "failure_review_queue.json").write_text(json.dumps(audited_failures, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (run_dir / "prefix_yield_analysis.json").write_text(json.dumps(prefix_replay, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    audit_fields = ["model", "id", "draft_key", "sample_index", "valid_for_eligibility", "manual_category",
+                    "manual_reason", "answer_numbers", "extracted_answer", "audited_expression_value",
+                    "source_path", "source_line", "source_sha256"]
+    with (run_dir / "error_review.csv").open("w", newline="", encoding="utf-8-sig") as handle:
+        writer = csv.DictWriter(handle, fieldnames=audit_fields)
+        writer.writeheader()
+        for row in audited_failures:
+            csv_row = {field: row.get(field) for field in audit_fields}
+            csv_row["answer_numbers"] = json.dumps(row["answer_numbers"], ensure_ascii=False)
+            writer.writerow(csv_row)
+    print(json.dumps({
+        "persisted_generations": len(all_records),
+        "raw_scorer_correctness_counts": dict(scorer_counts),
+        "strict_eos_parseable_counts": dict(strict_counts),
+        "dual_complete_n": len(dual_complete),
+        "partial_only_n": len(partial_only),
+        "automatic_threshold_dual": summary["prefilter_automatic_threshold_n_correct_ge_2_and_raw_false_ge_2"]["dual_complete"],
+        "automatic_threshold_partial": summary["prefilter_automatic_threshold_n_correct_ge_2_and_raw_false_ge_2"]["partial_only"],
+        "failure_review_rows": len(failure_queue),
+        "manual_error_audit_counts": dict(audited_counts),
+        "manual_eligibility_after_review": final_coverage,
+        "prefix_replay_summary": [
+            {key: row[key] for key in ("samples_per_model_prefix", "qwen3_8b_alone_qualifying_n",
+                                       "qwen3_8b_alone_qualifying_ids", "qwen3_32b_alone_qualifying_n",
+                                       "qwen3_32b_alone_qualifying_ids", "both_models_alone_qualifying_n",
+                                       "both_models_alone_qualifying_ids",
+                                       "pooled_qualifying_n", "new_since_previous_prefix_n",
+                                       "new_since_previous_prefix_ids", "pooled_questions_rescued_by_8b",
+                                       "pooled_questions_rescued_by_32b")}
+            for row in prefix_replay
+        ],
+        "gpu_time": gpu_time,
+    }, ensure_ascii=False, indent=2))
+    if args.inspect_failures:
+        for row in failure_queue[args.failure_offset : args.failure_offset + args.inspect_failures]:
+            print("\n--- FAILURE CASE ---")
+            compact = {key: row.get(key) for key in (
+                "model", "id", "draft_key", "sample_index", "valid_for_eligibility",
+                "finish_reason", "thinking_status", "answer_numbers", "extracted_answer",
+                "source_path", "source_line",
+            )}
+            final = row.get("final_response") or ""
+            compact["final_response_chars"] = len(final)
+            compact["final_response_tail"] = final[-args.response_tail_chars:]
+            print(json.dumps(compact, ensure_ascii=True, indent=2))
+    if args.list_failures:
+        for index, row in enumerate(failure_queue):
+            print(json.dumps({
+                "index": index,
+                "model": row["model"],
+                "id": row["id"],
+                "sample_index": row["sample_index"],
+                "valid": row["valid_for_eligibility"],
+                "answer": row["extracted_answer"],
+            }, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()

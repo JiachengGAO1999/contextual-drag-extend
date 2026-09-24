@@ -1,0 +1,60 @@
+{
+  "record_type": "batch_interruption_and_resource_release",
+  "recorded_at_utc": "2026-09-24T11:59:59Z",
+  "remote_project": "/data2/gaojc/projects/contextual-drag-extend",
+  "original_output_directory": "/data2/gaojc/projects/contextual-drag-extend/outputs/game24-batch03-dual-anchor-20260924",
+  "original_run_state": "interrupted",
+  "completed_run_claim": false,
+  "reidentified_processes": [
+    {
+      "role": "Batch03 parent scheduler",
+      "pid": 2740555,
+      "action_order": 1,
+      "action": "stopped first to prevent scheduling another chunk"
+    },
+    {
+      "role": "Batch03 generation frontend",
+      "pid": 3673360,
+      "action_order": 2,
+      "action": "stopped after parent scheduler"
+    },
+    {
+      "role": "Batch03 vLLM engine",
+      "pid": 3673624,
+      "action_order": 3,
+      "action": "confirmed exited with the Batch03 generation process"
+    }
+  ],
+  "other_jobs_targeted": false,
+  "persisted_generations_at_stop": {
+    "total": 864,
+    "planned_original": 1024,
+    "Qwen3_8B_Thinking": 512,
+    "Qwen3_32B": 352,
+    "unpersisted_planned_slots": 160
+  },
+  "in_flight_scope": {
+    "model": "Qwen3_32B",
+    "chunk": "chunk-11",
+    "persisted_result_jsonl_present": false,
+    "completed_chunk_summary_present": false,
+    "config_requests_and_logs_preserved": true,
+    "unsaved_in_memory_responses_included": false,
+    "chunk_12_through_15_started": false
+  },
+  "gpu4_release_verification": {
+    "verified_at_utc": "2026-09-24T11:55:56Z",
+    "memory_used_mib": 4,
+    "gpu_utilization_percent": 0,
+    "running_compute_processes": 0
+  },
+  "last_read_only_state_check_utc": "2026-09-24T13:14:26Z",
+  "last_read_only_state_check_result": "Batch03 scheduler and generator process search returned no matches; GPU4 remained at 4 MiB and 0% utilization. Current compute-app UUIDs did not include GPU4 UUID GPU-bb740995-3c17-c363-1553-ef7ac3907eca; other GPUs had unrelated compute processes.",
+  "data_preservation": {
+    "original_result_chunks_modified": false,
+    "run_logs_preserved": true,
+    "partial_audit_copy": "runs/batch03_interrupted_20260924/raw/"
+  },
+  "no_follow_up_generation_started": true,
+  "no_intervention_started": true
+}

@@ -1,0 +1,54 @@
+{
+  "recorded_at_utc": "2026-09-24T12:50:31Z",
+  "record_type": "proposed_midcourse_acquisition_revision_after_interruption",
+  "decision_state": "recommendation_for_next_user_decision_not_executed",
+  "original_run_state": "interrupted",
+  "original_planned_generations": 1024,
+  "persisted_before_revision": 864,
+  "original_unpersisted_planned_slots": 160,
+  "completed_generations_claim": false,
+  "eligibility_rule_changed": false,
+  "proposed_revision": {
+    "scope": "Qwen3_32B only, on the ten frozen questions without any saved 32B samples",
+    "question_ids": ["1171", "1049", "396", "764", "1019", "744", "200", "711", "122", "908"],
+    "sample_indices_per_question": [0, 1, 2, 3, 4, 5, 6, 7],
+    "new_generation_slots": 80,
+    "revised_total_batch_slots_if_executed": 944,
+    "model": "Qwen3_32B",
+    "max_num_seqs": 1,
+    "preserve": [
+      "frozen question IDs and order",
+      "original archived prompt token IDs",
+      "temperature/top_p/top_k",
+      "base seed 42",
+      "per-question max token budget",
+      "pooled threshold of at least two valid correct and two manually confirmed substantive errors"
+    ],
+    "recorded_configuration_change": "Reduce 32B sample prefix from 16 to 8 for the ten not-yet-started questions; the original run remains interrupted and incomplete.",
+    "output_requirement": "Use a new isolated recovery output directory; preserve all original chunks.",
+    "token_level_replay_claim": false
+  },
+  "evidence": {
+    "dual_complete_eligible_at_prefix_4": 2,
+    "dual_complete_eligible_at_prefix_8": 6,
+    "dual_complete_eligible_at_prefix_12": 7,
+    "dual_complete_eligible_at_prefix_16": 7,
+    "additional_eligible_from_prefix_8_to_12": 1,
+    "additional_eligible_from_prefix_12_to_16": 0,
+    "per_prefix_gpu_time_available": false,
+    "reason": "The 32B anchor has the dominant measured runtime, and the observed eligible-question count plateaued from 12 to 16 samples per anchor. These retrospective counts do not predict the ten unfinished questions."
+  },
+  "planned_confirmatory_scale": {
+    "target_new_independent_questions": [20, 30],
+    "preceding_batch02_strict_questions": 8,
+    "current_batch03_dual_anchor_eligible_questions": 7,
+    "current_countable_total_if_batch02_set_is_retained": 15,
+    "shortfall_to_lower_bound": 5,
+    "eight_b_only_partial_questions_counted_as_dual_anchor_eligible": false,
+    "8b_only_partial_questions_already_meeting_pooled_2_plus_2": 4,
+    "additional_candidates_without_8b_only_pass": 6,
+    "revised_80_generation_plan_minimum_to_reach_target_floor": "At least one of the six remaining questions must qualify after adding 32B responses; the outcome is not guaranteed."
+  },
+  "no_follow_up_generation_started": true,
+  "no_intervention_started": true
+}
