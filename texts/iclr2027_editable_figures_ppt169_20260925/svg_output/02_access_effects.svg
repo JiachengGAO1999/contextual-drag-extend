@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1672" height="987" viewBox="0 0 1672 987" data-pptx-page-role="content" font-family="Arial">
+<rect id="background" data-pptx-role="background" x="0" y="0" width="1672" height="987" fill="#FFFFFF"/>
+<g id="access-effects" data-pptx-bounds="44 26 1584 935" transform="translate(44 26)">
+  <g id="headings" fill="#000000">
+    <text x="546.48" y="62" font-size="33.61" font-weight="bold">Late access blocking</text>
+    <text x="1205.424" y="62" font-size="32.08">Effect [95% CI]</text>
+  </g>
+  <g id="access-effects-chartArea">
+    <line id="zero-reference" x1="739.129" y1="102.85" x2="739.129" y2="776.05" stroke="#626B73" stroke-width="3.056"/>
+    <line id="history-separator" x1="546.48" y1="651.84" x2="1180.08" y2="651.84" stroke="#D5DADE" stroke-width="2.444"/>
+    <line id="x-axis" x1="546.48" y1="776.05" x2="1180.08" y2="776.05" stroke="#A6AFB7" stroke-width="2.444"/>
+    <!-- chart-plot-area: object=access-effects | 590.48,128.85,1224.08,802.05 -->
+    <!-- Local frame x=546.48..1180.08 maps -45..103 pp; y=102.85..776.05 maps 6.35..-0.75. -->
+    <g id="qwen8-game24" stroke="#147D92" fill="#147D92">
+      <line id="qwen8-game24-ci" x1="853.291" y1="164.481" x2="1024.534" y2="164.481" stroke-width="5.5"/>
+      <line x1="853.291" y1="154.397" x2="853.291" y2="174.565" stroke-width="3.056"/><line x1="1024.534" y1="154.397" x2="1024.534" y2="174.565" stroke-width="3.056"/>
+      <circle id="qwen8-game24-estimate" cx="938.912" cy="164.481" r="10" stroke="none"/>
+    </g>
+    <g id="qwen32-game24" stroke="#147D92" fill="#147D92">
+      <line id="qwen32-game24-ci" x1="753.399" y1="264.039" x2="953.183" y2="264.039" stroke-width="5.5"/>
+      <line x1="753.399" y1="253.955" x2="753.399" y2="274.123" stroke-width="3.056"/><line x1="953.183" y1="253.955" x2="953.183" y2="274.123" stroke-width="3.056"/>
+      <circle id="qwen32-game24-estimate" cx="853.291" cy="264.039" r="10" stroke="none"/>
+    </g>
+    <g id="gemma-game24" stroke="#147D92" fill="#147D92">
+      <line id="gemma-game24-ci" x1="739.129" y1="363.596" x2="867.561" y2="363.596" stroke-width="5.5"/>
+      <line x1="739.129" y1="353.512" x2="739.129" y2="373.68" stroke-width="3.056"/><line x1="867.561" y1="353.512" x2="867.561" y2="373.68" stroke-width="3.056"/>
+      <circle id="gemma-game24-estimate" cx="810.480" cy="363.596" r="10" stroke="none"/>
+    </g>
+    <g id="math500" stroke="#147D92" fill="#147D92">
+      <line id="math500-ci" x1="953.183" y1="482.118" x2="1140.480" y2="482.118" stroke-width="5.5"/>
+      <line x1="953.183" y1="472.034" x2="953.183" y2="492.202" stroke-width="3.056"/><line x1="1140.480" y1="472.034" x2="1140.480" y2="492.202" stroke-width="3.056"/>
+      <circle id="math500-estimate" cx="1060.210" cy="482.118" r="10" stroke="none"/>
+    </g>
+    <g id="math-train" stroke="#147D92" fill="#147D92">
+      <line id="math-train-ci" x1="819.399" y1="581.675" x2="1086.966" y2="581.675" stroke-width="5.5"/>
+      <line x1="819.399" y1="571.591" x2="819.399" y2="591.759" stroke-width="3.056"/><line x1="1086.966" y1="571.591" x2="1086.966" y2="591.759" stroke-width="3.056"/>
+      <circle id="math-train-estimate" cx="953.183" cy="581.675" r="10" stroke="none"/>
+    </g>
+    <g id="correct-history" stroke="#AD531D" fill="#AD531D">
+      <line id="correct-history-ci" x1="578.588" y1="714.419" x2="712.372" y2="714.419" stroke-width="5.5"/>
+      <line x1="578.588" y1="704.335" x2="578.588" y2="724.503" stroke-width="3.056"/><line x1="712.372" y1="704.335" x2="712.372" y2="724.503" stroke-width="3.056"/>
+      <rect id="correct-history-estimate" x="648.858" y="704.419" width="20" height="20" stroke="none"/>
+    </g>
+  </g>
+  <g id="row-labels" font-size="32.08" text-anchor="end" fill="#000000">
+    <text x="515.924" y="160.5">Qwen3-8B / Game24</text><text x="515.924" y="196.5">Failed history, 15 questions</text>
+    <text x="515.924" y="260.0">Qwen3-32B / Game24</text><text x="515.924" y="296.0">Failed history, 15 questions</text>
+    <text x="515.924" y="359.6">Gemma 4 E4B / Game24</text><text x="515.924" y="395.6">Failed history, 15 questions</text>
+    <text x="515.924" y="478.1">Qwen3-8B / MATH500</text><text x="515.924" y="514.1">Failed history, 8 questions</text>
+    <text x="515.924" y="577.7">Qwen3-8B / MATH-train</text><text x="515.924" y="613.7">Failed history, 8 questions</text>
+    <text x="515.924" y="710.4">Qwen3-8B / Game24</text><text x="515.924" y="746.4">Correct history, 8 questions</text>
+  </g>
+  <g id="effect-labels" font-size="31.47" fill="#25333D">
+    <text x="1205.424" y="175.5">+46.7 [+26.7, +66.7]</text>
+    <text x="1205.424" y="275.0">+26.7 [+3.3, +50.0]</text>
+    <text x="1205.424" y="374.6">+16.7 [+0.0, +30.0]</text>
+    <text x="1205.424" y="493.1">+75.0 [+50.0, +93.8]</text>
+    <text x="1205.424" y="592.7">+50.0 [+18.8, +81.2]</text>
+    <text x="1205.424" y="725.4">-18.8 [-37.5, -6.2]</text>
+  </g>
+  <g id="axis-ticks" stroke="#000000" stroke-width="2.444">
+    <line x1="567.885" y1="776.05" x2="567.885" y2="786.744"/><line x1="739.129" y1="776.05" x2="739.129" y2="786.744"/><line x1="910.372" y1="776.05" x2="910.372" y2="786.744"/><line x1="1081.615" y1="776.05" x2="1081.615" y2="786.744"/><line x1="1167.237" y1="776.05" x2="1167.237" y2="786.744"/>
+  </g>
+  <g id="axis-labels" font-size="30.56" text-anchor="middle" fill="#000000">
+    <text x="567.885" y="820">−40</text><text x="739.129" y="820">0</text><text x="910.372" y="820">40</text><text x="1081.615" y="820">80</text><text x="1167.237" y="820">100</text>
+    <text x="863.28" y="880" font-size="33.61">Accuracy: blocked − full access (pp)</text>
+  </g>
+</g>
+</svg>

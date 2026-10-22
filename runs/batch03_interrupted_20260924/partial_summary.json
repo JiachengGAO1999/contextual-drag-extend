@@ -47,7 +47,7 @@
     ],
     "8b_only_n": 10,
     "32b_only_n": 0,
-    "unstarted_32b_question_ids": [
+    "no_persisted_32b_question_ids": [
       "1171",
       "1049",
       "396",
@@ -91,14 +91,60 @@
     ]
   },
   "manual_error_audit_counts": {
-    "substantive_error": 57,
+    "substantive_error": 61,
     "excluded_invalid": 4,
-    "format_or_extraction_false_negative": 7
+    "format_or_extraction_false_negative": 3
+  },
+  "adjudicated_valid_answer_counts": {
+    "raw_scorer_true": 771,
+    "confirmed_extraction_false_negatives": 3,
+    "total_adjudicated_correct": 774,
+    "formal_correct_gate": "Use original valid official-True responses only; extraction corrections are descriptive and excluded from the failed pool. Independently checked in runs/batch03_next_experiment_20260924/plan.json.",
+    "confirmed_substantive_errors": 61,
+    "invalid_false_rows_excluded": 4,
+    "uncertain_rows": 0,
+    "correctness_policy": "A response counts correct if the extracted/designated final expression is exact Game24, or if the final answer is only a scalar/format extraction miss and the body clearly supplies an endorsed exact Game24 expression. When an explicit final expression is wrong, an earlier valid alternative does not rescue the response; it is a mixed substantive error."
+  },
+  "question_381_mixed_answer_rule": {
+    "primary_policy": "Score the explicitly designated Final Answer. A valid earlier alternative does not override an explicit, selected final expression that misuses inputs.",
+    "sample_5_final_expression": {
+      "evaluation_status": "ok",
+      "evaluated_value": "24",
+      "actual_operand_multiset": "6x1,8x1,11x3",
+      "expected_operand_multiset": "6x1,8x1,11x2",
+      "arithmetic_is_24": true,
+      "operand_multiset_matches": false,
+      "exact_game24": false
+    },
+    "sample_10_final_expression": {
+      "evaluation_status": "ok",
+      "evaluated_value": "24",
+      "actual_operand_multiset": "6x1,8x1,11x3",
+      "expected_operand_multiset": "6x1,8x1,11x2",
+      "arithmetic_is_24": true,
+      "operand_multiset_matches": false,
+      "exact_game24": false
+    },
+    "body_alternative": {
+      "evaluation_status": "ok",
+      "evaluated_value": "24",
+      "actual_operand_multiset": "6x1,8x1,11x2",
+      "expected_operand_multiset": "6x1,8x1,11x2",
+      "arithmetic_is_24": true,
+      "operand_multiset_matches": true,
+      "exact_game24": true
+    },
+    "sensitivity_if_any_explicitly_endorsed_valid_alternative_counts": {
+      "question_381_qualifies": false,
+      "dual_complete_qualifying_n": 7,
+      "batch02_plus_batch03_count_if_batch02_has_8": 15,
+      "shortfall_to_target_floor_20": 5
+    }
   },
   "manual_eligibility_after_review": {
     "dual_complete": {
       "candidate_n": 22,
-      "qualifying_n": 7,
+      "qualifying_n": 8,
       "qualifying_question_ids": [
         "195",
         "434",
@@ -106,19 +152,33 @@
         "144",
         "1281",
         "395",
-        "1206"
+        "1206",
+        "381"
       ]
     },
     "8b_only_partial": {
       "candidate_n": 10,
-      "qualifying_n": 4,
+      "qualifying_n": 5,
       "qualifying_question_ids": [
         "1171",
         "764",
         "1019",
-        "200"
+        "200",
+        "122"
       ]
     }
+  },
+  "arithmetic_and_operand_validation": {
+    "expression_rows_checked": 852,
+    "exact_game24_rows": 777,
+    "scorer_true_unverified_rows": [],
+    "all_valid_scorer_true_have_verified_equation": true,
+    "verification_file": "expression_verification.csv"
+  },
+  "eligibility_boundary_audit": {
+    "all_question_rows": 32,
+    "near_boundary_rows": 17,
+    "file": "eligibility_boundary_audit.json"
   },
   "prefix_replay": [
     {
@@ -425,25 +485,27 @@
         "215",
         "1281"
       ],
-      "qwen3_32b_alone_qualifying_n": 4,
+      "qwen3_32b_alone_qualifying_n": 5,
       "qwen3_32b_alone_qualifying_ids": [
         "434",
         "215",
         "1281",
-        "1206"
+        "1206",
+        "381"
       ],
       "both_models_alone_qualifying_n": 2,
       "both_models_alone_qualifying_ids": [
         "215",
         "1281"
       ],
-      "pooled_qualifying_n": 6,
-      "new_since_previous_prefix_n": 4,
+      "pooled_qualifying_n": 7,
+      "new_since_previous_prefix_n": 5,
       "new_since_previous_prefix_ids": [
         "195",
         "434",
         "395",
-        "1206"
+        "1206",
+        "381"
       ],
       "pooled_questions_rescued_by_8b": [
         "195",
@@ -452,7 +514,8 @@
       "pooled_questions_rescued_by_32b": [
         "434",
         "395",
-        "1206"
+        "1206",
+        "381"
       ],
       "qualified_question_ids": [
         "195",
@@ -460,7 +523,8 @@
         "215",
         "1281",
         "395",
-        "1206"
+        "1206",
+        "381"
       ],
       "per_question": [
         {
@@ -707,13 +771,13 @@
           "id": "381",
           "8b_correct": 8,
           "8b_substantive_wrong": 0,
-          "32b_correct": 7,
-          "32b_substantive_wrong": 1,
-          "pooled_correct": 15,
-          "pooled_substantive_wrong": 1,
+          "32b_correct": 6,
+          "32b_substantive_wrong": 2,
+          "pooled_correct": 14,
+          "pooled_substantive_wrong": 2,
           "qualifies_8b_alone": false,
-          "qualifies_32b_alone": false,
-          "qualifies_pooled": false
+          "qualifies_32b_alone": true,
+          "qualifies_pooled": true
         },
         {
           "id": "524",
@@ -739,19 +803,20 @@
         "215",
         "1281"
       ],
-      "qwen3_32b_alone_qualifying_n": 4,
+      "qwen3_32b_alone_qualifying_n": 5,
       "qwen3_32b_alone_qualifying_ids": [
         "434",
         "215",
         "1281",
-        "1206"
+        "1206",
+        "381"
       ],
       "both_models_alone_qualifying_n": 2,
       "both_models_alone_qualifying_ids": [
         "215",
         "1281"
       ],
-      "pooled_qualifying_n": 7,
+      "pooled_qualifying_n": 8,
       "new_since_previous_prefix_n": 1,
       "new_since_previous_prefix_ids": [
         "144"
@@ -765,7 +830,8 @@
         "434",
         "144",
         "395",
-        "1206"
+        "1206",
+        "381"
       ],
       "qualified_question_ids": [
         "195",
@@ -774,7 +840,8 @@
         "144",
         "1281",
         "395",
-        "1206"
+        "1206",
+        "381"
       ],
       "per_question": [
         {
@@ -1021,13 +1088,13 @@
           "id": "381",
           "8b_correct": 12,
           "8b_substantive_wrong": 0,
-          "32b_correct": 11,
-          "32b_substantive_wrong": 1,
-          "pooled_correct": 23,
-          "pooled_substantive_wrong": 1,
+          "32b_correct": 9,
+          "32b_substantive_wrong": 3,
+          "pooled_correct": 21,
+          "pooled_substantive_wrong": 3,
           "qualifies_8b_alone": false,
-          "qualifies_32b_alone": false,
-          "qualifies_pooled": false
+          "qualifies_32b_alone": true,
+          "qualifies_pooled": true
         },
         {
           "id": "524",
@@ -1053,19 +1120,20 @@
         "215",
         "1281"
       ],
-      "qwen3_32b_alone_qualifying_n": 4,
+      "qwen3_32b_alone_qualifying_n": 5,
       "qwen3_32b_alone_qualifying_ids": [
         "434",
         "215",
         "1281",
-        "1206"
+        "1206",
+        "381"
       ],
       "both_models_alone_qualifying_n": 2,
       "both_models_alone_qualifying_ids": [
         "215",
         "1281"
       ],
-      "pooled_qualifying_n": 7,
+      "pooled_qualifying_n": 8,
       "new_since_previous_prefix_n": 0,
       "new_since_previous_prefix_ids": [],
       "pooled_questions_rescued_by_8b": [
@@ -1077,7 +1145,8 @@
         "434",
         "144",
         "395",
-        "1206"
+        "1206",
+        "381"
       ],
       "qualified_question_ids": [
         "195",
@@ -1086,7 +1155,8 @@
         "144",
         "1281",
         "395",
-        "1206"
+        "1206",
+        "381"
       ],
       "per_question": [
         {
@@ -1333,13 +1403,13 @@
           "id": "381",
           "8b_correct": 16,
           "8b_substantive_wrong": 0,
-          "32b_correct": 15,
-          "32b_substantive_wrong": 1,
-          "pooled_correct": 31,
-          "pooled_substantive_wrong": 1,
+          "32b_correct": 13,
+          "32b_substantive_wrong": 3,
+          "pooled_correct": 29,
+          "pooled_substantive_wrong": 3,
           "qualifies_8b_alone": false,
-          "qualifies_32b_alone": false,
-          "qualifies_pooled": false
+          "qualifies_32b_alone": true,
+          "qualifies_pooled": true
         },
         {
           "id": "524",

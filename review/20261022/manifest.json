@@ -1,0 +1,75 @@
+{
+  "date": "2026-10-22",
+  "repository": "JiachengGAO1999/contextual-drag-extend",
+  "visibility": "private",
+  "base_commit": "338ea8707d42a0a3bbc05c2b28a9ec502d00e9c4",
+  "archives": [
+    {
+      "file": "evidence/completed_snapshot_20261017.tar.gz",
+      "sha256": "2ff23ec665923f4420b1364c06f0e371f15a22d2b85bd6fcdb363c245ba86c2e",
+      "bytes": 62638562,
+      "source": "outputs/game24-100q-8b-20261015/completed_snapshot_20261017.tar.gz",
+      "destination": ".",
+      "outputs_only": true,
+      "original_archive": true
+    },
+    {
+      "file": "evidence/game24-heldout82-completed-20261022.tar.gz",
+      "sha256": "3fe7de2843c1619f9a94805ae4e081ca7dc1d80ee4e96b45b6f5ae5f32293c1b",
+      "bytes": 15795855,
+      "source": "outputs/game24-replication-qwen3-8b-heldout82-20261019/game24-heldout82-completed-20261022.tar.gz",
+      "destination": "outputs/game24-replication-qwen3-8b-heldout82-20261019",
+      "outputs_only": false,
+      "original_archive": true
+    },
+    {
+      "file": "evidence/development20-completed-20261022.tar.gz",
+      "sha256": "3925a9495b9c74934b9f06141f2fffe9ae115082804b3bd4524a81cb57dc08b8",
+      "bytes": 1850124,
+      "source": "outputs/game24-replication-qwen3-8b-development-20261017",
+      "destination": "outputs/game24-replication-qwen3-8b-development-20261017",
+      "original_archive": false
+    },
+    {
+      "file": "evidence/historical-controls-20261022.tar.gz",
+      "sha256": "87f4696e47db7db93ec2b59261248666b509fd7f3739492a8a623b9d29e2cfc3",
+      "bytes": 1063684,
+      "source": "selected historical control/STOP evidence",
+      "destination": ".",
+      "original_archive": false,
+      "files": 31
+    },
+    {
+      "file": "evidence/legacy-acquisition-sources-20261022.tar.gz",
+      "sha256": "f0e8476eaa3dd19549faf2aa62e155bf182c12cd3f99e16bf84ff519dea23654",
+      "bytes": 36447700,
+      "source": "raw source closure of the historical acquisition index",
+      "destination": ".",
+      "original_archive": false,
+      "files": 90
+    }
+  ],
+  "support_files": {
+    "scripts/game24_full_replication_20261019.py": "edc6e58b1d58adc3b2800a21b4c6931a8a206ac0348218ff004a7e8f7ab06165",
+    "scripts/game24_replication_20261017.py": "50a6cb966800423f936f5aeaee737110cf03050ef577bf10b2c9cfe927506da0",
+    "scripts/analyze_batch03_partial_20260924.py": "fd01b7a27f77dd7946d2c128474f7082404426c1df3a0e35b5f91e5be7e8cb2d",
+    "docs/game24_100q_8b/game24_eligible_100.jsonl": "8eaf1e1491dc8fe4cb16e35d7b8cfd76f1df0cbdd6be511d476db3f4a027af6e",
+    "docs/game24_100q_8b/game24_trajectory_pool.jsonl": "2fceb1cfb9195d74ce2f50fb64639f21ece5f3e718756c4b8bc1858728e21863",
+    "docs/game24_100q_8b/game24_split_manifest.json": "f22415ace5196fac9c1bdae84e77d770c6d0bf046b7e74301fa0b2944a266ccc"
+  },
+  "raw_results_sha256": {
+    "outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl": "c593b2d5d2cb2c3ade438a90ba4c8b86e4886e5966091498b01213763bd82bbf",
+    "outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl": "87d35a3c3fcdb99efdff270b9e5c576ac0f605871b9558362351498147f15766"
+  },
+  "included_scope": "current research docs, scripts, tests, selective backend; complete acquisition/dev/confirmation evidence and selected old controls",
+  "excluded_scope": [
+    "credentials",
+    "model weights",
+    "installed environments",
+    "temporary downloads",
+    "unrelated third-party paper PDFs",
+    "all other historical bulk outputs"
+  ],
+  "provenance_boundary": "Original archives/raw bytes preserved; old absolute server paths remain for provenance, not portable runtime configuration.",
+  "license_boundary": "Existing repository Apache-2.0 license retained; no new license grant for third-party models or runtime dependencies."
+}

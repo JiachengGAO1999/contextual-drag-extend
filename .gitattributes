@@ -1,1 +1,10 @@
 *.pdf binary
+
+# Preserve the dated research evidence bytes across platforms.
+docs/** -text
+scripts/** -text
+tests/** -text
+selective_context/** -text
+review/** -text
+texts/** -text
+runs/** -text

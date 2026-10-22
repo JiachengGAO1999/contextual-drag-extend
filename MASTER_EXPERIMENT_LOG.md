@@ -1,5 +1,21 @@
 # Selective Context Reset — Master Experiment Log
 
+## 2026-10-22 — Full102 replication complete; heldout82 confirms both primary directions
+
+Completed492/492 at2026-10-22 06:37:14Asia/Shanghai in63.35hours including startup attempts; pooled612/612 across102questions. Heldout82:R0 104/164,R2 55/164,R3 95/164. Drag+29.88pp[18.90,40.85];recovery+24.39pp[13.41,35.37]. R2→R3:62paired recoveries,22damages. Pooled102:R0 131/204,R2 68/204,R3 119/204;recovery+25.00pp[14.71,35.29]. Heldout19length-limited/10scorer-null;pooled20/11,overlapping categories retained in denominators.599completed files and423frozen bindings verified;CPU analysis exactly matches server;164heldout/204pooled paired invariants pass;254new official-True formulas exact-arithmetic verified without relabeling. Launcher exit0,no automatic extension. [Full report](docs/game24_100q_8b/FULL_REPLICATION_RESULTS_20261022.md).
+
+## 2026-10-19 — Entire102 pool authorized; frozen82 confirmation submitted
+
+User explicitly requests the full expanded pool. Preserve completed20/120 and freeze remaining82 ×2seeds ×R0/R2/R3 =492new requests,612total. Draft policy/seeds/sampling/masks unchanged, original20 selections replay exactly. Isolated A800GPU4 deployment uses existing A100 vLLM0.11/Transformers4.55.4/xgrammar0.1.25 packages;3707hashes verified,120development prompt tokenizations agree,30CPU checks pass. Report heldout82 as confirmation and pooled102 separately, with A100/A800 strata. Runtime physical directory moved to owned system disk after4195file checks; model weights are links, no unrelated jobs changed. Initial IPC-path/spawn-import failures occurred before any scientific output and17.70s is retained. At2026-10-19 15:18Asia/Shanghai all16fixed old first4-token probes matched A100 outputs and4callback/pair probes passed; scientific first batch is running0/492,tmux game24-8b-heldout82-1019. Estimate63.13additional GPUh,96h cumulative guard. [Protocol and live-state command](docs/game24_100q_8b/FULL_REPLICATION_PLAN_20261019.md).
+
+## 2026-10-19 — Development replication verified complete, no expansion
+
+Completed120/120 on2026-10-18 02:16:49Asia/Shanghai,15.40hours. Frozen20questions/two seeds: R0 27/40,R2 13/40,R3 24/40. R0-R2 +35.0pp[17.5,52.5];R3-R2 +27.5pp[10.0,47.5],5000question bootstrap draws. R2→R3:15recoveries/4damages; oneR3 length-limited/scorer-null result retained in denominator. Held-out82 unused; no expansion launched. Synced117files/11,714,369bytes,all SHA256 matched; CPU analysis exactly matches saved JSON;40paired input/first-token checks passed; all64official-True final formulas exact-arithmetic verified. Runner exited0; prior idle resident restoration not confirmed, and GPU4 now serves other tasks untouched. [Full report](docs/game24_100q_8b/REPLICATION_RESULTS_20261019.md).
+
+## 2026-10-17 — Fresh-pool Qwen3-8B development replication
+
+User requests rerunning the old method and preparing extensions after the 102-question data freeze. Frozen development20 × seeds927001/927002 × R0/R2/R3 =120 scientific requests, plus4 engineering requests of at most4 tokens. Held-out82 remains unused. A100 GPU4 uses the actual paper snapshot with146 verified file hashes and64 old prompt-tokenization parity checks; the idle older root-checkout resident is released and restored afterward. No new weights/environment, no automatic extra conditions or held-out requests. Runtime and result status: `outputs/game24-replication-qwen3-8b-development-20261017/status.json`; tmux `game24-8b-dev-replication-1017`. Protocol and extension boundaries: [replication plan](docs/game24_100q_8b/REPLICATION_PLAN_20261017.md). No completed new effect estimate yet.
+
 ## 2026-09-20 — Same-question scope reaffirmed; public MATH final-answer audit
 
 User confirmed existing same-question route. Parallel32B resumes frozen acquisition; no new intervention launched. Manual review of20 public R1 MATH outputs flagged by scorer finds10 substantive final errors,9 correct-answer extraction artifacts (6 nested boxes,3 multiple boxes),1 missing final. Of10 errors,7 depend on diagram relationships,1 has missing diagram,2 have sufficient text (source indices154,444). Full trace/token-budget review pending, not generation-ready. Report `docs/quick_validation/math500_public_review_20260920.md`. Original scorer results preserved; no silent scorer change.
@@ -749,6 +765,14 @@ MATH34/128 persisted at check, GPU4 active; Game2464 queued. Recorded mixed evid
 ## 2026-09-24 — Gemma 4E target-model validation complete
 The frozen 15-question Gemma_4_E4B_it_Thinking run completed 60/60 R2/R3 requests on A100 GPU4 on Sep23 (8132s). Its R0 capability gate passed at 28/30 correct and 30/30 normally parseable. R2 was 22/30 correct; R3 was 27/30, with all 60 requests ending EOS and one R3 output unresolved by the frozen final-answer parser. Preflight same-text/mask contracts passed for all 30 paired units and all 30 persisted first-token boundary checks passed. Pooled R3-R2 is +16.7pp (6 wrong-to-correct, 1 correct-to-wrong); exact McNemar p=.125, question-cluster bootstrap 95% CI [0.0, 30.0]pp (50,000 draws). Pooled R0-R2 is +20.0pp [3.3, 33.3], p=.0703; R3-R0 is -3.3pp [-20.0, 10.0], p=1.0. The 15-question set comprises 8 dual_anchor_batch02 confirmation questions and 7 dual_anchor_initial7 pilot questions; only the former are independent confirmation data. On those 8 questions, R0/R2/R3 are 14/16, 11/16, and 15/16. R3-R2 is +25.0pp (4 recoveries, 0 harms), question-cluster bootstrap 95% CI [6.25, 43.75]pp, exact McNemar p=.125; one R3 output in this stratum is unresolved and counts incorrect. These data support bounded cross-architecture replication but not a broad significance claim. GPU4 was released after completion. Raw artifacts remain on A100 under `/data2/gaojc/tmp/math-external-16q-20260920/outputs/game24-gemma4-e4b-{r0-capability-15q,r2-r3-15q}-20260923/`. No follow-up generation was queued.
 
+## 2026-09-24 — Independent Batch03 audit correction and prepared next experiment
+
+Execution update22:29 Beijing: user approved64-request validation and selected wait-for-idle A100. Isolated server snapshot `/data2/gaojc/tmp/game24-batch03-validation-20260924` reuses reviewed validated code path (vLLM0.11,torch2.8,transformers4.55.4); does not deploy unrelated local backend changes. CPU preflight checks64 historical Batch02 prompt reconstructions exactly,64 new requests/16pairs, same-text and mask onsets, input97–1006tokens. Tmux `game24-batch03-idle-gpu-20260924` running queue PID261285; all GPUs occupied at registration. Three idle observations30s apart plus final recheck; max wait12h to Sep25 10:29 Beijing. One run only,8 four-token engineering probes before64 scientific requests, per-answer fsync; no termination of other jobs, no automatic retries/expansion/resident restoration. Local preflight and status snapshot saved under `runs/batch03_next_experiment_20260924/`; status is waiting, not scientific generation.
+
+This entry supersedes the later-listed interruption report's old 57/7/4 and 7+4 eligibility counts. Verified against raw files: q122 samples4/9 reuse operands; q381 samples5/10 explicitly select invalid final answers despite an earlier valid alternative. Correct counts:61 substantive errors,3 extraction misses,4 invalid among68 raw-False. All771 raw-True extracted equations verified with Fraction and exact input multiset. Eight dual-complete and five partial questions pass; requiring original official-True>=2 yields the same sets. Added6 real-data regression tests, removed contradictory mixed-answer fallback; all14 audit/recovery tests pass. Installed vLLM0.11 confirms stable parent_seed+child_index mapping. No GPU smoke or generation performed.
+
+Prepared deterministic failed-body pairs and a reviewable64-generation Qwen3-8B plan (8 complete new questions ×seeds927001/927002×R0/R2/R3/R4), using the existing fixed random selection rule; no intervention outcome consulted for selection. q381 sensitivity predeclared. Complete-prefix runtime selection and interrupted candidate coverage must be disclosed; Batch03 reported separately, Batch02+Batch03 secondary, pilot excluded. Reject choosing only8B-passing questions to complete32B just to reach20. Machine plan `runs/batch03_next_experiment_20260924/plan.json` has generate=false. GPU4 is now occupied by a process outside gaojc; no process changed. See `docs/quick_validation/batch03_next_experiment_20260924.md`.
+
 ## 2026-09-24 — Batch03 dual-anchor independent-question acquisition started
 
 After the user asked to continue and keep GPU4 working, started the already frozen Batch03 manifest: 32 Game24 questions × 16 ordinary-vLLM R0 outputs × Qwen3-8B and Qwen3-32B = 1,024 generations. The new independent-question yield is the current primary evidence gap; Qwen3-32B target validation, Gemma target validation, and correct-history specificity control are already complete. Candidate order and eligibility thresholds are unchanged. Run Qwen3-8B first in four-question chunks, then Qwen3-32B in two-question chunks; every completed chunk persists before the next. Stop for pooled manual substantive-failure audit; do not select drafts or launch interventions automatically. GPU4 prelaunch was clear at 4 MiB; `/data2` had about 226 GB free. At 17:08 UTC, Qwen3-8B chunk00 had loaded and started its 64 generations; status remained 0/1,024 completed. No other GPU or user's process was touched. Protocol, runner, and live artifacts: `docs/quick_validation/batch03_dual_anchor_20260924.md`, `scripts/batch03_dual_anchor_20260924.py`, and `/data2/gaojc/projects/contextual-drag-extend/outputs/game24-batch03-dual-anchor-20260924/`.
@@ -759,5 +783,92 @@ Per the user's stop-and-audit instruction, re-identified the Batch03 scheduler, 
 
 Recomputed from saved chunks and reviewed all 68 scorer-False answers against the full answer and input-number multiset: 57 substantive errors, seven valid answers missed by extraction/scoring, four invalid outputs excluded, zero uncertain. Two missed answers occur in Qwen3-32B question381: a valid `11+11+8−6=24` appears as an explicit alternative while the parser extracts an invalid final expression. The audited pool gives seven qualifying dual-anchor-complete questions among22 and four questions among10 with only 8B coverage; the latter are not counted as dual-anchor-complete. Prefix replay at per-anchor n=4/8/12/16 yields pooled eligible counts 2/6/7/7; n12→16 adds zero. Chunk summaries give 8B/32B generation times 8,522.619/37,157.073 seconds and reported chunk-total sums 8,891.686/37,923.732 seconds. They do not support per-prefix GPU-time allocation.
 
-The agreed sprint target is20–30 new independent questions. Batch02 contributes eight prior strict questions; Batch03 currently contributes seven audited complete dual-anchor questions, total15, five short of the lower bound. Proposed but not executed: revise the remaining 32B acquisition to sample indices0–7 uniformly for all ten frozen, previously unstarted 32B questions (80 generations, `max_num_seqs=1`), retain seed/prompts/sampling/budgets and the same 2+2 threshold, then manually audit before a separate decision. Four of the ten already pass 2+2 using the saved 8B answers and would remain eligible after the second-anchor samples are added; at least one of the other six must qualify to reach20. This changes the original 1,024 plan; it does not make that run complete. No generation or intervention was started. Full report: `docs/quick_validation/batch03_interrupted_audit_20260924.md`; audit artifacts: `runs/batch03_interrupted_20260924/`; original remote outputs remain under `/data2/gaojc/projects/contextual-drag-extend/outputs/game24-batch03-dual-anchor-20260924/`.
+
+## 2026-09-25 — Batch04 fresh-question screen started
+
+At the user's request to scale the independent-question sample before the deadline, froze a new baseline-only screen of 32 previously unseen Game24 questions, with eight R0 generations per question from each of Qwen3-8B Thinking and Qwen3-32B (512 planned generations). Preparation scanned prior manifests, screening outputs, experiment records, and question pairs; 194 question IDs and 194 corresponding number multisets were excluded. The corrected fixed-order Batch03 prefix replay is 2/7/8/8 eligible questions at per-anchor n=4/8/12/16; using n=8 is a measured-efficiency design choice, not a promised yield. Exact candidates and source hashes are in `scripts/baseline_manifest_batch04_20260925.json`; plan and timing assumptions are in `docs/quick_validation/batch04_sampling_plan_20260925.md`.
+
+GPU4 preflight found the user's Qwen3-8B selective resident (PID 1222876 / EngineCore 1223040) as its sole compute owner, with no pending resident job. The run stopped only that owned service, verified GPU4 free, and launched in the existing `qwen3-vllm-resident` tmux session under window `batch04-screen`. Qwen3-8B chunks00–07 completed 256/512 generations. The local record-level audit found 251 EOS, five length-limited; among EOS records, 239 official-True and 12 official-False. Manual review of all 12 valid scorer-False responses classified 11 as substantive errors and one as an extraction miss with an explicitly endorsed valid equation. Question50 provisionally passes the 8B-only 2+2 threshold (3 official-True, 4 substantive errors); pooled eligibility awaits Qwen3-32B. At 12:40 UTC, Qwen3-32B chunk00 had four requests finished, four running, and eight waiting; generation throughput 72.5 token/s; GPU4 77,331 MiB / 99% with no OOM/error under the configured 0.95 memory reservation. No failed-answer labels are auto-accepted, and there is no automatic intervention, retry, or candidate expansion. The runner persists and validates each chunk and will restore the selective resident after success or failure.
+
+At 13:23 UTC, the first Qwen3-32B chunk still has three of sixteen generations decoding; no result file has yet been persisted for this chunk. Throughput has stayed near 2.5–2.8 token/s since 13:07 while GPU4 is at full utilization and the KV-cache metric fluctuates near 75–99%. No CUDA/Xid, OOM, or Python exception is present. Batch03 chunks under the same settings measured 41–73 token/s, so this is an anomalous long-generation tail; KV-cache pressure and recomputation are plausible but unconfirmed. Keep the active chunk intact, then recalculate ETA from its measured token count/runtime before choosing whether further action is warranted. The frozen queue and candidate set have not changed.
+
+At 14:11 UTC, chunk00 remains in flight with three sequences decoding; short-window generation throughput fluctuates around 3.0–4.0 token/s. Its KV-cache metric repeatedly cycles between roughly 90% and 100%, which is consistent with scheduling/cache pressure but is not direct proof of preemption. No results from this chunk have been persisted, and no error or thermal throttle is present. GPU5/6 show no compute process; a request for authorization to use them for disjoint tail chunks is pending. Until answered, only GPU4 runs the frozen queue. No sample count, candidate, prompt, or seed has changed.
+
+## 2026-10-14 — Game24 100Q data audit and bounded pilot preparation
+
+Read-only A100 snapshot exported443 files, preserving original baseline chunks/configs/full text/token IDs; all checksums verified. Unified3,538 baseline records across206 multisets, of which3,136 ordinary-vLLM records match adapted dual-Qwen decoding/context. Compatible37 and strict32 eligible historical questions; conservative local/server material exclusions leave two complete-quota new-pool candidates643/1119. Batch03 missing16032B slots remains interrupted; prefix22-question replay2/7/8/8. Batch02 full prefix7/7/8/8. Batch04 actually completed512 generations,5/32strict yield and10.683 measured whole-job hours; eligible50/353/1073 are already later materials,643/1119 unexposed. Re-read25 ambiguous full final responses with raw-hash-bound adjudications; full raw provenance of all3,538 indexed records verified by11 passing tests. ICLR frozen artifacts untouched.
+
+Created docs/game24_100q audit/acquisition/exploration-status/decision reports,1,362-row question manifest, raw trajectory index, two candidate witness records, empty unachieved100Q freeze and explicit not-frozen split. Frozen16new questions×2anchors×8=256-generation pilot, cap8cumulative GPU-hours; asyncordinary-vLLM, per-slot seeds, fsync/heartbeat/resume, no completed-invalid resampling, no automatic expansion. A100 CPU/runtime imports and both complete checkpoints verified without loading weights, initializingengine or generating. New GPU hours/generations0. Remaining98-question cost scenario~210GPU-hours extrapolated from Batch04, not an approved budget or pilot measurement.
+
+At user request checked A100/A800 live at17:35China time: A100 all8cards have compute processes; GPU4 includes foreignhezq process plus ownidle resident. A8000/2/4/6 are idle;1has18GBunattributed allocation;3/5/7occupied. A800 ownQwen3-8B5shards and readable sharedQwen3-32B17shards complete, with existingvLLM0.10.2/torch2.8.0 environment; no model transfer/download needed. A800data13GBfree and root1.9GBrequire storage check. No GPU occupied/stopped on either server. Await allocation window/total budget; any A800 single-card migration must freeze paths/version and validate its environment first. Current collector is A100-specific. See docs/game24_100q/GAME24_100Q_ACQUISITION_REPORT.md and resource_inventory_a100/a800.json.
+
+## 2026-10-14 — 已授权迁移至A800单卡并启动100题数据准备
+
+用户明确要求迁移并运行100case数据准备后，部署到A800用户独立目录
+`/data/gaojc/projects/contextual-drag-extend-game24-100q`，GPU4 / UUID
+`GPU-9d164491-5abf-96eb-3d3f-e08e77deb8f7`，tmux `game24-100q-a800`。
+只使用这一张卡，不修改或停止A100原resident及其他用户进程。
+已有8B/32B权重直接读取，无大型模型下载/搬运；独立venv补齐官方math-verify0.8.0、
+datasets4.0.0及grader导入依赖，基础vLLM0.10.2未升级。
+两个tokenizer文件与A100字节一致；A800本地max_position_embeddings元数据分别扩大至
+409600/204800，仅通过引擎hf_overrides恢复原40960，context保持32768，共享配置不改。
+
+16题固定pilot / 每anchor8次 / 共256次 / 累计上限8 GPU小时，审计和成本门控通过后
+沿预冻结1034题序每批32题，目标至少100道strict独立题。全项目在此前210小时成本情景
+上设240小时有限保护上限，失败与恢复尝试计入；若预测超额、零pilot产率、资源异常则停止。
+不自动改变配额、降低门槛、根据干预结果筛选；100题达成后先冻结20/rest split再结束采集。
+当前控制程序只做数据准备，不自动运行R2/R3或消费held-out。
+
+首次18:37北京时间启动权重加载成功后因ninja未在PATH失败，0条生成。
+30.01秒失败作业及原日志保留，并纳入campaign ledger和pilot attempt账目。
+ninja已存在，修复基础环境/CUDA工具链PATH、将FlashInfer编译缓存置于/data后，
+18:42:46恢复。首次kernel编译约74.56秒；逐条seed使vLLM自动使用PyTorch-native sampler。
+随后真实响应落盘：18:53的机器进度为33/256条，8B阶段33/128条、196749已持久化tokens，
+另有在途长响应。较早23条复核为20原始True/3原始False、全部EOS/parsable-thinking，
+False尚不等于已通过实质错误资格；未完成双anchor配额，不提前增加正式合格题。
+
+13项CPU测试通过，包括所有3538历史记录全文溯源、False/None、混合最终答案、恢复、
+GPU UUID、wave固定配额与有限成本门控。实时状态每15秒更新。
+本地刷新 `python -X utf8 scripts/game24_100q_status.py`；完整批次原文和报告同步
+`python -X utf8 scripts/game24_100q_status.py --sync-data`。
+执行记录在 `docs/game24_100q/A800_EXECUTION_20261014.md`，原审计memo保留为生成前快照。
+
+## 2026-10-15 — A800 pilot达到8小时上限后停止
+
+09:35北京时间只读核实：02:42:42停止，累计8.0048 GPU小时，controller/collector退出、GPU4已释放。
+保存205/256条（8B128，32B77），剩余51条32B；32B最终summary为interrupted、errors为空。
+9题完成双anchor配额，初步严格检查2道新增候选584/1053；整批未完成，不以2/9替代完整pilot合格率，不冻结100题或split。
+当前/data剩余约4.6GB，低于10GiB启动阈值；未调整8小时上限或自动续跑。GUIDE、RESEARCH_STATUS与执行记录同步停止状态。
+
+## 2026-10-15 — 用户授权暂时仅用Qwen3-8B anchor
+
+建立独立`docs/game24_100q_8b`协议/候选/原文索引，保留原双anchor冻结配置及32B回答。
+复用原pilot完整128条8B回答，16题中584/1053符合单模型固定8次严格资格；历史8B prefix8重审1024条，无额外未暴露合格题。
+旧643/1119的错误来自32B，不纳入。新起点2/100；不自动启动机制实验。
+仅8B的含失败实测成本0.6675小时，按2/16产率外推剩余约784道新题、32.7GPU小时；原双anchor累计8.0048小时仍计入240小时总上限。
+单anchor runner用不同部署文件名，原远端dual collector hash保持不变；每新批32题×8，严格逐槽seed/缺失恢复，source/配置hash绑定，目标满足才冻结20/rest。
+20项CPU测试通过，A800 tokenizer/官方grader/vLLM验证仅检查8B（engine_initialized=false、GPU generations0）。
+启动前实际检查返回awaiting_disk_space：/data约4.5GiB，低于10GiB；没有新GPU进程或自动排队。新状态命令默认查询8B；旧作业加`--protocol dual`。
+
+## 2026-10-15 09:57北京时间 — 持续8B采集正式启动
+
+用户追问10GiB需求并明确要求一步开始100case采集。复核16题全部8B原始输出仅6,164,152bytes，pilot点估计784道新增候选约302MB，全剩余1018题约392MB；10GiB是工程默认，非模型需求。
+将单8B profile及policy余量明确修订为2GiB；旧配置、collector/controller和preflight绑定在A800归档，原dual运行器未变，源文件hash/采样/资格/240小时总预算保持。运行中每15秒检查空间、每条完成回答fsync，低于余量即停止。21项CPU测试通过。
+09:57:14在A800 GPU4创建持久tmux `game24-100q-8b-a800`；首批32题×8=256响应，控制器/collector已启动并报告running_baseline_acquisition。每批审计和更新成本后自动继续，目标100严格合格题后冻结20/rest并停止；无机制实验。
+当前初始候选2/100、复用128条。预计剩余约32.7 GPU小时，仅为16题pilot外推；新批首完成后更新。日志：`outputs/game24-100q-8b-20261015/acquisition/a800/campaign.console.log`。
+
+## 2026-10-16 22:37至22:38北京时间 — 授权清理HTTP缓存并恢复采集
+
+用户明确选择直接清理四处pip HTTP下载缓存，不为缓存另做归档。先核验精确绝对路径、UID1018、常规文件/无软硬链接、无包管理进程，再仅删除四处`http-v2`内容，合计3147个文件。
+数据盘实际删除18.23GiB，系统盘8.92GiB；清理后剩余约19.85GiB/9.07GiB。pip wheels（4.3MiB）/selfcheck、安装环境、模型及实验原始文件保留；删除报告同步到`docs/game24_100q_8b/pip_http_cleanup_20261016.json`。
+采集此前在14:13触发低于2GiB余量保护，停于第20批243/256。恢复前核对policy/profile/order/pilot/runner/controller/audit共7项冻结绑定全部一致，8B运行时和官方True/False/None评分检查通过（无额外生成）。
+22:38:53在原A800 GPU4与tmux `game24-100q-8b-a800`恢复；重新审计停机前完整保存cohort后为89/100（原整批状态86），保留5235条原回答，仅继续缺失13槽。已观察GPU加载并生成新token；后续按原预算与门控继续至目标，无新干预。
+
+## 2026-10-17 01:26:50北京时间 — 单8B数据目标达成并冻结
+
+第22个新批次完成后得到102道严格合格独立题；完整候选720题（复用pilot16+22批×32），全部5760条回答保存。冻结seed20261014：development20、held-out82，交集为空、完整覆盖102题。GPU进程退出、GPU4释放，无R2/R3生成。
+新8B续采31.0431 GPU小时，加复用8B pilot为31.7106小时；整个数据准备过程含此前双anchor为39.0480小时。回答分类5086 correct、406 substantive_error、115 pending_review、5 none_pending_review、148 truncated_or_incomplete；120待复核不作错误见证。
+终检重算102题的816条响应hash/分类/八个槽/单anchor和2+2见证、独立多重集合及历史排除，全部通过。完整254文件快照62,638,562bytes同步本地，逐文件SHA256验证通过；原始source_path在本地可直接解析。
+已有测试的初始2题断言更新为按目标状态验证完整冻结划分，21项CPU检查通过。状态工具停止后读取最终worker状态，消除旧heartbeat残留running/255条显示；控制器、采样与资格规则未改。
+报告`docs/game24_100q_8b/GAME24_100Q_ACQUISITION_REPORT.md`，数据`game24_eligible_100.jsonl`实际102行，split20/82；机制探索报告NOT_STARTED。
 

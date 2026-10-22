@@ -1,7 +1,9 @@
 {
   "recorded_at_utc": "2026-09-24T12:50:31Z",
   "record_type": "proposed_midcourse_acquisition_revision_after_interruption",
-  "decision_state": "recommendation_for_next_user_decision_not_executed",
+  "decision_state": "superseded_not_executed_historical_proposal",
+  "superseded_by": "docs/quick_validation/batch03_next_experiment_20260924.md",
+  "historical_evidence_warning": "Counts below describe the superseded pre-correction audit and must not be used as current eligibility. Current counts: 61 substantive errors, 3 extraction misses, 4 invalid raw-False; 8 eligible dual-complete questions and 5 partial. The next proposed experiment is 64 paired 8B intervention outputs, not 32B acquisition; generate=false.",
   "original_run_state": "interrupted",
   "original_planned_generations": 1024,
   "persisted_before_revision": 864,

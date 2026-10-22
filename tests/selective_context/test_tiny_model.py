@@ -1,4 +1,5 @@
 import torch
+from types import SimpleNamespace
 
 from selective_context.hf_backend import SelectiveHFBackend
 from selective_context.masks import build_additive_attention
@@ -63,3 +64,12 @@ def test_toy_generation_seed_and_kv_metadata():
     assert one.generated_token_ids == two.generated_token_ids
     assert one.metadata["cache_type"]
     assert one.metadata["physical_kv_eviction"] is False
+
+
+def test_hf_backend_collects_all_model_and_tokenizer_eos_ids():
+    model = SimpleNamespace(
+        generation_config=SimpleNamespace(eos_token_id=[1, 50, 106]),
+        config=SimpleNamespace(eos_token_id=[1, 106]),
+    )
+    tokenizer = SimpleNamespace(eos_token_id=1)
+    assert SelectiveHFBackend._collect_eos_token_ids(model, tokenizer) == {1, 50, 106}

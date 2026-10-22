@@ -1,4 +1,5 @@
 # Contextual Drag：Continued-Access 机制验证计划
+> 历史计划快照。2026-09-25 的论文主结果、完整实验总账和状态见 `docs/quick_validation/iclr2027_full_results_and_paper_map_20260925.md`。论文将 15 道 Game24 题作为一个样本，按目标模型和条件汇总，不再分“pilot/独立”证据层级；下文的 7 题分批叙述仅用于保留实验过程。
 **版本：2026-09-22（target-model 与 A100 执行决策已更新）**
 
 ## 1. 当前研究主线

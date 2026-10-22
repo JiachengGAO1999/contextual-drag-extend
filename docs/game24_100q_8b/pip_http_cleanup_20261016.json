@@ -1,0 +1,66 @@
+{
+  "authorized_by": "2026-10-16 user explicitly requested direct deletion without archiving download caches",
+  "started_utc": "2026-10-16T14:37:11.566526+00:00",
+  "mode": "apply",
+  "targets": [
+    {
+      "path": "/data/gaojc/pip-cache/http-v2",
+      "files": 858,
+      "allocated_bytes": 8709492736
+    },
+    {
+      "path": "/data/gaojc/cache/pip/http-v2",
+      "files": 899,
+      "allocated_bytes": 5602332672
+    },
+    {
+      "path": "/data/gaojc/tmp/pip-cache/http-v2",
+      "files": 718,
+      "allocated_bytes": 5264240640
+    },
+    {
+      "path": "/home/gaojc/.cache/pip/http-v2",
+      "files": 672,
+      "allocated_bytes": 9580417024
+    }
+  ],
+  "before_free_bytes": {
+    "/": 158404608,
+    "/data": 1724301312
+  },
+  "deleted": [
+    {
+      "path": "/data/gaojc/pip-cache/http-v2",
+      "files": 858,
+      "allocated_bytes": 8709492736
+    },
+    {
+      "path": "/data/gaojc/cache/pip/http-v2",
+      "files": 899,
+      "allocated_bytes": 5602332672
+    },
+    {
+      "path": "/data/gaojc/tmp/pip-cache/http-v2",
+      "files": 718,
+      "allocated_bytes": 5264240640
+    },
+    {
+      "path": "/home/gaojc/.cache/pip/http-v2",
+      "files": 672,
+      "allocated_bytes": 9580417024
+    }
+  ],
+  "installation_packages_archived": false,
+  "preserved": [
+    "pip wheels caches",
+    "installed environments",
+    "model checkpoints",
+    "research data and logs"
+  ],
+  "state": "completed",
+  "after_free_bytes": {
+    "/": 9743712256,
+    "/data": 21318004736
+  },
+  "finished_utc": "2026-10-16T14:37:11.991841+00:00"
+}

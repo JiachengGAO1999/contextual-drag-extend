@@ -1,0 +1,27 @@
+{
+  "status": "passed",
+  "scientific_responses": 612,
+  "independent_questions": 102,
+  "qualification_raw_records_checked": 816,
+  "exact_correct_formulas_checked": 318,
+  "correct_counts": {
+    "development20": {
+      "R0": 27,
+      "R2": 13,
+      "R3": 24
+    },
+    "heldout82": {
+      "R0": 104,
+      "R2": 55,
+      "R3": 95
+    },
+    "pooled102": {
+      "R0": 131,
+      "R2": 68,
+      "R3": 119
+    }
+  },
+  "paired_invariants": 204,
+  "analysis": "identical_to_frozen_question_bootstrap",
+  "boundary": "CPU evidence verification; not a fresh GPU reproduction or mechanism proof"
+}

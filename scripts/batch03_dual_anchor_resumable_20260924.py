@@ -19,14 +19,16 @@ from typing import Any
 from batch03_resume_core_20260924 import (
     append_jsonl_once,
     atomic_write_json,
+    contiguous_sample_runs,
     consume_request_stream,
     load_completed,
     missing_sample_indices,
+    sample_seed,
 )
 from baseline_screen_vllm_20260917 import official_score, parse_final, problem_text
 
 
-RUNNER_VERSION = "2026-09-24-resumable-v1"
+RUNNER_VERSION = "2026-09-24-resumable-v2-per-sample-seed"
 DEFAULT_CONTEXT = 32768
 
 
@@ -163,6 +165,7 @@ async def run_generation(args: argparse.Namespace) -> int:
         "model": str(model_path), "model_alias": args.model_alias,
         "manifest": str(args.manifest), "manifest_sha256": manifest_hash,
         "input": str(args.input), "seed": int(manifest["seed"]),
+        "seed_policy": "sample_seed = base_seed + frozen_sample_index; contiguous missing-index runs use vLLM n-way child seeds",
         "input_sha256": sha256_file(args.input),
         "reference_config_sha256": sha256_file(args.reference_config),
         "request_archive_sha256": {str(path): sha256_file(path) for path in args.request_archive},
@@ -177,7 +180,7 @@ async def run_generation(args: argparse.Namespace) -> int:
         "enable_prefix_caching": False, "enable_chunked_prefill": True,
         "enforce_eager": True, "attention_backend": reference.get("attention_backend", "FLASH_ATTN"),
         "vllm_version_reference": reference.get("vllm_version"),
-        "reproducibility_note": "Seed and sampling configuration are retained. On restart only missing sample identities are requested; changed n, scheduler concurrency, batching, or resume order means token-for-token replay is not guaranteed.",
+        "reproducibility_note": "Per-sample seed is fixed by frozen sample index, preventing seed reuse or relabeling across resume gaps. Each contiguous missing-index run starts with base_seed + first_index, matching vLLM n-way child seeds. Scheduling changes still mean token-for-token replay is not guaranteed.",
         "prompt_source": "frozen requests.json archives, using the exact stored prompt_token_ids and per-question max_tokens",
         "planned_targets": [{"id": task["row"]["id"], "sample_indices": task["sample_indices"]} for task in tasks],
         "planned_generations": planned_count,
@@ -284,99 +287,113 @@ async def run_generation(args: argparse.Namespace) -> int:
         engine = AsyncLLMEngine.from_engine_args(engine_args)
         tokenizer = await engine.get_tokenizer()
         generation_started = time.monotonic()
-        for task_number, task in enumerate(pending_tasks, start=1):
+        for task in pending_tasks:
             if signal_event.is_set():
                 break
             row, request = task["row"], task["request"]
             sample_indices = task["sample_indices"]
             params = dict(reference["sampling"])
             params.pop("max_tokens", None)
-            sampling = SamplingParams(
-                n=len(sample_indices), temperature=params["temperature"], top_p=params["top_p"],
-                top_k=params.get("top_k", -1), seed=int(manifest["seed"]),
-                max_tokens=int(request["max_tokens"]), skip_special_tokens=False,
-            )
-            request_id = f"batch03-resume-{args.model_alias}-{row['id']}-{task_number}"
-            request_started = time.monotonic()
+            for sample_run in contiguous_sample_runs(sample_indices):
+                if signal_event.is_set():
+                    break
+                run_seed = sample_seed(int(manifest["seed"]), sample_run[0])
+                sampling = SamplingParams(
+                    n=len(sample_run), temperature=params["temperature"], top_p=params["top_p"],
+                    top_k=params.get("top_k", -1), seed=run_seed,
+                    max_tokens=int(request["max_tokens"]), skip_special_tokens=False,
+                )
+                request_id = (f"batch03-resume-{args.model_alias}-{row['id']}-"
+                              f"s{sample_run[0]}-e{sample_run[-1]}")
+                request_started = time.monotonic()
 
-            def persist(sample_index: int, completion: Any) -> None:
-                nonlocal persisted_this_run
-                raw_finish = completion.finish_reason
-                generated = completion.text
-                try:
-                    final, thinking_status = parse_final(generated, request["prompt"], tokenizer.eos_token)
-                    postprocess_error = None
-                except Exception as exc:
-                    final, thinking_status = generated, "parse_error"
-                    postprocess_error = f"{type(exc).__name__}: {exc}"
-                token_ids = list(completion.token_ids)
-                elapsed = time.monotonic() - request_started
-                metadata = {
-                    "backend": "ordinary_vllm_v1_async_default_worker",
-                    "condition_id": "R0", "access_mode": "full",
-                    "sample_seed": int(manifest["seed"]), "base_seed": int(manifest["seed"]),
-                    "vllm_finish_reason": raw_finish, "stop_reason": getattr(completion, "stop_reason", None),
-                    "prompt_tokens": len(request["prompt_token_ids"]), "generated_tokens": len(token_ids),
-                    "resume_local_completion_index": int(completion.index),
-                    "resume_requested_sample_indices": sample_indices,
-                    "resume_schedule_note": "local vLLM output index remapped to the next missing frozen sample identity",
-                }
-                record = {
-                    "id": row["id"], "task": "game24", "problem": row["problem"], "answer": row["answer"],
-                    "draft_key": f"{row['id']}/{sample_index}",
-                    "init_response_generations": [{
-                        "response_id": sample_index, "generated_response": generated,
-                        "finish_reason": "eos" if raw_finish == "stop" else raw_finish,
+                def persist(completion_sample_index: int, completion: Any) -> None:
+                    nonlocal persisted_this_run
+                    if completion_sample_index not in sample_run:
+                        raise RuntimeError(f"vLLM child mapped outside planned sample run: {completion_sample_index}")
+                    seed = sample_seed(int(manifest["seed"]), completion_sample_index)
+                    raw_finish = completion.finish_reason
+                    generated = completion.text
+                    try:
+                        final, thinking_status = parse_final(generated, request["prompt"], tokenizer.eos_token)
+                        postprocess_error = None
+                    except Exception as exc:
+                        final, thinking_status = generated, "parse_error"
+                        postprocess_error = f"{type(exc).__name__}: {exc}"
+                    token_ids = list(completion.token_ids)
+                    elapsed = time.monotonic() - request_started
+                    metadata = {
+                        "backend": "ordinary_vllm_v1_async_default_worker",
+                        "condition_id": "R0", "access_mode": "full",
+                        "sample_seed": seed, "base_seed": int(manifest["seed"]),
+                        "resume_seed_policy": "base_seed_plus_frozen_sample_index",
+                        "resume_sample_index": completion_sample_index,
                         "vllm_finish_reason": raw_finish, "stop_reason": getattr(completion, "stop_reason", None),
-                        "selective_context_metadata": metadata,
-                    }],
-                    "init_response_prompt": request["prompt"],
-                    "init_response_generations_metadata": {
-                        "num_responses": 1, "template_path": "prompt_templates/init_response_prompt_templates.json",
-                        "template_key": "qwen_math_prompt", "enable_thinking": True,
-                        "partition_id": 0, "num_partitions": 1, "model_config_alias": args.model_alias,
-                        "intervention": {"condition_id": "R0", "access_mode": "full",
-                                         "backend": "ordinary_vllm_v1_async_default_worker",
-                                         "sample_seed": int(manifest["seed"])},
-                    },
-                    "generated_token_ids": token_ids, "final_response": final,
-                    "thinking_status": thinking_status, "generation_seconds": elapsed, "tokens": len(token_ids),
-                }
-                try:
-                    scored = official_score(record, "game24")
-                except Exception as exc:
-                    scored = record
-                    scored["init_response_generations"][0]["correctness"] = None
-                    postprocess_error = "; ".join(filter(None, [postprocess_error,
-                        f"scoring {type(exc).__name__}: {exc}"]))
-                if postprocess_error:
-                    scored["postprocess_error"] = postprocess_error
-                wrote = append_jsonl_once(output_file, scored, completed_all, canonical_all)
-                if wrote:
-                    persisted_this_run += 1
-                    request_durations.append(elapsed)
-                    now = time.monotonic()
-                    saved_in_output = len(load_completed([output_file])[0])
-                    remaining = planned_count - saved_in_output
-                    atomic_write_json(output_dir / "status.json", {
-                        "state": "running", "model_alias": args.model_alias,
-                        "planned_missing_generations": planned_count,
-                        "persisted_in_recovery_directory": saved_in_output,
-                        "remaining_in_recovery_plan": max(0, remaining),
-                        "last_persisted_identity": [args.model_alias, row["id"], sample_index],
-                        "last_persisted_at_unix": time.time(),
-                        "elapsed_seconds": round(now - started, 3),
-                        "original_batch_completion_claim": False,
-                    })
-                    print(json.dumps({"event": "sample_persisted", "model": args.model_alias,
-                                      "id": row["id"], "sample_index": sample_index,
-                                      "saved_in_recovery": saved_in_output, "planned": planned_count}, ensure_ascii=False), flush=True)
+                        "prompt_tokens": len(request["prompt_token_ids"]), "generated_tokens": len(token_ids),
+                        "resume_local_completion_index": int(completion.index),
+                        "resume_parent_seed": run_seed,
+                        "resume_child_seed_index": int(completion.index),
+                        "resume_schedule_note": "contiguous missing-index run; vLLM child seed equals run seed plus local index",
+                    }
+                    record = {
+                        "id": row["id"], "task": "game24", "problem": row["problem"], "answer": row["answer"],
+                        "draft_key": f"{row['id']}/{completion_sample_index}",
+                        "init_response_generations": [{
+                            "response_id": completion_sample_index, "generated_response": generated,
+                            "finish_reason": "eos" if raw_finish == "stop" else raw_finish,
+                            "vllm_finish_reason": raw_finish, "stop_reason": getattr(completion, "stop_reason", None),
+                            "selective_context_metadata": metadata,
+                        }],
+                        "init_response_prompt": request["prompt"],
+                        "init_response_generations_metadata": {
+                            "num_responses": 1, "template_path": "prompt_templates/init_response_prompt_templates.json",
+                            "template_key": "qwen_math_prompt", "enable_thinking": True,
+                            "partition_id": 0, "num_partitions": 1, "model_config_alias": args.model_alias,
+                            "intervention": {"condition_id": "R0", "access_mode": "full",
+                                             "backend": "ordinary_vllm_v1_async_default_worker",
+                                             "sample_seed": seed, "base_seed": int(manifest["seed"])},
+                        },
+                        "generated_token_ids": token_ids, "final_response": final,
+                        "thinking_status": thinking_status, "generation_seconds": elapsed, "tokens": len(token_ids),
+                    }
+                    try:
+                        scored = official_score(record, "game24")
+                    except Exception as exc:
+                        scored = record
+                        scored["init_response_generations"][0]["correctness"] = None
+                        postprocess_error = "; ".join(filter(None, [postprocess_error,
+                            f"scoring {type(exc).__name__}: {exc}"]))
+                    if postprocess_error:
+                        scored["postprocess_error"] = postprocess_error
+                    wrote = append_jsonl_once(output_file, scored, completed_all, canonical_all)
+                    if wrote:
+                        persisted_this_run += 1
+                        request_durations.append(elapsed)
+                        now = time.monotonic()
+                        saved_in_output = len(load_completed([output_file])[0])
+                        remaining = planned_count - saved_in_output
+                        atomic_write_json(output_dir / "status.json", {
+                            "state": "running", "model_alias": args.model_alias,
+                            "planned_missing_generations": planned_count,
+                            "persisted_in_recovery_directory": saved_in_output,
+                            "remaining_in_recovery_plan": max(0, remaining),
+                            "last_persisted_identity": [args.model_alias, row["id"], completion_sample_index],
+                            "last_sample_seed": seed,
+                            "last_persisted_at_unix": time.time(),
+                            "elapsed_seconds": round(now - started, 3),
+                            "original_batch_completion_claim": False,
+                        })
+                        print(json.dumps({"event": "sample_persisted", "model": args.model_alias,
+                                          "id": row["id"], "sample_index": completion_sample_index, "sample_seed": seed,
+                                          "saved_in_recovery": saved_in_output, "planned": planned_count}, ensure_ascii=False), flush=True)
 
-            _, request_finished = await consume_request_stream(
-                engine, {"prompt_token_ids": request["prompt_token_ids"]}, sampling,
-                request_id, sample_indices, persist, signal_event,
-            )
-            if not request_finished:
+                _, request_finished = await consume_request_stream(
+                    engine, {"prompt_token_ids": request["prompt_token_ids"]}, sampling,
+                    request_id, sample_run, persist, signal_event,
+                )
+                if not request_finished:
+                    break
+            if signal_event.is_set():
                 break
 
         saved_in_output = len(load_completed([output_file])[0])

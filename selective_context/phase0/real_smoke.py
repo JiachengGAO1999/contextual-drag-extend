@@ -34,11 +34,13 @@ def append(path, value):
         handle.write(json.dumps(value, ensure_ascii=False) + "\n")
 
 
-def evaluate(row, encoded, request, result):
+def evaluate(row, encoded, request, result, task='game24'):
     record = make_official_record(problem_id=row["id"], problem=row["problem"],
         answer=row["answer"], prompt=encoded.text, request=request,
         generations=[result], model_config_alias="Qwen3_8B")
-    record = evaluate_single_entry(record, "answer", "init_response_generations", is_correct_game_of_24)
+    from selective_context.tasks import score_record
+    record = score_record(record, task)
+    record['task'] = task
     record["generated_token_ids"] = result.generated_token_ids
     return record
 

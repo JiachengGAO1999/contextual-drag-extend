@@ -1,0 +1,118 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{madaan2023selfrefine,shinn2023reflexion}
+\citation{cheng2026contextualdrag}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Same-text intervention isolating continued access after full exposure. The prompt itself is unchanged. In \textup  {Full}{}, every generated query retains ordinary causal access to the known-wrong draft. In \textup  {LateBlock}{}, the complete prompt is processed with ordinary causal attention, and $y_1$ is sampled from the same full-prefill logits as in \textup  {Full}{}. Only then does blocking begin: the query at the $y_1$ position, which predicts $y_2$, is the first affected query. It and all subsequent generated queries cannot directly attend to the failed-draft key--value positions. Dashed arrows and crosses denote the removed attention edges. Access to the problem, error signal, and independent-solve instruction is preserved.}}{2}{figure.1}\protected@file@percent }
+\newlabel{fig:continued-access-overview}{{1}{2}{Same-text intervention isolating continued access after full exposure. The prompt itself is unchanged. In \fullaccess {}, every generated query retains ordinary causal access to the known-wrong draft. In \lateblock {}, the complete prompt is processed with ordinary causal attention, and $y_1$ is sampled from the same full-prefill logits as in \fullaccess {}. Only then does blocking begin: the query at the $y_1$ position, which predicts $y_2$, is the first affected query. It and all subsequent generated queries cannot directly attend to the failed-draft key--value positions. Dashed arrows and crosses denote the removed attention edges. Access to the problem, error signal, and independent-solve instruction is preserved}{figure.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Experimental conditions. \textup  {Full}{}, \textup  {LateBlock}{}, and \textup  {PathBlock}{} share identical prompt text, token IDs, absolute positions, draft span, error signal, and sampling configuration.}}{3}{table.1}\protected@file@percent }
+\newlabel{tab:conditions}{{1}{3}{Experimental conditions. \fullaccess {}, \lateblock {}, and \pathblock {} share identical prompt text, token IDs, absolute positions, draft span, error signal, and sampling configuration}{table.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Access Intervention and Evaluation Setup}{3}{section.2}\protected@file@percent }
+\newlabel{sec:setup}{{2}{3}{Access Intervention and Evaluation Setup}{section.2}{}}
+\newlabel{eq:late}{{2}{3}{Access Intervention and Evaluation Setup}{equation.2.2}{}}
+\newlabel{eq:path}{{3}{3}{Access Intervention and Evaluation Setup}{equation.2.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Experimental conditions}{3}{subsection.2.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Method}{3}{subsection.2.2}\protected@file@percent }
+\newlabel{sec:method}{{2.2}{3}{Method}{subsection.2.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Same-text access intervention.}{3}{section*.1}\protected@file@percent }
+\citation{qwen2025qwen3}
+\citation{google2026gemma4}
+\citation{yao2023tree}
+\citation{hendrycks2021math}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Experimental Design}{4}{subsection.2.3}\protected@file@percent }
+\newlabel{sec:experiments}{{2.3}{4}{Experimental Design}{subsection.2.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Models and decoding.}{4}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Game24.}{4}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Mathematical reasoning.}{4}{section*.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Clean comparator.}{4}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Correct-history specificity.}{4}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Metrics and uncertainty.}{4}{section*.7}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Game24 accuracy with two seeds per condition: 23 questions for Qwen3-8B and a shared 15-question subset for the other targets. The primary contrast is \textup  {LateBlock}{} versus \textup  {Full}{}. Effects are percentage points. Brackets are 95\% intervals resampling questions. \textup  {PathBlock}{} and generation diagnostics appear in Appendix~\ref {app:diagnostics}.}}{5}{table.2}\protected@file@percent }
+\newlabel{tab:game24}{{2}{5}{Game24 accuracy with two seeds per condition: 23 questions for Qwen3-8B and a shared 15-question subset for the other targets. The primary contrast is \lateblock {} versus \fullaccess {}. Effects are percentage points. Brackets are 95\% intervals resampling questions. \pathblock {} and generation diagnostics appear in Appendix~\ref {app:diagnostics}}{table.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Empirical Evaluation of Continued Access}{5}{section.3}\protected@file@percent }
+\newlabel{sec:results}{{3}{5}{Empirical Evaluation of Continued Access}{section.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Failed reasoning remains harmful after explicit feedback}{5}{subsection.3.1}\protected@file@percent }
+\newlabel{sec:residual-drag}{{3.1}{5}{Failed reasoning remains harmful after explicit feedback}{subsection.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}Blocking continued access recovers most of the observed loss}{5}{subsection.3.2}\protected@file@percent }
+\newlabel{sec:main-access}{{3.2}{5}{Blocking continued access recovers most of the observed loss}{subsection.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}The direction extends across target models and implementations}{5}{subsection.3.3}\protected@file@percent }
+\newlabel{sec:target-models}{{3.3}{5}{The direction extends across target models and implementations}{subsection.3.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Blocking can harm correct history}{5}{subsection.3.4}\protected@file@percent }
+\newlabel{sec:specificity}{{3.4}{5}{Blocking can harm correct history}{subsection.3.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Accuracy change from late access blocking. Points show \textup  {LateBlock}{} minus \textup  {Full}{} accuracy in percentage points for the indicated history type. Bars are 95\% percentile bootstrap intervals over questions, keeping the two seeds together. Qwen3-8B covers 23 Game24 questions. The other targets cover a shared 15-question subset, and the correct-history control covers eight questions. Each MATH row has eight questions and the Qwen3-8B target, with Qwen3-1.7B and Qwen3-4B source drafts for MATH500 and MATH-train, respectively. These rows are not a matched failed-versus-correct interaction. That comparison uses the same eight questions in Section~\ref {sec:specificity}. Unresolved scores count as incorrect.}}{6}{figure.2}\protected@file@percent }
+\newlabel{fig:access-effects}{{2}{6}{Accuracy change from late access blocking. Points show \lateblock {} minus \fullaccess {} accuracy in percentage points for the indicated history type. Bars are 95\% percentile bootstrap intervals over questions, keeping the two seeds together. Qwen3-8B covers 23 Game24 questions. The other targets cover a shared 15-question subset, and the correct-history control covers eight questions. Each MATH row has eight questions and the Qwen3-8B target, with Qwen3-1.7B and Qwen3-4B source drafts for MATH500 and MATH-train, respectively. These rows are not a matched failed-versus-correct interaction. That comparison uses the same eight questions in Section~\ref {sec:specificity}. Unresolved scores count as incorrect}{figure.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.5}The direction also appears in longer-form mathematical reasoning}{6}{subsection.3.5}\protected@file@percent }
+\newlabel{sec:math-replication}{{3.5}{6}{The direction also appears in longer-form mathematical reasoning}{subsection.3.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Question-level recovery from late access blocking on Game24 with Qwen3-8B. Each row shows one of the 23 selected questions. Points denote the number of correct generations out of two paired seeds under full access (\textup  {Full}{}) and late access blocking (\textup  {LateBlock}{}). Lines connect the paired conditions for the same question. Rows are ordered by transition type, from the largest gains to declines, and by question ID within each type. The aggregate \textup  {Full}{}-to-\textup  {LateBlock}{} effect is $+39.1$ percentage points. The question-level view shows how recovery is distributed across the selected set.}}{7}{figure.3}\protected@file@percent }
+\newlabel{fig:question-recovery}{{3}{7}{Question-level recovery from late access blocking on Game24 with Qwen3-8B. Each row shows one of the 23 selected questions. Points denote the number of correct generations out of two paired seeds under full access (\fullaccess {}) and late access blocking (\lateblock {}). Lines connect the paired conditions for the same question. Rows are ordered by transition type, from the largest gains to declines, and by question ID within each type. The aggregate \fullaccess {}-to-\lateblock {} effect is $+39.1$ percentage points. The question-level view shows how recovery is distributed across the selected set}{figure.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Qwen3-8B target on MATH: eight questions per source group, two seeds per condition. Accuracy counts all requests. Unresolved scores count incorrect.}}{7}{table.3}\protected@file@percent }
+\newlabel{tab:math}{{3}{7}{Qwen3-8B target on MATH: eight questions per source group, two seeds per condition. Accuracy counts all requests. Unresolved scores count incorrect}{table.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.6}Earlier blocking provides no consistent additional benefit}{7}{subsection.3.6}\protected@file@percent }
+\newlabel{sec:timing}{{3.6}{7}{Earlier blocking provides no consistent additional benefit}{subsection.3.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Analysis}{7}{section.4}\protected@file@percent }
+\newlabel{sec:discussion}{{4}{7}{Analysis}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}What the access contrast identifies}{7}{subsection.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}History dependence of the access effect}{8}{subsection.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Scope of the intervention}{8}{subsection.4.3}\protected@file@percent }
+\citation{madaan2023selfrefine,shinn2023reflexion}
+\citation{cheng2026contextualdrag}
+\citation{laban2026lostconversation,huang2026ownwords}
+\citation{kwon2023pagedattention,zhang2023h2o}
+\citation{kontonis2026memento}
+\citation{meng2022causaltracing,zhang2024activationpatching,goldowsky2023pathpatching,dura2026sequentialpatching}
+\citation{dong2025flexattention}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Related Work}{9}{section.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Refinement and contextual drag.}{9}{section*.8}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Prior attempts across turns.}{9}{section*.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Context management and causal interventions.}{9}{section*.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Limitations}{9}{section.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {7}Conclusion}{9}{section.7}\protected@file@percent }
+\bibdata{contextual_drag_continued_access}
+\bibcite{cheng2026contextualdrag}{{1}{2026}{{Cheng et~al.}}{{Cheng, Zhu, Zhao, and Arora}}}
+\bibcite{dong2025flexattention}{{2}{2025}{{Dong et~al.}}{{Dong, Feng, Guessous, Liang, and He}}}
+\bibcite{dura2026sequentialpatching}{{3}{2026}{{Dura et~al.}}{{Dura, {\"O}zt{\"u}rk, and Tekir}}}
+\bibcite{goldowsky2023pathpatching}{{4}{2023}{{Goldowsky-Dill et~al.}}{{Goldowsky-Dill, MacLeod, Sato, and Arora}}}
+\bibcite{google2026gemma4}{{5}{2026}{{Google DeepMind}}{{}}}
+\bibcite{hendrycks2021math}{{6}{2021}{{Hendrycks et~al.}}{{Hendrycks, Burns, Kadavath, Arora, Basart, Tang, Song, and Steinhardt}}}
+\bibcite{huang2026ownwords}{{7}{2026}{{Huang et~al.}}{{Huang, Choshen, Sun, Khattab, {Fernandez Astudillo}, Damani, Broderick, and Andreas}}}
+\bibcite{kontonis2026memento}{{8}{2026}{{Kontonis et~al.}}{{Kontonis, Zeng, Garg, Chen, Tang, Wang, Awadallah, Horvitz, Langford, and Papailiopoulos}}}
+\bibcite{kwon2023pagedattention}{{9}{2023}{{Kwon et~al.}}{{Kwon, Li, Zhuang, Sheng, Zheng, Yu, Gonzalez, Zhang, and Stoica}}}
+\bibcite{laban2026lostconversation}{{10}{2026}{{Laban et~al.}}{{Laban, Hayashi, Zhou, and Neville}}}
+\bibcite{madaan2023selfrefine}{{11}{2023}{{Madaan et~al.}}{{Madaan, Tandon, Gupta, Hallinan, Gao, Wiegreffe, Alon, Dziri, Prabhumoye, Yang, Gupta, Majumder, Hermann, Welleck, Yazdanbakhsh, and Clark}}}
+\bibcite{meng2022causaltracing}{{12}{2022}{{Meng et~al.}}{{Meng, Bau, Andonian, and Belinkov}}}
+\bibcite{shinn2023reflexion}{{13}{2023}{{Shinn et~al.}}{{Shinn, Cassano, Gopinath, Narasimhan, and Yao}}}
+\bibcite{qwen2025qwen3}{{14}{2025}{{Yang et~al.}}{{}}}
+\bibcite{yao2023tree}{{15}{2023}{{Yao et~al.}}{{Yao, Yu, Zhao, Shafran, Griffiths, Cao, and Narasimhan}}}
+\bibcite{zhang2024activationpatching}{{16}{2024}{{Zhang \& Nanda}}{{Zhang and Nanda}}}
+\bibcite{zhang2023h2o}{{17}{2023}{{Zhang et~al.}}{{Zhang, Sheng, Zhou, Chen, Zheng, Cai, Song, Tian, R{\'e}, Barrett, Wang, and Chen}}}
+\bibstyle{iclr2027_conference}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Intervention and Experimental Details}{12}{appendix.A}\protected@file@percent }
+\newlabel{app:details}{{A}{12}{Intervention and Experimental Details}{appendix.A}{}}
+\@writefile{toc}{\contentsline {paragraph}{Condition names and artifact IDs.}{12}{section*.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Access semantics}{12}{subsection.A.1}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Operational semantics of the access modes. ``Allocated'' means that the KV tensors remain present in memory. The intervention controls whether the corresponding logical attention edges participate.}}{12}{table.4}\protected@file@percent }
+\newlabel{tab:access-semantics}{{4}{12}{Operational semantics of the access modes. ``Allocated'' means that the KV tensors remain present in memory. The intervention controls whether the corresponding logical attention edges participate}{table.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Implementation validation checklist}{12}{subsection.A.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Decoding, scoring, and the clean comparator}{12}{subsection.A.3}\protected@file@percent }
+\newlabel{app:decoding}{{A.3}{12}{Decoding, scoring, and the clean comparator}{subsection.A.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}Draft acquisition and leakage control}{12}{subsection.A.4}\protected@file@percent }
+\newlabel{app:acquisition}{{A.4}{12}{Draft acquisition and leakage control}{subsection.A.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.5}Statistical reporting}{13}{subsection.A.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {B}Generation Diagnostics and Earlier Blocking}{13}{appendix.B}\protected@file@percent }
+\newlabel{app:diagnostics}{{B}{13}{Generation Diagnostics and Earlier Blocking}{appendix.B}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces All completed requests in the paper. Correctness uses persisted benchmark scores; unresolved answers count as incorrect. Termination is reported separately. MATH rows use the Qwen3-8B target.}}{13}{table.5}\protected@file@percent }
+\newlabel{tab:diagnostics}{{5}{13}{All completed requests in the paper. Correctness uses persisted benchmark scores; unresolved answers count as incorrect. Termination is reported separately. MATH rows use the Qwen3-8B target}{table.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Earlier-blocking diagnostic with the Qwen3-8B target. The \textup  {PathBlock}{} column reports correct counts. We define $\Delta _{\mathrm  {path}}=\operatorname  {Acc}(\textup  {PathBlock}{})-\operatorname  {Acc}(\textup  {Full}{})$ and $\Delta _{\mathrm  {early}}=\operatorname  {Acc}(\textup  {PathBlock}{})-\operatorname  {Acc}(\textup  {LateBlock}{})$. Effects are percentage points with question-cluster 95\% bootstrap intervals.}}{14}{table.6}\protected@file@percent }
+\newlabel{tab:r4}{{6}{14}{Earlier-blocking diagnostic with the Qwen3-8B target. The \pathblock {} column reports correct counts. We define $\Delta _{\mathrm {path}}=\operatorname {Acc}(\pathblock {})-\operatorname {Acc}(\fullaccess {})$ and $\Delta _{\mathrm {early}}=\operatorname {Acc}(\pathblock {})-\operatorname {Acc}(\lateblock {})$. Effects are percentage points with question-cluster 95\% bootstrap intervals}{table.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Prompts}{14}{appendix.C}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {D}Complete Question-Level Results}{14}{appendix.D}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {E}Coverage and Draft-Content Sensitivity}{14}{appendix.E}\protected@file@percent }
+\newlabel{app:coverage}{{E}{14}{Coverage and Draft-Content Sensitivity}{appendix.E}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Game24 correct counts per question. Each count is out of two seeds. Counts are ordered as \textup  {Clean}{}, \textup  {Full}{}, \textup  {LateBlock}{}, and \textup  {PathBlock}{} for Qwen3-8B (23 questions). The other models cover the shared 15-question subset and report the first three conditions in the same order. A dash denotes an unevaluated model--question combination.}}{15}{table.7}\protected@file@percent }
+\newlabel{tab:game24-per-question}{{7}{15}{Game24 correct counts per question. Each count is out of two seeds. Counts are ordered as \clean {}, \fullaccess {}, \lateblock {}, and \pathblock {} for Qwen3-8B (23 questions). The other models cover the shared 15-question subset and report the first three conditions in the same order. A dash denotes an unevaluated model--question combination}{table.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Sensitivity of the Qwen3-8B Game24 access effect to question eligibility and draft content. Each question contributes two paired seeds. Intervals are 95\% question-cluster percentile bootstrap intervals.}}{15}{table.8}\protected@file@percent }
+\newlabel{tab:coverage-sensitivity}{{8}{15}{Sensitivity of the Qwen3-8B Game24 access effect to question eligibility and draft content. Each question contributes two paired seeds. Intervals are 95\% question-cluster percentile bootstrap intervals}{table.8}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {F}Data Availability}{15}{appendix.F}\protected@file@percent }
+\gdef \@abspage@last{15}

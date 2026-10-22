@@ -258,8 +258,8 @@
     "source_line": 14,
     "source_sha256": "2864fbf9d3f3dcbf38b930c53ad9fbfa9ec9654cbef5d740f8f2ee8ba41a437d",
     "manual_category": "format_or_extraction_false_negative",
-    "manual_reason": "正文明确给出 8×(2+8÷8)=24，使用输入 2、8、8、8 各一次；提取器只取到 boxed 24。",
-    "audited_expression_value": null
+    "manual_reason": "提取器只返回标量24；人工核对正文中明确提出并认可的答案，程序验证算术值和输入多重集均正确：8 \\times (2 + 8 \\div 8)。回答将该算式作为 promising approach 展开逐步计算，并在 Final Answer 前明确宣称四个输入各用一次。",
+    "audited_expression_value": "24"
   },
   {
     "model": "Qwen3_8B_Thinking",
@@ -494,8 +494,8 @@
     "source_line": 8,
     "source_sha256": "9ea256d75c42688b47771a718c6931de84f65ba5765ead49344f3e9039a3b21d",
     "manual_category": "format_or_extraction_false_negative",
-    "manual_reason": "正文明确给出 10+7×2×1=24，使用输入 1、2、7、10 各一次；提取器只取到 boxed 24。",
-    "audited_expression_value": null
+    "manual_reason": "提取器只返回标量24；人工核对正文中明确提出并认可的答案，程序验证算术值和输入多重集均正确：10 + 7 \\times 2 \\times 1 = 24。回答将该等式明确称为 solution，并在分步核算后给出最终答案24。",
+    "audited_expression_value": "24"
   },
   {
     "model": "Qwen3_8B_Thinking",
@@ -523,8 +523,8 @@
     "source_line": 13,
     "source_sha256": "9ea256d75c42688b47771a718c6931de84f65ba5765ead49344f3e9039a3b21d",
     "manual_category": "format_or_extraction_false_negative",
-    "manual_reason": "正文明确给出 (7×2)+(10÷1)=24，使用输入 1、2、7、10 各一次；提取器只取到 boxed 24。",
-    "audited_expression_value": null
+    "manual_reason": "提取器只返回标量24；人工核对正文中明确提出并认可的答案，程序验证算术值和输入多重集均正确：(7 \\times 2) + (10 \\div 1)。回答将该等式作为 better approach 展开，计算为14+10=24并作为最终答案。",
+    "audited_expression_value": "24"
   },
   {
     "model": "Qwen3_8B_Thinking",
@@ -1120,9 +1120,9 @@
     "source_path": "Qwen3_8B_Thinking/chunk-07/draft_candidates.jsonl",
     "source_line": 37,
     "source_sha256": "51c40fa8c9cb20e9c13fe40cddead356bca80d2aef79eee55ab600251ae714d8",
-    "manual_category": "format_or_extraction_false_negative",
-    "manual_reason": "提取出的 8×(9÷(12÷(12−8)))=24 本身合法，输入 8、9、12、12 各一次；评分器误判。",
-    "audited_expression_value": null
+    "manual_category": "substantive_error",
+    "manual_reason": "提取表达式数字为 [8,8,9,12,12]，题目输入为 [8,9,12,12]，多重集不一致",
+    "audited_expression_value": "24"
   },
   {
     "model": "Qwen3_8B_Thinking",
@@ -1146,9 +1146,9 @@
     "source_path": "Qwen3_8B_Thinking/chunk-07/draft_candidates.jsonl",
     "source_line": 42,
     "source_sha256": "51c40fa8c9cb20e9c13fe40cddead356bca80d2aef79eee55ab600251ae714d8",
-    "manual_category": "format_or_extraction_false_negative",
-    "manual_reason": "提取出的 (12×8)÷(12÷(12−9))=24 本身合法，输入 8、9、12、12 各一次；评分器误判。",
-    "audited_expression_value": null
+    "manual_category": "substantive_error",
+    "manual_reason": "提取表达式数字为 [8,9,12,12,12]，题目输入为 [8,9,12,12]，多重集不一致",
+    "audited_expression_value": "24"
   },
   {
     "model": "Qwen3_8B_Thinking",
@@ -1746,9 +1746,9 @@
     "source_path": "Qwen3_32B/chunk-10/draft_candidates.jsonl",
     "source_line": 6,
     "source_sha256": "2ac583c19e0d242e433e9369e66cdc58731ae9b8e5972c0220ffe864e48733c2",
-    "manual_category": "format_or_extraction_false_negative",
-    "manual_reason": "最终选定式多用了一个 11，但正文明确列出替代式 11+11+8−6=24，四个输入各一次；提取器只取最终选定式，漏掉正文中的合法答案。",
-    "audited_expression_value": null
+    "manual_category": "substantive_error",
+    "manual_reason": "混合回答按明确标出的 Final Answer 评分。选中式 (8×6×11)÷(11+11) 算术值为24，但实际用数为[6,8,11,11,11]，多用了一个11。正文虽列出 11+11+8−6=24 作为替代式，最终仍把错误选中式标为答案；因此这是实质性用数错误，不是答案提取漏检。",
+    "audited_expression_value": "24"
   },
   {
     "model": "Qwen3_32B",
@@ -1774,8 +1774,8 @@
     "source_path": "Qwen3_32B/chunk-10/draft_candidates.jsonl",
     "source_line": 11,
     "source_sha256": "2ac583c19e0d242e433e9369e66cdc58731ae9b8e5972c0220ffe864e48733c2",
-    "manual_category": "format_or_extraction_false_negative",
-    "manual_reason": "最终选定式多用了一个 11，但正文先明确列出 11+11+8−6=24，四个输入各一次；提取器只取最终选定式，漏掉正文中的合法答案。",
-    "audited_expression_value": null
+    "manual_category": "substantive_error",
+    "manual_reason": "混合回答按明确标出的 Final Answer 评分。选中式 (11−(8−(11÷11)))×6 算术值为24，但实际用数为[6,8,11,11,11]，多用了一个11。正文先列出合法的 11+11+8−6=24，随后明确选择错误的复杂式作为 Final Answer；因此这是实质性用数错误，不是答案提取漏检。",
+    "audited_expression_value": "24"
   }
 ]

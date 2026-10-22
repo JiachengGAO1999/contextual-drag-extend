@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "hostname": "10-7-130-17",
+  "gpu_index": 4,
+  "gpu_uuid": "GPU-9d164491-5abf-96eb-3d3f-e08e77deb8f7",
+  "manage_project_resident": false,
+  "python": "/data/gaojc/projects/contextual-drag-extend-game24-100q/.venv/bin/python",
+  "expected_vllm_version": "0.10.2",
+  "hf_overrides": {
+    "max_position_embeddings": 40960
+  },
+  "config_normalization_reason": "A800 local config metadata enlarged max_position_embeddings to409600/204800; normalize per-engine to A100/Qwen40960 without modifying shared files. Context stays32768 and RoPE scaling staysnull.",
+  "models": {
+    "Qwen3_8B_Thinking": "/data/gaojc/shared/models/Qwen3-8B"
+  },
+  "purpose": "Authorized single Qwen3-8B anchor acquisition; dual-anchor records remain separate",
+  "version_note": "Adapted protocol; previous ordinary-vLLM samples used0.11.0, new acquisition uses0.10.2. Per-slot seeds fixed; identical outputs across backend versions not promised."
+}

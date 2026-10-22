@@ -1,0 +1,7 @@
+label,history,questions,effect_pp,low_pp,high_pp
+Qwen3-8B / Game24,Failed,15,46.666666666666664,26.666666666666668,66.66666666666666
+Qwen3-32B / Game24,Failed,15,26.666666666666668,3.3333333333333335,50.0
+Gemma 4 E4B / Game24,Failed,15,16.666666666666664,0.0,30.0
+Qwen3-8B / MATH500,Failed,8,75.0,50.0,93.75
+Qwen3-8B / MATH-train,Failed,8,50.0,18.75,81.25
+Qwen3-8B / Game24,Correct,8,-18.75,-37.5,-6.25

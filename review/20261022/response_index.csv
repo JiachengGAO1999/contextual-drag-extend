@@ -1,0 +1,613 @@
+question,split,seed,condition,correctness,finish_reason,extracted_answer,raw_file,raw_line
+tot-rank:408,development20,927001,R0,True,eos,12 \times (12 - 9) - 12,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,1
+tot-rank:1268,development20,927001,R0,True,eos,13 \times 3 - 13 - 2,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,2
+tot-rank:408,development20,927002,R0,True,eos,(12 - 9) \times 12 - 12,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,3
+tot-rank:1268,development20,927002,R0,True,eos,13 \times 3 - 13 - 2,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,4
+tot-rank:1344,development20,927002,R0,False,eos,(5 \times 7 - 11) \times (5 \div 5),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,5
+tot-rank:584,development20,927001,R0,True,eos,(10 - 7) \times 6 + 6,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,6
+tot-rank:1344,development20,927001,R0,True,eos,5 \times \left(7 - \frac{11}{5}\right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,7
+tot-rank:584,development20,927002,R0,True,eos,6 \times (10 - 7) + 6,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,8
+tot-rank:1116,development20,927001,R0,True,eos,(10 - 7) \times 10 - 6,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,9
+tot-rank:334,development20,927001,R0,False,eos,((11 - 5) \times 4) \times (11 \div 11),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,10
+tot-rank:1116,development20,927002,R0,True,eos,10 \times (10 - 7) - 6,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,11
+tot-rank:1232,development20,927002,R0,False,eos,12 \times \left(2 + \frac{12 - 12}{7}\right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,12
+tot-rank:1082,development20,927001,R0,True,eos,5 \times \left(6 - \frac{12}{10}\right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,13
+tot-rank:334,development20,927002,R0,True,eos,(5 + (11 \div 11)) \times 4,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,14
+tot-rank:1232,development20,927001,R0,False,eos,(12 \times 2) + ((12 - 12) \times 7),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,15
+tot-rank:1082,development20,927002,R0,True,eos,(6 - \frac{12}{10}) \times 5,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,16
+tot-rank:866,development20,927002,R0,True,eos,6 \times (7 - (12 - 9)),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,17
+tot-rank:113,development20,927001,R0,True,eos,11 + 12 + \frac{4}{4},outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,18
+tot-rank:113,development20,927002,R0,True,eos,12 + 11 + \frac{4}{4},outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,19
+tot-rank:93,development20,927002,R0,False,eos,((9 \times 12) \div 9) \times (11 - 9),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,20
+tot-rank:93,development20,927001,R0,False,eos,12 \times (11 - 9) \times (9 \div 9),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,21
+tot-rank:866,development20,927001,R0,True,eos,6 \times (7 - (12 - 9)),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,22
+tot-rank:1351,development20,927001,R0,True,eos,12 \div \left( \frac{12}{8} - 1 \right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,23
+tot-rank:1351,development20,927002,R0,False,eos,\left( \frac{12}{12 - 8} \right) \times 8 \times 1,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,24
+tot-rank:1263,development20,927001,R0,True,eos,11 \times (11 - 8) - 9,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,25
+tot-rank:224,development20,927001,R0,True,eos,(2 \times 2 - 1) \times 8,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,26
+tot-rank:1266,development20,927002,R0,True,eos,9 \times (7 - 5) + 6,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,27
+tot-rank:224,development20,927002,R0,True,eos,8 \times (2 + 2 - 1),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,28
+tot-rank:1337,development20,927002,R0,False,eos,(8 \div (13 - 8)) \times (7 + 8),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,29
+tot-rank:1263,development20,927002,R0,False,eos,8 \times \left(9 \div (11 - 8)\right) \times \left(11 \div 11\right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,30
+tot-rank:1337,development20,927001,R0,False,eos,(8 \div (13 - 8)) \times (7 + 8),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,31
+tot-rank:1266,development20,927001,R0,False,eos,(9 \times 6) / (7 - 5) - 6,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,32
+tot-rank:120,development20,927002,R0,True,eos,8 \times \left(2 + \frac{9}{9}\right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,33
+tot-rank:779,development20,927001,R0,True,eos,10 + 13 + 8 - 7,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,34
+tot-rank:387,development20,927001,R0,True,eos,(10 \div 5) \times 10 + 4,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,35
+tot-rank:120,development20,927001,R0,True,eos,8 \times \left( \frac{9}{9} + 2 \right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,36
+tot-rank:779,development20,927002,R0,True,eos,10 + 13 + (8 - 7),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,37
+tot-rank:1307,development20,927001,R0,True,eos,12 \div \left(9 \div (10 + 8)\right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,38
+tot-rank:1307,development20,927002,R0,False,eos,12 \div \left( \frac{9 - 8}{10 - 8} \right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,39
+tot-rank:387,development20,927002,R0,False,eos,(10 - 4) \times (5 - (10 \div 10)),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,40
+tot-rank:584,development20,927002,R2,False,eos,(10 - 6) \times (7 - 6 \div 6),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,41
+tot-rank:584,development20,927001,R3,True,eos,6 \times (10 - 7) + 6,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,42
+tot-rank:1344,development20,927002,R3,True,eos,(7 - \frac{11}{5}) \times 5,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,43
+tot-rank:1344,development20,927001,R2,True,eos,5 \times \left(7 - \frac{11}{5}\right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,44
+tot-rank:584,development20,927002,R3,True,eos,(10 - 7) \times 6 + 6,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,45
+tot-rank:1344,development20,927001,R3,False,eos,7 \times 5 - (11 - 5 + 5),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,46
+tot-rank:584,development20,927001,R2,False,eos,(10 - 6) \times (7 - 6 \div 6),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,47
+tot-rank:1344,development20,927002,R2,True,eos,5 \times \left(7 - \frac{11}{5}\right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,48
+tot-rank:408,development20,927001,R2,True,eos,((12 - 9) \times 12) - 12,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,49
+tot-rank:1268,development20,927002,R3,True,eos,(13 \times 3) - 13 - 2,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,50
+tot-rank:1268,development20,927001,R2,True,eos,13 \times 3 - (13 + 2),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,51
+tot-rank:408,development20,927001,R3,False,eos,12 \times \left( (12 - 9) - \left( \frac{12}{12} \right) \right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,52
+tot-rank:1268,development20,927002,R2,True,eos,13 \times 3 - (13 + 2),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,53
+tot-rank:1268,development20,927001,R3,True,eos,3 \times 13 - (13 + 2),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,54
+tot-rank:408,development20,927002,R3,True,eos,((12 - 9) \times 12) - 12,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,55
+tot-rank:408,development20,927002,R2,True,eos,((12 - 9) \times 12) - 12,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,56
+tot-rank:1116,development20,927002,R2,False,eos,(10 - 6) \times (7 - (10 \div 10)),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,57
+tot-rank:1116,development20,927001,R3,False,eos,(10 - 6) \times (7 - (10 \div 10)),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,58
+tot-rank:334,development20,927001,R3,True,eos,4 \times (5 + (11 \div 11)),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,59
+tot-rank:334,development20,927002,R2,False,eos,((11 - 5) \times 4) \div (11 \div 11),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,60
+tot-rank:334,development20,927001,R2,False,eos,((11 - 5) \times 4) \div (11 \div 11),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,61
+tot-rank:1116,development20,927001,R2,False,eos,(10 - 6) \times (7 - (10 \div 10)),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,62
+tot-rank:334,development20,927002,R3,False,eos,4 \times (11 - 5) \times \left(\frac{11}{11}\right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,63
+tot-rank:1116,development20,927002,R3,False,eos,(10 - 6) \times \left(7 - \frac{10}{10} \right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,64
+tot-rank:1232,development20,927001,R3,True,eos,((7 \times 2) - 12) \times 12,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,65
+tot-rank:1232,development20,927002,R2,False,eos,12 \times 2 + (12 - 12) \times 7,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,66
+tot-rank:1082,development20,927001,R2,True,eos,12 + 6 \times (10 \div 5),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,67
+tot-rank:1082,development20,927002,R2,False,eos,(12 \times 5) \div \left(10 \div (10 - 6)\right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,68
+tot-rank:1232,development20,927001,R2,False,eos,12 \times 2 + (12 - 12) \times 7,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,69
+tot-rank:1232,development20,927002,R3,False,eos,(12 \times 2) \times \left( \frac{12 - 7}{12 - 7} \right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,70
+tot-rank:1082,development20,927002,R3,True,eos,(6 - (12 \div 10)) \times 5,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,71
+tot-rank:1082,development20,927001,R3,,length,,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,72
+tot-rank:866,development20,927002,R2,True,eos,((9 - 7) \times 6) + 12,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,73
+tot-rank:93,development20,927001,R3,True,eos,12 + 11 + \frac{9}{9},outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,74
+tot-rank:93,development20,927002,R2,False,eos,9 + 9 + \frac{12}{11 - 9},outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,75
+tot-rank:93,development20,927001,R2,False,eos,9 + 9 + \frac{12}{11 - 9},outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,76
+tot-rank:866,development20,927001,R2,True,eos,((7 + 9) - 12) \times 6,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,77
+tot-rank:866,development20,927001,R3,True,eos,6 \times (7 - (12 - 9)),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,78
+tot-rank:93,development20,927002,R3,True,eos,12 + 11 + \frac{9}{9},outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,79
+tot-rank:866,development20,927002,R3,True,eos,(9 - 7) \times 6 + 12,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,80
+tot-rank:1351,development20,927002,R2,False,eos,(12 \times 8 \times 1) \div (12 - 8),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,81
+tot-rank:113,development20,927002,R2,False,eos,(12 - 4) \times (11 - 4 - 4),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,82
+tot-rank:113,development20,927002,R3,True,eos,11 + 12 + \frac{4}{4},outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,83
+tot-rank:113,development20,927001,R3,True,eos,12 + 11 + (4 \div 4),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,84
+tot-rank:113,development20,927001,R2,True,eos,12 + 11 + \frac{4}{4},outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,85
+tot-rank:1351,development20,927001,R3,False,eos,\frac{12 \times 8 \times 1}{12 - 8},outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,86
+tot-rank:1351,development20,927001,R2,False,eos,8 \times \left( \frac{12}{12 - 8} \right) \times 1,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,87
+tot-rank:1351,development20,927002,R3,False,eos,\left( \frac{12}{12 - 8} \right) \times \left( \frac{8}{1} \right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,88
+tot-rank:1263,development20,927001,R3,True,eos,11 \times (11 - 8) - 9,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,89
+tot-rank:1263,development20,927001,R2,False,eos,(11 - 8) \times (9 - (11 \div 11)),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,90
+tot-rank:1263,development20,927002,R2,False,eos,(11 - 8) \times (9 - (11 \div 11)),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,91
+tot-rank:1337,development20,927002,R3,False,eos,\frac{8 \times (13 - 7)}{8 - (13 - 7)},outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,92
+tot-rank:1337,development20,927002,R2,False,eos,"\text{No valid expression exists using the numbers 7, 8, 8, and 13 exactly once.}",outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,93
+tot-rank:1337,development20,927001,R3,False,eos,8 \times (7 - (13 - 8)) + 8,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,94
+tot-rank:1337,development20,927001,R2,False,eos,\left(\frac{8}{13 - 8}\right) \times (7 + 8),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,95
+tot-rank:1263,development20,927002,R3,False,eos,8 \times \left(11 - \left(9 - \left(\frac{11}{11}\right)\right)\right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,96
+tot-rank:224,development20,927002,R3,True,eos,8 \times (2 \times 2 - 1),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,97
+tot-rank:224,development20,927001,R2,False,eos,2 \times 8 \times (2 + 1) \div 2,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,98
+tot-rank:1266,development20,927001,R2,False,eos,(9 - 5) \times (7 - 6) \times 6,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,99
+tot-rank:224,development20,927002,R2,False,eos,2 \times 8 \times (2 + 1) \div 2,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,100
+tot-rank:1266,development20,927001,R3,True,eos,9 \times (7 - 5) + 6,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,101
+tot-rank:1266,development20,927002,R2,True,eos,(9 \times (7 - 5)) + 6,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,102
+tot-rank:1266,development20,927002,R3,False,eos,9 \times 5 - 7 \times \left( \frac{6}{7 - 5} \right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,103
+tot-rank:224,development20,927001,R3,False,eos,8 \times 2 \times \left(2 - \frac{1}{2}\right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,104
+tot-rank:1307,development20,927001,R2,False,eos,(12 \times (10 - 8)) \div (9 - 8),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,105
+tot-rank:779,development20,927002,R3,True,eos,13 + 8 + 10 - 7,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,106
+tot-rank:779,development20,927001,R2,False,eos,(13 - 7) \times \left( \frac{8}{10 - 8} \right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,107
+tot-rank:779,development20,927002,R2,False,eos,(13 - 7) \times \left( \frac{8}{10 - 8} \right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,108
+tot-rank:779,development20,927001,R3,True,eos,13 + 10 + 8 - 7,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,109
+tot-rank:1307,development20,927002,R3,True,eos,\frac{12 \times 10}{8} + 9,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,110
+tot-rank:1307,development20,927001,R3,False,eos,(9 - (12 \div (10 - 8))) \times 8,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,111
+tot-rank:1307,development20,927002,R2,False,eos,(12 \times (10 - 8)) \div (9 - 8),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,112
+tot-rank:387,development20,927001,R2,False,eos,(10 - 4) \times (5 - (10 \div 10)),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,113
+tot-rank:120,development20,927001,R2,True,eos,8 + 9 + 9 - 2,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,114
+tot-rank:387,development20,927001,R3,True,eos,4 \times \left(5 + \frac{10}{10}\right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,115
+tot-rank:120,development20,927001,R3,True,eos,9 + 9 + 8 - 2,outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,116
+tot-rank:120,development20,927002,R3,True,eos,8 \times \left(2 + \frac{9}{9}\right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,117
+tot-rank:120,development20,927002,R2,True,eos,8 \times \left( \frac{9}{9} + 2 \right),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,118
+tot-rank:387,development20,927002,R2,False,eos,(10 - 4) \times (5 - (10 \div 10)),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,119
+tot-rank:387,development20,927002,R3,False,eos,(10 \times (5 - (10 / 4))) - (10 / 10),outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl,120
+tot-rank:1273,heldout82,927001,R0,True,eos,3 \times (6 + (6 \div 3)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,1
+tot-rank:291,heldout82,927001,R0,True,eos,3 \times (7 + (13 \div 13)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,2
+tot-rank:1273,heldout82,927002,R0,True,eos,3 \times (6 + (6 \div 3)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,3
+tot-rank:593,heldout82,927001,R0,False,eos,10 \times 3 - 6 \div (10 \div 10),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,4
+tot-rank:1081,heldout82,927002,R0,False,eos,8 \times \left(5 - \frac{13 - 5}{4}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,5
+tot-rank:593,heldout82,927002,R0,False,eos,10 \times 3 - 6 \times (10 \div 10),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,6
+tot-rank:1081,heldout82,927001,R0,True,eos,4 \times 8 - (13 - 5),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,7
+tot-rank:291,heldout82,927002,R0,False,eos,(13 - 7) \times (3 + 13 \div 13),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,8
+tot-rank:894,heldout82,927002,R0,True,eos,10 + 12 + 12 \div 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,9
+tot-rank:759,heldout82,927001,R0,True,eos,(6 \times 8) - (12 + 12),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,10
+tot-rank:759,heldout82,927002,R0,True,eos,8 \times 6 - 12 - 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,11
+tot-rank:233,heldout82,927002,R0,True,eos,11 + 11 + 3 - 1,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,12
+tot-rank:543,heldout82,927002,R0,True,eos,6 \times (12 - 5 - 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,13
+tot-rank:233,heldout82,927001,R0,True,eos,11 + 11 + 3 - 1,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,14
+tot-rank:894,heldout82,927001,R0,True,eos,10 + 12 + \frac{12}{6},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,15
+tot-rank:543,heldout82,927001,R0,True,eos,6 \times (12 - 5 - 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,16
+tot-rank:690,heldout82,927001,R0,False,eos,((9 - 4) + (4 \div 4)) \times 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,17
+tot-rank:1129,heldout82,927002,R0,True,eos,(13 - 5) + 4 \times 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,18
+tot-rank:642,heldout82,927002,R0,True,eos,(10 + 10) + (12 - 8),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,19
+tot-rank:690,heldout82,927002,R0,True,eos,(9 - 4) \times 4 + 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,20
+tot-rank:642,heldout82,927001,R0,True,eos,10 + 10 + 12 - 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,21
+tot-rank:1251,heldout82,927002,R0,True,eos,5 \times (10 - 7) + 9,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,22
+tot-rank:1129,heldout82,927001,R0,True,eos,13 - 5 + 4 \times 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,23
+tot-rank:1251,heldout82,927001,R0,False,length,24,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,24
+tot-rank:1313,heldout82,927002,R0,True,eos,11 \times \left(2 + \frac{2}{11}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,25
+tot-rank:737,heldout82,927001,R0,True,eos,2 + 4 + 9 + 9,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,26
+tot-rank:974,heldout82,927002,R0,True,eos,(8 - 5) \times 6 + 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,27
+tot-rank:974,heldout82,927001,R0,True,eos,6 \times (8 - 5) + 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,28
+tot-rank:737,heldout82,927002,R0,True,eos,2 + 4 + 9 + 9,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,29
+tot-rank:1012,heldout82,927002,R0,True,eos,(13 - 9) \times 4 + 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,30
+tot-rank:1313,heldout82,927001,R0,False,eos,\frac{11 \times 2 + 2}{11 \div 11},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,31
+tot-rank:1012,heldout82,927001,R0,False,eos,((13 - 9) \times (8 + 4)) \div (8 \div 4),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,32
+tot-rank:733,heldout82,927001,R0,True,eos,(11 - 4) \times 4 - 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,33
+tot-rank:733,heldout82,927002,R0,False,eos,4 \times \left(11 - \left(4 + \frac{4}{4}\right)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,34
+tot-rank:1211,heldout82,927002,R0,True,eos,12 \div \left(5 \div (13 - 3)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,35
+tot-rank:347,heldout82,927001,R0,True,eos,10 + 13 + \frac{7}{7},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,36
+tot-rank:347,heldout82,927002,R0,True,eos,10 + 13 + 7 \div 7,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,37
+tot-rank:1198,heldout82,927001,R0,False,eos,(8 \times 3) \times \left(\frac{10 - 6}{10 - 6}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,38
+tot-rank:1198,heldout82,927002,R0,False,eos,(6 \times 8) \div (10 - 8),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,39
+tot-rank:1211,heldout82,927001,R0,False,length,24,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,40
+tot-rank:975,heldout82,927002,R0,False,eos,((11 - 7) - (7 \div 7)) \times 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,41
+tot-rank:267,heldout82,927002,R0,True,eos,(4 \times 4) + (4 + 4),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,42
+tot-rank:267,heldout82,927001,R0,True,eos,4 \times 4 + 4 + 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,43
+tot-rank:5,heldout82,927001,R0,True,eos,6 \times 6 - 6 - 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,44
+tot-rank:975,heldout82,927001,R0,False,eos,8 \times \left( (11 - 7) - \left( \frac{7}{7} \right) \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,45
+tot-rank:995,heldout82,927002,R0,False,eos,(11 - 5) \times \left(8 \div (10 - 8)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,46
+tot-rank:5,heldout82,927002,R0,False,eos,6 \times \left(6 - \frac{6 + 6}{6}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,47
+tot-rank:995,heldout82,927001,R0,False,eos,((11 - 5) \div (10 - 8)) \times 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,48
+tot-rank:1068,heldout82,927001,R0,True,eos,(7 \times (8 - 4)) - 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,49
+tot-rank:1068,heldout82,927002,R0,True,eos,7 \times (8 - 4) - 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,50
+tot-rank:933,heldout82,927002,R0,True,eos,6 \times (12 - 7) - 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,51
+tot-rank:963,heldout82,927002,R0,False,eos,(13 - 1) \times \left(\frac{8}{3 + 1}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,52
+tot-rank:1067,heldout82,927001,R0,True,eos,8 \div \left(3 \div (6 + 3)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,53
+tot-rank:933,heldout82,927001,R0,True,eos,6 \times (12 - 7) - 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,54
+tot-rank:963,heldout82,927001,R0,True,eos,13 + 3 + 8 \times 1,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,55
+tot-rank:1067,heldout82,927002,R0,False,eos,8 \times 3 + 6 - 3 - 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,56
+tot-rank:1340,heldout82,927002,R0,True,eos,((8 \times 13) - 8) \div 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,57
+tot-rank:1061,heldout82,927002,R0,False,eos,3 \times 4 \times (3 + 3) \div 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,58
+tot-rank:1348,heldout82,927002,R0,False,eos,12 \div \left( (11 - 9) \div (13 - 9) \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,59
+tot-rank:1345,heldout82,927002,R0,True,eos,((13 + 3) \times 2) - 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,60
+tot-rank:1061,heldout82,927001,R0,True,eos,3 \times (4 + 3) + 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,61
+tot-rank:1345,heldout82,927001,R0,True,eos,(13 + 3) \times 2 - 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,62
+tot-rank:1348,heldout82,927001,R0,False,eos,(12 \times (13 - 11)) \times \left(\frac{9}{9}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,63
+tot-rank:1340,heldout82,927001,R0,False,eos,(13 - (8 / 8)) \times (4 / 4),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,64
+tot-rank:1317,heldout82,927001,R0,False,eos,\left(\frac{12}{13 - 12}\right) \times \left(\frac{12}{6}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,65
+tot-rank:115,heldout82,927001,R0,True,eos,(11 \times 3) - (12 - 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,66
+tot-rank:115,heldout82,927002,R0,True,eos,3 \times 11 - (12 - 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,67
+tot-rank:161,heldout82,927002,R0,True,eos,11 + 11 + 2 \div 1,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,68
+tot-rank:161,heldout82,927001,R0,True,eos,11 + 11 + 2 \times 1,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,69
+tot-rank:1317,heldout82,927002,R0,False,eos,((12 \div 6) \times 12) \times (13 - 12),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,70
+tot-rank:532,heldout82,927002,R0,True,eos,13 + 8 + \frac{12}{4},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,71
+tot-rank:532,heldout82,927001,R0,False,length,(12 \times (8 / (13 - 4))),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,72
+tot-rank:1176,heldout82,927002,R0,True,eos,(6 + 7) \times 2 - 2,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,73
+tot-rank:498,heldout82,927001,R0,False,eos,8 \times \left(12 \div \left(5 - \left(12 \div 12\right)\right)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,74
+tot-rank:338,heldout82,927001,R0,True,eos,10 + 13 + \frac{9}{9},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,75
+tot-rank:1257,heldout82,927001,R0,True,eos,12 \times 8 - 8 \times 9,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,76
+tot-rank:1257,heldout82,927002,R0,True,eos,(12 \times 8) - (8 \times 9),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,77
+tot-rank:338,heldout82,927002,R0,False,eos,(9 - (9 \div 9)) \times (13 - 10),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,78
+tot-rank:498,heldout82,927002,R0,False,eos,12 \times \left(8 - \left(5 + \frac{12}{12}\right)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,79
+tot-rank:1176,heldout82,927001,R0,True,eos,(7 + 2) \times 2 + 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,80
+tot-rank:95,heldout82,927002,R0,True,eos,2 + 7 + 7 + 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,81
+tot-rank:18,heldout82,927001,R0,True,eos,12 \times 1 + 12 \times 1,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,82
+tot-rank:18,heldout82,927002,R0,False,eos,(12 \times 12) \div (12 \div (1 + 1)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,83
+tot-rank:1179,heldout82,927002,R0,False,eos,(9 \times 4) - (12 \times (9 \div 9)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,84
+tot-rank:1179,heldout82,927001,R0,False,eos,(12 \div 4) \times (9 - (9 \div 9)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,85
+tot-rank:939,heldout82,927002,R0,True,eos,(13 - 7) \times 2 + 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,86
+tot-rank:939,heldout82,927001,R0,True,eos,(13 - 7) \times 2 + 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,87
+tot-rank:95,heldout82,927001,R0,True,eos,2 + 7 + 7 + 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,88
+tot-rank:273,heldout82,927002,R0,True,eos,12 \times (3 - (13 \div 13)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,89
+tot-rank:261,heldout82,927001,R0,True,eos,(5 + (9 \div 9)) \times 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,90
+tot-rank:968,heldout82,927001,R0,True,eos,(2 \times 5) + 7 + 7,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,91
+tot-rank:557,heldout82,927002,R0,True,eos,12 \times (3 - (4 \div 4)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,92
+tot-rank:557,heldout82,927001,R0,True,eos,12 \times (3 - (4 \div 4)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,93
+tot-rank:968,heldout82,927002,R0,True,eos,2 \times 5 + 7 + 7,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,94
+tot-rank:273,heldout82,927001,R0,True,eos,12 \times \left(3 - \frac{13}{13}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,95
+tot-rank:261,heldout82,927002,R0,False,length,(9 \times 5) - (9 + 4),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,96
+tot-rank:540,heldout82,927002,R0,True,eos,(11 + 6 \div 6) \times 2,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,97
+tot-rank:187,heldout82,927002,R0,True,eos,(12 + 12) \times (4 - 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,98
+tot-rank:1362,heldout82,927001,R0,False,eos,12 \div \left(2 \div (5 - (3 - 2))\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,99
+tot-rank:187,heldout82,927001,R0,True,eos,12 + 12 \times (4 - 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,100
+tot-rank:540,heldout82,927001,R0,True,eos,(11 + 6 \div 6) \times 2,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,101
+tot-rank:1027,heldout82,927001,R0,True,eos,8 \times (9 - (12 - 6)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,102
+tot-rank:1027,heldout82,927002,R0,False,eos,9 \times \left(8 \div \left(6 \div (6 - (12 - 8))\right)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,103
+tot-rank:1362,heldout82,927002,R0,False,length,24,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,104
+tot-rank:1233,heldout82,927001,R0,False,eos,(10 - 1) \times 8 \div (2 + 1),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,105
+tot-rank:1233,heldout82,927002,R0,True,eos,10 + 2 \times (8 - 1),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,106
+tot-rank:983,heldout82,927001,R0,False,eos,(12 - 8) \times 6 \times (8 \div 8),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,107
+tot-rank:691,heldout82,927001,R0,True,eos,8 \times (10 - (13 - 6)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,108
+tot-rank:983,heldout82,927002,R0,False,eos,6 \times (12 - 8) \times (8 \div 8),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,109
+tot-rank:1216,heldout82,927002,R0,False,eos,(12 \div 2) \times 4 + (2 - 2),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,110
+tot-rank:1216,heldout82,927001,R0,True,eos,((12 + 2) \times 2) - 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,111
+tot-rank:691,heldout82,927002,R0,True,eos,(6 - (13 - 10)) \times 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,112
+tot-rank:1094,heldout82,927001,R0,False,eos,(9 - 1) \times \left(6 \div (1 + 1)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,113
+tot-rank:1094,heldout82,927002,R0,False,eos,(9 - 1) \times \left(6 \div (1 + 1)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,114
+tot-rank:1053,heldout82,927002,R0,True,eos,(12 - 10) \times 7 + 10,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,115
+tot-rank:1053,heldout82,927001,R0,False,eos,12 \times \left( (10 - 7) - \left( \frac{10}{10} \right) \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,116
+tot-rank:132,heldout82,927001,R0,True,eos,(13 + 11) \div (9 \div 9),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,117
+tot-rank:132,heldout82,927002,R0,False,eos,(13 - (9 \div 9)) \times (11 - 9),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,118
+tot-rank:1325,heldout82,927001,R0,True,eos,(10 - 5) \times 7 - 11,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,119
+tot-rank:1325,heldout82,927002,R0,False,eos,10 \times (11 - 7) - 5 - 11,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,120
+tot-rank:1044,heldout82,927002,R0,True,eos,12 \times (5 - (8 - 5)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,121
+tot-rank:1044,heldout82,927001,R0,True,eos,12 \times (5 - (8 - 5)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,122
+tot-rank:595,heldout82,927001,R0,False,eos,12 \times \left( (11 - 8) - \left( \frac{12}{12} \right) \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,123
+tot-rank:595,heldout82,927002,R0,True,eos,(11 - 8) \times 12 - 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,124
+tot-rank:1290,heldout82,927002,R0,True,eos,(11 + 7) \times (12 \div 9),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,125
+tot-rank:1290,heldout82,927001,R0,,eos,,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,126
+tot-rank:692,heldout82,927001,R0,True,eos,(11 + 8 \div 8) \times 2,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,127
+tot-rank:692,heldout82,927002,R0,False,length,24,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,128
+tot-rank:1041,heldout82,927001,R0,False,eos,(12 \times 6) \div (4 - 6 \div 6),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,129
+tot-rank:780,heldout82,927001,R0,True,eos,(13 - 8) \times 6 - 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,130
+tot-rank:1347,heldout82,927002,R0,True,eos,((11 \times 2) - 10) \times 2,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,131
+tot-rank:1352,heldout82,927001,R0,True,eos,(5 \times 3 - 7) \times 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,132
+tot-rank:1041,heldout82,927002,R0,True,eos,12 + 6 \times (6 - 4),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,133
+tot-rank:780,heldout82,927002,R0,True,eos,((13 - 8) \times 6) - 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,134
+tot-rank:1347,heldout82,927001,R0,True,eos,((11 \times 2) - 10) \times 2,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,135
+tot-rank:1352,heldout82,927002,R0,False,eos,(5 + \frac{3}{3}) \times (7 - 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,136
+tot-rank:1125,heldout82,927001,R0,True,eos,9 \times (7 + 1) \div 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,137
+tot-rank:1125,heldout82,927002,R0,True,eos,(7 + 1) \times (9 \div 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,138
+tot-rank:1335,heldout82,927002,R0,False,eos,10 + 9 + 6 - \frac{9}{9},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,139
+tot-rank:937,heldout82,927002,R0,True,eos,((13 - 11) \times 6) + 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,140
+tot-rank:832,heldout82,927001,R0,True,eos,3 \times (9 - (4 - 3)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,141
+tot-rank:832,heldout82,927002,R0,True,eos,(9 + 3) + (4 \times 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,142
+tot-rank:1335,heldout82,927001,R0,True,eos,\frac{10 \times 9}{6} + 9,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,143
+tot-rank:937,heldout82,927001,R0,False,length,(13 - 11) \times (12 - 6),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,144
+tot-rank:875,heldout82,927001,R0,True,eos,5 \times 3 + 3 \times 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,145
+tot-rank:875,heldout82,927002,R0,False,eos,(3 + 3) \times (5 - 3 \div 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,146
+tot-rank:1114,heldout82,927002,R0,True,eos,(12 \times 12) \div (12 - 6),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,147
+tot-rank:1265,heldout82,927001,R0,True,eos,(8 \times 7) / 4 + 10,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,148
+tot-rank:1114,heldout82,927001,R0,False,eos,12 \times \left( \frac{12}{6} \right) \times \left( \frac{12}{12} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,149
+tot-rank:1225,heldout82,927002,R0,True,eos,(9 - 3) \times 2 + 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,150
+tot-rank:1265,heldout82,927002,R0,False,eos,8 \times (10 - 7) + 4 - 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,151
+tot-rank:1225,heldout82,927001,R0,True,eos,((9 - 3) \times 2) + 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,152
+tot-rank:1075,heldout82,927001,R0,True,eos,10 + 7 \times (9 - 7),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,153
+tot-rank:1295,heldout82,927001,R0,True,eos,12 \times (9 + 7) \div 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,154
+tot-rank:386,heldout82,927001,R0,False,eos,\frac{8}{11 - 8} \times (8 + 1),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,155
+tot-rank:409,heldout82,927001,R0,True,eos,8 \div \left( \frac{8}{6} - 1 \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,156
+tot-rank:386,heldout82,927002,R0,True,eos,8 \times (11 - (8 \div 1)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,157
+tot-rank:1295,heldout82,927002,R0,True,eos,(12 \div 8) \times (9 + 7),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,158
+tot-rank:409,heldout82,927002,R0,True,eos,8 \times (8 - (6 - 1)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,159
+tot-rank:1075,heldout82,927002,R0,False,eos,(10 - 7) \times (9 - \frac{7}{7}),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,160
+tot-rank:1081,heldout82,927002,R3,True,eos,((13 - 5) \times 4) - 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,161
+tot-rank:1081,heldout82,927001,R3,True,eos,8 \times 4 - (13 - 5),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,162
+tot-rank:1081,heldout82,927001,R2,True,eos,8 \times 4 - (13 - 5),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,163
+tot-rank:1339,heldout82,927001,R0,False,eos,(3 + 3 \div 3) \times (13 - 7),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,164
+tot-rank:1081,heldout82,927002,R2,True,eos,(13 - 5) \times 4 - 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,165
+tot-rank:1172,heldout82,927001,R0,True,eos,(13 - (8 - 3)) \times 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,166
+tot-rank:1339,heldout82,927002,R0,False,eos,3 \times (7 - (13 / 3)) \times 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,167
+tot-rank:1172,heldout82,927002,R0,False,eos,(3 \times 8) \times \left( \frac{13 - 3}{13 - 3} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,168
+tot-rank:291,heldout82,927001,R2,False,eos,(13 - 7) \times (3 + (13 \div 13)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,169
+tot-rank:291,heldout82,927002,R2,False,eos,(13 - 7) \times (3 + (13 \div 13)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,170
+tot-rank:1273,heldout82,927001,R3,True,eos,3 \times \left(6 + \frac{6}{3}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,171
+tot-rank:1273,heldout82,927001,R2,False,eos,(6 + 6) \times \left(3 - \frac{3}{3}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,172
+tot-rank:1273,heldout82,927002,R2,True,eos,(6 + \frac{6}{3}) \times 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,173
+tot-rank:291,heldout82,927002,R3,True,eos,(7 + (13 \div 13)) \times 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,174
+tot-rank:291,heldout82,927001,R3,True,eos,(7 + (13 \div 13)) \times 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,175
+tot-rank:1273,heldout82,927002,R3,True,eos,((6 / 3) + 6) \times 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,176
+tot-rank:593,heldout82,927001,R3,True,eos,6 \times (3 + \frac{10}{10}),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,177
+tot-rank:593,heldout82,927002,R2,False,eos,10 \times 3 - 6 \times (10 \div 10),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,178
+tot-rank:593,heldout82,927001,R2,True,eos,10 \times \left(3 - \frac{6}{10}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,179
+tot-rank:543,heldout82,927001,R2,False,eos,3 \times (12 - (6 - (5 - 3))),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,180
+tot-rank:543,heldout82,927001,R3,False,eos,6 \times (5 - 3 + 12 \div 6),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,181
+tot-rank:543,heldout82,927002,R2,True,eos,12 + 6 \times (5 - 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,182
+tot-rank:593,heldout82,927002,R3,False,eos,6 \times (10 \times 3 + 10) \div 10,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,183
+tot-rank:543,heldout82,927002,R3,True,eos,(5 - 3) \times 6 + 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,184
+tot-rank:894,heldout82,927001,R2,False,eos,12 \times \left( \frac{12}{10 - 6} \right) - 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,185
+tot-rank:894,heldout82,927002,R2,False,eos,12 \times \left( \frac{12}{10 - 6} \right) - 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,186
+tot-rank:759,heldout82,927002,R2,False,eos,(12 \times 8) \div (6 - (12 \div 6)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,187
+tot-rank:759,heldout82,927002,R3,True,eos,(12 - 8) \times (12 - 6),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,188
+tot-rank:759,heldout82,927001,R2,False,eos,(12 \times 8) \div (6 - (12 \div 6)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,189
+tot-rank:759,heldout82,927001,R3,True,eos,(12 - 8) \times (12 - 6),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,190
+tot-rank:894,heldout82,927001,R3,True,eos,((12 - 10) \times 6) + 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,191
+tot-rank:894,heldout82,927002,R3,,eos,,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,192
+tot-rank:233,heldout82,927001,R2,False,eos,(11 + 1) \times \left(3 - \frac{11}{11}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,193
+tot-rank:233,heldout82,927002,R2,False,eos,(11 + 1) \times \left(3 - \frac{11}{11}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,194
+tot-rank:233,heldout82,927001,R3,True,eos,11 + 11 + 3 - 1,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,195
+tot-rank:233,heldout82,927002,R3,False,eos,(11 + 1) \times \left(3 - \frac{11}{11}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,196
+tot-rank:1251,heldout82,927001,R3,False,eos,(9 - 5) \times (7 - (10 - 9)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,197
+tot-rank:1251,heldout82,927002,R2,True,eos,5 \times (10 - 7) + 9,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,198
+tot-rank:1251,heldout82,927001,R2,False,length,(10 - (9 - 5)) \times 7,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,199
+tot-rank:1251,heldout82,927002,R3,,length,,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,200
+tot-rank:1129,heldout82,927001,R2,False,eos,(13 - 5) \times (4 - (4 / 4)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,201
+tot-rank:690,heldout82,927002,R2,False,eos,(4 \times 4) + (9 - (4 \div 4)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,202
+tot-rank:690,heldout82,927002,R3,False,eos,4 \times \left( (9 - 4) + \left( \frac{4}{4} \right) \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,203
+tot-rank:1129,heldout82,927002,R2,True,eos,(13 - 5) + (4 \times 4),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,204
+tot-rank:690,heldout82,927001,R2,False,eos,9 \times 4 - (4 \times 4 - 4),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,205
+tot-rank:690,heldout82,927001,R3,True,eos,(9 - 4) \times 4 + 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,206
+tot-rank:1129,heldout82,927001,R3,False,eos,(13 - 5) \times (4 - (4 / 4)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,207
+tot-rank:1129,heldout82,927002,R3,False,length,(13 - 5) \times (4 + 4) - 4 = 64 - 4 = 60,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,208
+tot-rank:1313,heldout82,927001,R2,False,eos,((11 \times 2) + 2) \times (11 \div 11),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,209
+tot-rank:642,heldout82,927002,R2,False,eos,8 \times \left((12 - 10) + \left(\frac{10}{10}\right)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,210
+tot-rank:642,heldout82,927002,R3,True,eos,10 + 10 + 12 - 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,211
+tot-rank:642,heldout82,927001,R2,False,eos,8 \times \left((12 - 10) + \left(\frac{10}{10}\right)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,212
+tot-rank:642,heldout82,927001,R3,True,eos,10 + 10 + 12 - 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,213
+tot-rank:1313,heldout82,927001,R3,True,eos,11 \times \left(2 + \frac{2}{11}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,214
+tot-rank:1313,heldout82,927002,R2,True,eos,11 \times \left(2 + \frac{2}{11}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,215
+tot-rank:1313,heldout82,927002,R3,True,eos,11 \times \left(2 + \frac{2}{11}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,216
+tot-rank:974,heldout82,927002,R3,True,eos,(8 - 5) \times 6 + 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,217
+tot-rank:974,heldout82,927001,R3,True,eos,(8 - 5) \times 6 + 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,218
+tot-rank:974,heldout82,927002,R2,False,eos,6 \times \left( (8 - 5) + \frac{6}{6} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,219
+tot-rank:1012,heldout82,927002,R3,False,eos,8 \div \left(4 \div (13 - (9 - 8))\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,220
+tot-rank:1012,heldout82,927001,R3,True,eos,13 + 9 + 8 \div 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,221
+tot-rank:974,heldout82,927001,R2,False,eos,6 \times \left( (8 - 5) + \frac{6}{6} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,222
+tot-rank:1012,heldout82,927002,R2,False,eos,((13 - 9) \times (8 + 4)) \div (8 \div 4),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,223
+tot-rank:1012,heldout82,927001,R2,False,eos,((13 - 9) \times (8 + 4)) \div (8 \div 4),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,224
+tot-rank:737,heldout82,927002,R2,False,eos,2 \times (9 + 4 - 9 \div 9),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,225
+tot-rank:737,heldout82,927001,R2,False,eos,2 \times (9 + 4 - 9 \div 9),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,226
+tot-rank:1211,heldout82,927002,R3,True,eos,12 \div \left(5 \div (13 - 3)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,227
+tot-rank:737,heldout82,927001,R3,True,eos,9 + 9 + 4 + 2,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,228
+tot-rank:1211,heldout82,927001,R2,False,eos,12 \times (5 - 3) \div (13 - 12),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,229
+tot-rank:1211,heldout82,927002,R2,False,eos,12 \times (5 - 3) \div (13 - 12),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,230
+tot-rank:737,heldout82,927002,R3,True,eos,9 + 9 + 4 + 2,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,231
+tot-rank:1211,heldout82,927001,R3,False,eos,(13 - 5) \times 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,232
+tot-rank:733,heldout82,927001,R2,False,eos,4 \times \left(11 - \left(4 + \frac{4}{4}\right)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,233
+tot-rank:1198,heldout82,927001,R2,True,eos,3 \times (10 - (8 - 6)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,234
+tot-rank:733,heldout82,927002,R3,True,eos,((11 - 4) \times 4) - 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,235
+tot-rank:733,heldout82,927001,R3,True,eos,(11 - 4) \times 4 - 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,236
+tot-rank:733,heldout82,927002,R2,True,eos,4 \times (11 - 4) - 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,237
+tot-rank:1198,heldout82,927002,R2,False,eos,(8 \times 3) \times \left(\frac{10 - 6}{10 - 6}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,238
+tot-rank:1198,heldout82,927001,R3,True,eos,(10 - (8 - 6)) \times 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,239
+tot-rank:1198,heldout82,927002,R3,True,eos,3 \times (10 - (8 - 6)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,240
+tot-rank:5,heldout82,927001,R3,True,eos,6 + 6 + 6 + 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,241
+tot-rank:347,heldout82,927001,R2,False,eos,(13 - 10) \times \left(7 + \frac{7}{7}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,242
+tot-rank:347,heldout82,927002,R2,False,eos,(13 - 10) \times \left(7 + \frac{7}{7}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,243
+tot-rank:347,heldout82,927001,R3,True,eos,13 + 10 + \left( \frac{7}{7} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,244
+tot-rank:5,heldout82,927001,R2,True,eos,6 \times 6 - 6 - 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,245
+tot-rank:347,heldout82,927002,R3,True,eos,13 + 10 + \left( \frac{7}{7} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,246
+tot-rank:5,heldout82,927002,R3,True,eos,6 \times 6 - 6 - 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,247
+tot-rank:5,heldout82,927002,R2,True,eos,6 \times 6 - 6 - 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,248
+tot-rank:975,heldout82,927001,R3,True,eos,((7 + 7) - 11) \times 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,249
+tot-rank:975,heldout82,927001,R2,False,eos,8 \times \left( (11 - 7) - \frac{7}{7} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,250
+tot-rank:267,heldout82,927002,R3,True,eos,4 \times 4 + 4 + 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,251
+tot-rank:975,heldout82,927002,R3,False,eos,8 \times \left( (11 - 7) - \left( \frac{7}{7} \right) \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,252
+tot-rank:267,heldout82,927001,R3,True,eos,4 \times 4 + 4 + 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,253
+tot-rank:975,heldout82,927002,R2,True,eos,8 \times (7 - (11 - 7)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,254
+tot-rank:267,heldout82,927001,R2,True,eos,4 \times 4 + 4 + 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,255
+tot-rank:267,heldout82,927002,R2,True,eos,4 \times 4 + 4 + 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,256
+tot-rank:933,heldout82,927002,R2,False,eos,6 \times \left(7 - \frac{6}{12 \div 6}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,257
+tot-rank:933,heldout82,927001,R2,False,eos,6 \times \left(7 - \frac{6}{12 \div 6}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,258
+tot-rank:995,heldout82,927002,R3,True,eos,(10 + 11 + 8) - 5,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,259
+tot-rank:933,heldout82,927001,R3,False,eos,6 \times (12 - 7 - (6 \div 6)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,260
+tot-rank:995,heldout82,927001,R3,True,eos,10 + 8 + 11 - 5,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,261
+tot-rank:995,heldout82,927002,R2,False,eos,(11 - 5) \times \left(8 \div (10 - 8)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,262
+tot-rank:933,heldout82,927002,R3,True,eos,6 \times (12 - 7) - 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,263
+tot-rank:995,heldout82,927001,R2,True,eos,11 + 8 + 10 - 5,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,264
+tot-rank:1068,heldout82,927001,R2,False,eos,(8 - 4) \times (7 - (4 \div 4)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,265
+tot-rank:1068,heldout82,927002,R2,False,eos,(8 - 4) \times (7 - (4 \div 4)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,266
+tot-rank:963,heldout82,927002,R3,False,eos,(13 - 1) \times \left( \frac{8}{3 + 1} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,267
+tot-rank:963,heldout82,927002,R2,False,eos,(13 - 1) \times \left(8 \div (3 + 1)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,268
+tot-rank:1068,heldout82,927001,R3,True,eos,(4 \times 7) - (8 - 4),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,269
+tot-rank:963,heldout82,927001,R2,False,eos,(13 - 1) \times \left(8 \div (3 + 1)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,270
+tot-rank:1068,heldout82,927002,R3,True,eos,(4 \times 7) - 8 + 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,271
+tot-rank:963,heldout82,927001,R3,True,eos,13 + 8 + 3 \times 1,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,272
+tot-rank:1067,heldout82,927001,R2,False,eos,(8 \times 6) \div (3 - 3 \div 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,273
+tot-rank:1067,heldout82,927001,R3,False,eos,6 \times \left(8 \div (3 - (3 \div 3))\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,274
+tot-rank:1061,heldout82,927001,R3,True,eos,(3 \times 3 - 3) \times 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,275
+tot-rank:1061,heldout82,927002,R2,False,eos,(3 \times 4) \times (3 - (3 \div 3)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,276
+tot-rank:1061,heldout82,927001,R2,False,eos,(3 \times 4) \times (3 - (3 \div 3)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,277
+tot-rank:1061,heldout82,927002,R3,True,eos,(3 \times 3 - 3) \times 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,278
+tot-rank:1067,heldout82,927002,R2,True,eos,8 \div \left( \frac{3}{6 + 3} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,279
+tot-rank:1067,heldout82,927002,R3,False,eos,(3 \times 8) + (6 - 3 - 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,280
+tot-rank:1340,heldout82,927001,R3,False,eos,\left(13 - \frac{8}{8}\right) \div \left(\frac{4}{8}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,281
+tot-rank:1345,heldout82,927001,R2,True,eos,(13 + 3) \times 2 - 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,282
+tot-rank:1340,heldout82,927002,R3,False,eos,13 + 8 + 4 - \frac{8}{8},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,283
+tot-rank:1340,heldout82,927001,R2,True,eos,\left(8 \times 13 - 8\right) \div 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,284
+tot-rank:1345,heldout82,927002,R3,True,eos,(13 + 3) \times 2 - 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,285
+tot-rank:1345,heldout82,927002,R2,True,eos,((13 + 3) \times 2) - 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,286
+tot-rank:1345,heldout82,927001,R3,False,eos,(3 \times 8) \times \left( \frac{13 - 2}{13 - 2} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,287
+tot-rank:1340,heldout82,927002,R2,False,eos,8 \times \left((13 - 8) - \left(\frac{8}{4}\right)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,288
+tot-rank:161,heldout82,927001,R2,False,eos,(11 \times 2 \times (11 + 1)) \div 11,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,289
+tot-rank:161,heldout82,927002,R2,False,eos,(11 \times 2 \times (11 + 1)) \div 11,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,290
+tot-rank:161,heldout82,927002,R3,True,eos,11 + 11 + \left( \frac{2}{1} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,291
+tot-rank:161,heldout82,927001,R3,True,eos,(11 + 11 + 2) \times 1,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,292
+tot-rank:1348,heldout82,927001,R2,False,eos,(13 - 9) \times \left( \frac{12}{13 - 11} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,293
+tot-rank:1348,heldout82,927002,R2,False,eos,(12 \div (11 - 9)) \times (13 - 9),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,294
+tot-rank:1348,heldout82,927001,R3,False,eos,\frac{12 \times (13 - 11)}{9 / 9},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,295
+tot-rank:1348,heldout82,927002,R3,False,eos,(12 \times (13 - 11)) + (9 - 9),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,296
+tot-rank:532,heldout82,927001,R3,False,eos,(8 \div (13 - 12)) \times (12 \div 4),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,297
+tot-rank:115,heldout82,927002,R2,True,eos,(11 \times 3) - (12 - 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,298
+tot-rank:115,heldout82,927001,R2,True,eos,(11 \times 3) - 12 + 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,299
+tot-rank:115,heldout82,927002,R3,False,eos,((12 - 3) \times (11 - 3)) \div 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,300
+tot-rank:115,heldout82,927001,R3,True,eos,12 + 11 + \frac{3}{3},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,301
+tot-rank:532,heldout82,927002,R2,False,eos,(8 \div (13 - 12)) \times (12 \div 4),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,302
+tot-rank:532,heldout82,927001,R2,True,eos,13 + 8 + \left( \frac{12}{4} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,303
+tot-rank:532,heldout82,927002,R3,True,eos,8 \times (12 - (13 - 4)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,304
+tot-rank:1317,heldout82,927001,R2,False,eos,(12 \div 6) \times (13 - (12 \div 12)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,305
+tot-rank:1257,heldout82,927002,R2,False,eos,12 \times \left( (9 - 8) + \left( \frac{8}{8} \right) \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,306
+tot-rank:1257,heldout82,927001,R2,False,eos,12 \times \left( (9 - 8) + \left( \frac{8}{8} \right) \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,307
+tot-rank:1257,heldout82,927001,R3,True,eos,12 \times 8 - 8 \times 9,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,308
+tot-rank:1317,heldout82,927002,R2,False,eos,(12 \div 6) \times (13 - (12 \div 12)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,309
+tot-rank:1257,heldout82,927002,R3,False,eos,8 \times ((12 - 8) - (9 - 8)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,310
+tot-rank:1317,heldout82,927002,R3,False,eos,12 \times \left( \frac{13 - (12 \div 12)}{6} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,311
+tot-rank:1317,heldout82,927001,R3,False,eos,(12 \times (13 - 6)) - (12 \times (12 / 12)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,312
+tot-rank:338,heldout82,927002,R3,True,eos,(13 + 10) + \left(\frac{9}{9}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,313
+tot-rank:338,heldout82,927001,R3,True,eos,10 + 13 + \frac{9}{9},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,314
+tot-rank:1176,heldout82,927001,R3,False,eos,(6 + 2) \times (7 - 2 - 2),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,315
+tot-rank:1176,heldout82,927002,R3,True,eos,(6 + 7) \times 2 - 2,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,316
+tot-rank:338,heldout82,927002,R2,True,eos,(13 + 10) + (9 \div 9),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,317
+tot-rank:338,heldout82,927001,R2,False,eos,(9 - 9 \div 9) \times (13 - 10),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,318
+tot-rank:1176,heldout82,927002,R2,True,eos,(6 + 7) \times 2 - 2,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,319
+tot-rank:1176,heldout82,927001,R2,True,eos,(7 + 6) \times 2 - 2,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,320
+tot-rank:95,heldout82,927001,R2,False,eos,(8 \div 2) \times (7 - (7 \div 7)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,321
+tot-rank:498,heldout82,927002,R2,False,eos,(12 - 8) \times (5 + 12 \div 12),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,322
+tot-rank:498,heldout82,927001,R2,False,eos,(12 - 8) \times (5 + 12 \div 12),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,323
+tot-rank:498,heldout82,927002,R3,True,eos,(12 \times (8 - 5)) - 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,324
+tot-rank:498,heldout82,927001,R3,False,eos,\frac{12 \times 8}{5 - (12 \div 12)},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,325
+tot-rank:95,heldout82,927001,R3,True,eos,2 + 7 + 7 + 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,326
+tot-rank:95,heldout82,927002,R2,True,eos,8 \times (2 + 7 \div 7),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,327
+tot-rank:95,heldout82,927002,R3,True,eos,7 + 7 + 8 + 2,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,328
+tot-rank:1179,heldout82,927002,R2,True,eos,((9 + 9) - 12) \times 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,329
+tot-rank:1179,heldout82,927002,R3,False,eos,\left( \frac{12}{4} \right) \times \left( 9 - \left( \frac{9}{9} \right) \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,330
+tot-rank:1179,heldout82,927001,R3,False,eos,12 \div \left(4 \div \left(9 - \left(9 \div 9\right)\right)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,331
+tot-rank:1179,heldout82,927001,R2,True,eos,9 \times \left(4 - \left(\frac{12}{9}\right)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,332
+tot-rank:939,heldout82,927001,R2,False,eos,\frac{12 \times 2 \times (13 - 7)}{13 - 7},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,333
+tot-rank:939,heldout82,927002,R3,True,eos,(13 - 7) \times 2 + 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,334
+tot-rank:939,heldout82,927002,R2,True,eos,(13 - 7) \times 2 + 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,335
+tot-rank:939,heldout82,927001,R3,False,length,(12 \times 2) + (13 - 7),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,336
+tot-rank:261,heldout82,927002,R2,True,eos,(5 + (9 / 9)) \times 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,337
+tot-rank:18,heldout82,927001,R2,False,eos,12 \times (1 + 1) \times (12 \div 12),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,338
+tot-rank:18,heldout82,927002,R2,False,eos,12 \times (1 + 1) \times (12 \div 12),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,339
+tot-rank:18,heldout82,927001,R3,True,eos,12 + 12 + 1 - 1,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,340
+tot-rank:18,heldout82,927002,R3,True,eos,12 \times 1 + 12 \times 1,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,341
+tot-rank:261,heldout82,927001,R2,False,eos,(9 \times (5 - (9 \div 4))),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,342
+tot-rank:261,heldout82,927002,R3,True,eos,4 \times (5 + (9 \div 9)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,343
+tot-rank:261,heldout82,927001,R3,True,eos,4 \times \left(5 + \frac{9}{9}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,344
+tot-rank:968,heldout82,927001,R2,False,eos,(7 + (7 \div 7)) \times (5 - 2),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,345
+tot-rank:968,heldout82,927002,R2,False,eos,(7 + (7 \div 7)) \times (5 - 2),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,346
+tot-rank:273,heldout82,927002,R3,True,eos,12 \times (3 - (13 \div 13)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,347
+tot-rank:273,heldout82,927002,R2,True,eos,12 \times \left(3 - \frac{13}{13}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,348
+tot-rank:968,heldout82,927002,R3,True,eos,(7 + 7) + (5 \times 2),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,349
+tot-rank:273,heldout82,927001,R2,True,eos,12 \times (3 - (13 \div 13)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,350
+tot-rank:968,heldout82,927001,R3,True,eos,(5 \times 2) + 7 + 7,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,351
+tot-rank:273,heldout82,927001,R3,False,eos,12 \times 3 - (13 - (13 - 12)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,352
+tot-rank:557,heldout82,927002,R3,True,eos,12 \times \left(3 - \left(\frac{4}{4}\right)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,353
+tot-rank:557,heldout82,927001,R3,False,eos,12 \times \left(4 \div \left(3 - \left(4 \div 4\right)\right)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,354
+tot-rank:557,heldout82,927002,R2,False,eos,(12 \times 4) \div (3 - (4 \div 4)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,355
+tot-rank:557,heldout82,927001,R2,False,eos,(12 \times 4) \div (3 - (4 \div 4)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,356
+tot-rank:1362,heldout82,927002,R2,,eos,,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,357
+tot-rank:1362,heldout82,927001,R2,True,eos,12 \div (3 - 5 \div 2),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,358
+tot-rank:1362,heldout82,927002,R3,False,eos,12 \times \left( \frac{5 - 2}{3 \div 2} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,359
+tot-rank:1362,heldout82,927001,R3,False,eos,(12 \times (5 - 3)) + (2 - 2),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,360
+tot-rank:187,heldout82,927001,R2,False,eos,12 \times \left(4 - \left(3 - \frac{12}{12}\right)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,361
+tot-rank:540,heldout82,927002,R2,,eos,,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,362
+tot-rank:187,heldout82,927002,R2,False,eos,12 \times \left(4 - \left(3 - \frac{12}{12}\right)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,363
+tot-rank:187,heldout82,927002,R3,True,eos,(12 + 12) \times (4 - 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,364
+tot-rank:187,heldout82,927001,R3,True,eos,(12 + 12) \times (4 - 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,365
+tot-rank:540,heldout82,927002,R3,False,eos,(6 \times 11) \div (11 \div (6 - 2)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,366
+tot-rank:540,heldout82,927001,R3,True,eos,((6 \div 6) + 11) \times 2,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,367
+tot-rank:540,heldout82,927001,R2,False,eos,(6 \div ((11 - 2) \div 6)) \times 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,368
+tot-rank:691,heldout82,927001,R3,True,eos,(10 - (13 - 6)) \times 8,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,369
+tot-rank:691,heldout82,927002,R3,False,eos,6 \times \left( 8 \div \left( 10 \div (13 - 8) \right) \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,370
+tot-rank:691,heldout82,927002,R2,False,eos,13 + 8 + 6 \div (10 - 8),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,371
+tot-rank:691,heldout82,927001,R2,False,eos,13 + 8 + 6 \div (10 - 8),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,372
+tot-rank:1027,heldout82,927001,R2,False,eos,8 \times (9 - 6) \times \left(\frac{12}{12}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,373
+tot-rank:1027,heldout82,927002,R2,False,eos,8 \times (9 - 6) \times \left(\frac{12}{12}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,374
+tot-rank:1027,heldout82,927002,R3,False,eos,8 \times (12 - 9) \times \left( \frac{6}{6} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,375
+tot-rank:1027,heldout82,927001,R3,False,eos,8 \times (12 - 9) + (6 - 6),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,376
+tot-rank:1233,heldout82,927001,R2,False,eos,(10 - 1) \times \frac{8}{2 + 1},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,377
+tot-rank:983,heldout82,927001,R2,False,eos,8 \times \left( \frac{12}{6} + \frac{8}{8} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,378
+tot-rank:983,heldout82,927002,R2,False,eos,8 \times \left( \frac{12}{6} + \frac{8}{8} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,379
+tot-rank:1233,heldout82,927002,R2,False,eos,(10 - 1) \times \frac{8}{2 + 1},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,380
+tot-rank:983,heldout82,927002,R3,False,eos,8 \times \left( \frac{12}{6} + \frac{8}{8} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,381
+tot-rank:983,heldout82,927001,R3,False,eos,12 \times \left(8 - \frac{6}{8 \div 8}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,382
+tot-rank:1233,heldout82,927002,R3,True,eos,((8 - 1) \times 2) + 10,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,383
+tot-rank:1233,heldout82,927001,R3,False,eos,(10 - 2) \times (2 + 1),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,384
+tot-rank:1094,heldout82,927001,R2,False,eos,(9 - 1) \times (6 \div (1 + 1)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,385
+tot-rank:1216,heldout82,927001,R3,True,eos,(12 + 2) \times 2 - 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,386
+tot-rank:1094,heldout82,927002,R2,True,eos,(9 \times (1 + 1)) + 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,387
+tot-rank:1094,heldout82,927002,R3,True,eos,9 \times (1 + 1) + 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,388
+tot-rank:1216,heldout82,927002,R2,False,eos,\left(12 \times 2 \times \frac{4}{2}\right) \div \frac{2}{2},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,389
+tot-rank:1216,heldout82,927001,R2,False,eos,12 \times (4 - 2) \times \left(\frac{2}{2}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,390
+tot-rank:1094,heldout82,927001,R3,True,eos,(9 \times (1 + 1)) + 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,391
+tot-rank:1216,heldout82,927002,R3,True,eos,(12 - 2) \times 2 + 4,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,392
+tot-rank:1053,heldout82,927001,R3,False,eos,12 \times \left(10 - \left(7 + \left(10 \div 10\right)\right)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,393
+tot-rank:1053,heldout82,927002,R2,False,eos,(10 + 10) + \left( \frac{12}{10 - 7} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,394
+tot-rank:1053,heldout82,927001,R2,False,eos,12 \times \left( (10 - 7) - \left( \frac{10}{10} \right) \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,395
+tot-rank:1053,heldout82,927002,R3,True,eos,(12 - 10) \times 7 + 10,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,396
+tot-rank:1325,heldout82,927002,R2,False,eos,(10 \times (11 - 7)) - (5 + 11),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,397
+tot-rank:1325,heldout82,927001,R2,False,eos,\frac{(11 + 5) \times (10 - 7)}{10 / 5},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,398
+tot-rank:1325,heldout82,927002,R3,False,eos,(10 \times (7 - \frac{11}{5})) \div \frac{10}{5},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,399
+tot-rank:1325,heldout82,927001,R3,,length,,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,400
+tot-rank:132,heldout82,927001,R2,False,eos,(13 - \frac{9}{9}) \times (11 - 9),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,401
+tot-rank:132,heldout82,927002,R2,False,eos,(13 - \frac{9}{9}) \times (11 - 9),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,402
+tot-rank:595,heldout82,927001,R2,False,eos,12 \times \left( (11 - 8) - \left( \frac{12}{12} \right) \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,403
+tot-rank:595,heldout82,927002,R2,False,eos,12 \times \left( (11 - 8) - \left( \frac{12}{12} \right) \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,404
+tot-rank:595,heldout82,927002,R3,True,eos,12 \times (11 - 8) - 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,405
+tot-rank:132,heldout82,927001,R3,True,eos,13 + 9 + (11 - 9),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,406
+tot-rank:595,heldout82,927001,R3,False,eos,12 \times \left( (11 - 8) - \left( \frac{12}{12} \right) \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,407
+tot-rank:132,heldout82,927002,R3,True,eos,(13 + 11) \div (9 \div 9),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,408
+tot-rank:692,heldout82,927002,R3,True,eos,2 \times (11 + \frac{8}{8}),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,409
+tot-rank:1290,heldout82,927002,R2,True,eos,(11 + 7) \times \left( \frac{12}{9} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,410
+tot-rank:692,heldout82,927001,R3,True,eos,(11 + (8 \div 8)) \times 2,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,411
+tot-rank:692,heldout82,927001,R2,False,eos,(8 \times 11) \div (8 \div 2) + 2,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,412
+tot-rank:692,heldout82,927002,R2,True,eos,(11 + (8 \div 8)) \times 2,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,413
+tot-rank:1290,heldout82,927002,R3,True,eos,((11 - 7) \times 9) - 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,414
+tot-rank:1290,heldout82,927001,R2,True,eos,(11 + 7) \times \left(\frac{12}{9}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,415
+tot-rank:1290,heldout82,927001,R3,False,eos,(12 \times (11 - 9)) + (7 - 7),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,416
+tot-rank:1044,heldout82,927001,R2,True,eos,12 \times (5 + 5 - 8),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,417
+tot-rank:1044,heldout82,927002,R3,False,eos,8 \times \left(12 \div \left(5 - \left(5 \div 5\right)\right)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,418
+tot-rank:780,heldout82,927002,R2,False,eos,6 \times ((13 - 8) - (6 \div 6)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,419
+tot-rank:1044,heldout82,927002,R2,False,eos,8 \times \left(12 \div \left(5 - \left(5 \div 5\right)\right)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,420
+tot-rank:780,heldout82,927002,R3,False,eos,6 \times (13 - 8 - (6 \div 6)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,421
+tot-rank:1044,heldout82,927001,R3,False,eos,12 \times \left(8 \div \left(5 - \left(5 \div 5\right)\right)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,422
+tot-rank:780,heldout82,927001,R3,True,eos,(13 - 8) \times 6 - 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,423
+tot-rank:780,heldout82,927001,R2,False,eos,6 \times ((13 - 8) - (6 \div 6)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,424
+tot-rank:1352,heldout82,927002,R3,True,eos,((5 \times 3) - 7) \times 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,425
+tot-rank:1041,heldout82,927002,R3,True,eos,12 + 6 \times (6 - 4),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,426
+tot-rank:1041,heldout82,927002,R2,True,eos,12 + 6 \times (6 - 4),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,427
+tot-rank:1041,heldout82,927001,R2,False,eos,6 \times 4 \times \left( \frac{12 - 6}{6} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,428
+tot-rank:1041,heldout82,927001,R3,False,eos,6 \times 4 + 12 - 6 - 6,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,429
+tot-rank:1352,heldout82,927001,R2,False,eos,(7 + 5) \times \left(3 - \frac{3}{3}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,430
+tot-rank:1352,heldout82,927002,R2,False,eos,(5 + \frac{3}{3}) \times (7 - 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,431
+tot-rank:1352,heldout82,927001,R3,False,length,(7 \times 3) - (5 - 3) = 21 - 2 = 19,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,432
+tot-rank:1347,heldout82,927002,R2,False,eos,11 + 10 + 2 + \frac{2}{2},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,433
+tot-rank:1347,heldout82,927001,R2,False,eos,11 + 10 + 2 + \frac{2}{2},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,434
+tot-rank:1335,heldout82,927001,R3,False,eos,10 + (9 + 6 - (9 \div 9)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,435
+tot-rank:1335,heldout82,927001,R2,False,eos,10 + 9 + 6 - 9 \div 9,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,436
+tot-rank:1347,heldout82,927001,R3,True,eos,((11 \times 2) - 10) \times 2,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,437
+tot-rank:1335,heldout82,927002,R2,False,eos,10 + 9 + 6 - 9 \div 9,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,438
+tot-rank:1347,heldout82,927002,R3,False,eos,(11 - \frac{10}{2}) \times (2 + 2),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,439
+tot-rank:1335,heldout82,927002,R3,,length,,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,440
+tot-rank:1125,heldout82,927001,R3,True,eos,(7 + 1) \times \left(\frac{9}{3}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,441
+tot-rank:832,heldout82,927001,R3,True,eos,3 \times (9 - (4 - 3)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,442
+tot-rank:832,heldout82,927002,R3,True,eos,3 \times (9 - (4 - 3)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,443
+tot-rank:1125,heldout82,927002,R3,False,eos,\frac{(9 + 3) \times (7 - 1)}{3},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,444
+tot-rank:832,heldout82,927001,R2,True,eos,((9 - 4) + 3) \times 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,445
+tot-rank:832,heldout82,927002,R2,True,eos,3 \times (9 - (4 - 3)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,446
+tot-rank:1125,heldout82,927001,R2,True,eos,\frac{(7 + 1) \times 9}{3},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,447
+tot-rank:1125,heldout82,927002,R2,False,eos,(9 + 3) \times (7 - 1) \div 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,448
+tot-rank:937,heldout82,927001,R2,True,eos,(13 - 11) \times 6 + 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,449
+tot-rank:1265,heldout82,927001,R2,False,eos,(10 - \frac{8}{4}) \times (7 - 4),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,450
+tot-rank:937,heldout82,927001,R3,True,eos,((13 - 11) \times 6) + 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,451
+tot-rank:937,heldout82,927002,R2,True,eos,6 \times (13 - 11) + 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,452
+tot-rank:1265,heldout82,927002,R2,False,eos,(10 - \frac{8}{4}) \times (7 - 4),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,453
+tot-rank:937,heldout82,927002,R3,False,eos,11 \times \left( \frac{12}{6} \right) + (13 - 11),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,454
+tot-rank:1265,heldout82,927002,R3,False,eos,8 \times (10 - 7) \times \left(\frac{4}{4}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,455
+tot-rank:1265,heldout82,927001,R3,False,eos,8 \times (10 - 7) \times \left( \frac{4}{4} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,456
+tot-rank:875,heldout82,927001,R2,False,eos,(3 + 3) \times (5 - 3 \div 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,457
+tot-rank:875,heldout82,927002,R2,False,eos,(3 + 3) \times (5 - 3 \div 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,458
+tot-rank:1114,heldout82,927001,R2,True,eos,(12 \times 12) \div (12 - 6),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,459
+tot-rank:875,heldout82,927001,R3,True,eos,(5 \times 3) + (3 \times 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,460
+tot-rank:1114,heldout82,927002,R3,True,eos,12 \times \left( \frac{12}{12 - 6} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,461
+tot-rank:875,heldout82,927002,R3,True,eos,(5 \times 3) + (3 \times 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,462
+tot-rank:1114,heldout82,927002,R2,True,eos,(12 \times 12) \div (12 - 6),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,463
+tot-rank:1114,heldout82,927001,R3,True,eos,(12 \times 12) \div (12 - 6),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,464
+tot-rank:1225,heldout82,927001,R2,True,eos,12 + (9 - 3) \times 2,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,465
+tot-rank:1075,heldout82,927002,R2,False,eos,(10 - 7) \times (9 - 7 \div 7),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,466
+tot-rank:1075,heldout82,927001,R2,False,eos,(10 - 7) \times (9 - 7 \div 7),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,467
+tot-rank:1225,heldout82,927001,R3,True,eos,((9 - 3) \times 2) + 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,468
+tot-rank:1225,heldout82,927002,R3,False,eos,(12 - 3) \times 2 \div (9 \div 12),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,469
+tot-rank:1075,heldout82,927002,R3,False,eos,(10 - 7) \times \left(9 - \left(\frac{7}{7}\right)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,470
+tot-rank:1225,heldout82,927002,R2,True,eos,(9 - 3) \times 2 + 12,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,471
+tot-rank:1075,heldout82,927001,R3,,length,,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,472
+tot-rank:386,heldout82,927001,R2,False,eos,(8 \times (8 + 1)) \div (11 - 8),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,473
+tot-rank:386,heldout82,927001,R3,True,eos,8 \times (11 - 8) \times 1,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,474
+tot-rank:386,heldout82,927002,R3,False,eos,\frac{8 \times (8 + 1)}{11 - 8},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,475
+tot-rank:1295,heldout82,927002,R2,True,eos,12 \times \left( \frac{9 + 7}{8} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,476
+tot-rank:386,heldout82,927002,R2,True,eos,8 \times (11 - (8 \div 1)),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,477
+tot-rank:1295,heldout82,927002,R3,True,eos,8 \div \left(7 \div (12 + 9)\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,478
+tot-rank:1295,heldout82,927001,R2,,length,,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,479
+tot-rank:1295,heldout82,927001,R3,False,length,(12 \times (9 - 7)) + (8 - 8),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,480
+tot-rank:1172,heldout82,927002,R2,True,eos,(13 + 3 - 8) \times 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,481
+tot-rank:409,heldout82,927002,R2,True,eos,8 \times ((8 - 6) + 1),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,482
+tot-rank:1172,heldout82,927001,R3,True,eos,3 \times (13 - 8 + 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,483
+tot-rank:409,heldout82,927002,R3,False,eos,8 \times \left( \frac{6}{8 - 6} \right) \times 1,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,484
+tot-rank:409,heldout82,927001,R2,True,eos,8 \div \left( \frac{8}{6} - 1 \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,485
+tot-rank:409,heldout82,927001,R3,,eos,,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,486
+tot-rank:1172,heldout82,927002,R3,False,eos,(3 \times 8) \times \left( \frac{13 - 3}{13 - 3} \right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,487
+tot-rank:1172,heldout82,927001,R2,False,eos,(8 \times 3) \times \frac{13 - 3}{13 - 3},outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,488
+tot-rank:1339,heldout82,927001,R2,False,eos,3 \times 3 \times \left(7 - \frac{13}{3}\right),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,489
+tot-rank:1339,heldout82,927002,R2,True,eos,(7 \times 3 - 13) \times 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,490
+tot-rank:1339,heldout82,927001,R3,False,length,(3 \times 7) + (13 - 3),outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,491
+tot-rank:1339,heldout82,927002,R3,False,length,(13 - 7) \times (3 + 3) - 3,outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl,492

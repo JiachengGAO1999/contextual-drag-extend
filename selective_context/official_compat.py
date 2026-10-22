@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
-from typing import Any, Dict, Iterable, List
+from typing import Any, Dict, Iterable, List, Union
 
 from .hf_backend import GenerationResult
 from .schema import SelectiveContextRequest
@@ -12,7 +12,7 @@ def make_official_record(
     *,
     problem_id: str,
     problem: str,
-    answer: List[int],
+    answer: Union[List[int], str],
     prompt: str,
     request: SelectiveContextRequest,
     generations: Iterable[GenerationResult],

@@ -1,4 +1,5 @@
 # ICLR 2027 研究方向建议：从 Contextual Drag 到 Trace-Level Causal Anatomy
+> 历史方向讨论，随后局部结构干预未形成稳定主线。当前论文研究完整预填充后持续直接访问错误草稿的作用；现行结果和结论见 `docs/quick_validation/iclr2027_full_results_and_paper_map_20260925.md`。
 
 ## 1. 总体判断
 

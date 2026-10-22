@@ -1,0 +1,180 @@
+{
+  "version": 1,
+  "state": "complete_8b_source_reused_after_protocol_amendment",
+  "protocol": "adapted_single_qwen8b_fixed8_v1",
+  "source_revision": "8050e67d0e3a0fddc424d7fa5801538722a4c4cc",
+  "source_sha256": "b9f12b3e36d987a3c714c4cef17d89a137d7c59da26532fcfb93b4821d8111b5",
+  "order_seed": 20261014,
+  "seed": 20261014,
+  "candidate_count": 16,
+  "samples_per_problem": 8,
+  "total_generations": 128,
+  "max_pilot_gpu_hours": 8,
+  "sampling_parameters": {
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "context_length": 32768
+  },
+  "anchor_models": [
+    "Qwen3_8B_Thinking"
+  ],
+  "target_model": "Qwen3_8B_Thinking",
+  "exclusion": "all prior baseline questions and local/server development materials by input multiset",
+  "eligibility": ">=2 completed parseable mathematically correct and >=2 completed parseable substantive errors; no intervention results used",
+  "quota": "Exactly8 Qwen3-8B responses per question; invalid completed responses never resampled",
+  "expansion": "Finite single-anchor campaign; audit each32-question wave",
+  "failure_conditions": [
+    "foreign GPU4 process",
+    "disk free <10 GiB",
+    "cumulative pilot GPU hours >=8",
+    "source/config mismatch",
+    "generation failure"
+  ],
+  "candidate_rows": [
+    {
+      "id": "1036",
+      "numbers": [
+        3,
+        5,
+        10,
+        13
+      ]
+    },
+    {
+      "id": "374",
+      "numbers": [
+        6,
+        9,
+        12,
+        12
+      ]
+    },
+    {
+      "id": "584",
+      "numbers": [
+        6,
+        6,
+        7,
+        10
+      ]
+    },
+    {
+      "id": "1191",
+      "numbers": [
+        2,
+        7,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "1053",
+      "numbers": [
+        7,
+        10,
+        10,
+        12
+      ]
+    },
+    {
+      "id": "849",
+      "numbers": [
+        4,
+        7,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "309",
+      "numbers": [
+        4,
+        4,
+        12,
+        13
+      ]
+    },
+    {
+      "id": "16",
+      "numbers": [
+        2,
+        2,
+        2,
+        12
+      ]
+    },
+    {
+      "id": "295",
+      "numbers": [
+        5,
+        6,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "442",
+      "numbers": [
+        2,
+        6,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "1079",
+      "numbers": [
+        1,
+        4,
+        7,
+        9
+      ]
+    },
+    {
+      "id": "1039",
+      "numbers": [
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "1298",
+      "numbers": [
+        1,
+        2,
+        9,
+        11
+      ]
+    },
+    {
+      "id": "839",
+      "numbers": [
+        4,
+        5,
+        7,
+        12
+      ]
+    },
+    {
+      "id": "349",
+      "numbers": [
+        11,
+        12,
+        12,
+        13
+      ]
+    },
+    {
+      "id": "1164",
+      "numbers": [
+        4,
+        5,
+        7,
+        13
+      ]
+    }
+  ]
+}

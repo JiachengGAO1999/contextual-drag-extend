@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "protocol": "adapted_single_qwen8b_fixed8_v1",
+  "authorization": "2026-10-15 user requested Qwen3-8B as the sole temporary anchor",
+  "anchors": [
+    "Qwen3_8B_Thinking"
+  ],
+  "target": 100,
+  "samples_per_anchor": 8,
+  "wave_questions": 32,
+  "maximum_wave_gpu_hours": 8,
+  "maximum_campaign_gpu_hours": 240,
+  "prior_campaign_job_gpu_hours": 8.004814306232664,
+  "reused_pilot_8b_gpu_hours": 0.667504633428115,
+  "reused_pilot_root": "outputs/game24-100q-20261014/acquisition/a800/pilot/Qwen3_8B_Thinking",
+  "historical_index": "docs/game24_100q/game24_trajectory_pool.jsonl",
+  "frozen_history": "docs/game24_100q/historical_exclusion_frozen.json",
+  "source_bindings": [
+    {
+      "path": "docs/game24_100q/game24_trajectory_pool.jsonl",
+      "sha256": "59444f66e232e68511d79c1b4d2ec563867b12172c0d889b9e359d2b62ae95ed"
+    },
+    {
+      "path": "docs/game24_100q/historical_exclusion_frozen.json",
+      "sha256": "198cb7d1347314158c65fcc138c7a463e5e32441d5a6c7c27b2bdc57a76b451e"
+    },
+    {
+      "path": "outputs/game24-100q-20261014/acquisition/a800/pilot/Qwen3_8B_Thinking/draft_candidates.jsonl",
+      "sha256": "67dca834129092065b3161c08c495d781e63b4004e94fadf3b1daa589cc14b21"
+    },
+    {
+      "path": "outputs/game24-100q-20261014/acquisition/a800/pilot/Qwen3_8B_Thinking/config.json",
+      "sha256": "e6333a7a97edb51ea06868aea8d90ebeb283b5ee67f39c61a9c761781898bff3"
+    },
+    {
+      "path": "outputs/game24-100q-20261014/acquisition/a800/pilot/Qwen3_8B_Thinking/summary.json",
+      "sha256": "583f9cebf717a76118d7dd6325a630e825f5e41f477097504a4cdc4640d1a970"
+    }
+  ],
+  "historical_dual_candidates_excluded": [
+    "643",
+    "1119"
+  ],
+  "split_seed": 20261014,
+  "seed": 20261014,
+  "minimum_disk_free_gib": 2,
+  "collector_script": "scripts/game24_100q_collect_single_anchor_v1.py",
+  "automatic_interventions": false,
+  "scope": "100 independent strict 8B-only questions; freeze20development/restheldout; no mechanism runs"
+}

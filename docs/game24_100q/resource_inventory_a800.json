@@ -1,0 +1,117 @@
+{
+  "hostname": "10-7-130-17",
+  "utc": "2026-10-14T09:42:18.779020+00:00",
+  "gpus": [
+    {
+      "index": "0",
+      "uuid": "GPU-31b85688-3791-c68c-9508-f25c99fc3ca1",
+      "name": "NVIDIA A800-SXM4-80GB",
+      "memory.total": "81920",
+      "memory.used": "1",
+      "memory.free": "81154",
+      "utilization.gpu": "0",
+      "processes": []
+    },
+    {
+      "index": "1",
+      "uuid": "GPU-cf5f2bc0-80d1-ec62-290f-2a3e5fcd7e67",
+      "name": "NVIDIA A800-SXM4-80GB",
+      "memory.total": "81920",
+      "memory.used": "18049",
+      "memory.free": "63105",
+      "utilization.gpu": "0",
+      "processes": [
+        {
+          "pid": 1666531,
+          "owner": "exited_or_unavailable",
+          "name": "[Not Found]",
+          "memory_mib": "18040"
+        }
+      ]
+    },
+    {
+      "index": "2",
+      "uuid": "GPU-79493246-2adf-0dd4-c5c7-c4ae0f865c51",
+      "name": "NVIDIA A800-SXM4-80GB",
+      "memory.total": "81920",
+      "memory.used": "4",
+      "memory.free": "81151",
+      "utilization.gpu": "0",
+      "processes": []
+    },
+    {
+      "index": "3",
+      "uuid": "GPU-21f97862-2c41-ffea-fab9-9964fd3ddd6c",
+      "name": "NVIDIA A800-SXM4-80GB",
+      "memory.total": "81920",
+      "memory.used": "67635",
+      "memory.free": "13519",
+      "utilization.gpu": "100",
+      "processes": [
+        {
+          "pid": 76839,
+          "owner": "linhy",
+          "name": "/data/users/maxb/SHINE4AGENT/experiments/latentskill_table1_seen/runs/main/env/bin/python",
+          "memory_mib": "67626"
+        }
+      ]
+    },
+    {
+      "index": "4",
+      "uuid": "GPU-9d164491-5abf-96eb-3d3f-e08e77deb8f7",
+      "name": "NVIDIA A800-SXM4-80GB",
+      "memory.total": "81920",
+      "memory.used": "4",
+      "memory.free": "81151",
+      "utilization.gpu": "0",
+      "processes": []
+    },
+    {
+      "index": "5",
+      "uuid": "GPU-ec800df1-001f-7bb0-0ecb-5bd112e935e0",
+      "name": "NVIDIA A800-SXM4-80GB",
+      "memory.total": "81920",
+      "memory.used": "74745",
+      "memory.free": "6409",
+      "utilization.gpu": "100",
+      "processes": [
+        {
+          "pid": 208101,
+          "owner": "maxb",
+          "name": "VLLM::EngineCore",
+          "memory_mib": "74732"
+        }
+      ]
+    },
+    {
+      "index": "6",
+      "uuid": "GPU-a8dca292-a145-061a-9df5-14067e41508c",
+      "name": "NVIDIA A800-SXM4-80GB",
+      "memory.total": "81920",
+      "memory.used": "1",
+      "memory.free": "81154",
+      "utilization.gpu": "0",
+      "processes": []
+    },
+    {
+      "index": "7",
+      "uuid": "GPU-0ed8cd69-7be9-557e-0c87-271278ceead0",
+      "name": "NVIDIA A800-SXM4-80GB",
+      "memory.total": "81920",
+      "memory.used": "75257",
+      "memory.free": "5897",
+      "utilization.gpu": "33",
+      "processes": [
+        {
+          "pid": 371177,
+          "owner": "maxb",
+          "name": "VLLM::EngineCore",
+          "memory_mib": "75246"
+        }
+      ]
+    }
+  ],
+  "disk": {
+    "/data": "/dev/vdb1        36T   35T   13G 100% /data"
+  }
+}

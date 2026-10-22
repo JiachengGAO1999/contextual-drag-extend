@@ -24,7 +24,15 @@ def install():
     # Packed prefill and per-request decode share compiled functions across
     # bounded batch sizes (1..8). Torch's default eight variants is too small.
     # Keep a finite limit and fail visibly if unexpected variants exceed it.
-    torch._dynamo.config.recompile_limit = 64
+    torch._dynamo.config.recompile_limit = int(os.environ.get('SC_FLEX_COMPILE_LIMIT', '64'))
+    torch._dynamo.config.accumulated_recompile_limit = max(
+        torch._dynamo.config.accumulated_recompile_limit,
+        2 * torch._dynamo.config.recompile_limit)
+    if os.environ.get('SC_FLEX_NO_CUDAGRAPHS') == '1':
+        # vLLM enforce_eager does not disable upstream reduce-overhead mask capture.
+        flex_module.create_block_mask_compiled = torch.compile(
+            flex_module.create_block_mask, fullgraph=True, dynamic=False,
+            options={'triton.cudagraphs': False})
     original_prepare = GPUModelRunner._prepare_inputs
     original_mask = FlexAttentionMetadata.get_mask_mod
     # Qwen3 head_dim=128 + custom index tensors exceeds A100 shared memory
@@ -103,15 +111,8 @@ def install():
                 runner._selective_table_cache=(request_ids,table)
             self._selective_table=runner._selective_table_cache[1]
         table=self._selective_table
-        width=table.shape[1]
-        docs=self.doc_ids
-
-        def selective_mask(b,h,q,k):
-            valid,lq,lk=self._convert_physical_to_logical(docs,q,k)
-            onset=table[docs[q],torch.clamp(lk,min=0,max=width-1)]
-            extra=(lk>=width)|(lq<onset)
-            return base(b,h,q,k)&valid&extra
-        return selective_mask
+        from .safe_flex_mask import make_safe_selective_mask
+        return make_safe_selective_mask(self, base, table, torch)
 
     GPUModelRunner._prepare_inputs=prepare
     FlexAttentionMetadata.get_mask_mod=get_mask

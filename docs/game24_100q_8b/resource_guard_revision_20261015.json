@@ -1,0 +1,21 @@
+{
+  "reason": "10GiB was a conservative engineering default, not an8B model requirement; measured pilot raw6.16MB and projected additional raw302MB",
+  "changes": [
+    {
+      "path": "execution_config_a800.json",
+      "before_sha256": "dc8e3cf3b5c0fdd6847090fda0f9661f354ea2af5ba111683f15cb178065967d",
+      "before_gib": 10,
+      "after_gib": 2
+    },
+    {
+      "path": "acquisition_campaign.json",
+      "before_sha256": "52aa3e5a5a6da4612c9971911090ad4ca7cb9ce5dc58b9a224067ba20294df45",
+      "before_gib": 10,
+      "after_gib": 2
+    }
+  ],
+  "pilot_raw_bytes": 6164152,
+  "expected_remaining_raw_bytes": 302043448,
+  "runtime_guard": "Check every15seconds and fsync every completed response; no model download or deletion",
+  "sampling_and_eligibility_changed": false
+}

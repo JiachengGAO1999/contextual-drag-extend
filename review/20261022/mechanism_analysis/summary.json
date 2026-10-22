@@ -1,0 +1,96 @@
+{
+  "created_utc": "2026-10-22T13:07:31.942564+00:00",
+  "status": "CPU_exploratory_description_only",
+  "new_model_requests": 0,
+  "source_draft_morphology": {
+    "value24_inventory_invalid": 99,
+    "value_invalid_inventory_valid": 3
+  },
+  "response_shape_counts": {
+    "R0": {
+      "official_correct": 131,
+      "value24_inventory_invalid": 63,
+      "both_invalid": 2,
+      "length_limited": 7,
+      "unresolved_expression": 1
+    },
+    "R2": {
+      "value24_inventory_invalid": 129,
+      "official_correct": 68,
+      "unresolved_expression": 3,
+      "length_limited": 2,
+      "value_invalid_inventory_valid": 1,
+      "both_invalid": 1
+    },
+    "R3": {
+      "official_correct": 119,
+      "value24_inventory_invalid": 71,
+      "length_limited": 11,
+      "unresolved_expression": 2,
+      "both_invalid": 1
+    }
+  },
+  "paired_patterns": {
+    "development20": {
+      "questions": 20,
+      "paired_seed_units": 40,
+      "triple_counts": {
+        "000": 6,
+        "001": 6,
+        "011": 1,
+        "100": 6,
+        "101": 9,
+        "110": 4,
+        "111": 8
+      }
+    },
+    "heldout82": {
+      "questions": 82,
+      "paired_seed_units": 164,
+      "triple_counts": {
+        "000": 22,
+        "001": 16,
+        "010": 10,
+        "011": 12,
+        "100": 25,
+        "101": 46,
+        "110": 12,
+        "111": 21
+      }
+    },
+    "pooled102": {
+      "questions": 102,
+      "paired_seed_units": 204,
+      "triple_counts": {
+        "000": 28,
+        "001": 22,
+        "010": 10,
+        "011": 13,
+        "100": 31,
+        "101": 55,
+        "110": 16,
+        "111": 29
+      }
+    }
+  },
+  "all_eligible_failed_trajectory_counts": {
+    "value24_inventory_invalid": 291,
+    "value_invalid_inventory_valid": 5,
+    "both_invalid": 3
+  },
+  "questions_per_source_error_type": {
+    "value24_inventory_invalid": 102,
+    "value_invalid_inventory_valid": 4,
+    "both_invalid": 3
+  },
+  "questions_with_both_main_error_types": 4,
+  "interpretation": "Final-expression shape and observed seed outcomes do not identify internal mechanisms, full trajectory content, or stable question phenotypes. No original correctness changed.",
+  "input_hashes": {
+    "outputs/game24-replication-qwen3-8b-development-20261017/results.jsonl": "c593b2d5d2cb2c3ade438a90ba4c8b86e4886e5966091498b01213763bd82bbf",
+    "outputs/game24-replication-qwen3-8b-heldout82-20261019/results.jsonl": "87d35a3c3fcdb99efdff270b9e5c576ac0f605871b9558362351498147f15766",
+    "outputs/game24-replication-qwen3-8b-development-20261017/selected_source_records.jsonl": "ea9ed58e1431da9e6f167547c5744c1792eff1a0f5e6e782b08071041b3b4bf8",
+    "outputs/game24-replication-qwen3-8b-heldout82-20261019/selected_source_records.jsonl": "93025cc9670caaa2cb586196009142df3b299591b8ce478432cc99e0ad17f640",
+    "docs/game24_100q_8b/game24_eligible_100.jsonl": "8eaf1e1491dc8fe4cb16e35d7b8cfd76f1df0cbdd6be511d476db3f4a027af6e",
+    "docs/game24_100q_8b/game24_trajectory_pool.jsonl": "2fceb1cfb9195d74ce2f50fb64639f21ece5f3e718756c4b8bc1858728e21863"
+  }
+}

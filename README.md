@@ -1,7 +1,7 @@
 # Contextual Drag: How Errors in the Context Affect LLM Reasoning
 
 > **Research extension workspace — JiachengGAO1999/contextual-drag-extend.**
-> Latest: [Game24 protocol parity audit and pre-generation decisions](docs/quick_validation/protocol_parity_report_20260917.md). New generation is paused; candidate plans are preparation only.
+> **Latest (2026-10-22): [research review package](review/20261022/README.md).** The new 102-question Qwen3-8B replication is complete (612 responses); the frozen 82-question confirmation supports the behavioral effect. Mechanism claims remain unresolved. The review package includes raw-evidence archives and a CPU verifier.
 > This repository extends the original [Princeton Contextual-Drag code](https://github.com/princeton-pli/Contextual-Drag) with selective logical attention blocking experiments. The original project documentation follows below.
 >
 > Start with the [2026-09-17 progress report](docs/quick_validation/progress_report_20260917.md), [research status](docs/RESEARCH_STATUS.md), and [master experiment log](MASTER_EXPERIMENT_LOG.md). Implementation: `selective_context/`; tests: `tests/selective_context/`; annotations and reports: `docs/quick_validation/`. Model weights, local environments and bulk `outputs/` are excluded. The vLLM backend is undergoing completed-output acceptance; see its [validation record](docs/quick_validation/vllm_backend_20260917.md).

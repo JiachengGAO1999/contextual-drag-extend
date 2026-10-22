@@ -12,6 +12,29 @@ from typing import Any, Callable, Iterable
 Identity = tuple[str, str, int]
 
 
+def sample_seed(base_seed: int, sample_index: int) -> int:
+    """Match vLLM n-way child seeds while keeping the mapping stable across resume gaps."""
+    if sample_index < 0:
+        raise ValueError("sample_index must be non-negative")
+    return int(base_seed) + int(sample_index)
+
+
+def contiguous_sample_runs(indices: Iterable[int]) -> list[list[int]]:
+    """Partition sorted missing indices so vLLM child seeds stay aligned to sample IDs."""
+    ordered = [int(index) for index in indices]
+    if any(index < 0 for index in ordered):
+        raise ValueError("sample indices must be non-negative")
+    if ordered != sorted(set(ordered)):
+        raise ValueError("sample indices must be unique and sorted")
+    runs: list[list[int]] = []
+    for index in ordered:
+        if not runs or index != runs[-1][-1] + 1:
+            runs.append([index])
+        else:
+            runs[-1].append(index)
+    return runs
+
+
 def sample_identity(record: dict[str, Any]) -> Identity:
     generation = record["init_response_generations"][0]
     model = record["init_response_generations_metadata"]["model_config_alias"]

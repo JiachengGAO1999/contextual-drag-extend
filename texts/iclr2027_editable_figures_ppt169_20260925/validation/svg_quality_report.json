@@ -1,0 +1,206 @@
+{
+  "schema": "ppt-master.svg-quality-report.v1",
+  "stage": "final",
+  "target": "D:\\Learning\\PhD\\Research\\contextual-drag-extend\\texts\\iclr2027_editable_figures_ppt169_20260925",
+  "source_fingerprint": {
+    "algorithm": "sha256",
+    "digest": "c9365bd2a4b92485dd8c0ecfcbd9b7cec0657d2fc685760d6bc3fa1b55dda161",
+    "file_count": 2,
+    "files": [
+      {
+        "file": "01_access_mechanism.svg",
+        "sha256": "706a937f84278b054f7a2281cf1c66f6721bf7f9782d1809f4a9360ba1be6156"
+      },
+      {
+        "file": "02_access_effects.svg",
+        "sha256": "9e9a4aa484d2a37d2059268dd343136046e7f0492afb0439c80ac7bf00193bdc"
+      }
+    ]
+  },
+  "summary": {
+    "total": 2,
+    "passed": 2,
+    "warnings": 0,
+    "errors": 0
+  },
+  "issue_types": {},
+  "categories": {
+    "blocking": {
+      "count": 0,
+      "issues": []
+    },
+    "introduced": {
+      "count": 0,
+      "issues": []
+    },
+    "inherited": {
+      "count": 0,
+      "issues": []
+    },
+    "source-import": {
+      "count": 0,
+      "summary": {
+        "warning_count": 0,
+        "by_code": {}
+      }
+    }
+  },
+  "drift": {
+    "colors": {},
+    "fonts": {},
+    "sizes": {}
+  },
+  "carrier_receipt": {
+    "scope": "informational-not-a-quota",
+    "pages": 2,
+    "totals": {
+      "text_elements": 57,
+      "image_placements": 0,
+      "icons": 0,
+      "svg_geometry_elements": 126,
+      "preset_shapes": 0,
+      "page_frame_elements": 2,
+      "marker_uses": 39
+    },
+    "pages_with": {
+      "images": 0,
+      "icons": 0,
+      "presets": 0,
+      "charts": 0,
+      "tables": 0,
+      "formulas": 0
+    },
+    "geometry_elements": {
+      "circle": 11,
+      "ellipse": 0,
+      "line": 47,
+      "path": 32,
+      "polygon": 0,
+      "polyline": 0,
+      "rect": 36
+    },
+    "preset_names": {},
+    "native_objects": {
+      "chart": 0,
+      "formula_block": 0,
+      "formula_inline": 0,
+      "other": 0,
+      "table": 0
+    },
+    "image_page_max_frame_share_range": []
+  },
+  "project_issues": {
+    "template": [],
+    "animation": [],
+    "illustration": [],
+    "communication_trace": [],
+    "pptx_structure": []
+  },
+  "files": [
+    {
+      "file": "01_access_mechanism.svg",
+      "path": "D:\\Learning\\PhD\\Research\\contextual-drag-extend\\texts\\iclr2027_editable_figures_ppt169_20260925\\svg_output\\01_access_mechanism.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1672 987",
+        "carrier_receipt": {
+          "text_elements": 31,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "geometry": {
+            "svg_elements": {
+              "rect": 34,
+              "circle": 6,
+              "ellipse": 0,
+              "line": 21,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 32
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 39
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial",
+          "Times New Roman"
+        ],
+        "text_elements": 37,
+        "tspan_elements": 15
+      },
+      "passed": true,
+      "source_sha256": "706a937f84278b054f7a2281cf1c66f6721bf7f9782d1809f4a9360ba1be6156"
+    },
+    {
+      "file": "02_access_effects.svg",
+      "path": "D:\\Learning\\PhD\\Research\\contextual-drag-extend\\texts\\iclr2027_editable_figures_ppt169_20260925\\svg_output\\02_access_effects.svg",
+      "exists": true,
+      "errors": [],
+      "warnings": [],
+      "info": {
+        "viewbox": "0 0 1672 987",
+        "carrier_receipt": {
+          "text_elements": 26,
+          "images": {
+            "placements": 0,
+            "files": [],
+            "max_frame_share": 0.0
+          },
+          "icons": 0,
+          "geometry": {
+            "svg_elements": {
+              "rect": 2,
+              "circle": 5,
+              "ellipse": 0,
+              "line": 26,
+              "polyline": 0,
+              "polygon": 0,
+              "path": 0
+            },
+            "preset_shapes": 0,
+            "preset_names": {},
+            "page_frame_elements": 1,
+            "marker_uses": {
+              "start": 0,
+              "mid": 0,
+              "end": 0
+            }
+          },
+          "native_objects": {
+            "chart": 0,
+            "table": 0,
+            "formula_block": 0,
+            "formula_inline": 0,
+            "other": 0
+          }
+        },
+        "fonts": [
+          "Arial"
+        ],
+        "text_elements": 26,
+        "tspan_elements": 0
+      },
+      "passed": true,
+      "source_sha256": "9e9a4aa484d2a37d2059268dd343136046e7f0492afb0439c80ac7bf00193bdc"
+    }
+  ]
+}

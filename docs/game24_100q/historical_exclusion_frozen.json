@@ -1,0 +1,3277 @@
+{
+  "state": "frozen_before_a800_acquisition",
+  "questions": [
+    {
+      "tot_rank": "19",
+      "numbers": [
+        3,
+        3,
+        3,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "41",
+      "numbers": [
+        1,
+        1,
+        11,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-dual-anchor-validation-20260918-prepared/pairs.jsonl",
+        "outputs/game24-dual-anchor-validation-20260918/results.jsonl",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "runs/game24_gemma4_e4b_r2_r3_20260923_raw/results.jsonl",
+        "runs/game24_qwen3_32b_r2_r3_15q_20260923_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "44",
+      "numbers": [
+        10,
+        10,
+        12,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-dual-anchor-validation-20260918-prepared/pairs.jsonl",
+        "outputs/game24-dual-anchor-validation-20260918/results.jsonl",
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_gemma4_e4b_r2_r3_20260923_raw/results.jsonl",
+        "runs/game24_qwen3_32b_r2_r3_15q_20260923_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "49",
+      "numbers": [
+        3,
+        8,
+        13,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "50",
+      "numbers": [
+        9,
+        9,
+        12,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "52",
+      "numbers": [
+        3,
+        3,
+        12,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "71",
+      "numbers": [
+        7,
+        7,
+        11,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-morphology-surgery-20260915/seed-12027/results.jsonl",
+        "outputs/game24-morphology-surgery-20260915/seed-2027/results.jsonl",
+        "outputs/game24-morphology-surgery-20260915/seed-22027/results.jsonl",
+        "outputs/game24-morphology-surgery-20260915/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-32027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-12027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-2027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-22027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-32027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-12027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-2027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-22027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-32027/results.jsonl",
+        "outputs/ten-question-review-20260912/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "77",
+      "numbers": [
+        1,
+        2,
+        5,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "87",
+      "numbers": [
+        1,
+        4,
+        7,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "97",
+      "numbers": [
+        1,
+        1,
+        4,
+        7
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "98",
+      "numbers": [
+        1,
+        1,
+        10,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "108",
+      "numbers": [
+        4,
+        5,
+        5,
+        6
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "110",
+      "numbers": [
+        1,
+        2,
+        2,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "116",
+      "numbers": [
+        3,
+        6,
+        11,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "119",
+      "numbers": [
+        1,
+        2,
+        2,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "121",
+      "numbers": [
+        6,
+        6,
+        12,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "122",
+      "numbers": [
+        8,
+        9,
+        12,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "123",
+      "numbers": [
+        1,
+        5,
+        8,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-42027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-52027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-62027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-72027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-42027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-52027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-62027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-72027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-12027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-2027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-22027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-32027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-12027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-2027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-22027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-32027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-12027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-2027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-22027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-32027/results.jsonl",
+        "outputs/ten-question-review-20260912/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "126",
+      "numbers": [
+        1,
+        5,
+        6,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "139",
+      "numbers": [
+        2,
+        4,
+        4,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "143",
+      "numbers": [
+        10,
+        11,
+        12,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "144",
+      "numbers": [
+        2,
+        4,
+        11,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_batch03_validation_20260925_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "147",
+      "numbers": [
+        1,
+        4,
+        8,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "155",
+      "numbers": [
+        1,
+        12,
+        13,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "159",
+      "numbers": [
+        4,
+        5,
+        12,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/game24-qwen3-8b-thinking-r0-r4-20260906/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "164",
+      "numbers": [
+        3,
+        6,
+        6,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "167",
+      "numbers": [
+        2,
+        8,
+        10,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "170",
+      "numbers": [
+        1,
+        2,
+        6,
+        6
+      ],
+      "evidence_paths": [
+        "outputs/game24-qwen3-8b-thinking-r0-r4-20260906/results.jsonl",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "176",
+      "numbers": [
+        1,
+        2,
+        6,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "191",
+      "numbers": [
+        3,
+        8,
+        11,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "195",
+      "numbers": [
+        2,
+        8,
+        13,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/feedback_decoding/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_batch03_validation_20260925_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "198",
+      "numbers": [
+        4,
+        7,
+        7,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "200",
+      "numbers": [
+        2,
+        2,
+        11,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/feedback_decoding/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "208",
+      "numbers": [
+        2,
+        3,
+        11,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "210",
+      "numbers": [
+        1,
+        2,
+        3,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "215",
+      "numbers": [
+        10,
+        10,
+        11,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/feedback_decoding/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_batch03_validation_20260925_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "221",
+      "numbers": [
+        1,
+        4,
+        6,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "230",
+      "numbers": [
+        3,
+        11,
+        11,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json",
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_batch02_validation_20260921_raw/results.jsonl",
+        "runs/game24_correct_draft_specificity_20260922_raw/results.jsonl",
+        "runs/game24_gemma4_e4b_r2_r3_20260923_raw/results.jsonl",
+        "runs/game24_qwen3_32b_r2_r3_15q_20260923_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "235",
+      "numbers": [
+        1,
+        5,
+        10,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "239",
+      "numbers": [
+        2,
+        7,
+        8,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "241",
+      "numbers": [
+        7,
+        9,
+        11,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "248",
+      "numbers": [
+        4,
+        8,
+        9,
+        9
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "251",
+      "numbers": [
+        2,
+        12,
+        12,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "253",
+      "numbers": [
+        2,
+        8,
+        11,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "254",
+      "numbers": [
+        4,
+        5,
+        13,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "256",
+      "numbers": [
+        2,
+        8,
+        10,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "264",
+      "numbers": [
+        3,
+        6,
+        10,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "266",
+      "numbers": [
+        1,
+        6,
+        6,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "270",
+      "numbers": [
+        2,
+        6,
+        6,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "274",
+      "numbers": [
+        6,
+        6,
+        11,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "283",
+      "numbers": [
+        4,
+        5,
+        6,
+        6
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "284",
+      "numbers": [
+        1,
+        3,
+        3,
+        5
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "285",
+      "numbers": [
+        1,
+        4,
+        6,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "289",
+      "numbers": [
+        12,
+        13,
+        13,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "297",
+      "numbers": [
+        1,
+        6,
+        8,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "302",
+      "numbers": [
+        7,
+        8,
+        11,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "311",
+      "numbers": [
+        2,
+        3,
+        4,
+        6
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "322",
+      "numbers": [
+        1,
+        12,
+        12,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "330",
+      "numbers": [
+        5,
+        6,
+        7,
+        7
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "331",
+      "numbers": [
+        5,
+        7,
+        10,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "339",
+      "numbers": [
+        1,
+        6,
+        6,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json",
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/feedback_decoding/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_batch02_validation_20260921_raw/results.jsonl",
+        "runs/game24_correct_draft_specificity_20260922_raw/results.jsonl",
+        "runs/game24_gemma4_e4b_r2_r3_20260923_raw/results.jsonl",
+        "runs/game24_qwen3_32b_r2_r3_15q_20260923_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "341",
+      "numbers": [
+        6,
+        8,
+        10,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "346",
+      "numbers": [
+        4,
+        5,
+        7,
+        7
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "350",
+      "numbers": [
+        5,
+        7,
+        11,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "353",
+      "numbers": [
+        4,
+        7,
+        13,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "363",
+      "numbers": [
+        9,
+        11,
+        11,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "366",
+      "numbers": [
+        2,
+        6,
+        6,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "373",
+      "numbers": [
+        2,
+        5,
+        5,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "380",
+      "numbers": [
+        3,
+        3,
+        3,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "381",
+      "numbers": [
+        6,
+        8,
+        11,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_batch03_validation_20260925_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "390",
+      "numbers": [
+        2,
+        5,
+        12,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "395",
+      "numbers": [
+        1,
+        2,
+        7,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_batch03_validation_20260925_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "400",
+      "numbers": [
+        1,
+        1,
+        8,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "412",
+      "numbers": [
+        6,
+        8,
+        8,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "413",
+      "numbers": [
+        5,
+        6,
+        9,
+        9
+      ],
+      "evidence_paths": [
+        "outputs/game24-dual-anchor-validation-20260918-prepared/pairs.jsonl",
+        "outputs/game24-dual-anchor-validation-20260918/results.jsonl",
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/feedback_decoding/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_gemma4_e4b_r2_r3_20260923_raw/results.jsonl",
+        "runs/game24_qwen3_32b_r2_r3_15q_20260923_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "414",
+      "numbers": [
+        1,
+        3,
+        7,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "419",
+      "numbers": [
+        1,
+        3,
+        5,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "428",
+      "numbers": [
+        2,
+        6,
+        7,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "434",
+      "numbers": [
+        5,
+        5,
+        11,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_batch03_validation_20260925_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "440",
+      "numbers": [
+        2,
+        2,
+        7,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "454",
+      "numbers": [
+        2,
+        7,
+        7,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "457",
+      "numbers": [
+        4,
+        5,
+        11,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "467",
+      "numbers": [
+        3,
+        5,
+        13,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "476",
+      "numbers": [
+        5,
+        5,
+        7,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "479",
+      "numbers": [
+        3,
+        4,
+        8,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "486",
+      "numbers": [
+        3,
+        3,
+        4,
+        5
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "489",
+      "numbers": [
+        2,
+        3,
+        3,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "495",
+      "numbers": [
+        2,
+        5,
+        6,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "500",
+      "numbers": [
+        5,
+        6,
+        8,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "502",
+      "numbers": [
+        3,
+        5,
+        6,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "507",
+      "numbers": [
+        3,
+        5,
+        10,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "509",
+      "numbers": [
+        6,
+        6,
+        6,
+        9
+      ],
+      "evidence_paths": [
+        "outputs/game24-dual-anchor-validation-20260918-prepared/pairs.jsonl",
+        "outputs/game24-dual-anchor-validation-20260918/results.jsonl",
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/feedback_decoding/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_gemma4_e4b_r2_r3_20260923_raw/results.jsonl",
+        "runs/game24_qwen3_32b_r2_r3_15q_20260923_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "510",
+      "numbers": [
+        5,
+        5,
+        10,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "513",
+      "numbers": [
+        3,
+        9,
+        13,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-32027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-12027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-2027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-22027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-32027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-12027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-2027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-22027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-32027/results.jsonl",
+        "outputs/ten-question-review-20260912/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "514",
+      "numbers": [
+        4,
+        4,
+        4,
+        7
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "516",
+      "numbers": [
+        9,
+        10,
+        10,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "529",
+      "numbers": [
+        5,
+        7,
+        13,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "538",
+      "numbers": [
+        4,
+        4,
+        7,
+        9
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "539",
+      "numbers": [
+        2,
+        2,
+        6,
+        6
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "541",
+      "numbers": [
+        6,
+        7,
+        11,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "549",
+      "numbers": [
+        2,
+        4,
+        5,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "577",
+      "numbers": [
+        1,
+        6,
+        9,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/game24-multi-late-20260912/seed-12027/results.jsonl",
+        "outputs/game24-multi-late-20260912/seed-2027/results.jsonl",
+        "outputs/game24-multi-late-20260912/seed-22027/results.jsonl",
+        "outputs/game24-multi-late-20260912/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-42027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-52027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-62027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-72027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-42027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-52027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-62027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-72027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-12027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-2027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-22027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-32027/results.jsonl",
+        "outputs/game24-region-late-20260912/seed-12027/results.jsonl",
+        "outputs/game24-region-late-20260912/seed-2027/results.jsonl",
+        "outputs/game24-region-late-20260912/seed-22027/results.jsonl",
+        "outputs/game24-region-late-20260912/seed-32027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-12027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-2027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-22027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-32027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-12027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-2027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-22027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-32027/results.jsonl",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/ordinary-vllm-qwen32b-benchmark-20260917/results.jsonl",
+        "outputs/ordinary-vllm-qwen8b-benchmark-20260917/results.jsonl",
+        "outputs/ten-question-review-20260912/results.jsonl",
+        "outputs/validated-probe-20261013/manifest.json",
+        "outputs/vllm-complete-decode-kernel-20260917/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "585",
+      "numbers": [
+        6,
+        6,
+        9,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "589",
+      "numbers": [
+        1,
+        2,
+        2,
+        5
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "590",
+      "numbers": [
+        1,
+        2,
+        4,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "594",
+      "numbers": [
+        5,
+        6,
+        6,
+        6
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "597",
+      "numbers": [
+        5,
+        8,
+        8,
+        9
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "603",
+      "numbers": [
+        1,
+        2,
+        6,
+        9
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "623",
+      "numbers": [
+        2,
+        3,
+        5,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "637",
+      "numbers": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "651",
+      "numbers": [
+        1,
+        3,
+        12,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "656",
+      "numbers": [
+        1,
+        4,
+        5,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "657",
+      "numbers": [
+        1,
+        4,
+        9,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "660",
+      "numbers": [
+        4,
+        4,
+        10,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "668",
+      "numbers": [
+        6,
+        8,
+        8,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "674",
+      "numbers": [
+        2,
+        2,
+        6,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "675",
+      "numbers": [
+        1,
+        8,
+        11,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "685",
+      "numbers": [
+        6,
+        6,
+        7,
+        9
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "704",
+      "numbers": [
+        3,
+        3,
+        8,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "710",
+      "numbers": [
+        2,
+        9,
+        10,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "717",
+      "numbers": [
+        1,
+        4,
+        6,
+        7
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json",
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/feedback_decoding/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_batch02_validation_20260921_raw/results.jsonl",
+        "runs/game24_correct_draft_specificity_20260922_raw/results.jsonl",
+        "runs/game24_gemma4_e4b_r2_r3_20260923_raw/results.jsonl",
+        "runs/game24_qwen3_32b_r2_r3_15q_20260923_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "719",
+      "numbers": [
+        5,
+        7,
+        8,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/game24-multi-late-20260912/seed-12027/results.jsonl",
+        "outputs/game24-multi-late-20260912/seed-2027/results.jsonl",
+        "outputs/game24-multi-late-20260912/seed-22027/results.jsonl",
+        "outputs/game24-multi-late-20260912/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-marginal-path-20260914/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-marginal-path-20260914/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-marginal-path-20260914/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-marginal-path-20260914/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-42027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-52027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-62027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-72027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-42027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-52027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-62027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-72027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-12027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-2027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-22027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-32027/results.jsonl",
+        "outputs/game24-region-late-20260912/seed-12027/results.jsonl",
+        "outputs/game24-region-late-20260912/seed-2027/results.jsonl",
+        "outputs/game24-region-late-20260912/seed-22027/results.jsonl",
+        "outputs/game24-region-late-20260912/seed-32027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-12027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-2027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-22027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-32027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-12027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-2027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-22027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-32027/results.jsonl",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/ten-question-review-20260912/results.jsonl",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "721",
+      "numbers": [
+        2,
+        3,
+        10,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "724",
+      "numbers": [
+        4,
+        5,
+        8,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "735",
+      "numbers": [
+        4,
+        5,
+        9,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "736",
+      "numbers": [
+        4,
+        6,
+        10,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "739",
+      "numbers": [
+        1,
+        2,
+        5,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "743",
+      "numbers": [
+        2,
+        2,
+        8,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "752",
+      "numbers": [
+        2,
+        4,
+        10,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "753",
+      "numbers": [
+        1,
+        3,
+        8,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "754",
+      "numbers": [
+        3,
+        9,
+        9,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json",
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_batch02_validation_20260921_raw/results.jsonl",
+        "runs/game24_correct_draft_specificity_20260922_raw/results.jsonl",
+        "runs/game24_gemma4_e4b_r2_r3_20260923_raw/results.jsonl",
+        "runs/game24_qwen3_32b_r2_r3_15q_20260923_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "761",
+      "numbers": [
+        4,
+        4,
+        8,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "764",
+      "numbers": [
+        3,
+        4,
+        4,
+        5
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "776",
+      "numbers": [
+        1,
+        4,
+        5,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "789",
+      "numbers": [
+        1,
+        3,
+        5,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "792",
+      "numbers": [
+        8,
+        8,
+        9,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "798",
+      "numbers": [
+        3,
+        6,
+        12,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "802",
+      "numbers": [
+        2,
+        10,
+        11,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "804",
+      "numbers": [
+        5,
+        10,
+        10,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-fixed-repeats-20260910/seed-12027/results.jsonl",
+        "outputs/game24-fixed-repeats-20260910/seed-22027/results.jsonl",
+        "outputs/game24-fixed-repeats-20260910/seed-32027/results.jsonl",
+        "outputs/game24-independent-control-20260910/results.jsonl",
+        "outputs/game24-independent-stage-a-20260910/seed-12027/results.jsonl",
+        "outputs/game24-independent-stage-a-20260910/seed-22027/results.jsonl",
+        "outputs/game24-independent-stage-a-20260910/seed-32027/results.jsonl",
+        "outputs/game24-independent-stage-a-20260910/seed-42027/results.jsonl",
+        "outputs/game24-independent-stage-a-20260910/seed-52027/results.jsonl",
+        "outputs/game24-morphology-surgery-20260915/seed-12027/results.jsonl",
+        "outputs/game24-morphology-surgery-20260915/seed-2027/results.jsonl",
+        "outputs/game24-morphology-surgery-20260915/seed-22027/results.jsonl",
+        "outputs/game24-morphology-surgery-20260915/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-8b-thinking-fixed-r0-r4-20260908/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-32027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-12027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-2027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-22027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-32027/results.jsonl",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/ten-question-review-20260912/results.jsonl",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "812",
+      "numbers": [
+        1,
+        5,
+        10,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "817",
+      "numbers": [
+        3,
+        7,
+        8,
+        9
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "823",
+      "numbers": [
+        2,
+        3,
+        4,
+        4
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "827",
+      "numbers": [
+        2,
+        2,
+        6,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "836",
+      "numbers": [
+        3,
+        9,
+        11,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "838",
+      "numbers": [
+        3,
+        4,
+        5,
+        9
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "840",
+      "numbers": [
+        2,
+        7,
+        9,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "843",
+      "numbers": [
+        1,
+        7,
+        12,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "845",
+      "numbers": [
+        2,
+        5,
+        6,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "856",
+      "numbers": [
+        5,
+        6,
+        8,
+        9
+      ],
+      "evidence_paths": [
+        "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "outputs/game24-uft-external-20q-20260919/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "861",
+      "numbers": [
+        3,
+        5,
+        9,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "888",
+      "numbers": [
+        5,
+        7,
+        9,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "914",
+      "numbers": [
+        1,
+        4,
+        4,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/game24-dual-anchor-validation-20260918-prepared/pairs.jsonl",
+        "outputs/game24-dual-anchor-validation-20260918/results.jsonl",
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_gemma4_e4b_r2_r3_20260923_raw/results.jsonl",
+        "runs/game24_qwen3_32b_r2_r3_15q_20260923_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "923",
+      "numbers": [
+        5,
+        5,
+        8,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "942",
+      "numbers": [
+        4,
+        5,
+        10,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "954",
+      "numbers": [
+        2,
+        3,
+        6,
+        6
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "956",
+      "numbers": [
+        7,
+        8,
+        8,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json",
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_batch02_validation_20260921_raw/results.jsonl",
+        "runs/game24_correct_draft_specificity_20260922_raw/results.jsonl",
+        "runs/game24_gemma4_e4b_r2_r3_20260923_raw/results.jsonl",
+        "runs/game24_qwen3_32b_r2_r3_15q_20260923_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "959",
+      "numbers": [
+        2,
+        3,
+        6,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "962",
+      "numbers": [
+        8,
+        8,
+        10,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "970",
+      "numbers": [
+        2,
+        3,
+        4,
+        7
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "997",
+      "numbers": [
+        2,
+        5,
+        6,
+        6
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1000",
+      "numbers": [
+        4,
+        9,
+        10,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1008",
+      "numbers": [
+        1,
+        4,
+        7,
+        7
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1018",
+      "numbers": [
+        3,
+        7,
+        9,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1019",
+      "numbers": [
+        4,
+        5,
+        6,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1026",
+      "numbers": [
+        2,
+        6,
+        10,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1034",
+      "numbers": [
+        2,
+        5,
+        11,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1052",
+      "numbers": [
+        2,
+        6,
+        6,
+        7
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1057",
+      "numbers": [
+        6,
+        9,
+        9,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-dual-anchor-validation-20260918-prepared/pairs.jsonl",
+        "outputs/game24-dual-anchor-validation-20260918/results.jsonl",
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/feedback_decoding/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_gemma4_e4b_r2_r3_20260923_raw/results.jsonl",
+        "runs/game24_qwen3_32b_r2_r3_15q_20260923_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "1073",
+      "numbers": [
+        1,
+        5,
+        8,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/feedback_decoding/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1076",
+      "numbers": [
+        2,
+        4,
+        8,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1078",
+      "numbers": [
+        2,
+        4,
+        5,
+        7
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1084",
+      "numbers": [
+        5,
+        7,
+        7,
+        9
+      ],
+      "evidence_paths": [
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-42027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-52027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-62027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-72027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-42027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-52027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-62027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-72027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-12027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-2027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-22027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-32027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-12027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-2027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-22027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-32027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-12027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-2027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-22027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-32027/results.jsonl",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/ten-question-review-20260912/results.jsonl",
+        "outputs/validated-probe-20261013/manifest.json",
+        "outputs/vllm-complete-decode-kernel-20260917/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "1093",
+      "numbers": [
+        6,
+        9,
+        11,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-qwen3-8b-thinking-r0-r4-20260906/results.jsonl",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1101",
+      "numbers": [
+        2,
+        2,
+        2,
+        9
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1103",
+      "numbers": [
+        2,
+        3,
+        5,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1108",
+      "numbers": [
+        6,
+        8,
+        11,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1112",
+      "numbers": [
+        4,
+        5,
+        8,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/game24-dual-anchor-validation-20260918-prepared/pairs.jsonl",
+        "outputs/game24-dual-anchor-validation-20260918/results.jsonl",
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/feedback_decoding/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_gemma4_e4b_r2_r3_20260923_raw/results.jsonl",
+        "runs/game24_qwen3_32b_r2_r3_15q_20260923_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "1121",
+      "numbers": [
+        2,
+        3,
+        8,
+        9
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1131",
+      "numbers": [
+        4,
+        5,
+        8,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1139",
+      "numbers": [
+        2,
+        5,
+        9,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1141",
+      "numbers": [
+        3,
+        4,
+        7,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1148",
+      "numbers": [
+        2,
+        2,
+        5,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1159",
+      "numbers": [
+        3,
+        6,
+        6,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1170",
+      "numbers": [
+        5,
+        7,
+        12,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1171",
+      "numbers": [
+        4,
+        7,
+        8,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1173",
+      "numbers": [
+        1,
+        3,
+        12,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1182",
+      "numbers": [
+        3,
+        10,
+        11,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1184",
+      "numbers": [
+        5,
+        5,
+        6,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1185",
+      "numbers": [
+        6,
+        8,
+        9,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1189",
+      "numbers": [
+        10,
+        12,
+        12,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/game24-fixed-repeats-20260910/seed-12027/results.jsonl",
+        "outputs/game24-fixed-repeats-20260910/seed-22027/results.jsonl",
+        "outputs/game24-fixed-repeats-20260910/seed-32027/results.jsonl",
+        "outputs/game24-independent-control-20260910/results.jsonl",
+        "outputs/game24-independent-stage-a-20260910/seed-12027/results.jsonl",
+        "outputs/game24-independent-stage-a-20260910/seed-22027/results.jsonl",
+        "outputs/game24-independent-stage-a-20260910/seed-32027/results.jsonl",
+        "outputs/game24-independent-stage-a-20260910/seed-42027/results.jsonl",
+        "outputs/game24-independent-stage-a-20260910/seed-52027/results.jsonl",
+        "outputs/game24-morphology-surgery-20260915/seed-12027/results.jsonl",
+        "outputs/game24-morphology-surgery-20260915/seed-2027/results.jsonl",
+        "outputs/game24-morphology-surgery-20260915/seed-22027/results.jsonl",
+        "outputs/game24-morphology-surgery-20260915/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-8b-thinking-fixed-r0-r4-20260908/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-42027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-52027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-62027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-72027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-42027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-52027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-62027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-72027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-12027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-2027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-22027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-32027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-12027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-2027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-22027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-32027/results.jsonl",
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/ordinary-vllm-qwen32b-benchmark-20260917/results.jsonl",
+        "outputs/ordinary-vllm-qwen8b-benchmark-20260917/results.jsonl",
+        "outputs/ten-question-review-20260912/results.jsonl",
+        "outputs/validated-probe-20261013/manifest.json",
+        "outputs/vllm-complete-decode-kernel-20260917/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "1201",
+      "numbers": [
+        3,
+        9,
+        9,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1206",
+      "numbers": [
+        2,
+        6,
+        7,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/feedback_decoding/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_batch03_validation_20260925_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "1214",
+      "numbers": [
+        3,
+        5,
+        9,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json",
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/feedback_decoding/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_batch02_validation_20260921_raw/results.jsonl",
+        "runs/game24_correct_draft_specificity_20260922_raw/results.jsonl",
+        "runs/game24_gemma4_e4b_r2_r3_20260923_raw/results.jsonl",
+        "runs/game24_qwen3_32b_r2_r3_15q_20260923_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "1226",
+      "numbers": [
+        6,
+        8,
+        10,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/game24-multi-late-20260912/seed-12027/results.jsonl",
+        "outputs/game24-multi-late-20260912/seed-2027/results.jsonl",
+        "outputs/game24-multi-late-20260912/seed-22027/results.jsonl",
+        "outputs/game24-multi-late-20260912/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-local-calculation-late-20260916/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-42027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-52027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-62027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-72027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-42027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-52027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-62027/results.jsonl",
+        "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-72027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-12027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-2027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-22027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-32027/results.jsonl",
+        "outputs/game24-region-late-20260912/seed-12027/results.jsonl",
+        "outputs/game24-region-late-20260912/seed-2027/results.jsonl",
+        "outputs/game24-region-late-20260912/seed-22027/results.jsonl",
+        "outputs/game24-region-late-20260912/seed-32027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-12027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-2027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-22027/results.jsonl",
+        "outputs/game24-stage-b-paired-20260911/seed-32027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-12027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-2027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-22027/results.jsonl",
+        "outputs/game24-x-calc-late-20260916/seed-32027/results.jsonl",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/ten-question-review-20260912/results.jsonl",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1238",
+      "numbers": [
+        3,
+        6,
+        9,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1247",
+      "numbers": [
+        5,
+        9,
+        11,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1249",
+      "numbers": [
+        1,
+        5,
+        9,
+        12
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1261",
+      "numbers": [
+        2,
+        2,
+        6,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1281",
+      "numbers": [
+        3,
+        6,
+        7,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_batch03_validation_20260925_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "1282",
+      "numbers": [
+        1,
+        2,
+        7,
+        7
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1305",
+      "numbers": [
+        5,
+        10,
+        10,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json",
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_batch02_validation_20260921_raw/results.jsonl",
+        "runs/game24_correct_draft_specificity_20260922_raw/results.jsonl",
+        "runs/game24_gemma4_e4b_r2_r3_20260923_raw/results.jsonl",
+        "runs/game24_qwen3_32b_r2_r3_15q_20260923_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "1322",
+      "numbers": [
+        3,
+        4,
+        6,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1334",
+      "numbers": [
+        1,
+        4,
+        7,
+        11
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/route_revocation/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1342",
+      "numbers": [
+        3,
+        8,
+        8,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/game24-batch02-qwen32b-20260919/manifest.json",
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json",
+        "runs/game24_batch02_validation_20260921_raw/results.jsonl",
+        "runs/game24_correct_draft_specificity_20260922_raw/results.jsonl",
+        "runs/game24_gemma4_e4b_r2_r3_20260923_raw/results.jsonl",
+        "runs/game24_qwen3_32b_r2_r3_15q_20260923_raw/results.jsonl"
+      ]
+    },
+    {
+      "tot_rank": "1350",
+      "numbers": [
+        3,
+        3,
+        8,
+        8
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/identity_prospective/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1356",
+      "numbers": [
+        2,
+        4,
+        10,
+        10
+      ],
+      "evidence_paths": [
+        "outputs/generation-diagnostics-20261005/candidate_adoption/manifest.json",
+        "outputs/generation-diagnostics-20261005/check_rule_transfer/manifest.json",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    },
+    {
+      "tot_rank": "1358",
+      "numbers": [
+        3,
+        5,
+        7,
+        13
+      ],
+      "evidence_paths": [
+        "outputs/game24-fixed-repeats-20260910/seed-12027/results.jsonl",
+        "outputs/game24-fixed-repeats-20260910/seed-22027/results.jsonl",
+        "outputs/game24-fixed-repeats-20260910/seed-32027/results.jsonl",
+        "outputs/game24-independent-control-20260910/results.jsonl",
+        "outputs/game24-independent-stage-a-20260910/seed-12027/results.jsonl",
+        "outputs/game24-independent-stage-a-20260910/seed-22027/results.jsonl",
+        "outputs/game24-independent-stage-a-20260910/seed-32027/results.jsonl",
+        "outputs/game24-independent-stage-a-20260910/seed-42027/results.jsonl",
+        "outputs/game24-independent-stage-a-20260910/seed-52027/results.jsonl",
+        "outputs/game24-multi-late-20260912/seed-12027/results.jsonl",
+        "outputs/game24-multi-late-20260912/seed-2027/results.jsonl",
+        "outputs/game24-multi-late-20260912/seed-22027/results.jsonl",
+        "outputs/game24-multi-late-20260912/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-8b-thinking-fixed-r0-r4-20260908/results.jsonl",
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-fixed-c2-path-20260913/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-marginal-path-20260914/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-marginal-path-20260914/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-marginal-path-20260914/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-marginal-path-20260914/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-mx-late-path-20260913/seed-32027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-12027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-2027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-22027/results.jsonl",
+        "outputs/game24-qwen3-ten-validity-late-20260915/seed-32027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-12027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-2027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-22027/results.jsonl",
+        "outputs/game24-r1-supplement-20260912/seed-32027/results.jsonl",
+        "outputs/game24-region-late-20260912/seed-12027/results.jsonl",
+        "outputs/game24-region-late-20260912/seed-2027/results.jsonl",
+        "outputs/game24-region-late-20260912/seed-22027/results.jsonl",
+        "outputs/game24-region-late-20260912/seed-32027/results.jsonl",
+        "outputs/generation-diagnostics-20261005/constraint_coupling/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question/manifest.json",
+        "outputs/generation-diagnostics-20261005/cross_question_behavior/manifest.json",
+        "outputs/generation-diagnostics-20261005/decision_verification/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_alias/manifest.json",
+        "outputs/generation-diagnostics-20261005/identity_mvp/manifest.json",
+        "outputs/generation-diagnostics-20261005/subject_gated_verification/manifest.json",
+        "outputs/ten-question-review-20260912/results.jsonl",
+        "outputs/validated-probe-20261013/manifest.json"
+      ]
+    }
+  ]
+}

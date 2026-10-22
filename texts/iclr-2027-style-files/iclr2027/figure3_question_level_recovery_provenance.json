@@ -1,0 +1,201 @@
+{
+  "figure": "figure3_question_level_recovery",
+  "question_count": 23,
+  "condition": {
+    "R2": "full access",
+    "R3": "late access blocking"
+  },
+  "metric": "correct generations out of two paired seeds per question",
+  "aggregate_correct_generations": {
+    "R2": 18,
+    "R3": 36,
+    "trials_per_condition": 46
+  },
+  "question_transition_counts": {
+    "large_gain_0_to_2": 4,
+    "gain_1_seed": 11,
+    "unchanged": 7,
+    "decline": 1
+  },
+  "sort_order": [
+    "0-to-2 gains",
+    "1-seed gains",
+    "unchanged",
+    "declines",
+    "question ID ascending within each group"
+  ],
+  "sources_sha256": {
+    "runs/iclr2027_evidence_20260925_completed/evidence.json": "7a2ef8abf22c4aca41a473bc4f2931b43725dba03e9a2ab7928d2c866853e068",
+    "runs/iclr2027_evidence_20260925_completed/game24_per_question.csv": "ff8f220346a28d929bff2c2521e3a8e90e7cf606d62f90d1fb87e7ecf17fa85d",
+    "runs/iclr2027_evidence_20260925_completed/game24_per_question.tex": "272ebc97ff8cc6f8bf55f2a38b0f951e0424389453cac0fb7b8ccbf79ddde35e"
+  },
+  "raw_frozen_input_sha256": {
+    "outputs/game24-dual-anchor-validation-20260918/results.jsonl": "904745aa8201fb56692b17460eabf496a2cbb643d2e4aabe1948499f3be881f3",
+    "runs/game24_batch02_validation_20260921_raw/results.jsonl": "8d1103e56ad0dc1bf0aa1419c4ac098bcb1ba2052b65ff6429d19a6a9c303019",
+    "runs/game24_batch03_validation_20260925_raw/results.jsonl": "f57efbe634fca66ea13e983ffccff04e13ce3101405497e45d6918f8f6dc63ea"
+  },
+  "question_rows_in_plot_order": [
+    {
+      "question": 44,
+      "R2": 0,
+      "R3": 2,
+      "change_R3_minus_R2": 2,
+      "transition_group": "large_gain_0_to_2"
+    },
+    {
+      "question": 230,
+      "R2": 0,
+      "R3": 2,
+      "change_R3_minus_R2": 2,
+      "transition_group": "large_gain_0_to_2"
+    },
+    {
+      "question": 413,
+      "R2": 0,
+      "R3": 2,
+      "change_R3_minus_R2": 2,
+      "transition_group": "large_gain_0_to_2"
+    },
+    {
+      "question": 1057,
+      "R2": 0,
+      "R3": 2,
+      "change_R3_minus_R2": 2,
+      "transition_group": "large_gain_0_to_2"
+    },
+    {
+      "question": 144,
+      "R2": 1,
+      "R3": 2,
+      "change_R3_minus_R2": 1,
+      "transition_group": "gain_1_seed"
+    },
+    {
+      "question": 215,
+      "R2": 0,
+      "R3": 1,
+      "change_R3_minus_R2": 1,
+      "transition_group": "gain_1_seed"
+    },
+    {
+      "question": 339,
+      "R2": 1,
+      "R3": 2,
+      "change_R3_minus_R2": 1,
+      "transition_group": "gain_1_seed"
+    },
+    {
+      "question": 381,
+      "R2": 1,
+      "R3": 2,
+      "change_R3_minus_R2": 1,
+      "transition_group": "gain_1_seed"
+    },
+    {
+      "question": 395,
+      "R2": 1,
+      "R3": 2,
+      "change_R3_minus_R2": 1,
+      "transition_group": "gain_1_seed"
+    },
+    {
+      "question": 434,
+      "R2": 1,
+      "R3": 2,
+      "change_R3_minus_R2": 1,
+      "transition_group": "gain_1_seed"
+    },
+    {
+      "question": 717,
+      "R2": 0,
+      "R3": 1,
+      "change_R3_minus_R2": 1,
+      "transition_group": "gain_1_seed"
+    },
+    {
+      "question": 914,
+      "R2": 1,
+      "R3": 2,
+      "change_R3_minus_R2": 1,
+      "transition_group": "gain_1_seed"
+    },
+    {
+      "question": 1112,
+      "R2": 0,
+      "R3": 1,
+      "change_R3_minus_R2": 1,
+      "transition_group": "gain_1_seed"
+    },
+    {
+      "question": 1305,
+      "R2": 1,
+      "R3": 2,
+      "change_R3_minus_R2": 1,
+      "transition_group": "gain_1_seed"
+    },
+    {
+      "question": 1342,
+      "R2": 1,
+      "R3": 2,
+      "change_R3_minus_R2": 1,
+      "transition_group": "gain_1_seed"
+    },
+    {
+      "question": 41,
+      "R2": 2,
+      "R3": 2,
+      "change_R3_minus_R2": 0,
+      "transition_group": "unchanged"
+    },
+    {
+      "question": 509,
+      "R2": 1,
+      "R3": 1,
+      "change_R3_minus_R2": 0,
+      "transition_group": "unchanged"
+    },
+    {
+      "question": 754,
+      "R2": 2,
+      "R3": 2,
+      "change_R3_minus_R2": 0,
+      "transition_group": "unchanged"
+    },
+    {
+      "question": 956,
+      "R2": 0,
+      "R3": 0,
+      "change_R3_minus_R2": 0,
+      "transition_group": "unchanged"
+    },
+    {
+      "question": 1206,
+      "R2": 2,
+      "R3": 2,
+      "change_R3_minus_R2": 0,
+      "transition_group": "unchanged"
+    },
+    {
+      "question": 1214,
+      "R2": 1,
+      "R3": 1,
+      "change_R3_minus_R2": 0,
+      "transition_group": "unchanged"
+    },
+    {
+      "question": 1281,
+      "R2": 0,
+      "R3": 0,
+      "change_R3_minus_R2": 0,
+      "transition_group": "unchanged"
+    },
+    {
+      "question": 195,
+      "R2": 2,
+      "R3": 1,
+      "change_R3_minus_R2": -1,
+      "transition_group": "decline"
+    }
+  ],
+  "claim_scope": "distribution over the selected 23-question set; no outlier or population-generalization claim"
+}

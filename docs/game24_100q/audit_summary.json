@@ -1,0 +1,25 @@
+{
+  "source_questions": 1362,
+  "baseline_records": 3538,
+  "baseline_questions": 206,
+  "historical_material_questions": 207,
+  "reusable_records": 3136,
+  "protocol_compatible_questions": 37,
+  "strict_questions_all": 32,
+  "unexposed_strict_without_complete_quota": 0,
+  "admitted_independent_questions": 2,
+  "admitted_ids": [
+    "643",
+    "1119"
+  ],
+  "pending_responses": 0,
+  "target_met": false,
+  "fresh_questions_available": 1034,
+  "new_generations_this_task": 0,
+  "new_gpu_hours_this_task": 0,
+  "limitations": [
+    "Historical material exclusion includes prepared but potentially unrun questions; it is deliberately conservative.",
+    "Local and server baseline snapshots and material manifests checked; future or unindexed external usage cannot be ruled out.",
+    "Eligibility uses all verified baseline responses; prefix8 eligibility is reported separately for quota sensitivity."
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "pptx": "D:\\Learning\\PhD\\Research\\contextual-drag-extend\\texts\\iclr2027_editable_figures_ppt169_20260925\\exports\\iclr2027_figures_editable.pptx",
+  "slides": [
+    {
+      "slide": 1,
+      "native_shapes": 177,
+      "editable_text_objects": 43,
+      "pictures": 0,
+      "groups": 19
+    },
+    {
+      "slide": 2,
+      "native_shapes": 58,
+      "editable_text_objects": 26,
+      "pictures": 0,
+      "groups": 13
+    }
+  ],
+  "rendered": true,
+  "chart_coordinates_match_source_csv": true,
+  "chart_max_tolerance_source_pixels": 0.001
+}

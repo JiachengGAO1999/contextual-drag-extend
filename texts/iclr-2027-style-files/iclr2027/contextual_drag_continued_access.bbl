@@ -1,0 +1,170 @@
+\begin{thebibliography}{17}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Cheng et~al.(2026)Cheng, Zhu, Zhao, and
+  Arora]{cheng2026contextualdrag}
+Yun Cheng, Xingyu Zhu, Haoyu Zhao, and Sanjeev Arora.
+\newblock Contextual drag: How errors in the context affect {LLM} reasoning.
+\newblock In \emph{The Fourteenth International Conference on Learning
+  Representations}, 2026.
+\newblock URL \url{https://openreview.net/pdf?id=zpiYsPVDlV}.
+
+\bibitem[Dong et~al.(2025)Dong, Feng, Guessous, Liang, and
+  He]{dong2025flexattention}
+Juechu Dong, Boyuan Feng, Driss Guessous, Yanbo Liang, and Horace He.
+\newblock Flex attention: A programming model for generating optimized
+  attention kernels.
+\newblock In \emph{Proceedings of the 8th MLSys Conference}, 2025.
+\newblock URL
+  \url{https://proceedings.mlsys.org/paper_files/paper/2025/file/61a9278dfef5f871b5e472389f8d6fa1-Paper-Conference.pdf}.
+
+\bibitem[Dura et~al.(2026)Dura, {\"O}zt{\"u}rk, and
+  Tekir]{dura2026sequentialpatching}
+Murat Dura, Serkan {\"O}zt{\"u}rk, and Selma Tekir.
+\newblock Mechanistic interpretability of chain-of-thought reasoning via
+  sequential activation patching.
+\newblock \emph{arXiv preprint arXiv:2608.22332}, 2026.
+\newblock \doi{10.48550/arXiv.2608.22332}.
+\newblock URL \url{https://arxiv.org/abs/2608.22332}.
+
+\bibitem[Goldowsky-Dill et~al.(2023)Goldowsky-Dill, MacLeod, Sato, and
+  Arora]{goldowsky2023pathpatching}
+Nicholas Goldowsky-Dill, Chris MacLeod, Lucas Sato, and Aryaman Arora.
+\newblock Localizing model behavior with path patching.
+\newblock \emph{arXiv preprint arXiv:2304.05969}, 2023.
+\newblock \doi{10.48550/arXiv.2304.05969}.
+\newblock URL \url{https://arxiv.org/abs/2304.05969}.
+
+\bibitem[{Google DeepMind}(2026)]{google2026gemma4}
+{Google DeepMind}.
+\newblock {Gemma 4} model card, 2026.
+\newblock URL \url{https://ai.google.dev/gemma/docs/core/model_card_4}.
+
+\bibitem[Hendrycks et~al.(2021)Hendrycks, Burns, Kadavath, Arora, Basart, Tang,
+  Song, and Steinhardt]{hendrycks2021math}
+Dan Hendrycks, Collin Burns, Saurav Kadavath, Akul Arora, Steven Basart, Eric
+  Tang, Dawn Song, and Jacob Steinhardt.
+\newblock Measuring mathematical problem solving with the {MATH} dataset.
+\newblock In \emph{Proceedings of the Neural Information Processing Systems
+  Track on Datasets and Benchmarks}, volume~1, 2021.
+\newblock URL
+  \url{https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/be83ab3ecd0db773eb2dc1b0a17836a1-Abstract-round2.html}.
+
+\bibitem[Huang et~al.(2026)Huang, Choshen, Sun, Khattab, {Fernandez Astudillo},
+  Damani, Broderick, and Andreas]{huang2026ownwords}
+Jenny~Y. Huang, Leshem Choshen, Wei Sun, Omar Khattab, Ram{\'o}n {Fernandez
+  Astudillo}, Mehul Damani, Tamara Broderick, and Jacob Andreas.
+\newblock Do {LLMs} benefit from their own words?
+\newblock In \emph{Conference on Language Modeling (COLM 2026)}, 2026.
+\newblock URL \url{https://colm.eventhosts.cc/Conferences/2026/AcceptedPapers}.
+\newblock Accepted; to appear.
+
+\bibitem[Kontonis et~al.(2026)Kontonis, Zeng, Garg, Chen, Tang, Wang,
+  Awadallah, Horvitz, Langford, and Papailiopoulos]{kontonis2026memento}
+Vasilis Kontonis, Yuchen Zeng, Shivam Garg, Lingjiao Chen, Hao Tang, Ziyan
+  Wang, Ahmed~H. Awadallah, Eric Horvitz, John Langford, and Dimitris
+  Papailiopoulos.
+\newblock {MEMENTO}: Teaching {LLM}s to manage their context.
+\newblock In \emph{Conference on Language Modeling (COLM 2026)}, 2026.
+\newblock URL \url{https://colm.eventhosts.cc/Conferences/2026/AcceptedPapers}.
+\newblock Accepted; to appear.
+
+\bibitem[Kwon et~al.(2023)Kwon, Li, Zhuang, Sheng, Zheng, Yu, Gonzalez, Zhang,
+  and Stoica]{kwon2023pagedattention}
+Woosuk Kwon, Zhuohan Li, Siyuan Zhuang, Ying Sheng, Lianmin Zheng, Cody~Hao Yu,
+  Joseph~E. Gonzalez, Hao Zhang, and Ion Stoica.
+\newblock Efficient memory management for large language model serving with
+  {PagedAttention}.
+\newblock In \emph{Proceedings of the 29th Symposium on Operating Systems
+  Principles}, pp.\  611--626, 2023.
+\newblock \doi{10.1145/3600006.3613165}.
+\newblock URL \url{https://doi.org/10.1145/3600006.3613165}.
+
+\bibitem[Laban et~al.(2026)Laban, Hayashi, Zhou, and
+  Neville]{laban2026lostconversation}
+Philippe Laban, Hiroaki Hayashi, Yingbo Zhou, and Jennifer Neville.
+\newblock {LLMs} get lost in multi-turn conversation.
+\newblock In \emph{The Fourteenth International Conference on Learning
+  Representations}, 2026.
+\newblock URL
+  \url{https://proceedings.iclr.cc/paper_files/paper/2026/hash/59f6421e64707225fdf5b28840679a07-Abstract-Conference.html}.
+
+\bibitem[Madaan et~al.(2023)Madaan, Tandon, Gupta, Hallinan, Gao, Wiegreffe,
+  Alon, Dziri, Prabhumoye, Yang, Gupta, Majumder, Hermann, Welleck,
+  Yazdanbakhsh, and Clark]{madaan2023selfrefine}
+Aman Madaan, Niket Tandon, Prakhar Gupta, Skyler Hallinan, Luyu Gao, Sarah
+  Wiegreffe, Uri Alon, Nouha Dziri, Shrimai Prabhumoye, Yiming Yang, Shashank
+  Gupta, Bodhisattwa~Prasad Majumder, Katherine Hermann, Sean Welleck, Amir
+  Yazdanbakhsh, and Peter Clark.
+\newblock Self-refine: Iterative refinement with self-feedback.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~36, 2023.
+\newblock \doi{10.52202/075280-2019}.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2023/hash/91edff07232fb1b55a505a9e9f6c0ff3-Abstract-Conference.html}.
+
+\bibitem[Meng et~al.(2022)Meng, Bau, Andonian, and
+  Belinkov]{meng2022causaltracing}
+Kevin Meng, David Bau, Alex Andonian, and Yonatan Belinkov.
+\newblock Locating and editing factual associations in {GPT}.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~35, pp.\  17359--17372, 2022.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2022/hash/6f1d43d5a82a37e89b0665b33bf3a182-Abstract-Conference.html}.
+
+\bibitem[Shinn et~al.(2023)Shinn, Cassano, Gopinath, Narasimhan, and
+  Yao]{shinn2023reflexion}
+Noah Shinn, Federico Cassano, Ashwin Gopinath, Karthik Narasimhan, and Shunyu
+  Yao.
+\newblock Reflexion: Language agents with verbal reinforcement learning.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~36, 2023.
+\newblock \doi{10.52202/075280-0377}.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2023/hash/1b44b878bb782e6954cd888628510e90-Abstract-Conference.html}.
+
+\bibitem[Yang et~al.(2025)]{qwen2025qwen3}
+An~Yang et~al.
+\newblock {Qwen3} technical report.
+\newblock \emph{arXiv preprint arXiv:2505.09388}, 2025.
+\newblock \doi{10.48550/arXiv.2505.09388}.
+\newblock URL \url{https://arxiv.org/abs/2505.09388}.
+
+\bibitem[Yao et~al.(2023)Yao, Yu, Zhao, Shafran, Griffiths, Cao, and
+  Narasimhan]{yao2023tree}
+Shunyu Yao, Dian Yu, Jeffrey Zhao, Izhak Shafran, Thomas~L. Griffiths, Yuan
+  Cao, and Karthik Narasimhan.
+\newblock Tree of thoughts: Deliberate problem solving with large language
+  models.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~36, 2023.
+\newblock \doi{10.52202/075280-0517}.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper/2023/hash/271db9922b8d1f4dd7aaef84ed5ac703-Abstract.html}.
+
+\bibitem[Zhang \& Nanda(2024)Zhang and Nanda]{zhang2024activationpatching}
+Fred Zhang and Neel Nanda.
+\newblock Towards best practices of activation patching in language models:
+  Metrics and methods.
+\newblock In \emph{The Twelfth International Conference on Learning
+  Representations}, 2024.
+\newblock URL \url{https://openreview.net/forum?id=Hf17y6u9BC}.
+
+\bibitem[Zhang et~al.(2023)Zhang, Sheng, Zhou, Chen, Zheng, Cai, Song, Tian,
+  R{\'e}, Barrett, Wang, and Chen]{zhang2023h2o}
+Zhenyu Zhang, Ying Sheng, Tianyi Zhou, Tianlong Chen, Lianmin Zheng, Ruisi Cai,
+  Zhao Song, Yuandong Tian, Christopher R{\'e}, Clark Barrett, Zhangyang Wang,
+  and Beidi Chen.
+\newblock {$H_2O$}: Heavy-hitter oracle for efficient generative inference of
+  large language models.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~36, 2023.
+\newblock \doi{10.52202/075280-1506}.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2023/hash/6ceefa7b15572587b78ecfcebb2827f8-Abstract.html}.
+
+\end{thebibliography}

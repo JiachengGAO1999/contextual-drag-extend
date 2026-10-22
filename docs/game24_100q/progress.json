@@ -1,0 +1,66 @@
+{
+  "state": "stopped_at_checkpoint",
+  "target_eligible_questions": 100,
+  "execution_host": "10-7-130-17",
+  "gpu_index": 4,
+  "gpu_uuid": "GPU-9d164491-5abf-96eb-3d3f-e08e77deb8f7",
+  "campaign_gpu_hours_cap": 240,
+  "automatic_interventions": false,
+  "active_pid": null,
+  "updated_utc": "2026-10-14T18:42:42.364579+00:00",
+  "current_batch": "pilot",
+  "current_candidate_ids": [
+    "1036",
+    "374",
+    "584",
+    "1191",
+    "1053",
+    "849",
+    "309",
+    "16",
+    "295",
+    "442",
+    "1079",
+    "1039",
+    "1298",
+    "839",
+    "349",
+    "1164"
+  ],
+  "models": [
+    {
+      "model": "Qwen3_32B",
+      "state": "running",
+      "completed_generations": 77,
+      "planned_generations": 128,
+      "elapsed_seconds": 26386.08118840307,
+      "generated_tokens_persisted": 562539,
+      "active_tokens": {
+        "Qwen3_32B/442/5": 5989
+      },
+      "updated_unix": 1792003345.244431,
+      "maximum_this_attempt_hours": 7.330786775962139
+    },
+    {
+      "model": "Qwen3_8B_Thinking",
+      "state": "complete",
+      "new_generations": 128,
+      "completed_generations": 128,
+      "total_seconds": 2373.0061574988067,
+      "load_seconds": 91.72761107608676,
+      "generation_seconds": 2281.2785500623286,
+      "tokens": 862373,
+      "errors": []
+    }
+  ],
+  "campaign_job_gpu_hours": 8.004814306232664,
+  "error_type": "RuntimeError",
+  "error": "Child stopped or failed; see /data/gaojc/projects/contextual-drag-extend-game24-100q/outputs/game24-100q-20261014/acquisition/a800/pilot.console.log",
+  "eligible_questions": 2,
+  "processed_fresh_questions": 0,
+  "new_generations": 0,
+  "pending_response_reviews": 0,
+  "remaining_cost_forecast": {},
+  "target_met": false,
+  "current_batch_completed_generations": 205
+}

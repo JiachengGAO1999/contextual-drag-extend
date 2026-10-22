@@ -1,0 +1,200 @@
+{
+  "hostname": "rtx-node131",
+  "utc": "2026-10-14T09:42:19.214644+00:00",
+  "gpus": [
+    {
+      "index": "0",
+      "uuid": "GPU-ad21195c-f65e-78d9-44ec-6fb8af303b97",
+      "name": "NVIDIA A100 80GB PCIe",
+      "memory.total": "81920",
+      "memory.used": "69663",
+      "memory.free": "11492",
+      "utilization.gpu": "28",
+      "processes": [
+        {
+          "pid": 228528,
+          "owner": "maxb",
+          "name": "VLLM::Worker_TP0",
+          "memory_mib": "67274"
+        },
+        {
+          "pid": 4177074,
+          "owner": "zhaoyi",
+          "name": "/home/zhaoyi/anaconda3/envs/opencompass/bin/python",
+          "memory_mib": "2296"
+        }
+      ]
+    },
+    {
+      "index": "1",
+      "uuid": "GPU-1db6a277-a388-65c9-6c95-f4c4f32d6cdc",
+      "name": "NVIDIA A100 80GB PCIe",
+      "memory.total": "81920",
+      "memory.used": "69699",
+      "memory.free": "11456",
+      "utilization.gpu": "25",
+      "processes": [
+        {
+          "pid": 228529,
+          "owner": "maxb",
+          "name": "VLLM::Worker_TP1",
+          "memory_mib": "67274"
+        },
+        {
+          "pid": 4177075,
+          "owner": "zhaoyi",
+          "name": "/home/zhaoyi/anaconda3/envs/opencompass/bin/python",
+          "memory_mib": "2332"
+        }
+      ]
+    },
+    {
+      "index": "2",
+      "uuid": "GPU-01b72155-91ab-d109-b2d7-cae2b6b7500e",
+      "name": "NVIDIA A100 80GB PCIe",
+      "memory.total": "81920",
+      "memory.used": "77709",
+      "memory.free": "3446",
+      "utilization.gpu": "28",
+      "processes": [
+        {
+          "pid": 228524,
+          "owner": "maxb",
+          "name": "VLLM::Worker_TP0",
+          "memory_mib": "75434"
+        },
+        {
+          "pid": 4155140,
+          "owner": "zhaoyi",
+          "name": "/home/zhaoyi/anaconda3/envs/opencompass/bin/python",
+          "memory_mib": "2182"
+        }
+      ]
+    },
+    {
+      "index": "3",
+      "uuid": "GPU-7ea3d223-00aa-da89-242b-dff4216d10d2",
+      "name": "NVIDIA A100 80GB PCIe",
+      "memory.total": "81920",
+      "memory.used": "77679",
+      "memory.free": "3476",
+      "utilization.gpu": "23",
+      "processes": [
+        {
+          "pid": 228525,
+          "owner": "maxb",
+          "name": "VLLM::Worker_TP1",
+          "memory_mib": "75434"
+        },
+        {
+          "pid": 4155141,
+          "owner": "zhaoyi",
+          "name": "/home/zhaoyi/anaconda3/envs/opencompass/bin/python",
+          "memory_mib": "2152"
+        }
+      ]
+    },
+    {
+      "index": "4",
+      "uuid": "GPU-bb740995-3c17-c363-1553-ef7ac3907eca",
+      "name": "NVIDIA A100 80GB PCIe",
+      "memory.total": "81920",
+      "memory.used": "67875",
+      "memory.free": "13280",
+      "utilization.gpu": "39",
+      "processes": [
+        {
+          "pid": 3451842,
+          "owner": "gaojc",
+          "name": "VLLM::EngineCore",
+          "memory_mib": "50266"
+        },
+        {
+          "pid": 2190663,
+          "owner": "hezq",
+          "name": "/home/hezq/anaconda3/envs/gui/bin/python",
+          "memory_mib": "17594"
+        }
+      ]
+    },
+    {
+      "index": "5",
+      "uuid": "GPU-e6c83730-8da4-94b5-600e-4c86f3d238fa",
+      "name": "NVIDIA A100 80GB PCIe",
+      "memory.total": "81920",
+      "memory.used": "73224",
+      "memory.free": "7931",
+      "utilization.gpu": "52",
+      "processes": [
+        {
+          "pid": 2190668,
+          "owner": "hezq",
+          "name": "/home/hezq/anaconda3/envs/gui/bin/python",
+          "memory_mib": "34672"
+        },
+        {
+          "pid": 2307472,
+          "owner": "yud",
+          "name": "ray::WorkerDict.actor_rollout_save_checkpoint",
+          "memory_mib": "18008"
+        },
+        {
+          "pid": 2311156,
+          "owner": "yud",
+          "name": "sglang::scheduler",
+          "memory_mib": "20486"
+        }
+      ]
+    },
+    {
+      "index": "6",
+      "uuid": "GPU-caa86e8d-01cb-b90a-ced9-01649f2623ce",
+      "name": "NVIDIA A100 80GB PCIe",
+      "memory.total": "81920",
+      "memory.used": "70235",
+      "memory.free": "10919",
+      "utilization.gpu": "0",
+      "processes": [
+        {
+          "pid": 207740,
+          "owner": "huangrj",
+          "name": "VLLM::EngineCore",
+          "memory_mib": "70226"
+        }
+      ]
+    },
+    {
+      "index": "7",
+      "uuid": "GPU-2c050abf-f3e9-16e7-8f00-1155404ade92",
+      "name": "NVIDIA A100 80GB PCIe",
+      "memory.total": "81920",
+      "memory.used": "62920",
+      "memory.free": "18235",
+      "utilization.gpu": "65",
+      "processes": [
+        {
+          "pid": 2062325,
+          "owner": "hezq",
+          "name": "/home/hezq/anaconda3/envs/gui/bin/python",
+          "memory_mib": "14752"
+        },
+        {
+          "pid": 2307473,
+          "owner": "yud",
+          "name": "ray::WorkerDict.actor_rollout_save_checkpoint",
+          "memory_mib": "18008"
+        },
+        {
+          "pid": 2311345,
+          "owner": "yud",
+          "name": "sglang::scheduler",
+          "memory_mib": "30104"
+        }
+      ]
+    }
+  ],
+  "disk": {
+    "/data2": "/dev/sdb         15T   15T   33G 100% /data2",
+    "/data": "/dev/sda1        15T   14T   20G 100% /data"
+  }
+}

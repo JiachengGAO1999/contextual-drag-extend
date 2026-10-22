@@ -26,6 +26,59 @@ class SelectiveHFBackend:
         self.model = model.eval()
         self.tokenizer = tokenizer
         self.device = device or next(model.parameters()).device
+        # Some chat models (including Gemma 4) define several valid stop
+        # tokens in generation_config.  Stopping only on tokenizer.eos_token_id
+        # can run past an end-of-turn marker all the way to the length limit.
+        self.eos_token_ids = self._collect_eos_token_ids(model, tokenizer)
+        self.last_absolute_key_length: Optional[int] = None
+
+    @staticmethod
+    def _collect_eos_token_ids(model: torch.nn.Module, tokenizer: Any) -> frozenset[int]:
+        values: list[Any] = []
+        for source in (
+            getattr(model, "generation_config", None),
+            getattr(model, "config", None),
+            tokenizer,
+        ):
+            if source is not None:
+                values.append(getattr(source, "eos_token_id", None))
+        normalized: set[int] = set()
+        for value in values:
+            if value is None:
+                continue
+            if isinstance(value, (list, tuple, set, frozenset)):
+                normalized.update(int(item) for item in value)
+            else:
+                normalized.add(int(value))
+        return frozenset(normalized)
+
+    def _prepare_attention_mask(self, mask: torch.Tensor) -> torch.Tensor | dict[str, torch.Tensor]:
+        """Build Gemma-style per-layer masks when local and global KV lengths differ."""
+        self.last_absolute_key_length = int(mask.shape[-1])
+        config = getattr(self.model.config, "text_config", self.model.config)
+        layer_types = set(getattr(config, "layer_types", ()) or ())
+        sliding_window = getattr(config, "sliding_window", None)
+        if (
+            mask.ndim == 4
+            and {"full_attention", "sliding_attention"}.issubset(layer_types)
+            and isinstance(sliding_window, int)
+            and sliding_window > 0
+        ):
+            if mask.shape[-2] != 1:
+                raise NotImplementedError(
+                    "Hybrid local/global custom prefill masks are not implemented; "
+                    "the validated Gemma target protocol uses ordinary prefill and "
+                    "a one-query late-block decode mask"
+                )
+            # Gemma4's local-attention cache retains only the most recent
+            # sliding_window keys, while global layers retain the full cache.
+            # Passing one full-width 4-D mask to both produces a shape error
+            # once the sequence crosses the local window.
+            return {
+                "full_attention": mask,
+                "sliding_attention": mask[..., -min(sliding_window, mask.shape[-1]) :],
+            }
+        return mask
 
     @torch.inference_mode()
     def generate(
@@ -63,14 +116,19 @@ class SelectiveHFBackend:
                 dtype=model_dtype,
                 device=self.device,
             )
-        output = self.model(input_ids=prompt_ids, attention_mask=prefill_mask, use_cache=True, return_dict=True)
+        output = self.model(
+            input_ids=prompt_ids,
+            attention_mask=self._prepare_attention_mask(prefill_mask),
+            use_cache=True,
+            return_dict=True,
+        )
         past = output.past_key_values
         next_logits = output.logits[:, -1, :]
         generated: List[int] = []
         generator = torch.Generator(device=self.device)
         generator.manual_seed(request.sample_seed)
-        eos_token_id = getattr(self.tokenizer, "eos_token_id", None)
         finish_reason = "length"
+        stop_token_id: Optional[int] = None
 
         for step in range(max_new_tokens):
             next_token = self._choose(next_logits, temperature, top_k, generator, top_p)
@@ -78,8 +136,9 @@ class SelectiveHFBackend:
             generated.append(token_id)
             if progress_callback is not None and len(generated) % 512 == 0:
                 progress_callback(len(generated))
-            if eos_token_id is not None and token_id == eos_token_id:
+            if token_id in self.eos_token_ids:
                 finish_reason = "eos"
+                stop_token_id = token_id
                 break
             if step + 1 == max_new_tokens:
                 break
@@ -102,7 +161,7 @@ class SelectiveHFBackend:
                 )
             output = self.model(
                 input_ids=next_token.view(1, 1),
-                attention_mask=decode_mask,
+                attention_mask=self._prepare_attention_mask(decode_mask),
                 past_key_values=past,
                 use_cache=True,
                 return_dict=True,
@@ -121,6 +180,8 @@ class SelectiveHFBackend:
                 "physical_kv_eviction": False,
                 "prompt_tokens": prompt_length,
                 "generated_tokens": len(generated),
+                "eos_token_ids": sorted(self.eos_token_ids),
+                "stop_token_id": stop_token_id,
                 "cache_type": type(past).__name__,
                 "access_mode": request.access_mode.value,
                 "draft_token_span": list(request.draft_token_span),

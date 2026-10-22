@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1672" height="987" viewBox="0 0 1672 987" data-pptx-page-role="content" font-family="Times New Roman">
+<defs>
+  <linearGradient id="token-grey" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#C7D0D5"/><stop offset="0.5" stop-color="#B7C2C9"/><stop offset="1" stop-color="#CCD5DA"/></linearGradient>
+  <linearGradient id="token-red" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFABAF"/><stop offset="0.5" stop-color="#FF9298"/><stop offset="1" stop-color="#FFB2B3"/></linearGradient>
+  <linearGradient id="prefill-fill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#E5EBEE"/><stop offset="0.55" stop-color="#D5DEE2"/><stop offset="1" stop-color="#E5E9EB"/></linearGradient>
+  <linearGradient id="r2-fill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF5F5"/><stop offset="0.5" stop-color="#FDEFEF"/><stop offset="1" stop-color="#FFF4F4"/></linearGradient>
+  <linearGradient id="r3-fill" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F0FCFB"/><stop offset="0.5" stop-color="#E7F9F9"/><stop offset="1" stop-color="#F2FCFB"/></linearGradient>
+  <linearGradient id="red-badge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#D56768"/><stop offset="0.5" stop-color="#BC4142"/><stop offset="1" stop-color="#DA696A"/></linearGradient>
+  <linearGradient id="teal-badge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#00A1AA"/><stop offset="0.5" stop-color="#00858D"/><stop offset="1" stop-color="#00969D"/></linearGradient>
+  <linearGradient id="r2-node" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFF7F6"/><stop offset="0.6" stop-color="#FADDDC"/><stop offset="1" stop-color="#FFF6F5"/></linearGradient>
+  <linearGradient id="r3-node" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F4FFFF"/><stop offset="0.6" stop-color="#CFF1F2"/><stop offset="1" stop-color="#F2FCFC"/></linearGradient>
+  <marker id="navy-arrow" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="8" markerHeight="7" orient="auto"><polygon points="0,0 10,4 0,8" fill="#24465E"/></marker>
+  <marker id="red-arrow" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="8" markerHeight="7" orient="auto"><polygon points="0,0 10,4 0,8" fill="#D54747"/></marker>
+  <marker id="bright-arrow" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="8" markerHeight="7" orient="auto"><polygon points="0,0 10,4 0,8" fill="#F04C4C"/></marker>
+  <marker id="teal-arrow" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="8" markerHeight="7" orient="auto"><polygon points="0,0 10,4 0,8" fill="#008B94"/></marker>
+  <marker id="grey-arrow" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="8" markerHeight="7" orient="auto"><polygon points="0,0 10,4 0,8" fill="#96A7B3"/></marker>
+  <marker id="brown-arrow" viewBox="0 0 10 8" refX="9" refY="4" markerWidth="8" markerHeight="7" orient="auto"><polygon points="0,0 10,4 0,8" fill="#81413E"/></marker>
+  <g id="right-context">
+    <rect x="778" y="313" width="486" height="44" rx="8" fill="#FFFFFF" stroke="#BACBD5" stroke-width="1.3"/>
+    <rect x="784" y="319" width="25" height="32" rx="4" fill="url(#token-grey)"/>
+    <rect x="814" y="319" width="25" height="32" rx="4" fill="url(#token-grey)"/>
+    <rect x="844" y="319" width="25" height="32" rx="4" fill="url(#token-grey)"/>
+    <rect x="873" y="319" width="25" height="32" rx="4" fill="url(#token-grey)"/>
+    <rect x="903" y="319" width="25" height="32" rx="4" fill="url(#token-red)"/>
+    <rect x="933" y="319" width="25" height="32" rx="4" fill="url(#token-red)"/>
+    <rect x="963" y="319" width="25" height="32" rx="4" fill="url(#token-red)"/>
+    <rect x="992" y="319" width="25" height="32" rx="4" fill="url(#token-red)"/>
+    <rect x="1027" y="319" width="25" height="32" rx="4" fill="url(#token-grey)"/>
+    <rect x="1056" y="319" width="25" height="32" rx="4" fill="url(#token-grey)"/>
+    <rect x="1086" y="319" width="25" height="32" rx="4" fill="url(#token-grey)"/>
+    <rect x="1117" y="319" width="25" height="32" rx="4" fill="url(#token-grey)"/>
+    <rect x="1146" y="319" width="25" height="32" rx="4" fill="url(#token-grey)"/>
+    <rect x="1176" y="319" width="25" height="32" rx="4" fill="url(#token-grey)"/>
+    <rect x="1206" y="319" width="25" height="32" rx="4" fill="url(#token-grey)"/>
+    <rect x="1235" y="319" width="24" height="32" rx="4" fill="url(#token-grey)"/>
+    <path d="M778 364 Q778 373 786 373 L827 373 Q837 373 837 381 Q837 373 847 373 L888 373 Q895 373 895 364" fill="none" stroke="#1F405C" stroke-width="2"/>
+    <path d="M902 364 Q902 373 910 373 L950 373 Q960 373 960 381 Q960 373 970 373 L1012 373 Q1020 373 1020 364" fill="none" stroke="#1F405C" stroke-width="2"/>
+    <path d="M1027 364 Q1027 373 1035 373 L1063 373 Q1073 373 1073 381 Q1073 373 1083 373 L1110 373 Q1118 373 1118 364" fill="none" stroke="#1F405C" stroke-width="2"/>
+    <path d="M1125 364 Q1125 373 1133 373 L1184 373 Q1194 373 1194 381 Q1194 373 1204 373 L1256 373 Q1264 373 1264 364" fill="none" stroke="#1F405C" stroke-width="2"/>
+    <g font-size="23" fill="#193952" text-anchor="middle">
+      <text x="836" y="407">Problem</text><text x="962" y="407">Wrong trace</text>
+      <text x="1076" y="407">Error</text><text x="1076" y="430">signal</text>
+      <text x="1199" y="407">Solve</text><text x="1199" y="430">independently</text>
+    </g>
+  </g>
+</defs>
+<rect id="background" data-pptx-role="background" x="0" y="0" width="1672" height="987" fill="#FFFFFF"/>
+<g id="shared-prefix" data-pptx-bounds="26 288 687 280" transform="translate(0 23)" fill="#193952">
+  <rect x="27" y="421" width="389" height="43" rx="8" fill="#FFFFFF" stroke="#AEBFCB" stroke-width="1.3"/>
+  <g id="shared-token-tiles">
+    <rect x="36" y="427" width="25" height="31" rx="4" fill="url(#token-grey)"/><rect x="67" y="427" width="25" height="31" rx="4" fill="url(#token-grey)"/><rect x="97" y="427" width="25" height="31" rx="4" fill="url(#token-grey)"/>
+    <rect x="129" y="427" width="22" height="31" rx="4" fill="url(#token-red)"/><rect x="155" y="427" width="22" height="31" rx="4" fill="url(#token-red)"/><rect x="181" y="427" width="22" height="31" rx="4" fill="url(#token-red)"/><rect x="207" y="427" width="22" height="31" rx="4" fill="url(#token-red)"/>
+    <rect x="234" y="427" width="22" height="31" rx="4" fill="url(#token-grey)"/><rect x="260" y="427" width="22" height="31" rx="4" fill="url(#token-grey)"/><rect x="286" y="427" width="22" height="31" rx="4" fill="url(#token-grey)"/>
+    <rect x="312" y="427" width="22" height="31" rx="4" fill="url(#token-grey)"/><rect x="338" y="427" width="22" height="31" rx="4" fill="url(#token-grey)"/><rect x="364" y="427" width="22" height="31" rx="4" fill="url(#token-grey)"/><rect x="390" y="427" width="21" height="31" rx="4" fill="url(#token-grey)"/>
+  </g>
+  <g id="shared-label-braces" stroke="#1F405C" stroke-width="2" fill="none">
+    <path d="M27 470 Q27 478 35 478 L66 478 Q75 478 75 486 Q75 478 85 478 L115 478 Q122 478 122 470"/>
+    <path d="M129 470 Q129 478 137 478 L169 478 Q178 478 178 486 Q178 478 188 478 L220 478 Q228 478 228 470"/>
+    <path d="M234 470 Q234 478 242 478 L262 478 Q272 478 272 486 Q272 478 282 478 L299 478 Q306 478 306 470"/>
+    <path d="M313 470 Q313 478 321 478 L354 478 Q364 478 364 486 Q364 478 374 478 L408 478 Q416 478 416 470"/>
+  </g>
+  <g font-size="22" text-anchor="middle"><text x="75" y="511">Problem</text><text x="179" y="511">Wrong trace</text><text x="272" y="511">Error</text><text x="272" y="534">signal</text><text x="369" y="511">Solve</text><text x="369" y="534">independently</text></g>
+  <line x1="424" y1="444" x2="452" y2="444" stroke="#24465E" stroke-width="2" marker-end="url(#navy-arrow)"/>
+  <rect x="456" y="398" width="105" height="92" rx="10" fill="url(#prefill-fill)" stroke="#8CA7BA" stroke-width="1.3"/>
+  <text x="509" y="438" font-size="28" text-anchor="middle">Full</text><text x="509" y="468" font-size="28" text-anchor="middle">prefill</text>
+  <line x1="562" y1="444" x2="590" y2="444" stroke="#24465E" stroke-width="2" marker-end="url(#navy-arrow)"/>
+  <rect x="594" y="410" width="66" height="68" rx="10" fill="#F1F4F4" stroke="#8CA7BA" stroke-width="1.2"/>
+  <text x="627" y="453" font-family="Arial" font-size="32" font-style="italic" fill="#101010" text-anchor="middle">y<tspan baseline-shift="sub" font-size="22">1</tspan></text>
+  <text x="563" y="292" font-size="23" text-anchor="middle">same full-prefill logits</text>
+  <text x="563" y="317" font-size="23" text-anchor="middle">same sampled <tspan font-style="italic">y</tspan><tspan baseline-shift="sub" font-size="16">1</tspan></text>
+  <line x1="627" y1="334" x2="627" y2="403" stroke="#24465E" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#navy-arrow)"/>
+</g>
+<g id="branch-arrows" data-pptx-bounds="658 307 100 370" transform="translate(0 23)" fill="none">
+  <path d="M660 444 C710 444 685 294 754 294" stroke="#D54747" stroke-width="3.5" marker-end="url(#red-arrow)"/>
+  <path d="M660 444 C715 449 684 640 754 644" stroke="#008B94" stroke-width="3.5" marker-end="url(#teal-arrow)"/>
+</g>
+<g id="r2-full-access" data-pptx-bounds="756 128 892 355" transform="translate(0 23)">
+  <rect x="757" y="106" width="890" height="353" rx="15" fill="url(#r2-fill)" stroke="#F68B8E" stroke-width="0.9"/>
+  <rect x="782" y="124" width="91" height="53" rx="9" fill="url(#red-badge)"/>
+  <text x="827" y="165" font-family="Arial" font-size="40" font-weight="bold" text-anchor="middle" fill="#FFFFFF">R2</text>
+  <line x1="898" y1="129" x2="898" y2="174" stroke="#B94243" stroke-width="1.8"/>
+  <text x="923" y="163" font-size="36" font-weight="bold" fill="#A62C30">Full continued access</text>
+  <text x="1624" y="136" text-anchor="end" font-size="24" font-style="italic" fill="#AE393C">queries retain access</text>
+  <text x="1624" y="164" text-anchor="end" font-size="24" font-style="italic" fill="#AE393C">to failed-trace K/V</text>
+  <g id="r2-attention-links" fill="none" stroke-width="1.8">
+    <path d="M1340 241 C1330 148 970 160 916 311" stroke="#F04C4C" marker-end="url(#bright-arrow)"/>
+    <path d="M1340 241 C1310 161 1018 178 956 311" stroke="#F04C4C" marker-end="url(#bright-arrow)"/>
+    <path d="M1340 241 C1300 171 1060 197 1000 311" stroke="#F04C4C" marker-end="url(#bright-arrow)"/>
+    <path d="M1340 241 C1290 174 1101 209 1045 311" stroke="#F04C4C" marker-end="url(#bright-arrow)"/>
+    <path d="M1340 241 C1305 184 1136 224 1087 311" stroke="#D54747" marker-end="url(#red-arrow)"/>
+    <path d="M1340 241 C1300 193 1175 230 1129 311" stroke="#96A7B3" marker-end="url(#grey-arrow)"/>
+    <path d="M1340 241 C1303 208 1218 242 1202 311" stroke="#96A7B3" marker-end="url(#grey-arrow)"/>
+    <path d="M1340 241 C1316 223 1260 253 1235 311" stroke="#96A7B3" marker-end="url(#grey-arrow)"/>
+    <path d="M1120 207 C1200 176 1395 177 1431 240" stroke="#F04C4C" marker-end="url(#bright-arrow)"/>
+    <path d="M1170 200 C1255 176 1481 179 1514 240" stroke="#D54747" marker-end="url(#red-arrow)"/>
+    <path d="M1280 205 C1332 197 1398 207 1421 240" stroke="#96A7B3" marker-end="url(#grey-arrow)"/>
+    <path d="M1320 190 C1388 178 1477 199 1506 240" stroke="#96A7B3" marker-end="url(#grey-arrow)"/>
+  </g>
+  <use href="#right-context"/>
+  <g id="r2-generated-sequence">
+    <rect x="1325" y="242" width="45" height="40" rx="8" fill="url(#r2-node)" stroke="#E86F70"/>
+    <rect x="1414" y="242" width="45" height="40" rx="8" fill="url(#r2-node)" stroke="#E86F70"/>
+    <rect x="1501" y="242" width="45" height="40" rx="8" fill="url(#r2-node)" stroke="#E86F70"/>
+    <line x1="1347" y1="286" x2="1347" y2="318" stroke="#24465E" stroke-width="1.8" marker-end="url(#navy-arrow)"/>
+    <line x1="1436" y1="286" x2="1436" y2="318" stroke="#81413E" stroke-width="1.8" marker-end="url(#brown-arrow)"/>
+    <line x1="1526" y1="286" x2="1526" y2="318" stroke="#81413E" stroke-width="1.8" marker-end="url(#brown-arrow)"/>
+    <rect x="1317" y="321" width="59" height="53" rx="8" fill="url(#r2-node)" stroke="#E86F70"/>
+    <rect x="1407" y="321" width="59" height="53" rx="8" fill="url(#r2-node)" stroke="#E86F70"/>
+    <rect x="1497" y="321" width="60" height="53" rx="8" fill="url(#r2-node)" stroke="#E86F70"/>
+    <line x1="1377" y1="348" x2="1403" y2="348" stroke="#81413E" stroke-width="1.6" marker-end="url(#brown-arrow)"/>
+    <line x1="1468" y1="348" x2="1492" y2="348" stroke="#81413E" stroke-width="1.6" marker-end="url(#brown-arrow)"/>
+    <g font-family="Arial" font-style="italic" font-size="27" text-anchor="middle" fill="#101010">
+      <text x="1347" y="268">q<tspan baseline-shift="sub" font-size="19">1</tspan></text><text x="1436" y="268">q<tspan baseline-shift="sub" font-size="19">2</tspan></text><text x="1523" y="268">q<tspan baseline-shift="sub" font-size="19">3</tspan></text>
+      <text x="1347" y="353">y<tspan baseline-shift="sub" font-size="20">2</tspan></text><text x="1436" y="353">y<tspan baseline-shift="sub" font-size="20">3</tspan></text><text x="1527" y="353">y<tspan baseline-shift="sub" font-size="20">4</tspan></text>
+    </g>
+    <circle cx="1586" cy="348" r="3.5" fill="#101010"/><circle cx="1601" cy="348" r="3.5" fill="#101010"/><circle cx="1616" cy="348" r="3.5" fill="#101010"/>
+  </g>
+</g>
+<g id="r3-late-block" data-pptx-bounds="756 507 892 359" transform="translate(0 23)">
+  <rect x="757" y="485" width="890" height="357" rx="15" fill="url(#r3-fill)" stroke="#67D5D9" stroke-width="0.9"/>
+  <rect x="782" y="505" width="91" height="54" rx="9" fill="url(#teal-badge)"/>
+  <text x="827" y="546" font-family="Arial" font-size="40" font-weight="bold" text-anchor="middle" fill="#FFFFFF">R3</text>
+  <line x1="898" y1="510" x2="898" y2="555" stroke="#008993" stroke-width="1.8"/>
+  <text x="923" y="544" font-size="36" font-weight="bold" fill="#007982">Late access blocking</text>
+  <text x="1624" y="522" text-anchor="end" font-size="24" font-style="italic" fill="#24536B">block q₁, q₂, q₃, … →</text>
+  <text x="1624" y="550" text-anchor="end" font-size="24" font-style="italic" fill="#24536B">failed-trace K/V only</text>
+  <g id="r3-blocked-attention-links" fill="none" stroke="#96A7B3" stroke-width="1.8" stroke-dasharray="12 7">
+    <path d="M1340 627 C1330 534 970 546 918 697" marker-end="url(#grey-arrow)"/>
+    <path d="M1340 627 C1310 547 1018 564 956 697" marker-end="url(#grey-arrow)"/>
+    <path d="M1340 627 C1300 557 1060 583 1000 697" marker-end="url(#grey-arrow)"/>
+    <path d="M1340 627 C1290 560 1101 595 1045 697" marker-end="url(#grey-arrow)"/>
+    <path d="M1340 627 C1305 570 1136 610 1087 697" marker-end="url(#grey-arrow)"/>
+  </g>
+  <g id="r3-retained-attention-links" fill="none" stroke="#008B94" stroke-width="1.8">
+    <path d="M1340 627 C1310 533 1041 560 980 624"/>
+    <path d="M1340 627 C1316 535 1171 567 1080 623"/>
+    <path d="M1340 627 C1300 579 1175 616 1129 697" marker-end="url(#teal-arrow)"/>
+    <path d="M1340 627 C1303 594 1218 628 1202 697" marker-end="url(#teal-arrow)"/>
+    <path d="M1340 627 C1316 609 1260 639 1235 697" marker-end="url(#teal-arrow)"/>
+    <path d="M1120 581 C1200 550 1395 551 1431 626" marker-end="url(#teal-arrow)"/>
+    <path d="M1170 586 C1255 552 1481 553 1514 626" marker-end="url(#teal-arrow)"/>
+    <path d="M1280 585 C1332 575 1400 591 1429 626" marker-end="url(#teal-arrow)"/>
+    <path d="M1320 574 C1388 562 1477 583 1514 626" marker-end="url(#teal-arrow)"/>
+  </g>
+  <g id="blocked-crosses" stroke="#F04C3E" stroke-width="4">
+    <line x1="985" y1="637" x2="1001" y2="653"/><line x1="1001" y1="637" x2="985" y2="653"/>
+    <line x1="1046" y1="637" x2="1062" y2="653"/><line x1="1062" y1="637" x2="1046" y2="653"/>
+    <line x1="1109" y1="637" x2="1125" y2="653"/><line x1="1125" y1="637" x2="1109" y2="653"/>
+  </g>
+  <use href="#right-context" y="386"/>
+  <g id="r3-generated-sequence">
+    <rect x="1325" y="627" width="45" height="40" rx="8" fill="url(#r3-node)" stroke="#53B5BE"/>
+    <rect x="1414" y="627" width="45" height="40" rx="8" fill="url(#r3-node)" stroke="#53B5BE"/>
+    <rect x="1501" y="627" width="45" height="40" rx="8" fill="url(#r3-node)" stroke="#53B5BE"/>
+    <line x1="1347" y1="672" x2="1347" y2="704" stroke="#24465E" stroke-width="1.8" marker-end="url(#navy-arrow)"/>
+    <line x1="1436" y1="672" x2="1436" y2="704" stroke="#24465E" stroke-width="1.8" marker-end="url(#navy-arrow)"/>
+    <line x1="1526" y1="672" x2="1526" y2="704" stroke="#24465E" stroke-width="1.8" marker-end="url(#navy-arrow)"/>
+    <rect x="1317" y="707" width="59" height="53" rx="8" fill="url(#r3-node)" stroke="#53B5BE"/>
+    <rect x="1407" y="707" width="59" height="53" rx="8" fill="url(#r3-node)" stroke="#53B5BE"/>
+    <rect x="1497" y="707" width="60" height="53" rx="8" fill="url(#r3-node)" stroke="#53B5BE"/>
+    <line x1="1377" y1="734" x2="1403" y2="734" stroke="#24465E" stroke-width="1.6" marker-end="url(#navy-arrow)"/>
+    <line x1="1468" y1="734" x2="1492" y2="734" stroke="#24465E" stroke-width="1.6" marker-end="url(#navy-arrow)"/>
+    <g font-family="Arial" font-style="italic" font-size="27" text-anchor="middle" fill="#101010">
+      <text x="1347" y="654">q<tspan baseline-shift="sub" font-size="19">1</tspan></text><text x="1436" y="654">q<tspan baseline-shift="sub" font-size="19">2</tspan></text><text x="1523" y="654">q<tspan baseline-shift="sub" font-size="19">3</tspan></text>
+      <text x="1347" y="739">y<tspan baseline-shift="sub" font-size="20">2</tspan></text><text x="1436" y="739">y<tspan baseline-shift="sub" font-size="20">3</tspan></text><text x="1527" y="739">y<tspan baseline-shift="sub" font-size="20">4</tspan></text>
+    </g>
+    <circle cx="1586" cy="734" r="3.5" fill="#101010"/><circle cx="1601" cy="734" r="3.5" fill="#101010"/><circle cx="1616" cy="734" r="3.5" fill="#101010"/>
+  </g>
+</g>
+</svg>

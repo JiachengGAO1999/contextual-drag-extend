@@ -1,0 +1,1234 @@
+{
+  "batches": [
+    {
+      "batch": "batch02_dual_anchor",
+      "questions": 32,
+      "records": 1024,
+      "classifications": {
+        "correct": 938,
+        "truncated_or_incomplete": 25,
+        "substantive_error": 54,
+        "extraction_miss_correct": 7
+      },
+      "tokens": 6983366,
+      "generation_gpu_hours": 18.77558080214593,
+      "measured_job_hours": 19.170075033165308,
+      "eligible_all": 8
+    },
+    {
+      "batch": "game24-baseline-screen-vllm-20260917-retry1",
+      "questions": 24,
+      "records": 96,
+      "classifications": {
+        "correct": 82,
+        "substantive_error": 8,
+        "extraction_miss_correct": 3,
+        "truncated_or_incomplete": 3
+      },
+      "tokens": 704794,
+      "generation_gpu_hours": 0.3716501634205795,
+      "measured_job_hours": 0.4026901783773469,
+      "eligible_all": 0
+    },
+    {
+      "batch": "game24-batch03-dual-anchor-20260924",
+      "questions": 32,
+      "records": 864,
+      "classifications": {
+        "correct": 771,
+        "substantive_error": 61,
+        "truncated_or_incomplete": 29,
+        "extraction_miss_correct": 3
+      },
+      "tokens": 6472076,
+      "generation_gpu_hours": 12.688803419264861,
+      "measured_job_hours": 13.004282813488196,
+      "eligible_all": 13
+    },
+    {
+      "batch": "game24-batch04-dual-anchor-screen-20260925",
+      "questions": 32,
+      "records": 512,
+      "classifications": {
+        "correct": 472,
+        "truncated_or_incomplete": 9,
+        "substantive_error": 30,
+        "extraction_miss_correct": 1
+      },
+      "tokens": 3438749,
+      "generation_gpu_hours": 10.3104591143183,
+      "measured_job_hours": 10.682583822036783,
+      "eligible_all": 5
+    },
+    {
+      "batch": "game24-dual-anchor-20q-20260917",
+      "questions": 20,
+      "records": 640,
+      "classifications": {
+        "correct": 583,
+        "extraction_miss_correct": 11,
+        "substantive_error": 40,
+        "truncated_or_incomplete": 6
+      },
+      "tokens": 4137057,
+      "generation_gpu_hours": 8.702677635502898,
+      "measured_job_hours": 9.002913458979585,
+      "eligible_all": 6
+    },
+    {
+      "batch": "game24-heldout-screen-20260917",
+      "questions": 8,
+      "records": 32,
+      "classifications": {
+        "correct": 30,
+        "truncated_or_incomplete": 1,
+        "substantive_error": 1
+      },
+      "tokens": 245140,
+      "generation_gpu_hours": null,
+      "measured_job_hours": null,
+      "eligible_all": 0
+    },
+    {
+      "batch": "game24-qwen3-8b-r0-r4-smoke-20260906",
+      "questions": 4,
+      "records": 4,
+      "classifications": {
+        "malformed_or_empty": 4
+      },
+      "tokens": 2698,
+      "generation_gpu_hours": null,
+      "measured_job_hours": null,
+      "eligible_all": 0
+    },
+    {
+      "batch": "game24-qwen3-8b-r0-r4-smoke-boundary-20260906",
+      "questions": 66,
+      "records": 66,
+      "classifications": {
+        "truncated_or_incomplete": 21,
+        "malformed_or_empty": 45
+      },
+      "tokens": 119095,
+      "generation_gpu_hours": null,
+      "measured_job_hours": null,
+      "eligible_all": 0
+    },
+    {
+      "batch": "game24-qwen3-8b-thinking-drafts-20260908",
+      "questions": 16,
+      "records": 64,
+      "classifications": {
+        "correct": 55,
+        "truncated_or_incomplete": 4,
+        "substantive_error": 5
+      },
+      "tokens": 561854,
+      "generation_gpu_hours": null,
+      "measured_job_hours": null,
+      "eligible_all": 0
+    },
+    {
+      "batch": "game24-qwen3-8b-thinking-r0-r4-20260906",
+      "questions": 16,
+      "records": 64,
+      "classifications": {
+        "correct": 61,
+        "substantive_error": 2,
+        "extraction_miss_correct": 1
+      },
+      "tokens": 496959,
+      "generation_gpu_hours": null,
+      "measured_job_hours": null,
+      "eligible_all": 0
+    },
+    {
+      "batch": "game24-qwen3-reendorsement-drafts-20260914",
+      "questions": 8,
+      "records": 32,
+      "classifications": {
+        "correct": 30,
+        "substantive_error": 1,
+        "truncated_or_incomplete": 1
+      },
+      "tokens": 238262,
+      "generation_gpu_hours": null,
+      "measured_job_hours": null,
+      "eligible_all": 0
+    },
+    {
+      "batch": "game24-stage-b-drafts-20260911",
+      "questions": 32,
+      "records": 128,
+      "classifications": {
+        "correct": 109,
+        "substantive_error": 12,
+        "truncated_or_incomplete": 5,
+        "extraction_miss_correct": 1,
+        "excluded_ambiguous_failure": 1
+      },
+      "tokens": 951859,
+      "generation_gpu_hours": null,
+      "measured_job_hours": null,
+      "eligible_all": 1
+    },
+    {
+      "batch": "game24-stage-b-supplement-20260911",
+      "questions": 3,
+      "records": 12,
+      "classifications": {
+        "truncated_or_incomplete": 3,
+        "correct": 8,
+        "substantive_error": 1
+      },
+      "tokens": 168272,
+      "generation_gpu_hours": null,
+      "measured_job_hours": null,
+      "eligible_all": 0
+    }
+  ],
+  "prefix_replay": [
+    {
+      "batch": "batch02_dual_anchor",
+      "prefix": 4,
+      "complete_questions": 32,
+      "eligible": 7,
+      "newly_eligible_on_same_complete_set": 7,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 4,
+        "Qwen3_32B": 1
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 6,
+        "Qwen3_32B": 3
+      },
+      "tokens": 1785420,
+      "missed_full16_eligible": 1,
+      "full16_reference": 8,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "batch02_dual_anchor",
+      "prefix": 8,
+      "complete_questions": 32,
+      "eligible": 7,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 6,
+        "Qwen3_32B": 3
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 4,
+        "Qwen3_32B": 1
+      },
+      "tokens": 3551267,
+      "missed_full16_eligible": 1,
+      "full16_reference": 8,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "batch02_dual_anchor",
+      "prefix": 12,
+      "complete_questions": 32,
+      "eligible": 8,
+      "newly_eligible_on_same_complete_set": 1,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 8,
+        "Qwen3_32B": 3
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 5,
+        "Qwen3_32B": 0
+      },
+      "tokens": 5298657,
+      "missed_full16_eligible": 0,
+      "full16_reference": 8,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "batch02_dual_anchor",
+      "prefix": 16,
+      "complete_questions": 32,
+      "eligible": 8,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 8,
+        "Qwen3_32B": 3
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 5,
+        "Qwen3_32B": 0
+      },
+      "tokens": 6983366,
+      "missed_full16_eligible": 0,
+      "full16_reference": 8,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-baseline-screen-vllm-20260917-retry1",
+      "prefix": 4,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-baseline-screen-vllm-20260917-retry1",
+      "prefix": 8,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-baseline-screen-vllm-20260917-retry1",
+      "prefix": 12,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-baseline-screen-vllm-20260917-retry1",
+      "prefix": 16,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-batch03-dual-anchor-20260924",
+      "prefix": 4,
+      "complete_questions": 22,
+      "eligible": 2,
+      "newly_eligible_on_same_complete_set": 2,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 2,
+        "Qwen3_32B": 2
+      },
+      "tokens": 1250511,
+      "missed_full16_eligible": 6,
+      "full16_reference": 8,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-batch03-dual-anchor-20260924",
+      "prefix": 8,
+      "complete_questions": 22,
+      "eligible": 7,
+      "newly_eligible_on_same_complete_set": 5,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 3,
+        "Qwen3_32B": 5
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 2,
+        "Qwen3_32B": 4
+      },
+      "tokens": 2479163,
+      "missed_full16_eligible": 1,
+      "full16_reference": 8,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-batch03-dual-anchor-20260924",
+      "prefix": 12,
+      "complete_questions": 22,
+      "eligible": 8,
+      "newly_eligible_on_same_complete_set": 1,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 3,
+        "Qwen3_32B": 5
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 3,
+        "Qwen3_32B": 5
+      },
+      "tokens": 3756087,
+      "missed_full16_eligible": 0,
+      "full16_reference": 8,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-batch03-dual-anchor-20260924",
+      "prefix": 16,
+      "complete_questions": 22,
+      "eligible": 8,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 3,
+        "Qwen3_32B": 5
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 3,
+        "Qwen3_32B": 5
+      },
+      "tokens": 5040409,
+      "missed_full16_eligible": 0,
+      "full16_reference": 8,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-batch04-dual-anchor-screen-20260925",
+      "prefix": 4,
+      "complete_questions": 32,
+      "eligible": 2,
+      "newly_eligible_on_same_complete_set": 2,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 2
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 2
+      },
+      "tokens": 1689711,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-batch04-dual-anchor-screen-20260925",
+      "prefix": 8,
+      "complete_questions": 32,
+      "eligible": 5,
+      "newly_eligible_on_same_complete_set": 3,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 2,
+        "Qwen3_32B": 4
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 1,
+        "Qwen3_32B": 3
+      },
+      "tokens": 3438749,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-batch04-dual-anchor-screen-20260925",
+      "prefix": 12,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": null,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-batch04-dual-anchor-screen-20260925",
+      "prefix": 16,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-dual-anchor-20q-20260917",
+      "prefix": 4,
+      "complete_questions": 20,
+      "eligible": 3,
+      "newly_eligible_on_same_complete_set": 3,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 2,
+        "Qwen3_32B": 1
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 2,
+        "Qwen3_32B": 1
+      },
+      "tokens": 1065370,
+      "missed_full16_eligible": 3,
+      "full16_reference": 6,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-dual-anchor-20q-20260917",
+      "prefix": 8,
+      "complete_questions": 20,
+      "eligible": 3,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 3,
+        "Qwen3_32B": 2
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 1,
+        "Qwen3_32B": 0
+      },
+      "tokens": 2079604,
+      "missed_full16_eligible": 3,
+      "full16_reference": 6,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-dual-anchor-20q-20260917",
+      "prefix": 12,
+      "complete_questions": 20,
+      "eligible": 5,
+      "newly_eligible_on_same_complete_set": 2,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 4,
+        "Qwen3_32B": 3
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 2,
+        "Qwen3_32B": 1
+      },
+      "tokens": 3108912,
+      "missed_full16_eligible": 1,
+      "full16_reference": 6,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-dual-anchor-20q-20260917",
+      "prefix": 16,
+      "complete_questions": 20,
+      "eligible": 6,
+      "newly_eligible_on_same_complete_set": 1,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 5,
+        "Qwen3_32B": 5
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 1,
+        "Qwen3_32B": 1
+      },
+      "tokens": 4137057,
+      "missed_full16_eligible": 0,
+      "full16_reference": 6,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-heldout-screen-20260917",
+      "prefix": 4,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-heldout-screen-20260917",
+      "prefix": 8,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-heldout-screen-20260917",
+      "prefix": 12,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-heldout-screen-20260917",
+      "prefix": 16,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-8b-r0-r4-smoke-20260906",
+      "prefix": 4,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-8b-r0-r4-smoke-20260906",
+      "prefix": 8,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-8b-r0-r4-smoke-20260906",
+      "prefix": 12,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-8b-r0-r4-smoke-20260906",
+      "prefix": 16,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-8b-r0-r4-smoke-boundary-20260906",
+      "prefix": 4,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-8b-r0-r4-smoke-boundary-20260906",
+      "prefix": 8,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-8b-r0-r4-smoke-boundary-20260906",
+      "prefix": 12,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-8b-r0-r4-smoke-boundary-20260906",
+      "prefix": 16,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-8b-thinking-drafts-20260908",
+      "prefix": 4,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-8b-thinking-drafts-20260908",
+      "prefix": 8,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-8b-thinking-drafts-20260908",
+      "prefix": 12,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-8b-thinking-drafts-20260908",
+      "prefix": 16,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-8b-thinking-r0-r4-20260906",
+      "prefix": 4,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-8b-thinking-r0-r4-20260906",
+      "prefix": 8,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-8b-thinking-r0-r4-20260906",
+      "prefix": 12,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-8b-thinking-r0-r4-20260906",
+      "prefix": 16,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-reendorsement-drafts-20260914",
+      "prefix": 4,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-reendorsement-drafts-20260914",
+      "prefix": 8,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-reendorsement-drafts-20260914",
+      "prefix": 12,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-qwen3-reendorsement-drafts-20260914",
+      "prefix": 16,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-stage-b-drafts-20260911",
+      "prefix": 4,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-stage-b-drafts-20260911",
+      "prefix": 8,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-stage-b-drafts-20260911",
+      "prefix": 12,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-stage-b-drafts-20260911",
+      "prefix": 16,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-stage-b-supplement-20260911",
+      "prefix": 4,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-stage-b-supplement-20260911",
+      "prefix": 8,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-stage-b-supplement-20260911",
+      "prefix": 12,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    },
+    {
+      "batch": "game24-stage-b-supplement-20260911",
+      "prefix": 16,
+      "complete_questions": 0,
+      "eligible": 0,
+      "newly_eligible_on_same_complete_set": 0,
+      "alone_eligible": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "anchor_marginal": {
+        "Qwen3_8B_Thinking": 0,
+        "Qwen3_32B": 0
+      },
+      "tokens": 0,
+      "missed_full16_eligible": 0,
+      "full16_reference": 0,
+      "prefix_gpu_hours": null,
+      "reason": "Concurrent chunk wall time cannot be apportioned to sample prefixes"
+    }
+  ],
+  "prefix_cost_identifiable": false,
+  "cost_note": "Token prefixes measured; GPU hours measured for whole completed chunks only"
+}

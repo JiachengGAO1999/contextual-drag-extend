@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: contextual_drag_continued_access.aux
+The style file: iclr2027_conference.bst
+Database file #1: contextual_drag_continued_access.bib
+You've used 17 entries,
+            2773 wiz_defined-function locations,
+            688 strings with 10064 characters,
+and the built_in function-call counts, 10920 in all, are:
+= -- 876
+> -- 984
+< -- 11
++ -- 329
+- -- 312
+* -- 984
+:= -- 1742
+add.period$ -- 77
+call.type$ -- 17
+change.case$ -- 154
+chr.to.int$ -- 17
+cite$ -- 34
+duplicate$ -- 407
+empty$ -- 689
+format.name$ -- 332
+if$ -- 2236
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 16
+newline$ -- 119
+num.names$ -- 68
+pop$ -- 330
+preamble$ -- 1
+purify$ -- 137
+quote$ -- 0
+skip$ -- 351
+stack$ -- 0
+substring$ -- 114
+swap$ -- 58
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 187
+warning$ -- 0
+while$ -- 57
+width$ -- 0
+write$ -- 271

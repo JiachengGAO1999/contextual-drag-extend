@@ -1,0 +1,2282 @@
+{
+  "manifest_version": 1,
+  "status": "frozen_pending_execution",
+  "generate": false,
+  "purpose": "Fresh independent Game24 baseline screen before any intervention selection",
+  "selection": "Seeded shuffle of source rows remaining after excluding every Game24 question ID and number multiset found in prior scripts, plans, screening, runs, outputs, or pairs; no response-outcome ranking.",
+  "source": "/data2/gaojc/data/game24-tot-8050e67/24.csv",
+  "source_revision": "8050e67d0e3a0fddc424d7fa5801538722a4c4cc",
+  "source_sha256": "b9f12b3e36d987a3c714c4cef17d89a137d7c59da26532fcfb93b4821d8111b5",
+  "order_seed": 20270925,
+  "seed": 20270925,
+  "candidate_count": 32,
+  "samples_per_problem": 8,
+  "anchor_models": [
+    "Qwen3_8B_Thinking",
+    "Qwen3_32B"
+  ],
+  "condition": "R0",
+  "backend": "ordinary_vLLM_default_worker; no selective mask",
+  "total_generations": 512,
+  "eligibility_rule": "Pool valid EOS and parseable-thinking outputs across both anchors; require at least two official scorer True and at least two manually confirmed substantive errors. Scorer False remains pending manual review and never counts as an error automatically.",
+  "sampling_design_note": "Eight samples per anchor use the measured fixed-order Batch03 prefix where pooled eligibility rose from 2/22 at n=4 to 7/22 at n=8, 8/22 at n=12, and remained 8/22 at n=16. This is a planning estimate, not a guaranteed yield.",
+  "exclusion_audit": {
+    "excluded_unique_question_ids": 194,
+    "excluded_unique_number_multisets": 194,
+    "excluded_ids_sha256": "b2757570cc91c3b2229171ad78cfd9bc52298e92c0df0d24c2ce56de2a9dec14",
+    "evidence_files": [
+      {
+        "path": "outputs/game24-baseline-screen-vllm-20260917-retry1/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "aec86df9465a8d2bcd8bc1229501ac3144d55f3946c12eee605bc3252258a53c",
+        "question_ids_found": 24
+      },
+      {
+        "path": "outputs/game24-baseline-screen-vllm-20260917-retry1/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "8b313c0138c3a8d7cc283b5d1f5be9a7a196315307ee686f9698b342e7b9ef2c",
+        "question_ids_found": 24
+      },
+      {
+        "path": "outputs/game24-baseline-screen-vllm-20260917-retry1/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "90441d581167748c29adcb2b5a0cbf60bde31a55de1ecaf4a47b461c2b08de3c",
+        "question_ids_found": 24
+      },
+      {
+        "path": "outputs/game24-baseline-screen-vllm-20260917-retry1/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "aec86df9465a8d2bcd8bc1229501ac3144d55f3946c12eee605bc3252258a53c",
+        "question_ids_found": 24
+      },
+      {
+        "path": "outputs/game24-baseline-screen-vllm-20260918-batch02/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "6596b0b67e01080a8dc8a22998d038c15fead1cddec98ad3530ca89e25c74779",
+        "question_ids_found": 32
+      },
+      {
+        "path": "outputs/game24-baseline-screen-vllm-20260918-batch02/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "2428ed35695d7727ee7f6c8935b1550b20442550dffe469add9ca58583fa3d07",
+        "question_ids_found": 69
+      },
+      {
+        "path": "outputs/game24-baseline-screen-vllm-20260918-batch02/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "9a71155ed0ee95f77a622cdeeb9c144ff3248e81a7767b6556464a17a5ca560e",
+        "question_ids_found": 32
+      },
+      {
+        "path": "outputs/game24-baseline-screen-vllm-20260918-batch02/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "6596b0b67e01080a8dc8a22998d038c15fead1cddec98ad3530ca89e25c74779",
+        "question_ids_found": 32
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-00/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "f9c447e734e1486c476bd3da878c71b33e5fc3312b61fb726b53b04a1252d350",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-00/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "13c4b8a7e1304167da157d28089f3b00da7b47b7f9d1415e4faf475381de990b",
+        "question_ids_found": 39
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-00/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "ba119a15d6aedbceea6faae7f8324d3768cc69a9d08cbc1d340e2e8f443c8129",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-00/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "f9c447e734e1486c476bd3da878c71b33e5fc3312b61fb726b53b04a1252d350",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-02/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "cf2615027f373e0bef0eacefaf761a339d1b4a1d96822a0b5d3a5ea9e1d43a83",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-02/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "a0cd91c38e88e1946d0d5ea6e251ee94a2318e652830038e524ee6698a6b33f2",
+        "question_ids_found": 39
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-02/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "8e6f522aa06188dada1cd4a05868c933e9673ea8c98a8bc12281a98067c95dc4",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-02/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "cf2615027f373e0bef0eacefaf761a339d1b4a1d96822a0b5d3a5ea9e1d43a83",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-04/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "58e3a8974060cdc402009aaf12f7c33c316dd6a54645a7c59a29242007f3980f",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-04/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "02b3fd506a5efa12c253eed925356aa5a065b9b2167e47bf57bab9606dc963f0",
+        "question_ids_found": 39
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-04/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "500258e28aa9226d20634996596613b3afd774a6ee9dbc473075f863151f1093",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-04/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "58e3a8974060cdc402009aaf12f7c33c316dd6a54645a7c59a29242007f3980f",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-06/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "054a813160e6940769ef4414cdcb2dbb3ee83d66199a7b6401960832e8deddd2",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-06/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "3a71c7346f5f2711d753712a5824e90fcb85bd1de5bd93ed0a3255fea7103112",
+        "question_ids_found": 39
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-06/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "6f5a3dce4486d723dc270a3c8b3845432e5460dd6f14d5e4eb1606f866061b18",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-06/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "054a813160e6940769ef4414cdcb2dbb3ee83d66199a7b6401960832e8deddd2",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-08/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "21e491a195dcdb5242f12a4548d5d24878a9882cab04978517f4427c513677fa",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-08/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "fcc48629e3b10b6ae476e1afc32a7e6b65befe3d9754cec11d159d168ff7a4d3",
+        "question_ids_found": 39
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-08/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "963e52848c8ed193c3df4969365e3404cba7bd5ed6f6567112429ea94263ae24",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-08/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "21e491a195dcdb5242f12a4548d5d24878a9882cab04978517f4427c513677fa",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-10/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "6e76c8662e9e09386bd4d27a09992f4517401601c784081f6f87932c48cb4b1c",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-10/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "3b2e4a573b14d71fb6d385fb28358e5db62df508cf9d83493f07e68acc9ab411",
+        "question_ids_found": 39
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-10/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "06ba408082ac74d1eb2c2070512046e78492971968df03ffc109a47e1ea28b25",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-10/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "6e76c8662e9e09386bd4d27a09992f4517401601c784081f6f87932c48cb4b1c",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-12/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "4386bd4eb501f9fd02012fad2a8562cf65c921549df10bf963c934c0299b99fe",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-12/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "21b0f98e8b28f4fb328dd9a967737a45f8e17a4e19605f25f0f938e49959ddaf",
+        "question_ids_found": 39
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-12/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "baf42527e56a1de574979ef0e799716578c43e8a9e6407a28dceeb39d8184a0a",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-12/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "4386bd4eb501f9fd02012fad2a8562cf65c921549df10bf963c934c0299b99fe",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-14/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "c4f8b7245f55d7d956b19c75befbf7802d2fdef868421b3b87dc51346245a861",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-14/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "d8706c16145f0bf503d8e6c2e97e7a21ba32a8cb151c37de300786182742fa70",
+        "question_ids_found": 39
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-14/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "e01c6177f6ce0295b708a7714a6fda633fc8988369b0c1751484e03b35aadc80",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-14/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "c4f8b7245f55d7d956b19c75befbf7802d2fdef868421b3b87dc51346245a861",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-16/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "7325b644eabeaf33b63b9444e0686426746dd57a44497f310abdf07ff9c4fe0c",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-16/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "80088aca320f2a011c8f03690a081e6f82c3f17a6e1d23ce1dff476b2d7cd25c",
+        "question_ids_found": 39
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-16/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "c337819d901665c434ebf2ccf8fee7e65b60bac40635165355cd2232fca9ef2b",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-16/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "7325b644eabeaf33b63b9444e0686426746dd57a44497f310abdf07ff9c4fe0c",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-18/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "78ed5c7f871c5ff981fba9af8d44f733514ff45ca03d82c6cb9940bb4c490aaa",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-18/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "bf7887d95c60394407f98ef7536fb46fe6fe110c5dccbe09399f76543616d508",
+        "question_ids_found": 39
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-18/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "36714d68684df3973d2e5b0b333f1915d39d141157dfdd8b401f0bc5261c39e3",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-18/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "78ed5c7f871c5ff981fba9af8d44f733514ff45ca03d82c6cb9940bb4c490aaa",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-20/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "f64cc211c0eae547aa709bebb95e2d9b541f398cea1a9aca2fdc20fb84056cd5",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-20/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "a5ded5fefdb4bb163707c140cf5def49c7e2103fa5f780bd241f66ad2d9f3744",
+        "question_ids_found": 39
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-20/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "d470e0d5fd1d2d519b56dda942490b22819cdaecca7f968e6a57e6b38fc5b283",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-20/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "f64cc211c0eae547aa709bebb95e2d9b541f398cea1a9aca2fdc20fb84056cd5",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-22/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "45da7b4bc5c38cb2a70bd96da5f785f1b3bc3efc313c564b5061b4dde8bdaba4",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-22/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "11b8703c0af2b964c022d9af97f83381f511b52977c72cd70e1e05f5392434a7",
+        "question_ids_found": 39
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-22/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "1eaf2c07f88944420712fd5724906fd08602b23f69353fd9d595b6dd1f44dd9b",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-22/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "45da7b4bc5c38cb2a70bd96da5f785f1b3bc3efc313c564b5061b4dde8bdaba4",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-24/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "f09a5e2a6c9274ae640aee9f35e0fd6395e791160fbe36ad1896dc3acaf09ee5",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-24/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "13dda2dc99f3dfc909b9ea51f65d23011581e043debcd1a94e0797b619ea3029",
+        "question_ids_found": 39
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-24/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "48e136f2ca7ed29c9042090427c95e97476884d6b3fb38b6671c7b1d7c24d790",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-24/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "f09a5e2a6c9274ae640aee9f35e0fd6395e791160fbe36ad1896dc3acaf09ee5",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-26/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "b1dd144320fa5e637acdf271c74cdb9bba17b91369ef5611ecbbdfce1a6d34a5",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-26/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "6398d6fa55166d180ba2cf32b22b2e3a30ae87e125c4de9b384a90ffc2f764ae",
+        "question_ids_found": 39
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-26/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "73d5be3f49282deaed276c90c7fff447dd6ed14020473ecc416943c11764efd3",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-26/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "b1dd144320fa5e637acdf271c74cdb9bba17b91369ef5611ecbbdfce1a6d34a5",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-28/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "44ad14ac483408cdca8cb3b322d77173eb9551ae530b53dad3e73e22cb68118c",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-28/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "7a925132851529448615f000b1014a7cba5db4b8bff407f381f3bf54e525a231",
+        "question_ids_found": 39
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-28/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "74205234b2d9db40ae6090c6a6888f35447f7dd7a0ab99e00eb0f60afd145809",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-28/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "44ad14ac483408cdca8cb3b322d77173eb9551ae530b53dad3e73e22cb68118c",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-30/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "b8c93e8c0bdce708f191b9f936b46477976b12c8e9d972daaef3c6669ab17cde",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-30/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "e3559ed990fdcb0183f624dac1bbde6bda8caca601f37e5c6c108695f417c3af",
+        "question_ids_found": 39
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-30/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "0b5731b4fbf06f3b7c7161b1bfacc3a2c3a6a443df4d9a7168fd5a1dec394244",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/chunk-30/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "b8c93e8c0bdce708f191b9f936b46477976b12c8e9d972daaef3c6669ab17cde",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch02-qwen32b-20260919/manifest.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "2290fa964feb9d685f3c772cd0b387db93b8e2f8aeae1dc3522ac171bea726e9",
+        "question_ids_found": 69
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-00/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "d59ba0b026bc41b9d19e327df43e0a86c3794ef75ac44f4103be1c6476a987e9",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-00/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "792c2a4639de9d8e6703d660f9aeb3f52e47c9dec2f49c1cfbf7ab5fabae8bec",
+        "question_ids_found": 71
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-00/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "9a7d798ba987d2e9484a40ee6bdf282f6ba03efc3f17c6258d1837a6ba118755",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-00/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "d59ba0b026bc41b9d19e327df43e0a86c3794ef75ac44f4103be1c6476a987e9",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-01/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "17f9814abc2fed3d2174ee884073dcd661848d2cd17920d66a6209ae82b9c9e5",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-01/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "0ec684df654315f9d25e0d30c1948cf9d6cd5f23c8217cd53d91bc550d937067",
+        "question_ids_found": 71
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-01/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "450bf6475543a62d7480f4d2caf7503eb7a34c50dc63a2d3dd2b282d8a0bc41a",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-01/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "17f9814abc2fed3d2174ee884073dcd661848d2cd17920d66a6209ae82b9c9e5",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-02/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "ba124cde93bd745b2c2aa6c6de1350cf685cce27bd284419ebaf1ed886bfceec",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-02/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "2a99a1132622a77d7ede1186d611e81e57d7686784d068079783d725e394885d",
+        "question_ids_found": 71
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-02/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "56b48da94afeedae5d1051196e3fb5185d5e248c3c20e2d9b06a34efd622fa0b",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-02/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "ba124cde93bd745b2c2aa6c6de1350cf685cce27bd284419ebaf1ed886bfceec",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-03/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "4d2791f7f47239443a25f1741aa6f335c855fd7e0c3a50d5cf296ba91fe89cf7",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-03/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "d1a031ffabe6fd3593270eda954868840773cb248ba35e790a3bc969933b8771",
+        "question_ids_found": 71
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-03/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "6207e72b4ae622c1b3e9fb6a83e34645ea09fe6833f075b3c116834319506a48",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-03/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "4d2791f7f47239443a25f1741aa6f335c855fd7e0c3a50d5cf296ba91fe89cf7",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-04/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "36902a7c218d33a2293fb34dab4607ec31787dc18742832960ce72cfef64ece0",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-04/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "1fa7bdc6320465f20f2ceaa3b4b782d5bb6922944fd15e2e91825ea436b2f7c2",
+        "question_ids_found": 71
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-04/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "4fd8bcdbf3492527d9009514451f6f3e97ad24695735fcffb45562bde6ba95db",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-04/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "36902a7c218d33a2293fb34dab4607ec31787dc18742832960ce72cfef64ece0",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-05/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "058547b80fecc2d37756130b0316892666962a09d58dc3229c31e302c52601ca",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-05/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "16fd4a4a9b5dd53eecca8a99245abf457a460da738778449bd58646f3ef5fc5e",
+        "question_ids_found": 71
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-05/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "c0d5f07aad40b88c97f4915e2c96d48effd9c07eb77c37b414f07b197547b22a",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-05/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "058547b80fecc2d37756130b0316892666962a09d58dc3229c31e302c52601ca",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-06/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "4fb2ad35f7727a32c9a11f47bdae336afe050ba40c4f7a1df465549821864ab8",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-06/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "91bc21b220bbf419177d3f5ab267d7a6d31953acb41f4830ad724f377bda9a3c",
+        "question_ids_found": 71
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-06/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "863b39d70596cae45cfc8c6d9184799d6c9aca3e3bf81241bfd6a7d3f077b634",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-06/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "4fb2ad35f7727a32c9a11f47bdae336afe050ba40c4f7a1df465549821864ab8",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-07/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "5525123da91ad9a502b389309e8b9ffc843aac5d7499375778c1a871d6bc3287",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-07/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "e4b3358445d6e0b10d160efcd60c21208cb87018a2f5567943ee61ccbbcb8e1e",
+        "question_ids_found": 71
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-07/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "1cae49377763f387c65a6aac3c6c33099163790eec55014be30cd891f1f7192d",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-07/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "5525123da91ad9a502b389309e8b9ffc843aac5d7499375778c1a871d6bc3287",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-08/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "72dbb169ad9bc5f913b00241a407ad9a32c3dd2628beb855addfe9f96f01d434",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-08/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "6ce30e660e9ec76fb7b5f522435e9d231a2cc912c520339666ad5e7755b65d95",
+        "question_ids_found": 71
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-08/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "a7618606587c9d5411d1c26e7fd5d7815b9f15e040e752ab96842882ef499667",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-08/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "72dbb169ad9bc5f913b00241a407ad9a32c3dd2628beb855addfe9f96f01d434",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-09/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "145aafbe33fbae3846f3d473bb4db91989ef81bb2e28e53fb9058ed16461e2ef",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-09/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "9a77a82b5e8b127210b3d45e772ae8c7f0af24018df79a4ab424a011b1582c68",
+        "question_ids_found": 71
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-09/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "bbd2b31c0e831f0fb395d2521d7e5abd4ab9aa1c51d2b9c2fe8f2b88e4f78ab6",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-09/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "145aafbe33fbae3846f3d473bb4db91989ef81bb2e28e53fb9058ed16461e2ef",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-10/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "2ac583c19e0d242e433e9369e66cdc58731ae9b8e5972c0220ffe864e48733c2",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-10/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "0b6b289566b75529dc160677c2620744a08fffb43629944729e122a4c41f3a4d",
+        "question_ids_found": 71
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-10/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "071948815e539671306ea00ef6da09ffb629bf0169bcd5ee60befc7c9fda209a",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-10/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "2ac583c19e0d242e433e9369e66cdc58731ae9b8e5972c0220ffe864e48733c2",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_32B/chunk-11/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "3016e006e8bf3749eb8cbeb3a49c01e643f4a4ade35433927f76dfe1cbdfd250",
+        "question_ids_found": 71
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-00/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "fe8fc1a0c4db61a6570db89ae6b88c229cabae9432324e803b0683eafc89b806",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-00/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "797ef0b8f24eae72c842f0e5615868308571ed8723eb2343de90b6f6f81fbafe",
+        "question_ids_found": 73
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-00/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "b7a6df3c54ebfdde23dc8a8dd1172001aa22566cbbc121a15e70c9d3bb6f2a55",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-00/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "fe8fc1a0c4db61a6570db89ae6b88c229cabae9432324e803b0683eafc89b806",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-01/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "a6d9b076f3bfc40ab8251272c654b23e33e79e61e23fcd43426c6e0017b7b1c2",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-01/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "ce360488f9e7330f2f304f8e59f325f72714178120a026ff4fae57ef6d15d0a9",
+        "question_ids_found": 73
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-01/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "716569771986acc136757f36896b05b7ff08540bb5348412ff66b243e588e834",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-01/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "a6d9b076f3bfc40ab8251272c654b23e33e79e61e23fcd43426c6e0017b7b1c2",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-02/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "2864fbf9d3f3dcbf38b930c53ad9fbfa9ec9654cbef5d740f8f2ee8ba41a437d",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-02/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "ea78f5b12fc9bd4f46ebd28fe423250a2cc255e4541e7d17b20d4e98667f23b4",
+        "question_ids_found": 73
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-02/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "37f05f9909ffc50a30c31a425a86f3970a7d18321efff52bc0ea20435fb8f5ad",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-02/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "2864fbf9d3f3dcbf38b930c53ad9fbfa9ec9654cbef5d740f8f2ee8ba41a437d",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-03/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "f8e1966f241c91c2ec09353fe2246417da72bd321a1744a82d40d909918c7118",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-03/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "dc8a5cab635720f1887b1d9955206537c98814308d6511eeb425e359053d71fd",
+        "question_ids_found": 73
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-03/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "3d4b9f95ef42567999fb2583f1151de22d8c440eee50ca23817ce2c5df269400",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-03/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "f8e1966f241c91c2ec09353fe2246417da72bd321a1744a82d40d909918c7118",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-04/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "9ea256d75c42688b47771a718c6931de84f65ba5765ead49344f3e9039a3b21d",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-04/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "77a6cc16290866458ea93ba3deab0354ccb73b598f94dba6164d320bb8e4cf01",
+        "question_ids_found": 73
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-04/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "563f2a058218c848791deb4fe1847735b6cbf13a72730dce49afa128e3ab4f01",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-04/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "9ea256d75c42688b47771a718c6931de84f65ba5765ead49344f3e9039a3b21d",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-05/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "295804f2eb59a7fa12315ded43ae79cc7efae2abdef0392fedfea541d376873e",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-05/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "fdbac952cb783a903ec92b9b0cb0f1ec9325e6c21531bc226a7ca208e5895510",
+        "question_ids_found": 73
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-05/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "98372db88ac860ea43ea7646ec2fba39f6352a7b2b28d7399a976732ff306e7e",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-05/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "295804f2eb59a7fa12315ded43ae79cc7efae2abdef0392fedfea541d376873e",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-06/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "80f226e7bdfd0d7c2e08ad00443bea85c325de70cf26cfc5c7fc2853a5c5821f",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-06/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "9088d9a214de43899d8c2709b90e5c78726f18e44d4c07cc827afc56e301884e",
+        "question_ids_found": 73
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-06/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "f6156da439c45da64c37c425f2f970da97cc90475d76be1cb7d76e0db20d77f2",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-06/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "80f226e7bdfd0d7c2e08ad00443bea85c325de70cf26cfc5c7fc2853a5c5821f",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-07/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "51c40fa8c9cb20e9c13fe40cddead356bca80d2aef79eee55ab600251ae714d8",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-07/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "a5d539fa821d0f1b13f5cb2f0b01674a0c1f64c3236f55bf6bd5ee78eee04ea1",
+        "question_ids_found": 73
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-07/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "bcc6ca969f6c271e49c8e2ebcfac2b746fe27eccf64f0dca2960311e7fd301fc",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/Qwen3_8B_Thinking/chunk-07/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "51c40fa8c9cb20e9c13fe40cddead356bca80d2aef79eee55ab600251ae714d8",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/batch03_partial_manifest_20260924.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "0c66805d5807a92c986ca535181891c14c7bda5512d0e006b7a813e331bd342f",
+        "question_ids_found": 32
+      },
+      {
+        "path": "outputs/game24-batch03-dual-anchor-20260924/frozen_source_manifest.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "536bd0fa7b0ff46efc14006b8ab47a7688c34fd376b8af7f3bca68cb5230c07a",
+        "question_ids_found": 101
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-00-Qwen3_32B/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "27181ce3243a63ef9735f8ae00fd9fe821fe32dea11df47e2b2e00919d073e27",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-00-Qwen3_32B/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "32ec8d0c329e81c63550ab7961ac13a4cb9a5b193698d53bcad32ffec48492cd",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-00-Qwen3_32B/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "b5837bf776ccbfb5bd50a93731a5528da9355eac3ac56f403bd903a96f85f5b1",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-00-Qwen3_32B/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "27181ce3243a63ef9735f8ae00fd9fe821fe32dea11df47e2b2e00919d073e27",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-00-Qwen3_8B_Thinking/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "2d37741e520a9d6253e91fc99d9e6ede255b0f9f8e483dba238b718ab65e84f3",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-00-Qwen3_8B_Thinking/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "32ec8d0c329e81c63550ab7961ac13a4cb9a5b193698d53bcad32ffec48492cd",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-00-Qwen3_8B_Thinking/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "c4549aca183088f5b4707ef8875d3a516b53fde1cf68852009d89b5985ee1508",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-00-Qwen3_8B_Thinking/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "2d37741e520a9d6253e91fc99d9e6ede255b0f9f8e483dba238b718ab65e84f3",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-02-Qwen3_32B/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "ba7390ecddf9ebac0b07c04c42bc25476edf3d634ae3911ab2744f6c7e611b2e",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-02-Qwen3_32B/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "76997f06232fa4f962f9fef6cdb746eae994e217c71444a28090c7838cbf2ec8",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-02-Qwen3_32B/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "9c7b58f9b804751455c778d617e076231db012219a1e7fc2778bb9b0e98e6a23",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-02-Qwen3_32B/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "ba7390ecddf9ebac0b07c04c42bc25476edf3d634ae3911ab2744f6c7e611b2e",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-02-Qwen3_8B_Thinking/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "e460bf45596cab35195d27dd8b932b1f8faf7828836dc17ac3a0ba1a774aee45",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-02-Qwen3_8B_Thinking/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "76997f06232fa4f962f9fef6cdb746eae994e217c71444a28090c7838cbf2ec8",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-02-Qwen3_8B_Thinking/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "95838cd9e9926093cf6b8c3c4222a2e9ca6dd62d4c0170a9856493487c765863",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-02-Qwen3_8B_Thinking/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "e460bf45596cab35195d27dd8b932b1f8faf7828836dc17ac3a0ba1a774aee45",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-04-Qwen3_32B/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "66a92d7133d25c8add3c5f24c47023b2d66f4f5b5516f20f8f0695feccba91c1",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-04-Qwen3_32B/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "2eea3c2ea9d769414cd9ee168f60c72a939d3913e1356b71669c15cb7ffcc873",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-04-Qwen3_32B/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "f2c2186528b117baae850256d1a89a41bef450c82a3d858e33b5a9e022a11c1f",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-04-Qwen3_32B/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "66a92d7133d25c8add3c5f24c47023b2d66f4f5b5516f20f8f0695feccba91c1",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-04-Qwen3_8B_Thinking/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "7bc13c66dcef776d04e0fcc16918e542a767fafeac046febd282da84972161f6",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-04-Qwen3_8B_Thinking/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "2eea3c2ea9d769414cd9ee168f60c72a939d3913e1356b71669c15cb7ffcc873",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-04-Qwen3_8B_Thinking/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "8c274c428d44259feec0a179db5fc1d90e643a3f6cab3872354d3f5b14395e6e",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-04-Qwen3_8B_Thinking/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "7bc13c66dcef776d04e0fcc16918e542a767fafeac046febd282da84972161f6",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-06-Qwen3_32B/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "433231d8b4143bc5adea3decfbf482c940106722323fe51de22774c5f179ec70",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-06-Qwen3_32B/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "4e6666e6627c9b8b0af7b721b1bbdc9504c2b7c56b2516d804e65e8fb41e9f02",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-06-Qwen3_32B/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "18314dc82aefe2fe954d351dc2f1855dfa86ea8cfc4af4b34a516bf97d8f1b11",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-06-Qwen3_32B/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "433231d8b4143bc5adea3decfbf482c940106722323fe51de22774c5f179ec70",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-06-Qwen3_8B_Thinking/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "875d8a911cf94bb79693788e3baf076fe80433f939cd9fc2db494ed39fe7e2cf",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-06-Qwen3_8B_Thinking/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "4e6666e6627c9b8b0af7b721b1bbdc9504c2b7c56b2516d804e65e8fb41e9f02",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-06-Qwen3_8B_Thinking/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "ae09c63c9fb523174e07ee30dd5042e644efef8576202f4bc01c6f8fb8cd38b6",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-06-Qwen3_8B_Thinking/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "875d8a911cf94bb79693788e3baf076fe80433f939cd9fc2db494ed39fe7e2cf",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-08-Qwen3_32B/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "ba395d9d0d3602d75675c9a5725965c250cc4ef5f836be1f87a085d060555857",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-08-Qwen3_32B/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "c4d09229f0da91866d1ccb8e07a296ca02163370c383f5bdb0bc525fcd9bf41a",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-08-Qwen3_32B/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "271f0109328ad72a69031d6bdbd5549e5322173bf40767275d3406ef19af37eb",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-08-Qwen3_32B/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "ba395d9d0d3602d75675c9a5725965c250cc4ef5f836be1f87a085d060555857",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-08-Qwen3_8B_Thinking/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "fbf8b4abf4fb1d6f647ab8315ef68bfb2fe282a35454d3522286c2c69b3ac903",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-08-Qwen3_8B_Thinking/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "c4d09229f0da91866d1ccb8e07a296ca02163370c383f5bdb0bc525fcd9bf41a",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-08-Qwen3_8B_Thinking/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "ae99d61ff284857aa3f7413db0d4e1ab8545fe2a4bca972ce9c60cdba002f15f",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-08-Qwen3_8B_Thinking/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "fbf8b4abf4fb1d6f647ab8315ef68bfb2fe282a35454d3522286c2c69b3ac903",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-10-Qwen3_32B/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "b224adf4ce9a17d13f41e7b46a1c25fd8fbf38e2cb19a292ff1cf1adbb560808",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-10-Qwen3_32B/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "bbffa7c9ba87004dd1be1c269bb9e37d06b6922949199ae04fed3e7e875fb877",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-10-Qwen3_32B/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "670b62b575d0aa3e6827f9d6958c8d50fb102dd8b61193d7bd69d13295c10386",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-10-Qwen3_32B/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "b224adf4ce9a17d13f41e7b46a1c25fd8fbf38e2cb19a292ff1cf1adbb560808",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-10-Qwen3_8B_Thinking/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "f798810a7680da8a36583a0cb5c141094d61dc42fb247494da50fcc67051cee0",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-10-Qwen3_8B_Thinking/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "bbffa7c9ba87004dd1be1c269bb9e37d06b6922949199ae04fed3e7e875fb877",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-10-Qwen3_8B_Thinking/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "9961f5f8c64c68333a666f004f939e7337b68d7987ded87156219752f17fd9c9",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-10-Qwen3_8B_Thinking/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "f798810a7680da8a36583a0cb5c141094d61dc42fb247494da50fcc67051cee0",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-12-Qwen3_32B/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "48fd88909398e3c4bee0e2e368349a48a07c728a96b32a13ecc44bc119a43d1c",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-12-Qwen3_32B/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "e75c267c835aa17d1c761e2db90d6aac16cbfe764259b8b0b0ebea2071af9368",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-12-Qwen3_32B/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "d77b7df7cae071561f91d4fabf2e92418dd0b5969fcfed5ac030c7f8114028a9",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-12-Qwen3_32B/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "48fd88909398e3c4bee0e2e368349a48a07c728a96b32a13ecc44bc119a43d1c",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-12-Qwen3_8B_Thinking/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "43d3831b9e133270951364b9673eff02623b31167ef5c936e94541175101cea7",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-12-Qwen3_8B_Thinking/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "e75c267c835aa17d1c761e2db90d6aac16cbfe764259b8b0b0ebea2071af9368",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-12-Qwen3_8B_Thinking/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "58ad2bb952b747bacbf7083b4835c38a8e31afe381b6bad475d1be54b2928181",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-12-Qwen3_8B_Thinking/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "43d3831b9e133270951364b9673eff02623b31167ef5c936e94541175101cea7",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-14-Qwen3_32B/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "eceaf82e95ec348caef7e968149be9091febea6e229fed142ddbb7e1c0bd5225",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-14-Qwen3_32B/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "d7c2654298ff2152f741db88074a8d3d90fe48eabdab517130bad87ade951f97",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-14-Qwen3_32B/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "40a4cd7224b8ed8539c7a04874660019951a5d9c8fa47bfc1f59aa01fc0841e6",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-14-Qwen3_32B/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "eceaf82e95ec348caef7e968149be9091febea6e229fed142ddbb7e1c0bd5225",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-14-Qwen3_8B_Thinking/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "44143804a3dbc6899cd6774d2a7223792f70f8bb1a372cddf8bdf4d836b3bc9c",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-14-Qwen3_8B_Thinking/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "d7c2654298ff2152f741db88074a8d3d90fe48eabdab517130bad87ade951f97",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-14-Qwen3_8B_Thinking/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "f2e57b5f8696efd6dbd5049639a6be1f7ae745a964936290b118185a1bc7bfc2",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-14-Qwen3_8B_Thinking/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "44143804a3dbc6899cd6774d2a7223792f70f8bb1a372cddf8bdf4d836b3bc9c",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-16-Qwen3_32B/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "ddbf62178c009ab5433a949785575227792a5d4a65a21c1693ce84605e0c3675",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-16-Qwen3_32B/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "5ae84780bd8dad0c5579017342253e935210b37222362dbc6e9452aa1d4c5f0c",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-16-Qwen3_32B/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "981729541ff1cb7887d6aa3a0f6c6fdaecadbc05b57a614b46a7395f577d4b77",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-16-Qwen3_32B/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "ddbf62178c009ab5433a949785575227792a5d4a65a21c1693ce84605e0c3675",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-16-Qwen3_8B_Thinking/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "257daebae75b11a6be7e286ae616e7e5e137cd619211bfbd54a3c6c786e32472",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-16-Qwen3_8B_Thinking/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "5ae84780bd8dad0c5579017342253e935210b37222362dbc6e9452aa1d4c5f0c",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-16-Qwen3_8B_Thinking/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "ffcbc2388c8fabff10a26b650ee6983fa8833f74447dc69d4ecf15615ee94928",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-16-Qwen3_8B_Thinking/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "257daebae75b11a6be7e286ae616e7e5e137cd619211bfbd54a3c6c786e32472",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-18-Qwen3_32B/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "3f3bd20b5a2429165cbbe1915f6276df0ef8d126c201c1ae58ca8d340f7778b0",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-18-Qwen3_32B/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "afe1b6decf94bc5462356d3c991a387acf303a806682f4aeefa42cf74f562c12",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-18-Qwen3_32B/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "8e330c97998df3d7041150b901d8181cb26891812a757b77bc91055a9a5a0000",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-18-Qwen3_32B/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "3f3bd20b5a2429165cbbe1915f6276df0ef8d126c201c1ae58ca8d340f7778b0",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-18-Qwen3_8B_Thinking/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "9201b8401e2662d49276e20231be0061b1ddbda4e1dfc4d4be9342d7e14c51f5",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-18-Qwen3_8B_Thinking/manifest_snapshot.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "afe1b6decf94bc5462356d3c991a387acf303a806682f4aeefa42cf74f562c12",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-18-Qwen3_8B_Thinking/raw_results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "e449c3a4a18b457bc69b4e3b3e63948b10e3da1f18671d7f809b7ad134156658",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/batch-18-Qwen3_8B_Thinking/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "9201b8401e2662d49276e20231be0061b1ddbda4e1dfc4d4be9342d7e14c51f5",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-dual-anchor-20q-20260917/manifest.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "fb9d7f9e4ea03d82a0f4b36b6d5a51d4d6288fa2acbfcd82827db6c5d602f27b",
+        "question_ids_found": 20
+      },
+      {
+        "path": "outputs/game24-dual-anchor-validation-20260918/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "904745aa8201fb56692b17460eabf496a2cbb643d2e4aabe1948499f3be881f3",
+        "question_ids_found": 7
+      },
+      {
+        "path": "outputs/game24-dual-anchor-validation-20260918-prepared/pairs.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "40d7ac777f87a2e445e50826443cad841c43f91e073ac760d110c290e1773f67",
+        "question_ids_found": 7
+      },
+      {
+        "path": "outputs/game24-fixed-repeats-20260910/seed-12027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "3845d9afc917b1e588cbfaebc032f21fadcf830926b1f49b8e83cb8d8de3c064",
+        "question_ids_found": 3
+      },
+      {
+        "path": "outputs/game24-fixed-repeats-20260910/seed-22027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "81d34368046b1c498527ece7cfed83edad5e50d10a9e4eaae2f898b373b0739a",
+        "question_ids_found": 3
+      },
+      {
+        "path": "outputs/game24-fixed-repeats-20260910/seed-32027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "da94d3008f40f8e7545f805d407518175b6fcb8ba617ddc20ce31a8023109c19",
+        "question_ids_found": 3
+      },
+      {
+        "path": "outputs/game24-heldout-screen-20260917/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "f74e7504cc1750fc421f2ca7d0cbab0719865221aa0758870e14c06dc5a97580",
+        "question_ids_found": 8
+      },
+      {
+        "path": "outputs/game24-heldout-screen-20260917/review_candidates.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "ea0b97c3ab08769178062c6883e36c3bf3a16f6b1d9522b03999a2aaa002d682",
+        "question_ids_found": 8
+      },
+      {
+        "path": "outputs/game24-independent-control-20260910/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "0de8d7459eaddaa7032be92427eff2bb1bad2462069173832a921edfc78fd872",
+        "question_ids_found": 3
+      },
+      {
+        "path": "outputs/game24-independent-stage-a-20260910/seed-12027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "584e314c5c676f63a0bdee345da62705e722c097dc7fb53893ceba09f53acd76",
+        "question_ids_found": 3
+      },
+      {
+        "path": "outputs/game24-independent-stage-a-20260910/seed-22027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "3d8bf6a353769685eba6546a094113fbe10b84cb1941d589b11b97460592328f",
+        "question_ids_found": 3
+      },
+      {
+        "path": "outputs/game24-independent-stage-a-20260910/seed-32027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "d8926adc03379d893276ae97df3108d7a1f84c956dab0ab3e7179652b498939a",
+        "question_ids_found": 3
+      },
+      {
+        "path": "outputs/game24-independent-stage-a-20260910/seed-42027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "54d94c36d39ac3a270a8fc3f38997628029b2bdf09970718a6e988e2d4d1d28d",
+        "question_ids_found": 3
+      },
+      {
+        "path": "outputs/game24-independent-stage-a-20260910/seed-52027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "7c0a2863f20c86a7ba80b1f0572c6d3bda14d66371b2419688bb03f7fa43c803",
+        "question_ids_found": 3
+      },
+      {
+        "path": "outputs/game24-morphology-surgery-20260915/manifest.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "2bc6da6f054cd5c6f848d1b6f2165ee8ffb9ea1cd814ccea121eef0dbd4ba9ba",
+        "question_ids_found": 3
+      },
+      {
+        "path": "outputs/game24-morphology-surgery-20260915/seed-12027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "c943e43756d520743db00d61d8eb09839d5922116151dea9d1ee5e8527bd5c74",
+        "question_ids_found": 3
+      },
+      {
+        "path": "outputs/game24-morphology-surgery-20260915/seed-2027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "3f8dc86abe9665b112c577137a13ddffcac3bed5b59a610e0b8bc11224ea62bf",
+        "question_ids_found": 3
+      },
+      {
+        "path": "outputs/game24-morphology-surgery-20260915/seed-22027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "617d712b73593414345bd633c5103d4e3ea637545799585a2a9a9dc319f86fe3",
+        "question_ids_found": 3
+      },
+      {
+        "path": "outputs/game24-morphology-surgery-20260915/seed-32027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "cde853bbb49867ab4d0a64755f1dbfe811ee67dae81a51dbe1ad384621374d3f",
+        "question_ids_found": 3
+      },
+      {
+        "path": "outputs/game24-multi-late-20260912/seed-12027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "2e659d666d059a9d4c585532223441a049dc8e2f4c823ed8fc3d3cc90b66358c",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-multi-late-20260912/seed-2027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "adf176f402f94ac6dc171b1c5f2d5324092d38fecbec23f9d4162f8d9c7a75df",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-multi-late-20260912/seed-22027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "903d1d8f51931bfc0c605d733d578f3ee3934baf3ca021a104a30a42afe2e453",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-multi-late-20260912/seed-32027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "cfa3ab39a23746093b90add3ed1c7f9da95d2b27d9d324f54dfb5ce26bf863f3",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-qwen3-8b-r0-r4-smoke-20260906/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "1497cd2681655c63214b004620f6769516f90728a3664fd0fbcf45ea667efb17",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-qwen3-8b-r0-r4-smoke-boundary-20260906/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "dc99a360ce5272e57fbbab4cda3d61fe2f2c19ffdea23cc1a6e055178f124f8a",
+        "question_ids_found": 70
+      },
+      {
+        "path": "outputs/game24-qwen3-8b-r0-r4-smoke-boundary-20260906/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "1ea4d3ff544d4b8b5637d00fbd530bdc5e2199660c4e323006eead736d743df0",
+        "question_ids_found": 10
+      },
+      {
+        "path": "outputs/game24-qwen3-8b-thinking-drafts-20260908/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "54979f5ffef7a69a71e7b495d3a9523146a7fd85cfe54dfb89a92e83ba2a5189",
+        "question_ids_found": 16
+      },
+      {
+        "path": "outputs/game24-qwen3-8b-thinking-fixed-r0-r4-20260908/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "11961626e433d7d86d5bd558bfd213ba1c7acec4e071344b91f3c4941f958e40",
+        "question_ids_found": 3
+      },
+      {
+        "path": "outputs/game24-qwen3-8b-thinking-r0-r4-20260906/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "ff0275a83c7ca15f57bafb1b5df8717da7b14608c349bbcfe0eb6d4cd97f8b68",
+        "question_ids_found": 16
+      },
+      {
+        "path": "outputs/game24-qwen3-8b-thinking-r0-r4-20260906/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "ee832c4918ed1093f8cf94d56bb7b3043288d926879be246f6ab7e048624dfed",
+        "question_ids_found": 3
+      },
+      {
+        "path": "outputs/game24-qwen3-fixed-c2-path-20260913/manifest.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "0122d807a3286b655924b5077aad7798eaa14d461106006d0c14ec7f77b3a3dd",
+        "question_ids_found": 5
+      },
+      {
+        "path": "outputs/game24-qwen3-fixed-c2-path-20260913/seed-12027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "31ef0e8019ae525894579911138a9c90fec903426f302427ddba8bad9bba6064",
+        "question_ids_found": 5
+      },
+      {
+        "path": "outputs/game24-qwen3-fixed-c2-path-20260913/seed-2027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "533bb82485c1858158ec68631c9a8bd87f29dc4607821b400464bd4a893fbf07",
+        "question_ids_found": 5
+      },
+      {
+        "path": "outputs/game24-qwen3-fixed-c2-path-20260913/seed-22027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "c14f4ae3df22d892709836989ef8216f11cb2d0895ca56e4c44aac9487a39363",
+        "question_ids_found": 5
+      },
+      {
+        "path": "outputs/game24-qwen3-fixed-c2-path-20260913/seed-32027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "1df984beabe372aa385a9778b12145523f6f8542ffdbda7597b7620672d8cc27",
+        "question_ids_found": 5
+      },
+      {
+        "path": "outputs/game24-qwen3-local-calculation-late-20260916/manifest.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "8cec7c9e0d19915c4a4c716de996726949c48f0b7e778492c8caff9e0e505627",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/game24-qwen3-local-calculation-late-20260916/seed-12027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "7ed97f31866d899a23a2d03ffaf5e25d923d58ae373ae48882c93c19e7e38262",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/game24-qwen3-local-calculation-late-20260916/seed-2027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "7e399e79b081ff363e38a682fd4ae5c47de27ab1716229e5b0d749071404d25f",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/game24-qwen3-local-calculation-late-20260916/seed-22027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "40049249dff3e1abc4281f3c0b26dc59ea96e7ddd4891f35b8cf2c74d8cd1d14",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/game24-qwen3-local-calculation-late-20260916/seed-32027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "f32213feca5b369c1cd12d1768fb1d399278bfc03ec4446e7266559aa1dcf8d0",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/game24-qwen3-marginal-path-20260914/manifest.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "40cc9ce32de1f907d08a1bc28af77691df0c9e757a0868014614d90ee58a4aef",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-qwen3-marginal-path-20260914/seed-12027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "e401d4da1d58ecce13b7aec175231e5d94c00cd725e8d45ec2c5ebb36ca04274",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-qwen3-marginal-path-20260914/seed-2027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "257cf089fbf81762fdae731c2dbdd119f0a220595ab85370ad7ce0cf78e8f8be",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-qwen3-marginal-path-20260914/seed-22027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "5efdd5d3e9f374f8c21f4d5e38dbbc3455db95a8e3beff2488f578a8c6012754",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-qwen3-marginal-path-20260914/seed-32027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "1fc169b11f491874edcb8ef795a8fd909ff69820a36dc6677edea68a9d257441",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/game24-qwen3-mx-late-path-20260913/manifest.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "5b49b4059a4e4d85a2085ad2874eb6f61c80941628ce3e3b33a3f147a0587b44",
+        "question_ids_found": 10
+      },
+      {
+        "path": "outputs/game24-qwen3-mx-late-path-20260913/seed-12027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "bf454945447ec3701e5d134a8a7ca690ebb9f780ade971e68769792162cfb1b7",
+        "question_ids_found": 10
+      },
+      {
+        "path": "outputs/game24-qwen3-mx-late-path-20260913/seed-2027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "42f9708e8acd8689910d76d7fdd23ab65b82e835c86bcca4c9f0d77be575e68f",
+        "question_ids_found": 10
+      },
+      {
+        "path": "outputs/game24-qwen3-mx-late-path-20260913/seed-22027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "9b4a0bc6a47201b724458266bb6fef9674d43380c9820b1c83b672519516ad73",
+        "question_ids_found": 10
+      },
+      {
+        "path": "outputs/game24-qwen3-mx-late-path-20260913/seed-32027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "e898c7d89ab534f7286290e63d15a9dc86d26530e0e76f9697e63d5708cb2908",
+        "question_ids_found": 10
+      },
+      {
+        "path": "outputs/game24-qwen3-reendorsement-drafts-20260914/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "8f83e7fac87c04a9aa0da2f87274a432f5c0dae7e431389857d5fc54eb3c9cd0",
+        "question_ids_found": 8
+      },
+      {
+        "path": "outputs/game24-qwen3-ten-validity-late-20260915/manifest.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "05487c6cc0ef9d4e09c645d214aa59fc6e04245e6d4808c4a394c8e1cb4a4b31",
+        "question_ids_found": 10
+      },
+      {
+        "path": "outputs/game24-qwen3-ten-validity-late-20260915/seed-12027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "a440ac272be5b3a9ce714e6647953596919abe553b0be432b3f6f4abd33164ab",
+        "question_ids_found": 7
+      },
+      {
+        "path": "outputs/game24-qwen3-ten-validity-late-20260915/seed-2027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "3c63fe62d1149d855bfc7daefc57e0a587e10d479e6bd3949408206ebc76b70b",
+        "question_ids_found": 7
+      },
+      {
+        "path": "outputs/game24-qwen3-ten-validity-late-20260915/seed-22027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "b507e85b23202b66e4f608d8b882b6cd7be8657bc61c3182a424e11b18f83764",
+        "question_ids_found": 7
+      },
+      {
+        "path": "outputs/game24-qwen3-ten-validity-late-20260915/seed-32027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "624403de604ccd120f08fa64d3754b8a13a08a0c58fdd70e7555e3c09c672cb1",
+        "question_ids_found": 7
+      },
+      {
+        "path": "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/manifest.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "18a907c5acb4440e0d818f64e8eb22fd1df453d207e4e00144bfd58ca108858b",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-42027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "e6db2c2cea2bad301f58ed59d4e3bd176d1aea40db920e4d44c43b1bcfc39118",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-52027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "c5dcd3081ffe238fabf02594479f6be428a3489dc136c52e9774015b00887984",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-62027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "eb53c07ccb30cb95505692761784379c39d42836d7e5a8f700d4e8e64f429258",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/game24-qwen3-x-vs-xcalc-fresh-seeds-20260916/seed-72027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "a2d22e8776161b99542441ca93225724c2e8729c3ef1ff2d1580225ae7d489f2",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/manifest.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "7a50485a072d461ccf72900e5aa27bafe6d8441c550c8c2e504b4a6c9d43ffbc",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-42027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "12f4392e6bb76a594c723c28d1c6f8644f740161204d9b92ce8b76c3bd32d5e4",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-52027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "e93b4719f0c35016a905fcaa234dcf56f762f8589fb6acbd996a2ace2324b03a",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-62027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "41d08165592c68ffb3683cb3cd828cb3e67974446c08c75ec3d424dcefb08427",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/game24-qwen3-x-vs-xcalc-path-fresh-seeds-20260916/seed-72027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "10088a9a8900155310d3d9a11d897cba3f54eef5f5cb636e938c7b48a4346bfa",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/game24-r1-supplement-20260912/manifest.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "920f44d9294ccaeeffe43f9ada3dc6fbb392b0068e16603cf1146c25bbf46f92",
+        "question_ids_found": 10
+      },
+      {
+        "path": "outputs/game24-r1-supplement-20260912/seed-12027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "78cb887cfc77d94ad81cb6f42baffaf52e804794979041f18957d2680f64516b",
+        "question_ids_found": 10
+      },
+      {
+        "path": "outputs/game24-r1-supplement-20260912/seed-2027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "b7a61cf26607a2a45db4d2a518277e1246a1e9a2cb4f62e4728b23bdb5489f2e",
+        "question_ids_found": 10
+      },
+      {
+        "path": "outputs/game24-r1-supplement-20260912/seed-22027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "89ef6821913e55c1f757d68a302d76c5b29fbae584f9129c113b9736c29dfe82",
+        "question_ids_found": 10
+      },
+      {
+        "path": "outputs/game24-r1-supplement-20260912/seed-32027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "ce038d5c6c6c604ce9c1afd1e624e6771483125fd1b81955965cda61be5df7c4",
+        "question_ids_found": 10
+      },
+      {
+        "path": "outputs/game24-region-late-20260912/seed-12027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "3972a09f628f2409d6162fe9fd49a5b014ae22e558c8309e47c750427fa5e69f",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-region-late-20260912/seed-2027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "27f55221aec97eb222d46fa5cb734788ee0065a35a9f9cd4a5133f99cfdc0521",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-region-late-20260912/seed-22027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "ec97c4895a4f7e4825a3f2ee1cbcc6b400b287718f6eb514627984f29821bc19",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-region-late-20260912/seed-32027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "f72d267317beb8507df3b186d82e506508bb32506b9fe37111e91b607bb76ea7",
+        "question_ids_found": 4
+      },
+      {
+        "path": "outputs/game24-stage-b-drafts-20260911/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "6abb190be2cce6976509025e93d8071c8faa7a7a56b966ac609e64b09cd4ce7d",
+        "question_ids_found": 32
+      },
+      {
+        "path": "outputs/game24-stage-b-paired-20260911/seed-12027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "fa94878aa658e17ce8735aaacd67ca9a3f472f01f97d7e368cf0be997b48393a",
+        "question_ids_found": 7
+      },
+      {
+        "path": "outputs/game24-stage-b-paired-20260911/seed-2027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "03a011909c3f1db45e231a2ee7ac7a0072762a59979fcaaee30794196f4aac07",
+        "question_ids_found": 7
+      },
+      {
+        "path": "outputs/game24-stage-b-paired-20260911/seed-22027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "8f8c0d82a677d6dc1dc8f6cad259861ada42063ca0586a12b31e982eb3d2421e",
+        "question_ids_found": 7
+      },
+      {
+        "path": "outputs/game24-stage-b-paired-20260911/seed-32027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "1a3b1ca76b28789d13b017d5b9e5cf467458b8d69b2cd68db7521f59f2cf0347",
+        "question_ids_found": 7
+      },
+      {
+        "path": "outputs/game24-stage-b-supplement-20260911/draft_candidates.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "70408760df410c6acbad192ff75efc2c0e97ab15b3ed2fa78a494620a881479f",
+        "question_ids_found": 3
+      },
+      {
+        "path": "outputs/game24-uft-external-20q-20260919/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "17fc78935717b99b6a71776f61aabc5e1039a8367976f02330511476168aad12",
+        "question_ids_found": 20
+      },
+      {
+        "path": "outputs/game24-uft-external-20q-20260919-prepared/pairs.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "caeed770e587b888f2dc1cdd2473e386a102b5fd3447c4ebbef28c6578b50108",
+        "question_ids_found": 20
+      },
+      {
+        "path": "outputs/game24-x-calc-late-20260916/manifest.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "7101d54c6384092e98f4b5893a946866fb0476e95e51a85d3477b231fb475d25",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/game24-x-calc-late-20260916/seed-12027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "6633ec8e67ba8ab1ecee42d5d1925c228c10c57cf0cb0b827f7a3235e0f8a68c",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/game24-x-calc-late-20260916/seed-2027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "6f2a50eee3b3733482fcfda7ce4fb181be56b955123c007007aa563b5731945a",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/game24-x-calc-late-20260916/seed-22027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "2bf3104731b2784aa6dc8b55dc03dd7de753591b8f8771cbb14563934f6126d5",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/game24-x-calc-late-20260916/seed-32027/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "94a1eeef1152c7fef2b1d664f319fd938a70a8a007398c4202e06f5c0f5ebe9b",
+        "question_ids_found": 6
+      },
+      {
+        "path": "outputs/ordinary-vllm-qwen32b-benchmark-20260917/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "9a1dda78ab040f0e8c12f4bdff47466dca31efe7a284757d241e408cf6614f29",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/ordinary-vllm-qwen8b-benchmark-20260917/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "85ccf8d80168153b74a709ee2343be00b5a5e32f4049890199b8dae706cd679b",
+        "question_ids_found": 2
+      },
+      {
+        "path": "outputs/vllm-complete-decode-kernel-20260917/results.jsonl",
+        "kind": "generated_or_pair_records",
+        "sha256": "f58c08f98185cbf2a7d822529a00792d9ebba6f53fa97038889b379ca89e5feb",
+        "question_ids_found": 3
+      },
+      {
+        "path": "scripts/baseline_manifest_batch03_20260919.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "536bd0fa7b0ff46efc14006b8ab47a7688c34fd376b8af7f3bca68cb5230c07a",
+        "question_ids_found": 101
+      },
+      {
+        "path": "scripts/baseline_screen_manifest_20260917.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "1d9b2479229a9f06085f0d0ce9f6215e34301490a01635c31c9bf26056c10f2f",
+        "question_ids_found": 24
+      },
+      {
+        "path": "scripts/baseline_screen_manifest_20260918_batch02.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "8f94740a10e853110029d645055527ba150bebecab6be9e3c691f7b2bd1fe80c",
+        "question_ids_found": 69
+      },
+      {
+        "path": "scripts/dual_anchor_overnight_manifest_20260917.json",
+        "kind": "json_manifest_or_plan",
+        "sha256": "ced5094ecd64fd249607fa3b1d34f94af87b8788f916153daf74899fe58ded83",
+        "question_ids_found": 20
+      }
+    ]
+  },
+  "candidate_rows": [
+    {
+      "id": "1109",
+      "numbers": [
+        1,
+        3,
+        6,
+        10
+      ]
+    },
+    {
+      "id": "637",
+      "numbers": [
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "id": "50",
+      "numbers": [
+        9,
+        9,
+        12,
+        12
+      ]
+    },
+    {
+      "id": "346",
+      "numbers": [
+        4,
+        5,
+        7,
+        7
+      ]
+    },
+    {
+      "id": "871",
+      "numbers": [
+        4,
+        9,
+        9,
+        10
+      ]
+    },
+    {
+      "id": "928",
+      "numbers": [
+        6,
+        9,
+        12,
+        13
+      ]
+    },
+    {
+      "id": "920",
+      "numbers": [
+        3,
+        3,
+        6,
+        7
+      ]
+    },
+    {
+      "id": "990",
+      "numbers": [
+        2,
+        3,
+        3,
+        10
+      ]
+    },
+    {
+      "id": "285",
+      "numbers": [
+        1,
+        4,
+        6,
+        13
+      ]
+    },
+    {
+      "id": "353",
+      "numbers": [
+        4,
+        7,
+        13,
+        13
+      ]
+    },
+    {
+      "id": "28",
+      "numbers": [
+        1,
+        1,
+        3,
+        9
+      ]
+    },
+    {
+      "id": "1073",
+      "numbers": [
+        1,
+        5,
+        8,
+        13
+      ]
+    },
+    {
+      "id": "438",
+      "numbers": [
+        1,
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "id": "1262",
+      "numbers": [
+        4,
+        9,
+        10,
+        12
+      ]
+    },
+    {
+      "id": "740",
+      "numbers": [
+        6,
+        8,
+        9,
+        13
+      ]
+    },
+    {
+      "id": "643",
+      "numbers": [
+        4,
+        8,
+        8,
+        9
+      ]
+    },
+    {
+      "id": "1269",
+      "numbers": [
+        1,
+        7,
+        12,
+        13
+      ]
+    },
+    {
+      "id": "801",
+      "numbers": [
+        1,
+        5,
+        9,
+        11
+      ]
+    },
+    {
+      "id": "193",
+      "numbers": [
+        1,
+        2,
+        6,
+        8
+      ]
+    },
+    {
+      "id": "756",
+      "numbers": [
+        1,
+        2,
+        6,
+        11
+      ]
+    },
+    {
+      "id": "487",
+      "numbers": [
+        5,
+        8,
+        8,
+        10
+      ]
+    },
+    {
+      "id": "35",
+      "numbers": [
+        4,
+        5,
+        12,
+        12
+      ]
+    },
+    {
+      "id": "921",
+      "numbers": [
+        1,
+        5,
+        9,
+        13
+      ]
+    },
+    {
+      "id": "141",
+      "numbers": [
+        4,
+        6,
+        8,
+        8
+      ]
+    },
+    {
+      "id": "988",
+      "numbers": [
+        2,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "id": "750",
+      "numbers": [
+        2,
+        3,
+        7,
+        11
+      ]
+    },
+    {
+      "id": "130",
+      "numbers": [
+        1,
+        4,
+        4,
+        12
+      ]
+    },
+    {
+      "id": "555",
+      "numbers": [
+        2,
+        2,
+        4,
+        10
+      ]
+    },
+    {
+      "id": "666",
+      "numbers": [
+        3,
+        5,
+        6,
+        6
+      ]
+    },
+    {
+      "id": "562",
+      "numbers": [
+        5,
+        6,
+        10,
+        10
+      ]
+    },
+    {
+      "id": "1119",
+      "numbers": [
+        2,
+        2,
+        5,
+        9
+      ]
+    },
+    {
+      "id": "421",
+      "numbers": [
+        2,
+        9,
+        9,
+        13
+      ]
+    }
+  ]
+}

@@ -63,31 +63,6 @@ def record_fields(record: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-FORMAT_FALSE_NEGATIVES = {
-    ("Qwen3_8B_Thinking", "445", 13): (
-        "正文明确给出 8×(2+8÷8)=24，使用输入 2、8、8、8 各一次；提取器只取到 boxed 24。"
-    ),
-    ("Qwen3_8B_Thinking", "395", 7): (
-        "正文明确给出 10+7×2×1=24，使用输入 1、2、7、10 各一次；提取器只取到 boxed 24。"
-    ),
-    ("Qwen3_8B_Thinking", "395", 12): (
-        "正文明确给出 (7×2)+(10÷1)=24，使用输入 1、2、7、10 各一次；提取器只取到 boxed 24。"
-    ),
-    ("Qwen3_8B_Thinking", "122", 4): (
-        "提取出的 8×(9÷(12÷(12−8)))=24 本身合法，输入 8、9、12、12 各一次；评分器误判。"
-    ),
-    ("Qwen3_8B_Thinking", "122", 9): (
-        "提取出的 (12×8)÷(12÷(12−9))=24 本身合法，输入 8、9、12、12 各一次；评分器误判。"
-    ),
-    ("Qwen3_32B", "381", 5): (
-        "最终选定式多用了一个 11，但正文明确列出替代式 11+11+8−6=24，四个输入各一次；提取器只取最终选定式，漏掉正文中的合法答案。"
-    ),
-    ("Qwen3_32B", "381", 10): (
-        "最终选定式多用了一个 11，但正文先明确列出 11+11+8−6=24，四个输入各一次；提取器只取最终选定式，漏掉正文中的合法答案。"
-    ),
-}
-
-
 SCALAR_FALSE_EVIDENCE = {
     ("Qwen3_8B_Thinking", "1019", 1):
         "正文未给出有效表达式；其所谓 closest expression (6×4)+(13−5) 算出 32，随后承认答案不满足约束却输出 24。",
@@ -103,6 +78,38 @@ SCALAR_FALSE_EVIDENCE = {
         "正文算式 ((11+7)×(8−4))÷(11−8) 得 24，但重复使用输入 11 和 8。",
     ("Qwen3_8B_Thinking", "1019", 11):
         "正文算式 (13−5)×(6÷(4÷(6−4))) 得 24，但重复使用输入 6 和 4。",
+}
+
+SCALAR_EVIDENCE_EXPRESSIONS = {
+    ("Qwen3_8B_Thinking", "1019", 1): "(6*4)+(13-5)",
+    ("Qwen3_8B_Thinking", "1171", 4): "(8*(11-7))-(4*(8/4))",
+    ("Qwen3_8B_Thinking", "1171", 8): "(8*(11-7))-(4/4)",
+    ("Qwen3_8B_Thinking", "1171", 10): "(8*(11-7))-4",
+    ("Qwen3_8B_Thinking", "1171", 11): "(8*(11-7))-(4*(8/4))",
+    ("Qwen3_8B_Thinking", "1171", 15): "((11+7)*(8-4))/(11-8)",
+    ("Qwen3_8B_Thinking", "1019", 11): "(13-5)*(6/(4/(6-4)))",
+}
+
+APPROVED_RESPONSE_EXPRESSIONS = {
+    ("Qwen3_8B_Thinking", "445", 13): {
+        "expression": "8 \\times (2 + 8 \\div 8)",
+        "evidence": "回答将该算式作为 promising approach 展开逐步计算，并在 Final Answer 前明确宣称四个输入各用一次。",
+    },
+    ("Qwen3_8B_Thinking", "395", 7): {
+        "expression": "10 + 7 \\times 2 \\times 1 = 24",
+        "evidence": "回答将该等式明确称为 solution，并在分步核算后给出最终答案24。",
+    },
+    ("Qwen3_8B_Thinking", "395", 12): {
+        "expression": "(7 \\times 2) + (10 \\div 1)",
+        "evidence": "回答将该等式作为 better approach 展开，计算为14+10=24并作为最终答案。",
+    },
+}
+
+MIXED_FINAL_ANSWER_ERRORS = {
+    ("Qwen3_32B", "381", 5):
+        "混合回答按明确标出的 Final Answer 评分。选中式 (8×6×11)÷(11+11) 算术值为24，但实际用数为[6,8,11,11,11]，多用了一个11。正文虽列出 11+11+8−6=24 作为替代式，最终仍把错误选中式标为答案；因此这是实质性用数错误，不是答案提取漏检。",
+    ("Qwen3_32B", "381", 10):
+        "混合回答按明确标出的 Final Answer 评分。选中式 (11−(8−(11÷11)))×6 算术值为24，但实际用数为[6,8,11,11,11]，多用了一个11。正文先列出合法的 11+11+8−6=24，随后明确选择错误的复杂式作为 Final Answer；因此这是实质性用数错误，不是答案提取漏检。",
 }
 
 
@@ -186,16 +193,63 @@ def valid_response_expressions(response: str, answer_numbers: list[int]) -> list
     return found
 
 
+def format_multiset(values: Counter[int]) -> str:
+    return ",".join(f"{number}x{values[number]}" for number in sorted(values))
+
+
+def expression_measurement(expression: str, answer_numbers: list[int]) -> dict[str, Any]:
+    expected = Counter(int(number) for number in answer_numbers)
+    try:
+        value, operands = evaluate_expression(expression)
+    except (SyntaxError, ValueError, ZeroDivisionError) as exc:
+        return {
+            "evaluation_status": f"error:{type(exc).__name__}",
+            "evaluated_value": "",
+            "actual_operand_multiset": "",
+            "expected_operand_multiset": format_multiset(expected),
+            "arithmetic_is_24": False,
+            "operand_multiset_matches": False,
+            "exact_game24": False,
+        }
+    value_text = str(value.numerator) if value.denominator == 1 else f"{value.numerator}/{value.denominator}"
+    matches = operands == expected
+    return {
+        "evaluation_status": "ok",
+        "evaluated_value": value_text,
+        "actual_operand_multiset": format_multiset(operands),
+        "expected_operand_multiset": format_multiset(expected),
+        "arithmetic_is_24": value == 24,
+        "operand_multiset_matches": matches,
+        "exact_game24": value == 24 and matches,
+    }
+
+
 def manual_classification(row: dict[str, Any]) -> tuple[str, str, str | None]:
-    key = (row["model"], row["id"], row["sample_index"])
     if not row["valid_for_eligibility"]:
         return "excluded_invalid", "未同时满足完整 EOS 结束与可解析回答条件；不进入错误样本门槛。", None
-    if key in FORMAT_FALSE_NEGATIVES:
-        return "format_or_extraction_false_negative", FORMAT_FALSE_NEGATIVES[key], None
     response_candidates = valid_response_expressions(row.get("final_response") or "", row["answer_numbers"])
+    identity = (row["model"], row["id"], row["sample_index"])
+    mixed_final_error = MIXED_FINAL_ANSWER_ERRORS.get(identity)
+    approved_response = APPROVED_RESPONSE_EXPRESSIONS.get(identity)
+    approved_candidate = (
+        approved_response["expression"]
+        if approved_response and approved_response["expression"] in response_candidates
+        else None
+    )
     expression = row.get("extracted_answer") or ""
     if expression.strip() == "24":
-        reason = SCALAR_FALSE_EVIDENCE.get(key)
+        if approved_candidate:
+            examples = approved_candidate
+            return "format_or_extraction_false_negative", (
+                "提取器只返回标量24；人工核对正文中明确提出并认可的答案，程序验证算术值和输入多重集均正确："
+                + examples + "。" + approved_response["evidence"]
+            ), "24"
+        if response_candidates:
+            return "uncertain_manual_confirmation", (
+                "正文中出现程序可验证的正确算式，但尚无明确证据判断其是否作为答案被提出/认可："
+                + "；".join(response_candidates[:2])
+            ), None
+        reason = SCALAR_FALSE_EVIDENCE.get(identity)
         if reason is None:
             return "uncertain_manual_confirmation", "只提取到标量 24，正文证据未完成核定。", None
         return "substantive_error", reason, None
@@ -209,9 +263,13 @@ def manual_classification(row: dict[str, Any]) -> tuple[str, str, str | None]:
     value_text = str(value.numerator) if value.denominator == 1 else f"{value.numerator}/{value.denominator}"
     if value == 24 and operands == expected:
         return "format_or_extraction_false_negative", "提取表达式本身满足 24 与四个输入数字各用一次；评分器误判。", value_text
+    if mixed_final_error:
+        return "substantive_error", mixed_final_error, value_text
     if response_candidates:
-        examples = "；".join(response_candidates[:2])
-        return "uncertain_manual_confirmation", f"正文另含满足目标且用数完整的表达式，但提取/最终选定式不一致，需人工判断作答是否应计正确：{examples}", value_text
+        return "uncertain_manual_confirmation", (
+            "提取式错误且正文含合法备选；需核对提取式是否为明确最终选式，不能自动用备选改判正确："
+            + "；".join(response_candidates[:2])
+        ), value_text
     details = []
     if value != 24:
         details.append(f"提取表达式精确值为 {value_text}，不是 24")
@@ -354,6 +412,91 @@ def main() -> None:
         review_by_identity[(row["model"], row["id"], row["sample_index"])] = reviewed
     audited_counts = Counter(row["manual_category"] for row in audited_failures)
 
+    failure_by_identity = {
+        (row["model"], row["id"], row["sample_index"]): row
+        for row in audited_failures
+    }
+    expression_verifications = []
+    scorer_true_unverified = []
+
+    def add_expression_verification(
+        fields: dict[str, Any], expression: str, expression_source: str,
+        source_path: str, source_line: int, category: str,
+    ) -> dict[str, Any]:
+        measurement = expression_measurement(expression, fields["answer_numbers"] or [])
+        expression_verifications.append({
+            "model": fields["model"], "question_id": fields["id"],
+            "sample_index": fields["sample_index"], "raw_scorer_correctness": fields["correctness"],
+            "manual_category": category, "expression_source": expression_source,
+            "expression": expression, **measurement,
+            "answer_numbers": json.dumps(fields["answer_numbers"], ensure_ascii=False),
+            "source_path": source_path, "source_line": source_line,
+        })
+        return measurement
+
+    for record in all_records:
+        fields = record_fields(record)
+        identity = (fields["model"], fields["id"], fields["sample_index"])
+        source_path, source_line, _ = source_lines[identity]
+        manual = failure_by_identity.get(identity)
+        category = manual["manual_category"] if manual else "not_manually_reviewed"
+        expression = (fields["extracted_answer"] or "").strip()
+        if expression and expression != "24":
+            selected_measurement = add_expression_verification(
+                fields, expression, "extracted_answer", source_path, source_line, category
+            )
+        else:
+            selected_measurement = None
+            if expression == "24":
+                add_expression_verification(
+                    fields, expression, "scalar_only_no_formula", source_path, source_line, category
+                )
+
+        needs_response_scan = (
+            fields["correctness"] is False
+            or (fields["correctness"] is True and
+                (selected_measurement is None or not selected_measurement["exact_game24"]))
+        )
+        response_candidates = valid_response_expressions(
+            fields["final_response"] or "", fields["answer_numbers"] or []
+        ) if needs_response_scan else []
+        for candidate in response_candidates:
+            add_expression_verification(
+                fields, candidate, "full_response_exact_candidate", source_path, source_line, category
+            )
+
+        scalar_evidence = SCALAR_EVIDENCE_EXPRESSIONS.get(identity)
+        if scalar_evidence:
+            evidence_measurement = add_expression_verification(
+                fields, scalar_evidence, "manual_scalar_error_evidence",
+                source_path, source_line, category,
+            )
+            if identity[0:2] == ("Qwen3_8B_Thinking", "1019") and identity[2] == 1:
+                evidence_is_consistent = evidence_measurement["evaluated_value"] == "32"
+            else:
+                evidence_is_consistent = not evidence_measurement["exact_game24"]
+            if not evidence_is_consistent:
+                raise RuntimeError(f"Manual scalar evidence failed arithmetic/operand check: {identity}")
+
+        if is_valid(record) and fields["correctness"] is True:
+            verified = bool(selected_measurement and selected_measurement["exact_game24"])
+            if not verified:
+                verified = any(
+                    expression_measurement(candidate, fields["answer_numbers"] or [])["exact_game24"]
+                    for candidate in response_candidates
+                )
+            if not verified:
+                scorer_true_unverified.append({
+                    "model": fields["model"], "question_id": fields["id"],
+                    "sample_index": fields["sample_index"],
+                    "extracted_answer": fields["extracted_answer"],
+                    "source_path": source_path, "source_line": source_line,
+                })
+
+    expression_verifications.sort(key=lambda row: (
+        row["model"], int(row["question_id"]), row["sample_index"], row["expression_source"]
+    ))
+
     def counts_for_question(question_id: str, max_sample_index: int | None = None) -> dict[str, Counter]:
         counts = {model: Counter() for model in model_chunks}
         for record in all_records:
@@ -391,8 +534,102 @@ def main() -> None:
             substantive_n = sum(value["substantive_wrong"] for value in model_counts.values())
             if correct_n >= 2 and substantive_n >= 2:
                 qualifying.append(qid)
-        final_coverage[cohort] = {"candidate_n": len(question_ids), "qualifying_n": len(qualifying),
+            final_coverage[cohort] = {"candidate_n": len(question_ids), "qualifying_n": len(qualifying),
                                   "qualifying_question_ids": qualifying}
+
+    boundary_rows = []
+    for qid in ordered_ids:
+        model_counts = counts_for_question(qid)
+        correct_samples = []
+        substantive_wrong_samples = []
+        unresolved_samples = []
+        invalid_samples = []
+        for record in all_records:
+            fields = record_fields(record)
+            if fields["id"] != qid:
+                continue
+            identity = (fields["model"], fields["id"], fields["sample_index"])
+            path, line_number, digest = source_lines[identity]
+            sample_ref = {
+                "model": fields["model"], "sample_index": fields["sample_index"],
+                "raw_scorer_correctness": fields["correctness"],
+                "extracted_answer": fields["extracted_answer"],
+                "source_path": path, "source_line": line_number, "source_sha256": digest,
+            }
+            if not is_valid(record):
+                sample_ref["audit_class"] = "excluded_invalid"
+                invalid_samples.append(sample_ref)
+            elif fields["correctness"] is True:
+                sample_ref["audit_class"] = "raw_scorer_correct"
+                correct_samples.append(sample_ref)
+            elif fields["correctness"] is False:
+                category = review_by_identity[identity]["manual_category"]
+                if category == "format_or_extraction_false_negative":
+                    sample_ref["audit_class"] = category
+                    correct_samples.append(sample_ref)
+                elif category == "substantive_error":
+                    sample_ref["audit_class"] = category
+                    substantive_wrong_samples.append(sample_ref)
+                else:
+                    sample_ref["audit_class"] = category
+                    unresolved_samples.append(sample_ref)
+            else:
+                sample_ref["audit_class"] = "unscored_unresolved"
+                unresolved_samples.append(sample_ref)
+        correct_n = sum(counts["correct"] for counts in model_counts.values())
+        wrong_n = sum(counts["substantive_wrong"] for counts in model_counts.values())
+        correct_gap, wrong_gap = max(0, 2 - correct_n), max(0, 2 - wrong_n)
+        if qid in dual_complete:
+            cohort = "dual_complete"
+        elif qid in partial_only:
+            cohort = "8b_only_partial"
+        else:
+            cohort = "uncovered"
+        boundary_rows.append({
+            "question_id": qid, "cohort": cohort,
+            "pooled_valid_correct_n": correct_n,
+            "pooled_confirmed_substantive_wrong_n": wrong_n,
+            "counts_by_model": {
+                model: {
+                    "valid_correct": model_counts[model]["correct"],
+                    "confirmed_substantive_wrong": model_counts[model]["substantive_wrong"],
+                    "unresolved": model_counts[model]["unresolved"],
+                    "invalid": model_counts[model]["invalid"],
+                }
+                for model in model_chunks
+            },
+            "unresolved_n": len(unresolved_samples), "invalid_n": len(invalid_samples),
+            "qualifies_on_saved_data": correct_n >= 2 and wrong_n >= 2,
+            "additional_correct_needed": correct_gap,
+            "additional_substantive_errors_needed": wrong_gap,
+            "boundary_class": (
+                "qualifies" if correct_n >= 2 and wrong_n >= 2
+                else "one_error_short" if correct_n >= 2 and wrong_n == 1
+                else "one_correct_short" if correct_n == 1 and wrong_n >= 2
+                else "other"
+            ),
+            "correct_sample_identities": correct_samples,
+            "substantive_wrong_sample_identities": substantive_wrong_samples,
+            "invalid_sample_identities": invalid_samples,
+            "unresolved_sample_identities": unresolved_samples,
+        })
+    near_boundary_rows = [row for row in boundary_rows if row["boundary_class"] != "other"]
+    near_boundary_summary = [{
+        "question_id": row["question_id"], "cohort": row["cohort"],
+        "boundary_class": row["boundary_class"],
+        "pooled_valid_correct_n": row["pooled_valid_correct_n"],
+        "pooled_confirmed_substantive_wrong_n": row["pooled_confirmed_substantive_wrong_n"],
+        "counts_by_model": row["counts_by_model"],
+        "substantive_wrong_sample_identities": [
+            {key: sample[key] for key in ("model", "sample_index", "extracted_answer", "source_path", "source_line")}
+            for sample in row["substantive_wrong_sample_identities"]
+        ],
+        "extraction_miss_sample_identities": [
+            {key: sample[key] for key in ("model", "sample_index", "extracted_answer", "source_path", "source_line")}
+            for sample in row["correct_sample_identities"]
+            if sample.get("audit_class") == "format_or_extraction_false_negative"
+        ],
+    } for row in near_boundary_rows]
 
     prefix_replay = []
     previous_qualified: set[str] = set()
@@ -480,7 +717,7 @@ def main() -> None:
             "8b_only_question_ids": [qid for qid in ordered_ids if qid in partial_only],
             "8b_only_n": len(partial_only),
             "32b_only_n": len(complete_32b - complete_8b),
-            "unstarted_32b_question_ids": [qid for qid in ordered_ids if qid not in complete_32b],
+            "no_persisted_32b_question_ids": [qid for qid in ordered_ids if qid not in complete_32b],
         },
         "raw_scorer_correctness_counts": dict(scorer_counts),
         "strict_eos_parseable_counts": dict(strict_counts),
@@ -490,7 +727,45 @@ def main() -> None:
             "ids": [qid for qid in ordered_ids if qid in preaudit_eligible],
         },
         "manual_error_audit_counts": dict(audited_counts),
+        "adjudicated_valid_answer_counts": {
+            "raw_scorer_true": scorer_counts["True"],
+            "confirmed_extraction_false_negatives": audited_counts["format_or_extraction_false_negative"],
+            "total_adjudicated_correct": scorer_counts["True"] + audited_counts["format_or_extraction_false_negative"],
+            "formal_correct_gate": "Use original valid official-True responses only; extraction corrections are descriptive and excluded from the failed pool. Independently checked in runs/batch03_next_experiment_20260924/plan.json.",
+            "confirmed_substantive_errors": audited_counts["substantive_error"],
+            "invalid_false_rows_excluded": audited_counts["excluded_invalid"],
+            "uncertain_rows": audited_counts["uncertain_manual_confirmation"],
+            "correctness_policy": "A response counts correct if the extracted/designated final expression is exact Game24, or if the final answer is only a scalar/format extraction miss and the body clearly supplies an endorsed exact Game24 expression. When an explicit final expression is wrong, an earlier valid alternative does not rescue the response; it is a mixed substantive error.",
+        },
+        "question_381_mixed_answer_rule": {
+            "primary_policy": "Score the explicitly designated Final Answer. A valid earlier alternative does not override an explicit, selected final expression that misuses inputs.",
+            "sample_5_final_expression": expression_measurement(
+                "(8*6*11)/(11+11)", [6, 8, 11, 11]
+            ),
+            "sample_10_final_expression": expression_measurement(
+                "(11-(8-(11/11)))*6", [6, 8, 11, 11]
+            ),
+            "body_alternative": expression_measurement("11+11+8-6", [6, 8, 11, 11]),
+            "sensitivity_if_any_explicitly_endorsed_valid_alternative_counts": {
+                "question_381_qualifies": False,
+                "dual_complete_qualifying_n": max(0, final_coverage["dual_complete"]["qualifying_n"] - 1),
+                "batch02_plus_batch03_count_if_batch02_has_8": max(0, final_coverage["dual_complete"]["qualifying_n"] - 1) + 8,
+                "shortfall_to_target_floor_20": max(0, 20 - (max(0, final_coverage["dual_complete"]["qualifying_n"] - 1) + 8)),
+            },
+        },
         "manual_eligibility_after_review": final_coverage,
+        "arithmetic_and_operand_validation": {
+            "expression_rows_checked": len(expression_verifications),
+            "exact_game24_rows": sum(bool(row["exact_game24"]) for row in expression_verifications),
+            "scorer_true_unverified_rows": scorer_true_unverified,
+            "all_valid_scorer_true_have_verified_equation": not scorer_true_unverified,
+            "verification_file": "expression_verification.csv",
+        },
+        "eligibility_boundary_audit": {
+            "all_question_rows": len(boundary_rows),
+            "near_boundary_rows": len(near_boundary_rows),
+            "file": "eligibility_boundary_audit.json",
+        },
         "prefix_replay": prefix_replay,
         "summed_chunk_timing_from_persisted_summaries_only": gpu_time,
         "chunk_summary_records": chunk_summaries,
@@ -537,6 +812,62 @@ def main() -> None:
             csv_row = {field: row.get(field) for field in audit_fields}
             csv_row["answer_numbers"] = json.dumps(row["answer_numbers"], ensure_ascii=False)
             writer.writerow(csv_row)
+    verification_fields = [
+        "model", "question_id", "sample_index", "raw_scorer_correctness", "manual_category",
+        "expression_source", "expression", "evaluation_status", "evaluated_value",
+        "actual_operand_multiset", "expected_operand_multiset", "arithmetic_is_24",
+        "operand_multiset_matches", "exact_game24", "answer_numbers", "source_path", "source_line",
+    ]
+    with (run_dir / "expression_verification.csv").open("w", newline="", encoding="utf-8-sig") as handle:
+        writer = csv.DictWriter(handle, fieldnames=verification_fields)
+        writer.writeheader()
+        for row in expression_verifications:
+            writer.writerow({field: row.get(field) for field in verification_fields})
+    boundary_payload = {
+        "rule": "At least two complete, parseable correct answers and at least two manually confirmed substantive errors, pooled across available anchors.",
+        "cohorts": {
+            "dual_complete": [row for row in boundary_rows if row["cohort"] == "dual_complete"],
+            "8b_only_partial": [row for row in boundary_rows if row["cohort"] == "8b_only_partial"],
+        },
+        "near_boundary": near_boundary_rows,
+    }
+    (run_dir / "eligibility_boundary_audit.json").write_text(
+        json.dumps(boundary_payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
+    )
+    boundary_fields = [
+        "question_id", "cohort", "pooled_valid_correct_n", "pooled_confirmed_substantive_wrong_n",
+        "unresolved_n", "invalid_n", "qualifies_on_saved_data", "additional_correct_needed",
+        "additional_substantive_errors_needed", "boundary_class", "counts_by_model",
+        "correct_sample_identities", "substantive_wrong_sample_identities",
+        "invalid_sample_identities", "unresolved_sample_identities",
+    ]
+    with (run_dir / "eligibility_boundary_audit.csv").open("w", newline="", encoding="utf-8-sig") as handle:
+        writer = csv.DictWriter(handle, fieldnames=boundary_fields)
+        writer.writeheader()
+        for row in boundary_rows:
+            csv_row = dict(row)
+            csv_row["counts_by_model"] = json.dumps(row["counts_by_model"], ensure_ascii=False)
+            for field in boundary_fields[11:]:
+                if field in csv_row:
+                    csv_row[field] = json.dumps(csv_row[field], ensure_ascii=False)
+            writer.writerow({field: csv_row.get(field) for field in boundary_fields})
+    extraction_rows = [row for row in audited_failures
+                       if row["manual_category"] == "format_or_extraction_false_negative"]
+    extraction_fields = [
+        "model", "id", "sample_index", "answer_numbers", "extracted_answer",
+        "audited_expression_value", "valid_exact_expressions_in_response", "manual_reason",
+        "source_path", "source_line", "source_sha256",
+    ]
+    with (run_dir / "extraction_miss_audit.csv").open("w", newline="", encoding="utf-8-sig") as handle:
+        writer = csv.DictWriter(handle, fieldnames=extraction_fields)
+        writer.writeheader()
+        for row in extraction_rows:
+            csv_row = {field: row.get(field) for field in extraction_fields}
+            csv_row["answer_numbers"] = json.dumps(row["answer_numbers"], ensure_ascii=False)
+            csv_row["valid_exact_expressions_in_response"] = json.dumps(
+                row["valid_exact_expressions_in_response"], ensure_ascii=False
+            )
+            writer.writerow(csv_row)
     print(json.dumps({
         "persisted_generations": len(all_records),
         "raw_scorer_correctness_counts": dict(scorer_counts),
@@ -547,7 +878,11 @@ def main() -> None:
         "automatic_threshold_partial": summary["prefilter_automatic_threshold_n_correct_ge_2_and_raw_false_ge_2"]["partial_only"],
         "failure_review_rows": len(failure_queue),
         "manual_error_audit_counts": dict(audited_counts),
+        "adjudicated_valid_answer_counts": summary["adjudicated_valid_answer_counts"],
+        "question_381_mixed_answer_rule": summary["question_381_mixed_answer_rule"],
         "manual_eligibility_after_review": final_coverage,
+        "arithmetic_and_operand_validation": summary["arithmetic_and_operand_validation"],
+        "near_boundary_questions": near_boundary_summary,
         "prefix_replay_summary": [
             {key: row[key] for key in ("samples_per_model_prefix", "qwen3_8b_alone_qualifying_n",
                                        "qwen3_8b_alone_qualifying_ids", "qwen3_32b_alone_qualifying_n",

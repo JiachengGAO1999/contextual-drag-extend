@@ -11,9 +11,11 @@ from types import SimpleNamespace
 
 from batch03_resume_core_20260924 import (
     append_jsonl_once,
+    contiguous_sample_runs,
     consume_request_stream,
     load_completed,
     missing_sample_indices,
+    sample_seed,
 )
 
 
@@ -40,6 +42,34 @@ class FakeEngine:
 
 
 class ResumeCoreTests(unittest.TestCase):
+    def test_per_sample_seeds_are_stable_and_unique_across_resume_gaps(self):
+        expected = {index: 42 + index for index in range(16)}
+        seeds = {index: sample_seed(42, index) for index in range(16)}
+        self.assertEqual(seeds, expected)
+        self.assertEqual(len(set(seeds.values())), 16)
+        # If 0-2 were saved, missing indices keep seeds45+ rather than restarting at42.
+        missing = [index for index in range(8) if index not in {0, 1, 2}]
+        self.assertEqual([sample_seed(42, index) for index in missing], [45, 46, 47, 48, 49])
+        self.assertEqual(len(set(sample_seed(42, index) for index in missing)), len(missing))
+        resumed_runs = contiguous_sample_runs([3, 4, 5, 7, 8, 12])
+        self.assertEqual(resumed_runs, [[3, 4, 5], [7, 8], [12]])
+        child_seeds = [
+            sample_seed(42, run[0]) + local_index
+            for run in resumed_runs for local_index, _sample_index in enumerate(run)
+        ]
+        self.assertEqual(child_seeds, [sample_seed(42, index) for index in [3, 4, 5, 7, 8, 12]])
+        self.assertEqual(len(set(child_seeds)), 6)
+
+    def test_negative_sample_index_has_no_seed(self):
+        with self.assertRaisesRegex(ValueError, "non-negative"):
+            sample_seed(42, -1)
+
+    def test_contiguous_seed_runs_reject_unsorted_or_duplicate_indices(self):
+        with self.assertRaisesRegex(ValueError, "unique and sorted"):
+            contiguous_sample_runs([3, 2])
+        with self.assertRaisesRegex(ValueError, "unique and sorted"):
+            contiguous_sample_runs([3, 3])
+
     def test_catalog_deduplicates_identical_identity_and_skips_saved_indices(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

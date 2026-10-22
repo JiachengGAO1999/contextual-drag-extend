@@ -1,7 +1,7 @@
 """Fixed Stage-1 R0 baseline screen using ordinary vLLM.
 
 This runner intentionally does not import the selective vLLM worker or run any
-intervention. It generates four independent samples for the fixed manifest and
+intervention. It generates the manifest-specified samples for the fixed manifest and
 writes records compatible with the existing audit/manual-review pipeline.
 """
 from __future__ import annotations
@@ -27,7 +27,10 @@ def problem_text(numbers):
             "Provide an expression using the original four numbers.")
 
 
-def official_score(record):
+def official_score(record, task="game24"):
+    if task != "game24":
+        from selective_context.tasks import score_record
+        return score_record(record, task)
     """Use the official scorer; retain the repo's narrow Game24 fallback only if math_verify is absent."""
     try:
         from utils.verifiable_evaluation.math_eval.utils.evaluation_utils import evaluate_single_entry
@@ -50,6 +53,8 @@ def parse_final(raw_text, prompt, eos_token):
 
 def main():
     ap = argparse.ArgumentParser()
+    ap.add_argument("--validate-input-only", action="store_true", help="Check dataset/manifest/scorer without loading a model or generating")
+    ap.add_argument("--task", choices=["game24", "math500"], default="game24")
     ap.add_argument("--model", required=True)
     ap.add_argument("--model-alias", choices=["Qwen3_8B_Thinking", "Qwen3_32B"], default="Qwen3_8B_Thinking")
     ap.add_argument("--input", type=Path, required=True)
@@ -62,25 +67,53 @@ def main():
     args = ap.parse_args()
     if args.output.exists():
         raise RuntimeError("Refusing to overwrite an existing baseline screen")
-    args.output.mkdir(parents=True)
     repo = Path(__file__).resolve().parents[1]
     manifest = json.loads(args.manifest.read_text(encoding="utf-8"))
     candidates = manifest["candidate_rows"]
     if len(candidates) != manifest["candidate_count"]:
         raise RuntimeError("Manifest candidate count mismatch")
 
-    with args.input.open(encoding="utf-8-sig") as handle:
-        csv_rows = list(csv.DictReader(handle))
-    by_id = {str(row["Rank"]): row for row in csv_rows}
-    rows = []
-    for item in candidates:
-        row = by_id.get(str(item["id"]))
-        if row is None:
-            raise RuntimeError(f"Manifest id {item['id']} missing from input CSV")
-        numbers = [int(x) for x in row["Puzzles"].split()]
-        if sorted(numbers) != sorted(item["numbers"]):
-            raise RuntimeError(f"Number mismatch for {item['id']}: CSV={numbers}, manifest={item['numbers']}")
-        rows.append({"id": str(item["id"]), "answer": numbers, "problem": problem_text(numbers)})
+    if manifest.get("task", "game24") != args.task:
+        raise ValueError("Manifest task mismatch")
+    if args.task == "math500":
+        from selective_context.tasks import validate_pair_task
+        source_rows = [json.loads(line) for line in args.input.read_text(encoding="utf-8").splitlines() if line.strip()]
+        by_id = {r["id"]: r for r in source_rows}
+        if len(by_id) != len(source_rows):
+            raise ValueError("Duplicate MATH500 source IDs")
+        rows = []
+        for item in candidates:
+            row = by_id[item["id"]]
+            validate_pair_task(row, args.task)
+            if hashlib.sha256(row["problem"].encode()).hexdigest() != item["problem_sha256"]:
+                raise ValueError("MATH500 problem fingerprint mismatch")
+            if hashlib.sha256(row["answer"].encode()).hexdigest() != item["answer_sha256"]:
+                raise ValueError("MATH500 reference fingerprint mismatch")
+            rows.append(row)
+    else:
+        with args.input.open(encoding="utf-8-sig") as handle:
+            csv_rows = list(csv.DictReader(handle))
+        by_id = {str(row["Rank"]): row for row in csv_rows}
+        rows = []
+        for item in candidates:
+            row = by_id.get(str(item["id"]))
+            if row is None:
+                raise RuntimeError(f"Manifest id {item['id']} missing from input CSV")
+            numbers = [int(x) for x in row["Puzzles"].split()]
+            if sorted(numbers) != sorted(item["numbers"]):
+                raise RuntimeError(f"Number mismatch for {item['id']}: CSV={numbers}, manifest={item['numbers']}")
+            rows.append({"id": str(item["id"]), "answer": numbers, "problem": problem_text(numbers)})
+
+    if len({row["id"] for row in rows}) != len(rows):
+        raise ValueError("Duplicate candidate IDs")
+    if args.task == "math500":
+        from utils.verifiable_evaluation.math_eval.utils.math_utils import is_equivalent_math
+        if not is_equivalent_math("0.5", r"\frac{1}{2}"):
+            raise RuntimeError("Official math scorer preflight failed")
+    if args.validate_input_only:
+        print(json.dumps({"task": args.task, "validated_rows": len(rows), "generation_started": False}))
+        return
+    args.output.mkdir(parents=True)
 
     # These are deliberate ordinary-vLLM settings. Do not inherit a custom
     # selective worker/backend from the resident service.
@@ -115,6 +148,7 @@ def main():
 
     provenance = {
         "run_name": args.output.name,
+        "task": args.task,
         "purpose": "Stage-1 baseline-only acquisition; no intervention and no outcome-based selection",
         "source_revision": args.source_revision,
         "input": str(args.input),
@@ -177,6 +211,7 @@ def main():
             }
             record = {
                 "id": row["id"],
+                "task": args.task,
                 "problem": row["problem"],
                 "answer": row["answer"],
                 "draft_key": f"{row['id']}/{generation.index}",
@@ -207,7 +242,7 @@ def main():
                 "generation_seconds": generation_seconds,
                 "tokens": len(generation.token_ids),
             }
-            scored = official_score(record)
+            scored = official_score(record, args.task)
             records.append(scored)
             raw_records.append({"id": row["id"], "sample_index": generation.index,
                                 "text": generated, "token_ids": list(generation.token_ids),

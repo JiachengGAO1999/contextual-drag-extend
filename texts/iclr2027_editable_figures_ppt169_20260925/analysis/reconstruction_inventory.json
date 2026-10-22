@@ -1,0 +1,186 @@
+{
+  "pages": [
+    {
+      "order": 1,
+      "original": "D:\\Learning\\PhD\\Research\\contextual-drag-extend\\texts\\iclr2027_editable_figures_ppt169_20260925\\sources\\figure1_temp.png",
+      "normalized_page": "D:\\Learning\\PhD\\Research\\contextual-drag-extend\\texts\\iclr2027_editable_figures_ppt169_20260925\\sources\\figure1_temp.png",
+      "source_bbox": [
+        0,
+        0,
+        1672,
+        941
+      ],
+      "pixel_dimensions": [
+        1672,
+        941
+      ],
+      "sha256": "4fccb40d89cd290940cea1456728a799c86c56389e2de97869f1313c92b7c5fb",
+      "visible_regions": [
+        {
+          "id": "shared-input",
+          "bbox": [
+            26,
+            398,
+            635,
+            143
+          ],
+          "family": "graphic",
+          "text": "Problem | Wrong trace | Error signal | Solve independently | Full prefill | y₁",
+          "confidence": "high",
+          "source_sufficiency": "legible at full placement",
+          "boundary_complete": true,
+          "occlusion": "none; arrows intentionally overlap",
+          "identity_data_verifiable": true
+        },
+        {
+          "id": "shared-logits",
+          "bbox": [
+            468,
+            270,
+            195,
+            135
+          ],
+          "family": "text",
+          "text": "same full-prefill logits\nsame sampled y₁",
+          "confidence": "high",
+          "source_sufficiency": "legible at full placement",
+          "boundary_complete": true,
+          "occlusion": "none; arrows intentionally overlap",
+          "identity_data_verifiable": true
+        },
+        {
+          "id": "r2",
+          "bbox": [
+            757,
+            105,
+            890,
+            355
+          ],
+          "family": "graphic",
+          "text": "R2 | Full continued access | queries retain access to failed-trace K/V | Problem | Wrong trace | Error signal | Solve independently | q₁ q₂ q₃ | y₂ y₃ y₄ | …",
+          "confidence": "high",
+          "source_sufficiency": "legible at full placement",
+          "boundary_complete": true,
+          "occlusion": "none; arrows intentionally overlap",
+          "identity_data_verifiable": true
+        },
+        {
+          "id": "r3",
+          "bbox": [
+            757,
+            485,
+            890,
+            358
+          ],
+          "family": "graphic",
+          "text": "R3 | Late access blocking | block q₁, q₂, q₃, … → failed-trace K/V only | Problem | Wrong trace | Error signal | Solve independently | q₁ q₂ q₃ | y₂ y₃ y₄ | …",
+          "confidence": "high",
+          "source_sufficiency": "legible at full placement",
+          "boundary_complete": true,
+          "occlusion": "none; arrows intentionally overlap",
+          "identity_data_verifiable": true
+        }
+      ],
+      "unresolved_evidence": []
+    },
+    {
+      "order": 2,
+      "original": "D:\\Learning\\PhD\\Research\\contextual-drag-extend\\texts\\iclr2027_editable_figures_ppt169_20260925\\sources\\figure2_access_effects.png",
+      "normalized_page": "D:\\Learning\\PhD\\Research\\contextual-drag-extend\\texts\\iclr2027_editable_figures_ppt169_20260925\\sources\\figure2_access_effects.png",
+      "source_bbox": [
+        0,
+        0,
+        1584,
+        935
+      ],
+      "pixel_dimensions": [
+        1584,
+        935
+      ],
+      "sha256": "40cf5956368170e1a402fdf6c366874f934cf2ed1a145dd027aff170f4d83d05",
+      "visible_regions": [
+        {
+          "id": "headings",
+          "bbox": [
+            544,
+            28,
+            902,
+            40
+          ],
+          "family": "text",
+          "text": "Late access blocking | Effect [95% CI]",
+          "confidence": "high",
+          "source_sufficiency": "legible at full placement",
+          "boundary_complete": true,
+          "occlusion": "none; arrows intentionally overlap",
+          "identity_data_verifiable": true
+        },
+        {
+          "id": "labels",
+          "bbox": [
+            70,
+            132,
+            447,
+            614
+          ],
+          "family": "text",
+          "text": "Qwen3-8B / Game24\nFailed history, 15 questions\nQwen3-32B / Game24\nFailed history, 15 questions\nGemma 4 E4B / Game24\nFailed history, 15 questions\nQwen3-8B / MATH500\nFailed history, 8 questions\nQwen3-8B / MATH-train\nFailed history, 8 questions\nQwen3-8B / Game24\nCorrect history, 8 questions",
+          "confidence": "high",
+          "source_sufficiency": "legible at full placement",
+          "boundary_complete": true,
+          "occlusion": "none; arrows intentionally overlap",
+          "identity_data_verifiable": true
+        },
+        {
+          "id": "forest",
+          "bbox": [
+            546,
+            103,
+            634,
+            674
+          ],
+          "family": "graphic",
+          "text": "Six point estimates with 95% CI; source values in figure2_access_effects.csv",
+          "confidence": "high",
+          "source_sufficiency": "legible at full placement",
+          "boundary_complete": true,
+          "occlusion": "none; arrows intentionally overlap",
+          "identity_data_verifiable": true
+        },
+        {
+          "id": "values",
+          "bbox": [
+            1204,
+            145,
+            356,
+            584
+          ],
+          "family": "text",
+          "text": "+46.7 [+26.7, +66.7]\n+26.7 [+3.3, +50.0]\n+16.7 [+0.0, +30.0]\n+75.0 [+50.0, +93.8]\n+50.0 [+18.8, +81.2]\n-18.8 [-37.5, -6.2]",
+          "confidence": "high",
+          "source_sufficiency": "legible at full placement",
+          "boundary_complete": true,
+          "occlusion": "none; arrows intentionally overlap",
+          "identity_data_verifiable": true
+        },
+        {
+          "id": "axis",
+          "bbox": [
+            535,
+            776,
+            645,
+            115
+          ],
+          "family": "text",
+          "text": "−40 | 0 | 40 | 80 | 100 | Accuracy: blocked − full access (pp)",
+          "confidence": "high",
+          "source_sufficiency": "legible at full placement",
+          "boundary_complete": true,
+          "occlusion": "none; arrows intentionally overlap",
+          "identity_data_verifiable": true
+        }
+      ],
+      "unresolved_evidence": []
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 # ICLR 2027 一周冲刺计划
 
+**2026-09-24 latest review:** Batch03 remains interrupted (864/1024). Corrected baseline audit: eight dual-complete eligible questions plus five partial-only passes. Recommended next: 8 new questions ×2seeds×R0/R2/R3/R4=64 selective 8B generations; prepared, not launched. This supersedes the proposed outcome-selected 32B completion to reach20. Report stopped-prefix limitations, separate Batch03 results, and q381-excluded sensitivity. The original20–30 target remains unmet (16 total including Batch02); do not change eligibility to meet it. See [current concrete plan](batch03_next_experiment_20260924.md). Historical entries below are not live status.
+
 **Latest execution update:** User authorized one Track B UFT external20 run (160 generations), same validated server backend and four conditions. Original32B remains paused. See [frozen protocol](uft_external_plan_20260919.md). No automatic acquisition or second-task generation.
 
 **2026-09-19执行更新：**用户要求先做零generation公开数据审计，暂缓新的baseline和intervention。Batch02 32B当前组完成后已暂停，实际288/512落盘（父进程旧status仍可能显示256），可在核实原进程和GPU后续跑，未自动恢复。UFT公开数据初审发现625道排除历史及预留后的自动新候选题，但缺少EOS元数据；尚未冻结external protocol或改变Track A门槛。下一决策是是否接受已处理、完整外观的短trajectory作为单独Track B，再决定节省多少自生成预算。详见[公开数据审计](public_uft_audit_20260919.md)。以下原计划保留作时间线，暂停期间不自动执行。
@@ -80,3 +82,7 @@ MATH500 CPU compatibility implemented and tested; see [report](math500_compatibi
 
 ### 2026-09-20 overnight execution update
 用户批准最多176条，实际新生成168条：先续MATH16纯文本题剩余104条，再运行已审核冻结的Game24 Batch02新8题×2seeds×4条件64条。GPU4替换本项目idle resident，结束/失败后恢复，不碰他人进程。Batch02双-anchor1024条已完整，8题strict eligible；不追加baseline，不放宽筛题标准。MATH仅前三题有完整24条，尚不能据此评估16题总体；外部UFT20题未见drag，不继续扩该来源。今晚队列可能超过一夜，早晨验收保存部分。完整记录见[night report](night_validation_20260920.md)。正确草稿control和第二target模型仍待后续设计与批准，未自动入队。
+
+### 2026-09-24 continuation: frozen Batch03 acquisition
+
+用户要求继续实验并尽量保持GPU4运行，授权执行此前已冻结、但因时间窗口未启动的Batch03清单。新增预算为32题×16样本×两个Qwen anchor=1,024个R0基线生成；名单、题目顺序、模型配置和strict eligibility门槛均不变。该安排扩大独立题覆盖，不根据已看过的干预结果筛选题目。先完成8B、再完成32B，随后人工 pooled audit；本轮不自动选择失败草稿、不自动启动配对干预。详见[Batch03 live protocol](batch03_dual_anchor_20260924.md)。

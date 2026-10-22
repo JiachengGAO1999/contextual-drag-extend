@@ -1,0 +1,232 @@
+{
+  "abstract_numbers_updated_to_completed_evidence": true,
+  "title_unchanged": true,
+  "manuscript_no_pending_or_batch_claims": true,
+  "frozen_inputs": {
+    "game24_qwen8_7": {
+      "rows": 56,
+      "sha256_matches": true
+    },
+    "game24_qwen8_8": {
+      "rows": 64,
+      "sha256_matches": true
+    },
+    "game24_qwen8_additional8": {
+      "rows": 64,
+      "sha256_matches": true
+    },
+    "game24_qwen32_r0": {
+      "rows": 30,
+      "sha256_matches": true
+    },
+    "game24_qwen32_r2r3": {
+      "rows": 60,
+      "sha256_matches": true
+    },
+    "game24_gemma_r0": {
+      "rows": 30,
+      "sha256_matches": true
+    },
+    "game24_gemma_r2r3": {
+      "rows": 60,
+      "sha256_matches": true
+    },
+    "math": {
+      "rows": 128,
+      "sha256_matches": true
+    },
+    "correct_control": {
+      "rows": 32,
+      "sha256_matches": true
+    }
+  },
+  "scientific_requests": 524,
+  "figure_source_hashes_match": true,
+  "length_stop_scoring": {
+    "None": 16,
+    "False": 4
+  },
+  "length_stopped_requests": [
+    {
+      "group": "Game24 / Qwen3-8B",
+      "id": "1214",
+      "seed": 927001,
+      "condition": "R3",
+      "correct": false,
+      "unresolved": true,
+      "finish": "length"
+    },
+    {
+      "group": "Game24 / Qwen3-8B",
+      "id": "1214",
+      "seed": 927001,
+      "condition": "R0",
+      "correct": false,
+      "unresolved": true,
+      "finish": "length"
+    },
+    {
+      "group": "Game24 / Qwen3-8B",
+      "id": "1305",
+      "seed": 927001,
+      "condition": "R4",
+      "correct": false,
+      "unresolved": false,
+      "finish": "length"
+    },
+    {
+      "group": "Game24 / Qwen3-8B",
+      "id": "195",
+      "seed": 927001,
+      "condition": "R3",
+      "correct": false,
+      "unresolved": false,
+      "finish": "length"
+    },
+    {
+      "group": "Game24 / Qwen3-8B",
+      "id": "1281",
+      "seed": 927002,
+      "condition": "R0",
+      "correct": false,
+      "unresolved": false,
+      "finish": "length"
+    },
+    {
+      "group": "MATH500 / Qwen3-8B",
+      "id": "math500-public-index-136",
+      "seed": 930002,
+      "condition": "R4",
+      "correct": false,
+      "unresolved": true,
+      "finish": "length"
+    },
+    {
+      "group": "MATH500 / Qwen3-8B",
+      "id": "math500-public-index-295",
+      "seed": 930001,
+      "condition": "R3",
+      "correct": false,
+      "unresolved": true,
+      "finish": "length"
+    },
+    {
+      "group": "MATH500 / Qwen3-8B",
+      "id": "math500-public-index-491",
+      "seed": 930001,
+      "condition": "R2",
+      "correct": false,
+      "unresolved": true,
+      "finish": "length"
+    },
+    {
+      "group": "MATH-train / Qwen3-8B",
+      "id": "math-train-public-3289",
+      "seed": 930001,
+      "condition": "R3",
+      "correct": false,
+      "unresolved": false,
+      "finish": "length"
+    },
+    {
+      "group": "MATH-train / Qwen3-8B",
+      "id": "math-train-public-5293",
+      "seed": 930001,
+      "condition": "R4",
+      "correct": false,
+      "unresolved": true,
+      "finish": "length"
+    },
+    {
+      "group": "MATH-train / Qwen3-8B",
+      "id": "math-train-public-5293",
+      "seed": 930002,
+      "condition": "R3",
+      "correct": false,
+      "unresolved": true,
+      "finish": "length"
+    },
+    {
+      "group": "MATH-train / Qwen3-8B",
+      "id": "math-train-public-5293",
+      "seed": 930002,
+      "condition": "R4",
+      "correct": false,
+      "unresolved": true,
+      "finish": "length"
+    },
+    {
+      "group": "MATH-train / Qwen3-8B",
+      "id": "math-train-public-5293",
+      "seed": 930001,
+      "condition": "R0",
+      "correct": false,
+      "unresolved": true,
+      "finish": "length"
+    },
+    {
+      "group": "MATH-train / Qwen3-8B",
+      "id": "math-train-public-5300",
+      "seed": 930001,
+      "condition": "R4",
+      "correct": false,
+      "unresolved": true,
+      "finish": "length"
+    },
+    {
+      "group": "MATH-train / Qwen3-8B",
+      "id": "math-train-public-5300",
+      "seed": 930002,
+      "condition": "R4",
+      "correct": false,
+      "unresolved": true,
+      "finish": "length"
+    },
+    {
+      "group": "MATH-train / Qwen3-8B",
+      "id": "math-train-public-6774",
+      "seed": 930001,
+      "condition": "R3",
+      "correct": false,
+      "unresolved": true,
+      "finish": "length"
+    },
+    {
+      "group": "MATH-train / Qwen3-8B",
+      "id": "math-train-public-6774",
+      "seed": 930001,
+      "condition": "R4",
+      "correct": false,
+      "unresolved": true,
+      "finish": "length"
+    },
+    {
+      "group": "MATH-train / Qwen3-8B",
+      "id": "math-train-public-6774",
+      "seed": 930002,
+      "condition": "R3",
+      "correct": false,
+      "unresolved": true,
+      "finish": "length"
+    },
+    {
+      "group": "MATH-train / Qwen3-8B",
+      "id": "math-train-public-6774",
+      "seed": 930002,
+      "condition": "R4",
+      "correct": false,
+      "unresolved": true,
+      "finish": "length"
+    },
+    {
+      "group": "Correct history / Qwen3-8B",
+      "id": "1214",
+      "seed": 927002,
+      "condition": "C_LATE",
+      "correct": false,
+      "unresolved": true,
+      "finish": "length"
+    }
+  ],
+  "caveat": "Static checks complement, but do not replace, editorial claim review in revision_memo.md."
+}

@@ -1,0 +1,411 @@
+\documentclass{article}
+\usepackage{iclr2027_conference,times}
+
+\input{math_commands.tex}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{url}
+
+\title{After Error Feedback: Continued Access to Failed Reasoning Sustains Contextual Drag}
+
+% Keep author information hidden for the anonymous submission.
+\author{Anonymous authors}
+
+% Do not uncomment for the anonymous submission.
+% \iclrfinalcopy
+
+\newcommand{\method}{\textsc{Continued-Access Control}}
+\newcommand{\fullaccess}{\textsc{Full}}
+\newcommand{\lateblock}{\textsc{LateBlock}}
+\newcommand{\pathblock}{\textsc{PathBlock}}
+\newcommand{\clean}{\textsc{Clean}}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+When a failed reasoning trace remains in context, explicit feedback that its answer is wrong may not prevent it from influencing a new solution. Does this influence depend only on having processed the trace, or also on continued access during generation? We isolate continued direct access with a same-text attention intervention: the model processes the full prompt normally, but later generated queries cannot attend to the failed-draft keys. Across 15 Game24 questions and two seeds per question, Qwen3-8B accuracy is 25/30 without a draft, 10/30 with full access to a failed draft, and 24/30 when generation-time access is blocked. The paired access effect is +46.7 percentage points (95\% question-cluster bootstrap interval: +26.7 to +66.7). Qwen3-32B and Gemma 4 E4B show smaller positive effects on the same questions; two MATH source groups show positive effects under longer reasoning. On an eight-question correct-history control, blocking instead lowers accuracy from 16/16 to 13/16. These results identify continued direct access as a contributor to contextual drag after full initial exposure, while leaving open other information paths and the effects of imperfect error feedback.
+\end{abstract}
+
+\section{Introduction}
+
+An increasingly common inference pattern is to generate an answer, receive feedback, retain the previous trajectory, and reason again. Iterative refinement and agents with verbal feedback instantiate this pattern~\citep{madaan2023selfrefine,shinn2023reflexion}. Retaining the trajectory preserves potentially useful work, but it also leaves the failed computation available alongside the feedback. Does telling a model that prior reasoning is wrong neutralize that reasoning as computational context?
+
+\citet{cheng2026contextualdrag} establish that it need not: failed reasoning retained in context can lower subsequent accuracy even when its failure is explicitly identified. We use this phenomenon, \emph{contextual drag}, to ask a downstream causal question. When a failed trajectory produces a loss in accuracy, does continued direct access to it during generation contribute to that loss beyond the effect of having already processed it?
+
+Two explanations remain compatible with the behavioral phenomenon. Under an \emph{initial-exposure} explanation, processing the failed trace during prefill changes states that remain accessible; those states can carry its influence into the new solution even without later attention to the draft itself. Under a \emph{continued-access} explanation, generated queries' direct attention to the draft keys and values makes an additional contribution after prefill. Both routes may operate. Deleting, rewriting, or resetting the history changes its content, length, positions, prefill computation, and later accessibility together, so these prompt-level interventions cannot distinguish the routes.
+
+We hold exposure fixed while intervening on later accessibility. The principal conditions contain the same failed draft, error signal, prompt tokens, and absolute positions. Both process the entire prompt normally and sample the first generated token from the same full-prefill logits. Only then do their attention rules diverge: newly generated queries retain draft access in R2 and lose it in R3. Thus R2 and R3 are the same prompt under two accessibility regimes. The resulting contrast asks:
+\begin{quote}
+\emph{After a model has fully processed a known-wrong trajectory, does continued direct access to that trajectory during generation still contribute to contextual drag?}
+\end{quote}
+
+Figure~\ref{fig:continued-access-overview} illustrates the intervention boundary: full exposure and the first sampled token precede the change in access.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\textwidth,trim=18bp 72bp 18bp 72bp,clip]{figure1_temp.png}
+    \caption{Same-text intervention isolating continued access after full
+    exposure. The prompt itself is unchanged. In R2, every generated query retains ordinary causal access to
+    the known-wrong draft. In R3, the complete prompt is still processed with
+    ordinary causal attention and $y_1$ is sampled from the same full-prefill
+    logits. Blocking begins with the query for $y_1$, which predicts $y_2$;
+    this and subsequent generated queries cannot directly attend to the
+    failed-draft key--value positions. Dashed arrows and crosses denote the
+    removed attention edges; access to the problem, error signal, and
+    independent-solve instruction is preserved.}
+    \label{fig:continued-access-overview}
+\end{figure}
+
+In the main Game24 experiment, Qwen3-8B solves 25/30 trials without a draft, 10/30 with full access to a failed draft, and 24/30 under late access blocking. The intervention recovers most of the observed loss despite preserving full initial exposure. Correct history provides a contrasting result: on eight of these questions, blocking lowers accuracy from 16/16 to 13/16. Additional target models and longer-form mathematical reasoning show the same positive direction for failed history, with smaller effects or greater uncertainty in some settings. These findings motivate a distinction between processing a trajectory and keeping it directly accessible.
+
+We make three contributions:
+\begin{enumerate}
+    \item \textbf{Conceptual distinction.} We distinguish initial exposure from continued direct accessibility as two routes through which failed reasoning can affect a new solution.
+    \item \textbf{Identification design.} We introduce a same-text, post-prefill attention intervention that changes later draft access while preserving prompt tokens, positions, full initial processing, and first-token computation.
+    \item \textbf{Empirical finding.} Blocking continued access recovers substantial accuracy on selected failed-history problems across target models and tasks, while blocking verified correct history can reduce performance.
+\end{enumerate}
+
+We use access control for causal identification with externally verified drafts. The target claim concerns continued direct access after exposure, rather than error detection or the deployment advantage of a new decoding algorithm.
+
+\section{Related Work}
+
+\paragraph{Reasoning from feedback and prior attempts.}
+Self-refinement methods retain an earlier output and use language feedback to produce a revised one~\citep{madaan2023selfrefine}. Reflexion similarly stores linguistic feedback in episodic memory to guide later agent trials~\citep{shinn2023reflexion}. These approaches demonstrate that prior trajectories can be useful computational context, but they also create a channel through which earlier mistakes may persist. Our work does not propose a new feedback generator. It studies whether a known failed trajectory remains influential after its incorrectness has already been supplied as an oracle signal.
+
+\paragraph{Contextual drag.}
+\citet{cheng2026contextualdrag} show across reasoning models and tasks that failed in-context attempts can lower performance, induce structurally related errors, survive explicit verification signals, and impair iterative self-improvement. They further study context denoising and targeted fine-tuning as mitigations. We take this phenomenon as the starting point rather than attempting to re-establish it for arbitrary drafts. Our question is downstream of the phenomenon: conditional on a failed same-problem trajectory producing contextual drag, how much of the effect depends on the trajectory remaining directly accessible during decoding?
+
+\paragraph{Context and KV-cache control.}
+Work on KV-cache management removes or compresses context primarily to reduce serving cost. PagedAttention reduces memory fragmentation in LLM serving~\citep{kwon2023pagedattention}, while H$_2$O retains tokens selected by attention-based heavy-hitter criteria~\citep{zhang2023h2o}. MEMENTO trains models to summarize and evict reasoning blocks, and reports that information may persist through both textual summaries and KV states~\citep{kontonis2026memento}. These studies establish that controlling access to past computation can affect both efficiency and behavior. We differ in target and control: the target is a known harmful same-problem trajectory, and the central comparison retains identical prompt text and full prefill exposure rather than optimizing a compression budget.
+
+\paragraph{Programmable attention.}
+FlexAttention provides a compiler-driven interface for custom attention score and block-mask rules~\citep{dong2024flexattention}. We use this capability inside vLLM to apply request-specific masks over logical prompt positions. Our contribution is not a new attention kernel; it is the causal intervention and its use to separate exposure from continued accessibility.
+
+\section{Problem Setup}
+\label{sec:setup}
+
+Let a reasoning problem be $x$, and let $d=(d_1,\ldots,d_m)$ be a model-generated trajectory for the same problem that has been externally verified as incorrect. The evaluation prompt contains the problem, the complete text of $d$, an explicit signal that $d$ is incorrect, and an instruction to solve $x$ independently. Let $y=(y_1,\ldots,y_T)$ denote the new generated trajectory.
+
+Under full causal attention, a generated query at position $q$ can attend prompt keys in the failed-draft span $D$. We intervene on the binary accessibility relation $A(q,k)$. \fullaccess{} preserves the ordinary causal mask:
+\begin{equation}
+    A_{\mathrm{full}}(q,k)=\mathbb{1}[k\leq q].
+\end{equation}
+Our primary intervention, \lateblock{}, preserves all prefill access and then blocks generated queries from attending to the draft. For a draft span $D=[s_d,e_d)$ and prompt length $L$,
+\begin{equation}
+    A_{\mathrm{late}}(q,k)
+    = A_{\mathrm{full}}(q,k)\,\mathbb{1}[q<L \;\lor\; k\notin D].
+    \label{eq:late}
+\end{equation}
+All prompt queries, including the full prefill, therefore use ordinary causal attention. The logits used to sample $y_1$ are also the ordinary full-prefill logits. Blocking first affects the next query after $y_1$ has been appended.
+
+The secondary \pathblock{} diagnostic begins earlier, at the prompt suffix following the draft:
+\begin{equation}
+    A_{\mathrm{path}}(q,k)
+    = A_{\mathrm{full}}(q,k)\,\mathbb{1}[q<e_d \;\lor\; k\notin D].
+    \label{eq:path}
+\end{equation}
+This blocks post-draft prompt queries and generated queries from directly attending to $D$, while preserving computation within the draft itself. It tests intervention timing; unblocked states may still carry draft-derived information. The equations display the rule for full causal layers. For a model with native sliding-window layers, we intersect the additional access restriction with that layer's native attention relation, preserving its ordinary computation wherever the intervention does not apply.
+
+\subsection{Experimental conditions}
+
+Table~\ref{tab:conditions} summarizes the four conditions used in the main experiment.
+
+\begin{table}[t]
+\caption{Experimental conditions. R2--R4 share identical prompt text, token IDs, absolute positions, draft span, error signal, and sampling configuration.}
+\label{tab:conditions}
+\centering
+\small
+\begin{tabular}{llll}
+\toprule
+ID & History & Prefill access & Later access to draft \\
+\midrule
+R0 & None & N/A & N/A \\
+R2 & Failed draft & Full & Full \\
+R3 & Failed draft & Full & Blocked for generated queries \\
+R4 & Failed draft & Blocked after draft & Blocked for generated queries \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Our primary estimands are
+\begin{align}
+    \Delta_{\mathrm{drag}} &= \operatorname{Acc}(R0)-\operatorname{Acc}(R2), \\
+    \Delta_{\mathrm{access}} &= \operatorname{Acc}(R3)-\operatorname{Acc}(R2).
+\end{align}
+$\Delta_{\mathrm{drag}}>0$ denotes an observed loss from the failed-history prompt. The primary causal contrast is R3 versus R2: $\Delta_{\mathrm{access}}$ measures the accuracy change from removing later direct access at fixed initial exposure. A positive contrast represents recovery when the drag prerequisite holds; its sampling uncertainty is reported separately. The secondary contrast $R4-R3$ probes whether beginning the block earlier improves recovery.
+
+\section{Method}
+\label{sec:method}
+
+\subsection{Same-text access intervention}
+
+For each problem--draft pair, we tokenize the complete R2 prompt once and persist its token IDs, positions, prompt hash, and minimum contiguous token span covering the draft. R2, R3, and R4 load this shared bundle. The error label, solve instruction, and sampling configuration also agree. These controls make the access regime the manipulated variable in R2/R3; retokenization, wrapper drift, and position shifts cannot explain their contrast. Draft spans with non-formatting spillover are rejected during preparation.
+
+The intervention changes logical attention edges rather than physically deleting KV tensors. Keys and values remain allocated at their original positions. Request-specific metadata records the access mode and the query position at which blocking begins. Missing or inconsistent metadata causes the request to fail rather than fall back to unmodified attention.
+
+\subsection{Inference implementations}
+
+For Qwen3-8B and Qwen3-32B, we implement the masks in vLLM 0.11.0~\citep{kwon2023pagedattention} with PyTorch FlexAttention~\citep{dong2024flexattention}. Paged physical KV locations are mapped to logical token positions before applying Equations~\ref{eq:late}--\ref{eq:path}. The worker tracks request reordering and different modes in the same batch. Gemma 4 E4B is evaluated with a separate eager Hugging Face implementation that preserves its hybrid sliding/global attention layout; its results are within-model comparisons rather than a bitwise comparison to Qwen's backend. Runs use BF16 weights and no quantization or speculative decoding.
+
+Implementation checks compare the logical mask against a dense reference over reordered paged layouts and test mutations confined to blocked KV entries. Persisted R2/R3 prompt hashes, token hashes, draft spans, and first generated tokens match in every Game24 paired unit for all three models. Separate Qwen and Gemma implementations allow a check of whether the effect direction also occurs beyond one custom backend. They do not establish bitwise equivalence, and architecture and implementation are not separately varied.
+
+\subsection{Interpretation boundary}
+
+The manipulated variable is direct attention to draft positions after prefill. Since accessible states may already encode information from the draft, this contrast identifies the contribution of those access edges rather than the draft's total influence. Section~\ref{sec:discussion} develops this distinction.
+
+\section{Experimental Design}
+\label{sec:experiments}
+
+\subsection{Model and decoding}
+
+The target models are Qwen3-8B, Qwen3-32B~\citep{qwen2025qwen3}, and Gemma 4 E4B~\citep{google2026gemma4}, each in its recorded thinking mode. We use temperature $0.6$, top-$p$ $0.95$, top-$k$ $20$, a 32,768-token context limit, and paired seeds 927001 and 927002 for Game24. Qwen3-8B has R0--R4 results; the other two models have R0, R2, and R3. Within a model, conditions share the same inference implementation and scorer. All R0 outputs are generated for these comparisons; screening outputs are not substituted for them.
+
+\subsection{Game24}
+
+Game24 asks the model to combine four numbers using arithmetic operations to obtain 24, with every input number used exactly once. It provides executable correctness and a compact representation of solution structure, and has been used to study deliberate LLM reasoning~\citep{yao2023tree}. We score the final expression for arithmetic correctness and multiset compliance rather than relying on string matching.
+
+We evaluate 15 distinct Game24 questions, each with one failed draft and two paired seeds. Candidate questions were screened with ordinary baseline generations from Qwen3-8B and Qwen3-32B. The final eligibility rule required at least two completed, parsable, verified correct trajectories and two substantive incorrect trajectories in the pooled screening audit. One question, ID 41, entered under an earlier rule and is retained in the main set; the other 14 meet the final rule. Screening and intervention data were collected in successive batches as the protocol developed. Therefore, the pooled analysis is an estimate for this selected set, and its interval does not account for adaptive study design. Draft text is the source model's visible final response; no private thinking trace is transferred. The frozen draft for a question is shared across the three target models.
+
+\subsection{Mathematical reasoning}
+
+We evaluate 16 mathematical problems from MATH/MATH500 sources~\citep{hendrycks2021math}, two seeds and four conditions per question, with Qwen3-8B as the target. Eight MATH500 items use Qwen3-1.7B source drafts; eight MATH-train items use Qwen3-4B source drafts. Each draft was audited as a substantive failure. We report these groups separately because problem source and draft-source model change together. The MATH seeds are 930001 and 930002. The frozen scorer compares the last complete boxed answer with the reference answer.
+
+\subsection{Controls}
+
+\paragraph{Deletion/reset.}
+A reset that removes the complete failed-history block, including its label and delimiters, yields the R0 user content under the recorded chat wrapper. This equivalence was audited for all 32 MATH R0 requests, so we use R0 as the clean comparator. R0 is a prompt-level comparison: it changes initial exposure as well as later access. R2 versus R3 is the controlled same-text contrast.
+
+\paragraph{Correct-draft specificity.}
+To distinguish failed-history disengagement from a general effect of disrupting historical attention, we compare full versus late-block access for correct drafts selected from the same frozen questions without consulting intervention outcomes. The target interaction is
+\begin{equation}
+    \Delta_{\mathrm{specific}}
+    = \big[\operatorname{Acc}(F_{\mathrm{late}})-\operatorname{Acc}(F_{\mathrm{full}})\big]
+    - \big[\operatorname{Acc}(C_{\mathrm{late}})-\operatorname{Acc}(C_{\mathrm{full}})\big].
+\end{equation}
+The correct-history control covers eight of the 15 Game24 questions with the Qwen3-8B target. A verified correct source draft was selected without observing intervention outcomes, with character length used for matching to the failed draft. The prompt labels that draft \texttt{CORRECT}. Correct and failed histories differ in content and may differ in other features, so the interaction is a specificity check rather than an isolated manipulation of truth value.
+
+\subsection{Metrics and uncertainty}
+
+Accuracy is the fraction of all paired requests whose persisted benchmark score is correct. Unresolved scores remain in the denominator and count as incorrect; termination and score coverage are reported separately. All length-stopped outputs in this dataset are either scored incorrect or unresolved. We report paired wrong-to-correct and correct-to-wrong transitions. Percentile 95\% intervals use 50,000 bootstrap resamples of questions, retaining both seeds within each sampled question. Intervals describe variation over this selected set and are not adjusted for study decisions or multiple contrasts.
+
+\section{Results}
+\label{sec:results}
+
+\subsection{Failed reasoning remains harmful after explicit feedback}
+\label{sec:residual-drag}
+
+We first establish the prerequisite for interpreting an access effect as recovery. With Qwen3-8B, the failed-history prompt scores 10/30 versus 25/30 in clean context, despite the explicit incorrect-answer label and instruction to solve independently (Table~\ref{tab:game24}). The observed drag is 50.0 percentage points (95\% interval: 33.3 to 66.7). Qwen3-32B and Gemma 4 E4B also show losses, respectively 36.7 points [16.7, 56.7] and 20.0 points [3.3, 33.3]. The R0/R2 comparison establishes the phenomenon in these selected questions; it does not isolate the contribution of later access.
+
+\subsection{Blocking continued access recovers most of the observed loss}
+\label{sec:main-access}
+
+R3 preserves the full prompt and its prefill computation, yet raises Qwen3-8B accuracy from 10/30 to 24/30. The 46.7-point access effect [26.7, 66.7] recovers most of the 50.0-point loss observed in R2. Paired outcomes clarify the change: 16 trials move from wrong to correct, two from correct to wrong, eight remain correct, and four remain wrong. R3 is 3.3 points below R0, with an interval of $[-23.3,16.7]$ points; this is not an equivalence test or evidence of complete restoration.
+
+Because the conditions agree through full prefill and the first sampled token, the recovery cannot be explained solely by avoiding initial exposure to the failed trace. Continued direct access remains behaviorally consequential after that exposure. Figure~\ref{fig:access-effects} places this primary effect alongside the additional model, task, and correct-history comparisons.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=\textwidth]{figure2_access_effects.pdf}
+    \caption{Accuracy change from late access blocking. Points show blocked minus full-access accuracy in percentage points; bars are 95\% percentile bootstrap intervals over questions, keeping the two seeds together. Failed-history rows compare R3 with R2; the correct-history row compares $C_{\mathrm{late}}$ with $C_{\mathrm{full}}$. The three Game24 target models share 15 questions, while the correct-history control uses an eight-question subset. Each MATH row has eight questions and the Qwen3-8B target, with Qwen3-1.7B and Qwen3-4B source drafts for MATH500 and MATH-train, respectively. These rows are not a matched failed-versus-correct interaction; that comparison uses the same eight questions in Section~\ref{sec:specificity}. Unresolved scores count as incorrect.}
+    \label{fig:access-effects}
+\end{figure}
+
+\begin{table}[t]
+\caption{Game24 accuracy on the same 15 questions, with two seeds per condition. The primary contrast is R3 versus R2. Effects are percentage points; brackets are 95\% intervals resampling questions. R4 and generation diagnostics appear in Appendix~\ref{app:diagnostics}.}
+\label{tab:game24}
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+Target & R0 & R2 & R3 & $R3-R2$ [95\% CI] \\
+\midrule
+Qwen3-8B & 25/30 & 10/30 & 24/30 & $+46.7$ [$+26.7,+66.7$] \\
+Qwen3-32B & 27/30 & 16/30 & 24/30 & $+26.7$ [$+3.3,+50.0$] \\
+Gemma 4 E4B & 28/30 & 22/30 & 27/30 & $+16.7$ [$0.0,+30.0$] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{The direction extends across target models and implementations}
+\label{sec:target-models}
+
+On the same questions and source drafts, Qwen3-32B gains 26.7 points [3.3, 50.0] from R3 versus R2, with 11 improvements and three harms. Gemma 4 E4B gains 16.7 points [0.0, 30.0], with six improvements and one harm. The Gemma interval touches zero. These results support the same direction with different magnitudes and uncertainty, rather than a relation between model size and susceptibility.
+
+Qwen uses the vLLM/FlexAttention implementation, while Gemma uses a separate eager Hugging Face implementation that preserves its native hybrid attention. Observing the same direction in both provides a robustness check beyond one custom backend. Since architecture and implementation change together, it does not isolate backend effects or establish cross-backend equivalence. Generation termination and unresolved-score counts are reported in Appendix~\ref{app:diagnostics}.
+
+\subsection{Blocking is not generically beneficial}
+\label{sec:specificity}
+
+A generic benefit from disrupting historical attention would not, by itself, predict the observed benefit to depend on history quality. The correct-history control tests this possibility on eight Game24 questions with the same Qwen3-8B target. Full access scores 16/16, while late blocking scores 13/16: a $-18.8$-point effect [${-37.5},{-6.2}$]. All three discordant pairs are harms. Access to these correct drafts is useful in the observed sample, so blocking has no unconditional advantage.
+
+The failed-history access effect on these \emph{same eight questions} is $+37.5$ points. The matched difference in differences is therefore $+56.2$ points [${+37.5},{+75.0}$], rather than a comparison with the full 15-question effect. One blocked correct-history output is length-truncated and unresolved; scoring it as correct still yields a $+50.0$-point interaction. Correct and failed histories differ in content, may differ in length, and receive different truthful feedback labels. The interaction supports specificity to the history condition, but does not isolate truth value or rule out all forms of generic attention disruption.
+
+\subsection{The direction also appears in longer-form mathematical reasoning}
+\label{sec:math-replication}
+
+MATH provides a cross-task check under longer-form reasoning (Table~\ref{tab:math}). Both source groups show the drag prerequisite $R0>R2$ and a positive access effect: 75.0 points [50.0, 93.8] for MATH500/Qwen3-1.7B drafts and 50.0 points [18.8, 81.2] for MATH-train/Qwen3-4B drafts. The groups differ simultaneously in source questions and draft-source model; their contrast cannot identify either a source-model or draft-length mechanism.
+
+\begin{table}[t]
+\caption{Qwen3-8B target on MATH: eight questions per source group, two seeds per condition. Accuracy counts all requests; unresolved scores count incorrect.}
+\label{tab:math}
+\centering\small
+\begin{tabular}{lrrrr}
+\toprule
+Source / draft model & R0 & R2 & R3 & $R3-R2$ [95\% CI] \\
+\midrule
+MATH500 / Qwen3-1.7B & 16/16 & 2/16 & 14/16 & $+75.0$ [$+50.0,+93.8$] \\
+MATH-train / Qwen3-4B & 7/16 & 0/16 & 8/16 & $+50.0$ [$+18.8,+81.2$] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Termination is less balanced than in Game24: of 128 MATH generations, 114 reach EOS, 14 stop at the length limit, and 13 scores are unresolved. MATH-train R3 and R4 have 4/16 and 6/16 length stops, respectively, versus none in R2. The contrasts thus concern scored success under the fixed generation budget and can reflect changes in both answer content and completion. They replicate the direction under longer reasoning, but do not establish a correctness effect independent of termination. Appendix~\ref{app:diagnostics} gives the condition-level counts.
+
+\subsection{Earlier blocking provides no consistent additional benefit}
+\label{sec:timing}
+
+R4 probes whether removing access from post-draft prompt states as well as generated queries improves on late blocking. On Game24 with Qwen3-8B, it scores 22/30 versus R3's 24/30, giving $R4-R3=-6.7$ points [${-30.0},{+13.3}$]. The corresponding MATH contrasts are $+6.2$ points [${-12.5},{+25.0}$] and $-12.5$ points [${-43.8},{+12.5}$]. None shows a consistent additional benefit. These timing results constrain the conclusion: the observed recovery does not require the earlier intervention, and the data do not identify all mediated paths through which draft information may propagate.
+
+\section{Discussion}
+\label{sec:discussion}
+
+\paragraph{Exposure and accessibility are distinct computational variables.}
+A model can have processed a trajectory, incorporated some of its information into other states, and still behave differently depending on whether later queries can directly access the original draft representations. R2/R3 holds the first event fixed while intervening on the second. Its recovery shows that the observed drag is not fully determined by initial exposure: continued direct access remains causally consequential under the evaluated conditions. The external error label supplies feedback; the experiment does not measure the model's own error recognition.
+
+\paragraph{Direct access does not exhaust the information paths.}
+R3 does not erase the draft from prefill or prevent accessible prompt and generated states from carrying draft-derived information. Recovery identifies the causal relevance of specific direct access edges, not forgetting, a unique error representation, or the absence of an initial-exposure effect. R4 intervenes earlier but still leaves mediated paths available; its lack of consistent additional benefit limits what the timing comparison establishes.
+
+\paragraph{An identification tool rather than a deployment prescription.}
+Deleting a known-wrong trajectory before prefill is simpler than a custom attention mask, but also changes initial exposure. The value of R3 is to preserve exposure while testing later access. The harm observed with correct history further shows why blanket blocking is not warranted. Deployment would require reliable decisions about which history to suppress and separate evaluation of runtime, memory, and task performance.
+
+\section{Limitations}
+
+The study uses externally verified incorrect drafts and known token spans. Its 15 Game24 questions are selected for mixed baseline outcomes; the protocol developed across collection batches, and bootstrap intervals do not capture that selection or adaptation. These restrictions limit the population to which effect sizes generalize, while the within-prompt intervention still controls later access for the evaluated instances. Increasing distinct question coverage is more informative about that population than adding many seeds to the same questions.
+
+The additional models vary in both architecture and inference implementation, so their agreement supports robustness but cannot explain model differences. Logical blocking preserves allocated KV tensors and information in unblocked states. MATH's 16 questions have condition-dependent termination and unresolved answers, and the eight-question correct-history subset does not match failed histories on every feature. The results therefore do not establish a unique pathway, a scaling law, or a universally useful mitigation.
+
+\section{Conclusion}
+
+Holding full initial exposure fixed, blocking later direct access to failed reasoning recovers substantial accuracy. The direction extends to additional models and tasks, while blocking correct history can hurt. Continued direct accessibility thus makes an interventionally identifiable contribution to contextual drag after explicit feedback, without being the only possible information pathway.
+
+\subsection*{Reproducibility statement}
+The artifact records prompts, token spans, request manifests, model and inference versions, random seeds, scoring code, request-level outputs, and implementation checks. R2--R4 bundles persist token IDs and hashes. The local evidence manifest lists raw files and SHA-256 digests; an anonymous public artifact link can be added at submission.
+
+\subsection*{Ethics statement}
+This work evaluates publicly available reasoning benchmarks and model-generated trajectories and does not involve human subjects or private user data. The intervention assumes externally identified errors; deploying analogous mechanisms with imperfect error detectors could suppress useful context or alter model behavior unpredictably. We therefore present the method as a controlled analysis tool rather than a production safety guarantee.
+
+\subsection*{AI use statement}
+Generative AI tools assisted with code development, debugging, experiment documentation, literature discovery, and language editing. Numerical claims in this draft are tied to persisted results and auditable analysis scripts. The submitting authors are responsible for final review of the manuscript and artifacts.
+
+\bibliography{contextual_drag_continued_access}
+\bibliographystyle{iclr2027_conference}
+
+\appendix
+
+\section{Intervention and Experimental Details}
+\label{app:details}
+
+\subsection{Access semantics}
+
+\begin{table}[h]
+\caption{Operational semantics of the access modes. ``Allocated'' means that the KV tensors remain present in memory; the intervention controls whether the corresponding logical attention edges participate.}
+\centering
+\small
+\begin{tabular}{llll}
+\toprule
+Mode & Draft KV allocated & Prefill & Decode \\
+\midrule
+\fullaccess & Yes & Ordinary causal & Ordinary causal \\
+\lateblock & Yes & Ordinary causal & Draft keys blocked \\
+\pathblock & Yes & Block after draft end & Draft keys blocked \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+R3's first sampled token uses the same full-prefill logits as R2. In implementation terms, the first blocked query has logical position equal to the prompt length. R4 starts blocking at the end of the draft span and therefore also affects the prompt suffix following the draft. Neither mode physically compacts KV storage or renumbers token positions.
+
+\subsection{Implementation validation checklist}
+
+Before a scientific run, we verify:
+\begin{enumerate}
+    \item equality of R2--R4 prompt text, token IDs, length, positions, and hashes;
+    \item validity and minimum-span coverage of the persisted draft interval;
+    \item agreement of request-specific paged logical masks with a dense reference;
+    \item first-token agreement between full and late-block conditions in deterministic checks;
+    \item zero output change under mutations confined to keys blocked by the tested path mask in targeted greedy checks;
+    \item fail-closed behavior for missing metadata, unsupported layouts, or version mismatch.
+\end{enumerate}
+
+\subsection{Draft acquisition and leakage control}
+
+The 15 Game24 questions are distinct, and each has one frozen failed draft. Baseline screening determines draft correctness before intervention evaluation. Manual review distinguishes substantive failures from format-only errors, incomplete trajectories, and scorer failures. Fourteen questions meet the final two-correct/two-failure rule; ID 41 was admitted under an earlier rule. The set was collected in successive batches, and the paper reports it as a single selected sample. No intervention response is used to relabel its frozen source draft.
+
+\subsection{Statistical reporting}
+
+For each condition and contrast, we report raw numerators and denominators, accuracy, paired transitions, question-cluster bootstrap intervals, EOS rate, score coverage, and length termination. The question is the bootstrap resampling unit; two seed-level observations stay together. Effects are descriptive for the selected questions.
+
+\clearpage
+\section{Generation Diagnostics and Earlier Blocking}
+\label{app:diagnostics}
+
+Table~\ref{tab:diagnostics} reports all 460 completed scientific requests used in the paper. EOS and scoring coverage are distinct: one Gemma R3 output reaches EOS but has an unresolved score, whereas two length-stopped outputs across the full dataset have an extracted answer scored incorrect. No records are dropped because of termination or parsing outcomes.
+
+\input{generation_diagnostics.tex}
+
+\begin{table}[H]
+\centering\small
+\caption{Earlier-blocking diagnostic with the Qwen3-8B target. Effects are percentage points with question-cluster 95\% bootstrap intervals.}
+\label{tab:r4}
+\begin{tabular}{lrrr}
+\toprule
+Task & R4 correct & $R4-R2$ [95\% CI] & $R4-R3$ [95\% CI] \\
+\midrule
+Game24 & 22/30 & $+40.0$ [$+20.0,+60.0$] & $-6.7$ [$-30.0,+13.3$] \\
+MATH500 & 15/16 & $+81.2$ [$+56.2,+100.0$] & $+6.2$ [$-12.5,+25.0$] \\
+MATH-train & 6/16 & $+37.5$ [$+12.5,+75.0$] & $-12.5$ [$-43.8,+12.5$] \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\clearpage
+\section{Prompts}
+
+The prompt builder uses the following Game24 user-content template, with the two bracketed fields replaced by the frozen pair. Line wrapping of the final instruction below is typographic; the builder joins it into one line. The model-specific chat template surrounds this content.
+\begin{verbatim}
+Original problem:
+[problem]
+
+The following draft has an INCORRECT final answer.
+-- beginning of the draft --
+[draft]
+-- end of the draft --
+
+Solve the original problem independently and provide a
+complete solution. You do not need to evaluate or refer
+to any preceding draft. Conclude with an expression using
+the original four numbers exactly once in \boxed{}.
+\end{verbatim}
+For MATH, the last sentence is ``Conclude with your final answer in \textbackslash boxed\{\}.'' R0 omits the entire history block, including the incorrect-answer label and delimiters. The correct-history control changes the label to \texttt{CORRECT} and inserts a verified correct draft.
+
+\section{Complete Question-Level Results}
+
+Table~\ref{tab:game24-per-question} gives all Game24 question-level counts; the raw input hashes and seed-level outcomes are in the machine-readable evidence manifest. R2/R3 prompt hashes, input-token hashes, draft spans, and first generated tokens match for all 30 paired units per model. The Qwen3-8B R2/R3 transitions are 16 wrong-to-correct, two correct-to-wrong, eight both correct, and four both wrong. For Qwen3-32B they are 11, three, 13, and three; for Gemma 4 E4B they are six, one, 21, and two.
+
+\input{../../../runs/iclr2027_evidence_20260925/game24_per_question.tex}
+
+\section{Additional Behavioral Analysis}
+
+An output-level audit on the same eight Game24 questions used for the correct-history control compares the extracted final expression with the frozen failed expression after normalization. Exact reuse occurs in 9/16 R2 outputs, 2/16 R3 outputs, and 1/16 R4 outputs. The metric does not classify algebraically equivalent alternatives or reasoning routes. It is a descriptive check on final outputs, not evidence of an internal copying mechanism or an estimate for all 15 questions.
+
+\section{Data Availability}
+
+The final anonymous supplement will contain frozen manifests, selected draft texts where redistribution permits, token/hash audit records, request metadata, raw model outputs, and analysis code. Public benchmark items retain their original licenses and provenance. Model weights are referenced by immutable model identifiers and are not redistributed.
+
+\end{document}

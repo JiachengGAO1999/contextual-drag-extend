@@ -1,5 +1,7 @@
 # Next Game24 acquisition: widen independent questions
 
+**Superseded by the 2026-09-25 user-authorized fresh Batch04 plan:** see [`batch04_sampling_plan_20260925.md`](batch04_sampling_plan_20260925.md). The new run screens 32 unseen questions at eight samples per anchor; it does not resume or alter Batch03's frozen manifest.
+
 Decision recorded 2026-09-24 after discussion with the user. This is a plan for the batch **after** the running Batch03 dual-anchor acquisition; it does not change Batch03's frozen 32 questions, two models, or 16 generations per model per question.
 
 ## Why reconsider 16 generations

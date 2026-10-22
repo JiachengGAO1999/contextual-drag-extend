@@ -1,0 +1,58 @@
+{
+  "sources": {
+    "runs\\iclr2027_evidence_20260925_completed\\evidence.json": "7a2ef8abf22c4aca41a473bc4f2931b43725dba03e9a2ab7928d2c866853e068",
+    "runs\\game24_correct_draft_specificity_20260922_analysis\\analysis.json": "cbe30b193274c722cc1c8f6bed695458e4ef26f25303c4d2ac62269fe317fb88"
+  },
+  "intervals": "percentile 95% bootstrap over questions; 50000 draws; both seeds retained",
+  "scope": "Qwen3-8B Game24: 23 questions; other targets: shared 15-question subset; correct control: matched eight-question subset",
+  "rows": [
+    {
+      "label": "Qwen3-8B / Game24",
+      "history": "Failed",
+      "questions": 23,
+      "effect_pp": 39.130434782608695,
+      "low_pp": 23.91304347826087,
+      "high_pp": 54.347826086956516
+    },
+    {
+      "label": "Qwen3-32B / Game24",
+      "history": "Failed",
+      "questions": 15,
+      "effect_pp": 26.666666666666668,
+      "low_pp": 3.3333333333333335,
+      "high_pp": 50.0
+    },
+    {
+      "label": "Gemma 4 E4B / Game24",
+      "history": "Failed",
+      "questions": 15,
+      "effect_pp": 16.666666666666664,
+      "low_pp": 0.0,
+      "high_pp": 30.0
+    },
+    {
+      "label": "Qwen3-8B / MATH500",
+      "history": "Failed",
+      "questions": 8,
+      "effect_pp": 75.0,
+      "low_pp": 50.0,
+      "high_pp": 93.75
+    },
+    {
+      "label": "Qwen3-8B / MATH-train",
+      "history": "Failed",
+      "questions": 8,
+      "effect_pp": 50.0,
+      "low_pp": 18.75,
+      "high_pp": 81.25
+    },
+    {
+      "label": "Qwen3-8B / Game24",
+      "history": "Correct",
+      "questions": 8,
+      "effect_pp": -18.75,
+      "low_pp": -37.5,
+      "high_pp": -6.25
+    }
+  ]
+}

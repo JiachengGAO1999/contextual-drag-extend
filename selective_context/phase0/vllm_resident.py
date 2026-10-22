@@ -11,9 +11,9 @@ def main():
     from selective_context.phase0.vllm_run import main as run
     backend = SelectiveVLLMBackend('/data2/huangrj/models/qwen3-8b', max_num_seqs=8)
 
-    def run_manifest(manifest, output, batch_size=8):
+    def run_manifest(manifest, output, batch_size=8, task='game24'):
         return run(['--manifest', str(manifest), '--output', str(output),
-                    '--batch-size', str(batch_size)], backend=backend)
+                    '--batch-size', str(batch_size), '--task', task], backend=backend)
 
     print('SELECTIVE_VLLM_RESIDENT_READY', flush=True)
     startup=Path('outputs/vllm-resident-startup.json')

@@ -43,19 +43,7 @@ def rows_from(path):
     return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
 
 
-INDEPENDENT_SUFFIX = (
-    "Solve the original problem independently and provide a complete solution. "
-    "You do not need to evaluate or refer to any preceding draft. "
-    "Conclude with an expression using the original four numbers exactly once in \\boxed{}."
-)
-
-
-def independent_prompt(problem, draft=None):
-    text = f"Original problem:\n{problem}\n"
-    if draft is not None:
-        text += ("\nThe following draft has an INCORRECT final answer.\n"
-                 f"-- beginning of the draft --\n{draft}\n-- end of the draft --\n")
-    return text + '\n' + INDEPENDENT_SUFFIX
+from selective_context.tasks import GAME24_SUFFIX as INDEPENDENT_SUFFIX, independent_prompt
 
 
 def main():

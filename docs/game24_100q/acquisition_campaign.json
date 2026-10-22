@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "authorization": "2026-10-14 user explicitly requested migration to one A800 and execution of the100-case data preparation experiment",
+  "target_independent_strict_eligible_questions": 100,
+  "baseline_admitted_questions": 2,
+  "pilot_questions": 16,
+  "pilot_gpu_hours_cap": 8,
+  "wave_questions": 32,
+  "samples_per_anchor": 8,
+  "maximum_wave_gpu_hours": 16,
+  "maximum_campaign_gpu_hours": 240,
+  "budget_basis": "Conservative finite ceiling around previously disclosed210-hour historical cost scenario; stop before exceeding, not an unlimited allocation",
+  "fresh_order_file": "docs/game24_100q/fresh_question_order.json",
+  "execution_config": "docs/game24_100q/execution_config_a800.json",
+  "pilot_manifest": "docs/game24_100q/pilot_manifest.json",
+  "stop_conditions": [
+    "GPU4 foreign compute owner or GPU UUID mismatch",
+    "disk free below10GiB",
+    "failure or interrupted batch not audited as complete",
+    "zero strict eligible questions in the completed pilot",
+    "after pilot, point estimate of remaining acquisition cost exceeds remaining finite campaign budget",
+    "no fresh questions remain",
+    "target reached: freeze before any interventions"
+  ],
+  "pending_labels": "Incomplete, malformed, ambiguous, None and scalar-only answers never automatically count as substantive failures. Preserve for review and disclose conservative omissions.",
+  "interventions": "No R2/R3 or held-out exploration within this data-only campaign"
+}

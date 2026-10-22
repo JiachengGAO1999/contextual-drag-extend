@@ -1,0 +1,94 @@
+[
+  {
+    "path": "outputs/game24-100q-20261014/acquisition/a800/pilot/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "67dca834129092065b3161c08c495d781e63b4004e94fadf3b1daa589cc14b21"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-001/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "ec83c8fac3bdecbf3d1f73c0ec3fd38ca5d53d29bafa99ed70d7166aa3f6bdbf"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-002/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "3fe54136749a521ae9449854733e71d83020ba655b7fe67839b672a52ccde029"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-003/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "e60681a01442526071664e2a5c3b2ef6d8d25b211824a5c79e3f655f80bdc03f"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-004/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "57c14cd3dc2167691d3ff0c7a531712683c1c9d182c31512943b359fa6825701"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-005/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "e452224dfaab167ec67f4e175a46715c9b4e81407fdcf3dad633b3f4ebf9fd9f"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-006/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "ade59cb3b8e780575e0b9a64f1dc164948e7c6caf96a20a71811379cf1682a25"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-007/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "8b641655c5d01517e927765340ecc01d4413bcdf1c80ff94dd1e4e2186456dcc"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-008/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "9106f21dc7959e4ec06cdec116d358e6c2ad2870eeadcb1e457f13917532c36f"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-009/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "5981de5270bc5e26e2033094aa014c62dccb4a7fde8ba564690fb462c9ff8ef0"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-010/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "6217e882c69fef8fc9eea876020ca30214dd2a84e2c7aebd910ddfae5ffeb27e"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-011/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "8b73ad6191c32ae223961ebd0247537feb731151ca6a41da67264298bfa1580c"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-012/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "216fa85d772c36d2c7af45297074abd6a13d79ea278236ab378eacb23dac989b"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-013/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "77cd403cc10aaf39caaa93a6783b4f2e88820f6b8cf5e421c247e9a3359fdd86"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-014/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "627e89c026161dd1a722cf552d7fc44ea5c9b6660d0a5f0e265c5a6cfa72ce3a"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-015/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "51ef50c3210eba4b83cd0e32c42187b9439b9524470633e4328ba2b453c32c72"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-016/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "fd1773c786032a0e907c40f0f00145d36c9f8d0f6c60d2f1828aea607fbc766c"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-017/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "8b5e2a6534ae6018c4c18fb1695eaafc81c82f6d53dccd2c332743de7d4c8446"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-018/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "2c97be674a13f7c66b9385abec73f2009bcb99ec45b5d9c499780945f59280da"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-019/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "2ef1b1b9f155a54cc8a87862b41594bf000411d7192e1c24370672bc90f4e873"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-020/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "aa73852b110870042b68a1350a26343419b202ab1793337e5f0e783bc4ce41d4"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-021/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "368e3f8c6c6b8f00aeb4eb75ca7a29cf65f744338fbe5879de2fda688214586b"
+  },
+  {
+    "path": "outputs/game24-100q-8b-20261015/acquisition/a800/wave-022/Qwen3_8B_Thinking/draft_candidates.jsonl",
+    "sha256": "06a66116d2bfd0747d468d5e98592aa2f3afeb91d6ff154c8231b6b8047dbb50"
+  }
+]

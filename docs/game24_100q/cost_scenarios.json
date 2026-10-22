@@ -1,0 +1,11 @@
+{
+  "remaining_eligible": 98,
+  "observed_batch04_yield": 0.15625,
+  "scenario_candidate_questions": 628,
+  "scenario_generations": 10048,
+  "scenario_job_gpu_hours": 209.64570750747185,
+  "scenario_generated_tokens": 67485449,
+  "pilot_scenario_job_hours": 5.341291911018391,
+  "scope": "scenario using Batch04 full-job cost including loads; not a calibrated forecast or approved budget",
+  "changed_32b_batching": "max_num_seqs1 instead of historical16; speed effect unmeasured until pilot"
+}
